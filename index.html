@@ -5,228 +5,259 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Explore the music from Athlone: Delve into its rich past with figures like Patrick Gilmore and Count John McCormack, and discover today's vibrant scene of lessons, venues, and festivals.">
   <title>Explore the Music from Athlone | Past & Present</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Shannon River Inspired Palette */
-      --primary-color: #005A9C; /* Deep Blue - River Depth */
-      --secondary-color: #008080; /* Teal/Aqua - Water, Reeds */
-      --accent-color: #6B8E23;  /* Olive Green - Riverbanks, Nature */
-      --highlight-color: #ADD8E6; /* Light Blue - Sky, Water Reflection */
-
-      --text-color: #2c3e50; /* Dark Slate Grey for readability */
+      --primary-color: #005A9C;
+      --secondary-color: #008080;
+      --accent-color: #558B2F;
+      --highlight-color: #E0F2F7;
+      --neutral-light: #f8f9fa;
+      --neutral-surface: #ffffff;
+      --text-color: #34495e;
       --text-light: #ffffff;
-      --bg-color: #f8f9fa;   /* Very Light Grey/Off-white */
-      --surface-color: #ffffff;
-      --border-color: #d1d8e0; /* Light grey border */
-      --shadow-color: rgba(0, 90, 156, 0.15); /* Subtle blue shadow */
-
+      --border-color: #cce0e5;
+      --shadow-color: rgba(0, 70, 120, 0.12);
       --font-heading: 'Merriweather', serif;
-      --font-body: 'Lato', sans-serif; /* Switched to Lato for a cleaner, modern feel */
+      --font-body: 'Lato', sans-serif;
       --spacing-unit: 1rem;
+      --border-radius-sm: 4px;
+      --border-radius-md: 8px;
     }
-
     *, *::before, *::after { box-sizing: border-box; }
-
+    html { scroll-behavior: smooth; } /* Enable smooth scroll for all anchor links by default */
     body {
-      font-family: var(--font-body);
-      margin: 0;
-      padding: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.65;
+      font-family: var(--font-body); margin: 0; padding: 0; background: var(--neutral-light);
+      color: var(--text-color); line-height: 1.7;
     }
-
     h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-      margin-top: 0;
-      margin-bottom: calc(var(--spacing-unit) * 1.25);
-      line-height: 1.3;
-      color: var(--primary-color);
+      font-family: var(--font-heading); margin-top: 0; line-height: 1.3; color: var(--primary-color);
     }
-
-    h1 { font-size: 2.6rem; text-align: center; margin-bottom: var(--spacing-unit); }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; color: var(--secondary-color); }
-
+    h1 { font-size: 2.8rem; text-align: center; margin-bottom: calc(var(--spacing-unit) * 0.5); }
+    h2 { font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative; }
+    h2::after {
+      content: ''; display: block; width: 70px; height: 3px; background-color: var(--secondary-color);
+      margin: calc(var(--spacing-unit) * 0.75) auto 0;
+    }
+    h3 { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: var(--spacing-unit); }
+    h4 { color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.25rem; font-weight: 700; }
     p { margin-bottom: var(--spacing-unit); }
-
     a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+      color: var(--secondary-color); text-decoration: none; font-weight: 700;
+      transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+      text-decoration: underline; text-decoration-color: transparent;
     }
     a:hover, a:focus {
-      color: var(--accent-color);
-      text-decoration: underline;
-      outline: 2px solid var(--accent-color);
-      outline-offset: 2px;
+      color: var(--accent-color); text-decoration-color: var(--accent-color);
+      outline: 2px solid transparent; outline-offset: 2px;
     }
-
-    img { max-width: 100%; height: auto; display: block; border-radius: 6px; }
-
+    a:focus-visible { outline: 2px dashed var(--accent-color); }
+    img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius-sm); }
     .container {
-      max-width: 1100px; /* Slightly wider for content */
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: var(--spacing-unit);
-      padding-right: var(--spacing-unit);
+      max-width: 1100px; margin-left: auto; margin-right: auto;
+      padding-left: calc(var(--spacing-unit) * 1.5); padding-right: calc(var(--spacing-unit) * 1.5);
     }
-
     .site-header {
-      background: var(--primary-color);
-      color: var(--text-light);
-      padding: calc(var(--spacing-unit) * 1.5) 0;
-      text-align: center;
+      background: var(--primary-color); color: var(--text-light);
+      padding: var(--spacing-unit) 0 calc(var(--spacing-unit) * 1.5) 0; text-align: center;
     }
-    .site-header h1 { color: var(--text-light); font-size: 2.2rem; }
+    .site-header .logo-title {
+      font-family: var(--font-heading); font-size: 2rem; color: var(--text-light);
+      margin-bottom: calc(var(--spacing-unit) * 0.25);
+    }
     .site-header .subtitle {
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        opacity: 0.9;
-        color: var(--highlight-color);
-        margin-top: calc(var(--spacing-unit) / 2);
+      font-family: var(--font-body); font-size: 1rem; opacity: 0.85; color: var(--highlight-color); margin-top: 0;
     }
-
-
     .main-nav {
-      background-color: var(--surface-color);
-      box-shadow: 0 2px 6px var(--shadow-color);
-      padding: var(--spacing-unit) 0;
-      text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 2.5);
-      position: sticky; top: 0; z-index: 1000;
+      background-color: var(--neutral-surface); box-shadow: 0 2px 8px var(--shadow-color);
+      padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 3); position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
     }
     .main-nav a {
-      margin: 0 calc(var(--spacing-unit) * 0.8);
-      color: var(--primary-color);
-      font-weight: bold;
-      padding: 0.6em 1.2em;
-      border-radius: 20px; /* Pill-shaped buttons */
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin: 0 calc(var(--spacing-unit) * 0.6); color: var(--primary-color); font-weight: 700;
+      padding: 0.7em 1.4em; border-radius: 50px; font-size: 0.95rem;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      transition: background-color 0.2s ease, color 0.2s ease; text-decoration: none;
     }
     .main-nav a:hover, .main-nav a:focus, .main-nav a.active {
-      background-color: var(--secondary-color);
-      color: var(--text-light);
-      text-decoration: none;
+      background-color: var(--secondary-color); color: var(--text-light); text-decoration: none;
     }
-
-    .hero-main-title {
-        padding: calc(var(--spacing-unit) * 2) 0;
-        margin-bottom: calc(var(--spacing-unit) * 2);
+    .main-nav a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+    .page-main-title-container {
+      padding: calc(var(--spacing-unit) * 1.5) 0; margin-bottom: calc(var(--spacing-unit) * 1.5); text-align: center;
     }
-    .hero-main-title h1 {
-      font-size: 3rem; /* Larger main title */
-    }
-
-
     .content-section {
-      padding-top: calc(var(--spacing-unit) * 2);
-      padding-bottom: calc(var(--spacing-unit) * 2);
-      margin-bottom: calc(var(--spacing-unit) * 1.5);
-      background-color: var(--surface-color);
-      border-radius: 8px;
-      box-shadow: 0 3px 8px var(--shadow-color);
+      padding: calc(var(--spacing-unit) * 2.5); margin-bottom: calc(var(--spacing-unit) * 2.5);
+      background-color: var(--neutral-surface); border-radius: var(--border-radius-md);
+      box-shadow: 0 4px 12px var(--shadow-color);
     }
-    .content-section h2 {
-      text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 1.5);
-      position: relative;
-    }
-    .content-section h2::after {
-        content: ''; display: block; width: 80px; height: 3px;
-        background-color: var(--accent-color); margin: 0.5rem auto 0;
-    }
-
     .intro-paragraph {
-        font-size: 1.15rem;
-        text-align: center;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: calc(var(--spacing-unit) * 2);
-        color: #555;
+      font-size: 1.1rem; text-align: center; max-width: 750px; margin-left: auto; margin-right: auto;
+      margin-bottom: calc(var(--spacing-unit) * 2.5); color: #5a6a78;
     }
-
+    /* Figure Grid & Cards */
     .figure-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: calc(var(--spacing-unit) * 1.5);
-        margin-bottom: calc(var(--spacing-unit) * 1.5);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.25); margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+    .figure-card-link { /* Wrapper for the card to make it all clickable */
+        display: block; /* Allows box model properties */
+        text-decoration: none; /* Remove link underline */
+        color: inherit; /* Inherit text color */
+        border-radius: var(--border-radius-sm);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .figure-card-link:hover, .figure-card-link:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px var(--shadow-color);
     }
     .figure-card {
-        text-align: center;
-        padding: var(--spacing-unit);
-        background: #f0f7fa; /* Light blue tint */
-        border-radius: 6px;
-        border: 1px solid var(--highlight-color);
+      text-align: center; padding: var(--spacing-unit); background: var(--highlight-color);
+      border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);
+      height: 100%; /* Ensure cards in a row have same height if content differs */
+      display: flex; flex-direction: column; justify-content: center; /* Center content vertically */
     }
-    .figure-card h4 { color: var(--primary-color); margin-bottom: calc(var(--spacing-unit)/2); font-size:1.2rem; }
-
-    .historical-narrative p {
-        margin-bottom: calc(var(--spacing-unit)*0.75);
-    }
-    .historical-narrative strong {
-        color: var(--secondary-color);
-    }
-
+    .figure-card p { font-size: 0.9rem; color: var(--text-color); margin-bottom: 0; }
+    .historical-narrative { padding: 0 var(--spacing-unit); }
+    .historical-narrative p { margin-bottom: var(--spacing-unit); line-height: 1.75; }
+    .historical-narrative strong { color: var(--primary-color); font-weight: 700; }
     .products-link-section {
-        text-align: center;
-        padding: var(--spacing-unit);
-        margin-top: calc(var(--spacing-unit) * 1.5);
-        background-color: var(--highlight-color);
-        border-radius: 6px;
+      text-align: center; padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 2);
+      background-color: var(--accent-color); border-radius: var(--border-radius-md); color: var(--text-light);
     }
-    .products-link-section p { margin-bottom: calc(var(--spacing-unit)/2); color: var(--primary-color); }
-
-
+    .products-link-section h3 { color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 0.75); }
+    .products-link-section p { margin-bottom: var(--spacing-unit); color: var(--text-light); opacity: 0.9; }
+    .products-link-section .call-to-action {
+      background-color: var(--text-light); color: var(--accent-color) !important; border: 2px solid var(--accent-color);
+    }
+    .products-link-section .call-to-action:hover { background-color: var(--highlight-color); }
     .present-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: calc(var(--spacing-unit) * 1.5);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--spacing-unit) * 2);
     }
     .present-item {
-      background-color: var(--surface-color);
-      border: 1px solid var(--border-color);
-      border-left: 5px solid var(--secondary-color);
-      padding: var(--spacing-unit);
-      border-radius: 6px;
-      box-shadow: 0 2px 4px var(--shadow-color);
+      background-color: var(--neutral-surface); border: 1px solid var(--border-color);
+      border-left: 6px solid var(--accent-color); padding: calc(var(--spacing-unit) * 1.5);
+      border-radius: var(--border-radius-sm); box-shadow: 0 3px 6px var(--shadow-color);
+      display: flex; flex-direction: column;
     }
-    .present-item h3 { margin-top: 0; font-size: 1.3rem; }
-
-
+    .present-item h3 { margin-top: 0; }
+    .present-item p { flex-grow: 1; }
+    .present-item .call-to-action { margin-top: auto; }
     .call-to-action {
       display: inline-block; background-color: var(--accent-color); color: var(--text-light) !important;
-      padding: 0.8em 1.6em; border-radius: 25px; text-decoration: none !important; font-weight: bold;
-      margin-top: var(--spacing-unit); transition: background-color 0.2s ease-in-out, transform 0.2s ease;
-      border: none;
-      font-family: var(--font-body);
+      padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.8);
+      border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
+      margin-top: var(--spacing-unit);
+      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      border: none; font-family: var(--font-body); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .call-to-action:hover, .call-to-action:focus {
-      background-color: darken(var(--accent-color), 10%);
-      color: var(--text-light) !important; transform: translateY(-2px);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background-color: darken(var(--accent-color), 8%); color: var(--text-light) !important;
+      transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
-
-    #connect p { text-align: center; font-size: 1.1rem; }
-
+    .call-to-action:focus-visible { outline: 2px dashed var(--primary-color); outline-offset: 3px; }
+    #connect p { text-align: center; font-size: 1.1rem; margin-bottom: var(--spacing-unit); }
+    #connect .call-to-action {
+      margin-left: calc(var(--spacing-unit) / 2); margin-right: calc(var(--spacing-unit) / 2);
+    }
     .site-footer {
       background: var(--primary-color); color: var(--text-light); text-align: center;
-      padding: calc(var(--spacing-unit) * 2) 0; margin-top: calc(var(--spacing-unit) * 2.5);
-      border-top: 4px solid var(--secondary-color);
+      padding: calc(var(--spacing-unit) * 2.5) 0; margin-top: calc(var(--spacing-unit) * 3);
+      border-top: 5px solid var(--secondary-color);
     }
-    .site-footer p { margin-bottom: 0.5rem; opacity: 0.9; }
+    .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.85; }
     .site-footer a { color: var(--highlight-color); }
+    .site-footer a:hover, .site-footer a:focus { color: var(--text-light); text-decoration-color: var(--text-light); }
+    /* Product Grid styles */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.5); margin-top: var(--spacing-unit);
+    }
+    .product {
+      background: white; border-radius: var(--border-radius-md); box-shadow: 0 2px 5px var(--shadow-color);
+      overflow: hidden; text-align: center; border: 1px solid var(--border-color);
+    }
+    .product-image-container {
+      width: 100%; height: 180px; overflow: hidden; background-color: var(--highlight-color);
+    }
+    .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: var(--spacing-unit); }
+    .product h3 { margin: 0.5rem 0; font-size: 1.2rem; color: var(--primary-color); }
+    .product p { padding: 0 var(--spacing-unit) var(--spacing-unit); font-size: 0.9rem; margin-bottom: 0; }
+
+    /* Biography Section Styles */
+    #biographies-area {
+        margin-top: calc(var(--spacing-unit) * 2); /* Space above the bio area when it appears */
+    }
+    .biography-section { /* Inherits .content-section styles, plus specifics */
+        border-left: 8px solid var(--accent-color); /* Stronger accent */
+        padding-top: calc(var(--spacing-unit) * 1.5); /* Slightly less top padding than regular sections */
+    }
+    .biography-section h2 {
+        text-align: left; /* Align bio title to left */
+        margin-bottom: var(--spacing-unit);
+    }
+    .biography-section h2::after { display: none; /* Remove underline for bio titles */ }
+
+    .biography-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr; /* Default to single column */
+        gap: calc(var(--spacing-unit) * 1.5);
+        align-items: start;
+    }
+    @media (min-width: 768px) { /* Two columns for wider screens */
+        .biography-content-wrapper {
+            grid-template-columns: 200px 1fr; /* Image column and text column */
+        }
+    }
+    .bio-image-placeholder {
+        width: 100%;
+        max-width: 200px; /* Max width for the image */
+        height: auto;
+        aspect-ratio: 3/4; /* Maintain aspect ratio */
+        background-color: var(--highlight-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+        color: var(--text-color);
+        margin-bottom: var(--spacing-unit); /* Space below image on small screens */
+    }
+    .bio-text p {
+        margin-bottom: var(--spacing-unit);
+        line-height: 1.75;
+    }
+    .close-bio-button {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: var(--text-light) !important;
+      padding: calc(var(--spacing-unit) * 0.6) calc(var(--spacing-unit) * 1.2);
+      border-radius: var(--border-radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      margin-top: var(--spacing-unit);
+      transition: background-color 0.2s ease;
+      text-decoration: none !important;
+    }
+    .close-bio-button:hover, .close-bio-button:focus {
+      background-color: darken(var(--secondary-color), 10%);
+    }
 
     @media (max-width: 768px) {
-      .hero-main-title h1 { font-size: 2.4rem; }
-      h2 { font-size: 1.8rem; }
-      .main-nav a { font-size: 0.9rem; margin: 0 calc(var(--spacing-unit) * 0.3); padding: 0.5em 0.8em; }
-      .figure-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      h1 { font-size: 2.2rem; } h2 { font-size: 1.9rem; }
+      .main-nav a {
+        font-size: 0.85rem; margin: 0 calc(var(--spacing-unit) * 0.2);
+        padding: 0.6em 1em; letter-spacing: 0.5px;
+      }
+      .container { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
+      .content-section { padding: calc(var(--spacing-unit) * 1.5); }
+      .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
+      .present-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -234,21 +265,21 @@
   <a id="top"></a>
   <header class="site-header">
     <div class="container">
-      <h1>Athlone Music</h1>
+      <div class="logo-title">Athlone Music</div>
       <p class="subtitle">Your Gateway to Our Town's Melodic Heritage & Vibrant Present</p>
     </div>
   </header>
 
   <nav class="main-nav">
     <div class="container">
-      <a href="#past">Our Past</a>
-      <a href="#present">Our Present</a>
-      <a href="#products-showcase">Products</a> <!-- Will link to a section within "Past" or a separate area -->
-      <a href="#connect">Connect</a>
+      <a href="#past" class="nav-link">Our Past</a>
+      <a href="#present" class="nav-link">Our Present</a>
+      <a href="#products-placeholder-section" id="nav-products-link" class="nav-link">Products</a>
+      <a href="#connect" class="nav-link">Connect</a>
     </div>
   </nav>
 
-  <div class="hero-main-title">
+  <div class="page-main-title-container">
     <div class="container">
       <h1>Explore the Music from Athlone</h1>
     </div>
@@ -260,29 +291,37 @@
         <p class="intro-paragraph">Journey back through time to discover the remarkable individuals and pivotal moments that shaped Athlone's rich musical identity. From revolutionary bandmasters to world-renowned voices, our town has a story to sing.</p>
 
         <div class="figure-grid">
-            <div class="figure-card"><h4>Patrick Keating</h4><p>The revolutionary bandmaster.</p></div>
-            <div class="figure-card"><h4>Patrick Gilmore</h4><p>Global band leader & composer.</p></div>
-            <div class="figure-card"><h4>Michael Kilkelly</h4><p>Keeper of the musical flame.</p></div>
-            <div class="figure-card"><h4>Henry Foy</h4><p>Jazz pioneer & innovator.</p></div>
-            <div class="figure-card"><h4>Count John McCormack</h4><p>World-famous tenor.</p></div>
-            <!-- Add more brief cards if needed -->
+            <a href="#bio-patrick-keating" class="figure-card-link">
+                <div class="figure-card"><h4>Patrick Keating</h4><p>The revolutionary bandmaster.</p></div>
+            </a>
+            <a href="#bio-patrick-gilmore" class="figure-card-link">
+                <div class="figure-card"><h4>Patrick Gilmore</h4><p>Global band leader.</p></div>
+            </a>
+            <a href="#bio-michael-kilkelly" class="figure-card-link">
+                <div class="figure-card"><h4>Michael Kilkelly</h4><p>Keeper of the flame.</p></div>
+            </a>
+            <a href="#bio-henry-foy" class="figure-card-link">
+                <div class="figure-card"><h4>Henry Foy</h4><p>Jazz pioneer.</p></div>
+            </a>
+            <a href="#bio-count-john-mccormack" class="figure-card-link">
+                <div class="figure-card"><h4>Count John McCormack</h4><p>World-famous tenor.</p></div>
+            </a>
         </div>
 
         <div class="historical-narrative">
-            <p>Athlone's musical saga began with figures like <strong>Patrick Keating</strong>, whose bandmaster's baton wove melodies of defiance in the 1830s. His mentorship ignited the prodigious talent of <strong>Patrick Gilmore</strong>, who carried Athlone's spirit onto the world stage, becoming America's "March King."</p>
+             <p>Athlone's musical saga began with figures like <strong>Patrick Keating</strong>, whose bandmaster's baton wove melodies of defiance in the 1830s. His mentorship ignited the prodigious talent of <strong>Patrick Gilmore</strong>, who carried Athlone's spirit onto the world stage, becoming America's "March King."</p>
             <p>The legacy continued with <strong>Michael Kilkelly</strong>, who tirelessly trained future musicians, ensuring the town's musical pulse remained strong through changing times. Later, <strong>Henry Foy</strong> introduced the vibrant rhythms of jazz, challenging conventions and reflecting a modernizing Ireland. And, of course, the golden voice of <strong>Count John McCormack</strong> soared from Athlone to international acclaim, becoming a symbol of Irish artistry.</p>
-            <p>Their stories, intertwined with historical events like the Great Famine, political movements, and technological advancements like radio, create a compelling narrative of how music has always been at the heart of Athlone.</p>
         </div>
 
         <div id="products-showcase" class="products-link-section">
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
-            <a href="#products-placeholder" class="call-to-action">View Heritage Products</a>
-            <!-- This link can scroll to a more detailed product section below or a separate page -->
+            <a href="#products-placeholder-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
         </div>
     </section>
 
     <section id="present" class="content-section">
+        <!-- ... existing present section content ... -->
         <h2>Athlone's Music Today: A Living Soundscape</h2>
         <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Discover lessons, find live music venues, and join in our celebrated festivals.</p>
 
@@ -290,29 +329,28 @@
             <article class="present-item">
                 <h3>Music Lessons & Workshops</h3>
                 <p>Nurture your talent or learn a new instrument. Find information on local music teachers, schools, and workshops for all ages and skill levels.</p>
-                <a href="#" class="call-to-action">Find Lessons (Coming Soon)</a>
+                <a href="#" class="call-to-action">Find Lessons (Info Coming)</a>
             </article>
             <article class="present-item">
                 <h3>Live Music Venues</h3>
                 <p>From traditional sessions in cozy pubs to contemporary gigs in dedicated venues, experience the live sound of Athlone. Discover where to catch a performance.</p>
-                <a href="#" class="call-to-action">Explore Venues (Coming Soon)</a>
+                <a href="#" class="call-to-action">Explore Venues (Info Coming)</a>
             </article>
             <article class="present-item">
                 <h3>Festivals & Events</h3>
                 <p>Athlone hosts a variety of music festivals and events throughout the year, celebrating diverse genres and local talent. See what's coming up!</p>
-                <a href="#" class="call-to-action">View Festivals (Coming Soon)</a>
+                <a href="#" class="call-to-action">View Festivals (Info Coming)</a>
             </article>
         </div>
     </section>
 
-    <!-- Placeholder for a more detailed product section if needed, can be linked from #products-showcase -->
-    <section id="products-placeholder" class="content-section" style="display: none;"> <!-- Hidden for now -->
+    <section id="products-placeholder-section" class="content-section" style="display: none;">
+        <!-- ... existing products placeholder content ... -->
         <h2>Our Heritage Products</h2>
         <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
-        <!-- Product items would go here -->
         <div class="product-grid">
-             <article class="product"> <!-- Re-using product style from previous examples -->
-                <div class="product-image-container" style="background-color: var(--highlight-color);">
+             <article class="product">
+                <div class="product-image-container">
                   <img src="https://placehold.co/300x200/005A9C/FFFFFF?text=Postcard+Set" alt="Athlone Music Postcards">
                 </div>
                 <div class="product-info">
@@ -321,7 +359,7 @@
                 </div>
               </article>
               <article class="product">
-                <div class="product-image-container" style="background-color: var(--highlight-color);">
+                <div class="product-image-container">
                   <img src="https://placehold.co/300x200/008080/FFFFFF?text=Legends+Poster" alt="Athlone Music Legends Poster">
                 </div>
                 <div class="product-info">
@@ -329,16 +367,94 @@
                   <p>A2 decorative poster celebrating key musicians from Athlone's history.</p>
                 </div>
               </article>
+              <article class="product">
+                <div class="product-image-container">
+                  <img src="https://placehold.co/300x200/558B2F/FFFFFF?text=Booklet" alt="Athlone Music Heritage Booklet">
+                </div>
+                <div class="product-info">
+                  <h3>Heritage Booklet</h3>
+                  <p>A detailed guide to Athlone's rich musical history and its key figures.</p>
+                </div>
+              </article>
         </div>
     </section>
 
+    <!-- Biographies Area -->
+    <div id="biographies-area">
+        <section id="bio-patrick-keating" class="content-section biography-section" style="display: none;">
+            <h2>Patrick Keating</h2>
+            <div class="biography-content-wrapper">
+                <div class="bio-image-placeholder">[Image Placeholder]</div>
+                <div class="bio-text">
+                    <p>Patrick Keating arrived in Athlone around 1830, a town described as a "rotten borough" still adjusting to the ramifications of the Roman Catholic Relief Act of 1829. With a past shrouded in some mystery and a clear revolutionary zeal, Keating began to subtly intertwine his musical talents with his political objectives.</p>
+                    <p>His experiences, including alleged valor at Waterloo and musical training in Naples, shaped his approach. As a bandmaster, he used rehearsals not just for music but as a means to embed codes of resistance into melodies, turning his baton into both a conductor's wand and a symbol of defiance. He focused on recruiting sympathetic musicians, particularly from the local Catholic community, deepening these alliances even as suspicions about his true motives grew.</p>
+                    <p>Keating's influence culminated in significant public performances, such as at Daniel O'Connell's Monster Meeting in Athlone in 1843, where his band's anthem served as a powerful rallying cry. He also mentored a young Patrick Gilmore, recognizing and nurturing his extraordinary talent. The Great Famine (1845–1849) presented immense challenges, forcing Keating to use music for relief efforts even as starvation threatened to silence his movement. His legacy is one of music as a potent tool for social and political expression.</p>
+                </div>
+            </div>
+            <button class="close-bio-button" aria-label="Close Patrick Keating biography">Close Biography</button>
+        </section>
+
+        <section id="bio-patrick-gilmore" class="content-section biography-section" style="display: none;">
+            <h2>Patrick Gilmore</h2>
+            <div class="biography-content-wrapper">
+                <div class="bio-image-placeholder">[Image Placeholder]</div>
+                <div class="bio-text">
+                    <p>Patrick Sarsfield Gilmore, born in Ballygar, County Galway, in 1829, showed early musical promise. His talents were significantly shaped under the mentorship of Patrick Keating in Athlone. At around 13 (c. 1842), Gilmore was captivated by Keating's music and leadership, becoming his protégé.</p>
+                    <p>In 1848, at the age of 19, Gilmore emigrated to Boston, Massachusetts. His musical prowess quickly gained recognition. He led various bands, including his own famed "Gilmore's Band," which performed for presidents and became one of America's most celebrated musical ensembles. During the American Civil War, he penned the enduring classic "When Johnny Comes Marching Home" (under the pseudonym Louis Lambert).</p>
+                    <p>Gilmore was renowned for organizing colossal musical events, most notably the National Peace Jubilee (1869) and the World's Peace Jubilee and International Musical Festival (1872) in Boston, which featured thousands of performers. He returned to Ireland for a homecoming concert and maintained connections with figures like Michael Kilkelly. Gilmore's influence on American band music was profound, earning him the title of "Father of the American Concert Band." He died in St. Louis, Missouri, in 1892.</p>
+                </div>
+            </div>
+            <button class="close-bio-button" aria-label="Close Patrick Gilmore biography">Close Biography</button>
+        </section>
+
+        <section id="bio-michael-kilkelly" class="content-section biography-section" style="display: none;">
+            <h2>Michael Kilkelly</h2>
+            <div class="biography-content-wrapper">
+                <div class="bio-image-placeholder">[Image Placeholder]</div>
+                <div class="bio-text">
+                    <p>Michael Kilkelly emerged as a key figure in Athlone's musical landscape, carrying forward the traditions and mentorship established by Patrick Keating. He was himself a protégé of Keating and became instrumental in training future generations of bandmasters in Athlone, often with assistance from bandmate Patsey Glavey.</p>
+                    <p>Kilkelly maintained correspondence with Patrick Gilmore after Gilmore's move to America, drawing inspiration from his international success. He became a leader in his own right, using music not just for entertainment but also to subtly stoke nationalist sentiment within the community. After Keating's death, Kilkelly was pivotal in keeping the musical flame alive in Athlone.</p>
+                    <p>He strategically placed bands at various flashpoints across the country, with rehearsals often serving as clandestine gatherings for rebels. His leadership was tested during Parnell's political scandal, but he rallied musicians to rise above the divisions. Kilkelly's dedication ensured that Athlone's musical heritage remained vibrant and purposeful, and he was among the first to recognize the raw vocal talent of a young John McCormack, foreseeing a new era for Irish music.</p>
+                </div>
+            </div>
+            <button class="close-bio-button" aria-label="Close Michael Kilkelly biography">Close Biography</button>
+        </section>
+
+        <section id="bio-henry-foy" class="content-section biography-section" style="display: none;">
+            <h2>Henry Foy</h2>
+            <div class="biography-content-wrapper">
+                <div class="bio-image-placeholder">[Image Placeholder]</div>
+                <div class="bio-text">
+                    <p>Henry Foy, born around 1883, was captivated by music from a very young age, notably watching Michael Kilkelly's band perform for Charles Stewart Parnell in Athlone when he was just a toddler. He represented a newer generation of Athlone musicians, one that embraced evolving musical styles.</p>
+                    <p>After a period in London, where he reportedly became disillusioned, Foy returned to Athlone around 1902 to found the Athlone Musical Society. He was an innovator, and his introduction of modern rhythms, including pioneering Ireland's first jazz band, often clashed with more conservative elements in the town, such as Fr. Conneffrey.</p>
+                    <p>Foy's musical vision reflected a changing Ireland. As political landscapes shifted with events like the signing of the Anglo-Irish Treaty, the divisions in society were mirrored in the music scene. Foy's jazz music became a point of contention, highlighting the tension between traditional Irish music and new, international influences. His contributions mark a significant evolution in Athlone's musical story, bridging the gap between historical band traditions and emerging 20th-century sounds.</p>
+                </div>
+            </div>
+            <button class="close-bio-button" aria-label="Close Henry Foy biography">Close Biography</button>
+        </section>
+
+        <section id="bio-count-john-mccormack" class="content-section biography-section" style="display: none;">
+            <h2>Count John McCormack</h2>
+            <div class="biography-content-wrapper">
+                <div class="bio-image-placeholder">[Image Placeholder]</div>
+                <div class="bio-text">
+                    <p>John McCormack, born in Athlone in 1884, possessed a voice of extraordinary natural brilliance. His talent was recognized early on by figures like Michael Kilkelly. McCormack's formal rise began after winning the prestigious Feis Ceoil gold medal in Dublin in 1903.</p>
+                    <p>He then studied opera in Italy and quickly launched a meteoric international career, performing in major opera houses across Europe and America, including Covent Garden in London and the Metropolitan Opera in New York. While renowned for his operatic roles, McCormack also became immensely popular as a concert recitalist, particularly for his renditions of Irish folk songs and popular ballads.</p>
+                    <p>His fame reached unprecedented levels, making him one of the first global recording stars. He became a Papal Count in recognition of his services to Catholic charities. McCormack's voice, broadcast via the newly established Athlone radio transmitter during the 1932 Eucharistic Congress, reached millions and became a powerful symbol of Irish cultural pride and unity. He remains one of Ireland's most celebrated and beloved musical figures.</p>
+                </div>
+            </div>
+            <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
+        </section>
+    </div> <!-- End #biographies-area -->
+
 
     <section id="connect" class="content-section">
+        <!-- ... existing connect section content ... -->
       <h2>Connect & Contribute</h2>
       <p>Join our community! Follow us for updates, share your Athlone music stories, or learn how you can support the Athlone Music Heritage Project.</p>
       <p style="text-align:center;">
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--secondary-color); margin-right: 10px;">Follow on Instagram</a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--secondary-color);">Follow on Facebook</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--primary-color);">Follow on Instagram</a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--primary-color);">Follow on Facebook</a>
       </p>
     </section>
   </main>
@@ -350,32 +466,148 @@
     </div>
   </footer>
 
-  <script>
-    // Simple smooth scroll for anchor links in nav
-    document.querySelectorAll('.main-nav a[href^="#"], .products-link-section a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            // Ensure it's a page anchor and not just "#"
-            if (href.length > 1 && document.querySelector(href)) {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const allBiographySections = document.querySelectorAll('.biography-section');
+    const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
+    const allCloseBioButtons = document.querySelectorAll('.close-bio-button');
+    const productsSection = document.getElementById('products-placeholder-section');
+    const viewProductsCTA = document.getElementById('view-products-cta');
+    const navProductsLink = document.getElementById('nav-products-link');
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link'); // Specific class for main content links
+
+    function hideAllBioSections() {
+        allBiographySections.forEach(section => section.style.display = 'none');
+    }
+
+    function hideProductsSection() {
+        if (productsSection) productsSection.style.display = 'none';
+    }
+
+    // Handle clicks on Figure Cards
+    allFigureCardLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetBioId = this.getAttribute('href').substring(1);
+            const targetBioSection = document.getElementById(targetBioId);
+
+            hideAllBioSections(); // Hide any open bio
+            hideProductsSection(); // Hide products section if open
+
+            if (targetBioSection) {
+                targetBioSection.style.display = 'block';
+                // Smooth scroll to the biography section
+                // Ensure it's fully in view, accounting for sticky nav
+                const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
+                const elementPosition = targetBioSection.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - navHeight - 20; // 20px buffer
+
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
-
-                // Optional: Add 'active' class to nav link
-                document.querySelectorAll('.main-nav a').forEach(navA => navA.classList.remove('active'));
-                if(this.closest('.main-nav')) { // only for main nav links
-                    this.classList.add('active');
-                }
-
-                // If linking to the hidden product section, show it
-                if(href === "#products-placeholder") {
-                    document.getElementById('products-placeholder').style.display = 'block';
-                }
             }
         });
     });
-  </script>
+
+    // Handle clicks on Close Biography Buttons
+    allCloseBioButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.biography-section').style.display = 'none';
+            // Optionally, scroll back to the #past section
+            // document.getElementById('past').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Handle Products Section Visibility
+    function showProductsAndScroll() {
+        hideAllBioSections(); // Hide any open bio
+        if (productsSection) {
+            productsSection.style.display = 'block';
+            const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
+            const elementPosition = productsSection.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navHeight - 20;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    if (viewProductsCTA) {
+        viewProductsCTA.addEventListener('click', function(e) {
+            e.preventDefault();
+            showProductsAndScroll();
+        });
+    }
+    if (navProductsLink) {
+        navProductsLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Always prevent default for this specific nav link
+            showProductsAndScroll();
+        });
+    }
+
+    // Handle main navigation link clicks (for sections like #past, #present, #connect)
+    navLinks.forEach(link => {
+        // Exclude the products link as it's handled separately
+        if (link.id !== 'nav-products-link') {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#') && targetId.length > 1) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        hideAllBioSections();
+                        hideProductsSection(); // Also hide products if navigating to a main section
+
+                        const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - navHeight - 20;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        }
+    });
+
+
+    // Active nav link on scroll (simplified)
+    const mainSectionsForNav = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]'); // Include bio sections for active state if desired
+    window.addEventListener('scroll', () => {
+        let currentActive = '';
+        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 40; // Adjust offset
+
+        mainSectionsForNav.forEach(section => {
+            if (section.style.display !== 'none' && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                currentActive = section.id;
+            }
+        });
+        
+        // If no specific section is active (e.g. scrolled to top or between sections), try to find the best fit
+        if (!currentActive && productsSection && productsSection.style.display !== 'none' && productsSection.offsetTop <= scrollPosition) {
+            currentActive = productsSection.id;
+        }
+
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href').substring(1);
+            if (linkHref === currentActive) {
+                link.classList.add('active');
+            }
+            // Special case for products nav link
+            if (link.id === 'nav-products-link' && currentActive === 'products-placeholder-section') {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
