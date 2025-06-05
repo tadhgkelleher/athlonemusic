@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the rich musical heritage of Athlone with our booklet and poster, celebrating its history from Patrick Gilmore to the showbands.">
+  <title>Athlone Music | Celebrating Local Musical History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #222;
+      --secondary-color: #007bff; /* A slightly more vibrant accent */
+      --text-color: #333;
+      --text-light: #f9f9f9;
+      --bg-color: #f9f9f9;
+      --surface-color: #ffffff;
+      --border-color: #ddd;
+      --shadow-color: rgba(0,0,0,0.1);
+
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Roboto', sans-serif; /* Added a sans-serif for body text */
+
+      --spacing-unit: 1rem; /* approx 16px */
+    }
+
+    /* Basic Reset & Global Styles */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      margin-top: 0;
+      margin-bottom: var(--spacing-unit);
+      line-height: 1.2;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    p {
+      margin-bottom: var(--spacing-unit);
+    }
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    a:hover, a:focus {
+      color: darken(var(--secondary-color), 10%);
+      text-decoration: underline;
+      outline: 2px solid var(--secondary-color); /* Basic focus style */
+      outline-offset: 2px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block; /* Remove bottom space */
+    }
+
+    /* Layout */
+    .container {
+      max-width: 960px; /* Increased max-width slightly */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--spacing-unit);
+      padding-right: var(--spacing-unit);
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: calc(var(--spacing-unit) * 2) 0;
+      text-align: center;
+    }
+    .site-header h1 {
+      margin-bottom: calc(var(--spacing-unit) / 2);
+    }
+    .site-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    .main-nav {
+      background-color: var(--surface-color);
+      box-shadow: 0 2px 5px var(--shadow-color);
+      padding: var(--spacing-unit) 0;
+      text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      position: sticky; /* Sticky nav */
+      top: 0;
+      z-index: 1000;
+    }
+    .main-nav a {
+      margin: 0 var(--spacing-unit);
+      color: var(--primary-color);
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+    }
+    .main-nav a:hover, .main-nav a:focus {
+      background-color: var(--secondary-color);
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+      background: #eaeaea; /* Could be an image background */
+      text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      border-radius: 8px;
+    }
+    .hero h2 {
+      color: var(--primary-color);
+    }
+
+    /* Content Sections */
+    .content-section {
+      padding-top: calc(var(--spacing-unit) * 2);
+      padding-bottom: calc(var(--spacing-unit) * 2);
+      /* border-bottom: 1px solid var(--border-color); Remove if too busy */
+    }
+    .content-section:last-of-type {
+      border-bottom: none;
+    }
+    .content-section h2 {
+      text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Slightly wider min product */
+      gap: calc(var(--spacing-unit) * 1.5);
+      margin-top: var(--spacing-unit);
+    }
+
+    .product {
+      background: var(--surface-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px var(--shadow-color);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .product:hover, .product:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-image-container {
+      width: 100%;
+      height: 200px; /* Fixed height for image container */
+      overflow: hidden;
+      background-color: #f0f0f0; /* Placeholder bg for image */
+    }
+    .product-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures image covers space without distortion */
+    }
+
+    .product-info {
+      padding: var(--spacing-unit);
+      flex-grow: 1; /* Allows info to take remaining space */
+    }
+    .product h3 {
+      margin-top: 0;
+      margin-bottom: calc(var(--spacing-unit) / 2);
+      font-size: 1.25rem; /* Slightly adjusted */
+    }
+    .product p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    /* Contact Section */
+    #contact p {
+      text-align: center;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: calc(var(--spacing-unit) * 1.5) 0;
+      margin-top: calc(var(--spacing-unit) * 2);
+    }
+    .site-footer p {
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
+
+    /* Responsive Adjustments (Example) */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      .hero { padding: calc(var(--spacing-unit) * 2) var(--spacing-unit); }
+      .main-nav { font-size: 0.9rem; } /* Make nav links smaller */
+      .main-nav a { margin: 0 calc(var(--spacing-unit) / 2); }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Athlone Music</h1>
+      <p>Celebrating the Musical History of Athlone</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Explore the Soundtrack of Athlone</h2>
+        <p>From Patrick Gilmore to the showbands – discover the hidden musical stories of the town.</p>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="container">
+        <h2>About the Booklet</h2>
+        <p>This illustrated booklet explores the rich musical heritage of Athlone, Ireland — uncovering connections to global music movements, forgotten bands, and historic figures. Delve into the stories, sounds, and scenes that shaped the town's musical landscape.</p>
+      </div>
+    </section>
+
+    <section id="products" class="content-section">
+      <div class="container">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <article class="product">
+            <div class="product-image-container">
+              <img src="https://placehold.co/400x300/EAEAEA/333?text=Booklet+Cover" alt="Athlone Music Booklet Cover">
+            </div>
+            <div class="product-info">
+              <h3>Athlone Music Booklet</h3>
+              <p>A 40-page visual guide to Athlone’s vibrant music history. Perfect for enthusiasts and locals alike.</p>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-image-container">
+              <img src="https://placehold.co/400x300/DEDEDE/333?text=Poster+Design" alt="Music History Poster of Athlone">
+            </div>
+            <div class="product-info">
+              <h3>Music History Poster</h3>
+              <p>A beautifully designed A2 poster featuring historic musicians and iconic bands from Athlone.</p>
+            </div>
+          </article>
+          <!-- Add more products as needed
+          <article class="product">
+            <div class="product-image-container">
+              <img src="https://placehold.co/400x300/F0F0F0/333?text=Another+Product" alt="Another Product">
+            </div>
+            <div class="product-info">
+              <h3>Another Product</h3>
+              <p>Description of another great product related to Athlone's music.</p>
+            </div>
+          </article>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p>Have questions or want to learn more? Reach out to us!</p>
+        <p>Email: <a href="mailto:info@athlonemusic.com">info@athlonemusic.com</a></p>
+        <p>
+          Follow us on
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> or
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          for updates and historical snippets.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <script>document.write(new Date().getFullYear())</script> Athlone Music. All rights reserved.</p>
+      <p><a href="#top">Back to Top</a></p> <!-- Simple back to top link -->
+    </div>
+  </footer>
+</body>
+</html>
