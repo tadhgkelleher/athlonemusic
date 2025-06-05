@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Experience Athlone's monumental music saga, from Patrick Keating's revolutionary rhythms to Patrick Gilmore's global anthems, Michael Kilkelly's enduring influence, Henry Foy's jazz innovations, and Count John McCormack's legendary voice.">
-  <title>Athlone's Musical Crescendo: A Legacy Unveiled</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Explore the music from Athlone: Delve into its rich past with figures like Patrick Gilmore and Count John McCormack, and discover today's vibrant scene of lessons, venues, and festivals.">
+  <title>Explore the Music from Athlone | Past & Present</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1a1a1a; /* Deeper, more dramatic black */
-      --secondary-color: #B8860B; /* DarkGoldenRod - for a rich, historical feel */
-      --accent-color: #CDAF7D; /* Tan/Light Gold - for highlights and links */
-      --text-color: #333;
-      --text-light: #f0f0f0;
-      --bg-color: #f4f0e8; /* A slightly warmer, aged paper background */
+      /* Shannon River Inspired Palette */
+      --primary-color: #005A9C; /* Deep Blue - River Depth */
+      --secondary-color: #008080; /* Teal/Aqua - Water, Reeds */
+      --accent-color: #6B8E23;  /* Olive Green - Riverbanks, Nature */
+      --highlight-color: #ADD8E6; /* Light Blue - Sky, Water Reflection */
+
+      --text-color: #2c3e50; /* Dark Slate Grey for readability */
+      --text-light: #ffffff;
+      --bg-color: #f8f9fa;   /* Very Light Grey/Off-white */
       --surface-color: #ffffff;
-      --border-color: #c9c1b1; /* Softer border */
-      --shadow-color: rgba(0,0,0,0.12);
+      --border-color: #d1d8e0; /* Light grey border */
+      --shadow-color: rgba(0, 90, 156, 0.15); /* Subtle blue shadow */
 
       --font-heading: 'Merriweather', serif;
-      --font-body: 'Roboto', sans-serif;
+      --font-body: 'Lato', sans-serif; /* Switched to Lato for a cleaner, modern feel */
       --spacing-unit: 1rem;
     }
 
@@ -31,7 +34,7 @@
       padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
-      line-height: 1.7;
+      line-height: 1.65;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -39,11 +42,12 @@
       margin-top: 0;
       margin-bottom: calc(var(--spacing-unit) * 1.25);
       line-height: 1.3;
+      color: var(--primary-color);
     }
 
-    h1 { font-size: 2.8rem; color: var(--primary-color); text-shadow: 1px 1px 2px var(--shadow-color); }
-    h2 { font-size: 2.2rem; color: var(--secondary-color); }
-    h3 { font-size: 1.6rem; color: var(--primary-color); }
+    h1 { font-size: 2.6rem; text-align: center; margin-bottom: var(--spacing-unit); }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; color: var(--secondary-color); }
 
     p { margin-bottom: var(--spacing-unit); }
 
@@ -60,10 +64,10 @@
       outline-offset: 2px;
     }
 
-    img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+    img { max-width: 100%; height: auto; display: block; border-radius: 6px; }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px; /* Slightly wider for content */
       margin-left: auto;
       margin-right: auto;
       padding-left: var(--spacing-unit);
@@ -73,165 +77,156 @@
     .site-header {
       background: var(--primary-color);
       color: var(--text-light);
-      padding: calc(var(--spacing-unit) * 3) 0;
+      padding: calc(var(--spacing-unit) * 1.5) 0;
       text-align: center;
-      border-bottom: 5px solid var(--secondary-color);
     }
-    .site-header h1 { color: var(--text-light); margin-bottom: calc(var(--spacing-unit) / 2); }
-    .site-header .subtitle { font-size: 1.3rem; opacity: 0.9; color: var(--accent-color); font-style: italic; }
+    .site-header h1 { color: var(--text-light); font-size: 2.2rem; }
+    .site-header .subtitle {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        opacity: 0.9;
+        color: var(--highlight-color);
+        margin-top: calc(var(--spacing-unit) / 2);
+    }
+
 
     .main-nav {
       background-color: var(--surface-color);
-      box-shadow: 0 3px 7px var(--shadow-color);
+      box-shadow: 0 2px 6px var(--shadow-color);
       padding: var(--spacing-unit) 0;
       text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 3);
+      margin-bottom: calc(var(--spacing-unit) * 2.5);
       position: sticky; top: 0; z-index: 1000;
     }
     .main-nav a {
-      margin: 0 var(--spacing-unit);
+      margin: 0 calc(var(--spacing-unit) * 0.8);
       color: var(--primary-color);
       font-weight: bold;
-      padding: 0.7em 1.3em;
-      border-radius: 4px;
-      font-size: 1.1rem;
+      padding: 0.6em 1.2em;
+      border-radius: 20px; /* Pill-shaped buttons */
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .main-nav a:hover, .main-nav a:focus {
+    .main-nav a:hover, .main-nav a:focus, .main-nav a.active {
       background-color: var(--secondary-color);
       color: var(--text-light);
       text-decoration: none;
     }
 
-    .hero {
-      padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1200x400/555/eee?text=Athlone+Music+Panorama') no-repeat center center; /* Placeholder for a dramatic BG image */
-      background-size: cover;
-      color: var(--text-light);
-      text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 3);
-      border-radius: 8px;
+    .hero-main-title {
+        padding: calc(var(--spacing-unit) * 2) 0;
+        margin-bottom: calc(var(--spacing-unit) * 2);
     }
-    .hero h2 { color: var(--text-light); font-size: 2.5rem; text-shadow: 2px 2px 4px #000; }
-    .hero p { font-size: 1.2rem; max-width: 750px; margin-left: auto; margin-right:auto; opacity: 0.95; }
+    .hero-main-title h1 {
+      font-size: 3rem; /* Larger main title */
+    }
+
 
     .content-section {
-      padding-top: calc(var(--spacing-unit) * 3);
-      padding-bottom: calc(var(--spacing-unit) * 3);
+      padding-top: calc(var(--spacing-unit) * 2);
+      padding-bottom: calc(var(--spacing-unit) * 2);
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+      background-color: var(--surface-color);
+      border-radius: 8px;
+      box-shadow: 0 3px 8px var(--shadow-color);
     }
     .content-section h2 {
       text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 2.5);
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
       position: relative;
     }
     .content-section h2::after {
-        content: ''; display: block; width: 100px; height: 4px;
-        background-color: var(--secondary-color); margin: 0.6rem auto 0;
+        content: ''; display: block; width: 80px; height: 3px;
+        background-color: var(--accent-color); margin: 0.5rem auto 0;
     }
 
-    .maestros-intro p {
-        font-size: 1.1rem;
+    .intro-paragraph {
+        font-size: 1.15rem;
         text-align: center;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: calc(var(--spacing-unit) * 2);
+        color: #555;
     }
 
-    .figure-spotlight {
+    .figure-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: calc(var(--spacing-unit) * 2);
-        margin-bottom: calc(var(--spacing-unit) * 2);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: calc(var(--spacing-unit) * 1.5);
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
     }
     .figure-card {
-        background-color: var(--surface-color);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        padding: calc(var(--spacing-unit) * 1.5);
-        box-shadow: 0 3px 6px var(--shadow-color);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        padding: var(--spacing-unit);
+        background: #f0f7fa; /* Light blue tint */
+        border-radius: 6px;
+        border: 1px solid var(--highlight-color);
     }
-    .figure-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .figure-card h3 { margin-top: 0; color: var(--secondary-color); }
-    .figure-card p { font-size: 0.95rem; }
+    .figure-card h4 { color: var(--primary-color); margin-bottom: calc(var(--spacing-unit)/2); font-size:1.2rem; }
 
-    .history-section .era {
-        background-color: #fff;
-        padding: calc(var(--spacing-unit) * 1.5);
-        margin-bottom: calc(var(--spacing-unit) * 2);
-        border-radius: 8px;
-        box-shadow: 0 2px 5px var(--shadow-color);
-        border-left: 5px solid var(--secondary-color);
+    .historical-narrative p {
+        margin-bottom: calc(var(--spacing-unit)*0.75);
     }
-    .history-section .era h3 {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        margin-bottom: var(--spacing-unit);
+    .historical-narrative strong {
+        color: var(--secondary-color);
     }
-    .history-section .era p {
-        margin-bottom: calc(var(--spacing-unit) * 0.75);
+
+    .products-link-section {
+        text-align: center;
+        padding: var(--spacing-unit);
+        margin-top: calc(var(--spacing-unit) * 1.5);
+        background-color: var(--highlight-color);
+        border-radius: 6px;
     }
-    .history-section .era strong { color: var(--secondary-color); }
+    .products-link-section p { margin-bottom: calc(var(--spacing-unit)/2); color: var(--primary-color); }
 
 
-    .product-grid {
+    .present-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: calc(var(--spacing-unit) * 2);
-      margin-top: var(--spacing-unit);
+      gap: calc(var(--spacing-unit) * 1.5);
     }
-    .product {
-      background: var(--surface-color); border-radius: 8px; box-shadow: 0 4px 8px var(--shadow-color);
-      overflow: hidden; text-align: center; display: flex; flex-direction: column;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    .present-item {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-left: 5px solid var(--secondary-color);
+      padding: var(--spacing-unit);
+      border-radius: 6px;
+      box-shadow: 0 2px 4px var(--shadow-color);
     }
-    .product:hover, .product:focus-within {
-      transform: translateY(-6px); box-shadow: 0 7px 14px rgba(0,0,0,0.18);
-    }
-    .product-image-container {
-      width: 100%; height: 220px; overflow: hidden; background-color: #e0e0e0;
-    }
-    .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
-    .product-info { padding: var(--spacing-unit); flex-grow: 1; }
-    .product h3 { margin-top: 0; margin-bottom: calc(var(--spacing-unit) / 2); font-size: 1.3rem; }
-    .product p { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+    .present-item h3 { margin-top: 0; font-size: 1.3rem; }
+
 
     .call-to-action {
-      display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
-      padding: 0.9em 1.8em; border-radius: 5px; text-decoration: none !important; font-weight: bold;
+      display: inline-block; background-color: var(--accent-color); color: var(--text-light) !important;
+      padding: 0.8em 1.6em; border-radius: 25px; text-decoration: none !important; font-weight: bold;
       margin-top: var(--spacing-unit); transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+      border: none;
+      font-family: var(--font-body);
     }
     .call-to-action:hover, .call-to-action:focus {
-      background-color: var(--accent-color); color: var(--primary-color) !important; transform: scale(1.05);
+      background-color: darken(var(--accent-color), 10%);
+      color: var(--text-light) !important; transform: translateY(-2px);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    #contact p, #happenings p { text-align: center; font-size: 1.1rem; }
-    #happenings .event-placeholder {
-        border: 2px dashed var(--border-color);
-        padding: var(--spacing-unit);
-        border-radius: 6px;
-        background-color: #fdfcf9;
-    }
+    #connect p { text-align: center; font-size: 1.1rem; }
 
     .site-footer {
       background: var(--primary-color); color: var(--text-light); text-align: center;
-      padding: calc(var(--spacing-unit) * 2.5) 0; margin-top: calc(var(--spacing-unit) * 3);
-      border-top: 5px solid var(--secondary-color);
+      padding: calc(var(--spacing-unit) * 2) 0; margin-top: calc(var(--spacing-unit) * 2.5);
+      border-top: 4px solid var(--secondary-color);
     }
     .site-footer p { margin-bottom: 0.5rem; opacity: 0.9; }
-    .site-footer a { color: var(--accent-color); }
+    .site-footer a { color: var(--highlight-color); }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.9rem; }
-      .hero { padding: calc(var(--spacing-unit) * 3) var(--spacing-unit); }
-      .hero h2 { font-size: 2rem; }
-      .main-nav a { font-size: 0.9rem; margin: 0 calc(var(--spacing-unit) * 0.5); padding: 0.6em 1em; }
+      .hero-main-title h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.8rem; }
+      .main-nav a { font-size: 0.9rem; margin: 0 calc(var(--spacing-unit) * 0.3); padding: 0.5em 0.8em; }
+      .figure-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
     }
   </style>
 </head>
@@ -239,145 +234,148 @@
   <a id="top"></a>
   <header class="site-header">
     <div class="container">
-      <h1>Athlone's Musical Crescendo</h1>
-      <p class="subtitle">A Legacy of Rebellion, Artistry, and Unity</p>
+      <h1>Athlone Music</h1>
+      <p class="subtitle">Your Gateway to Our Town's Melodic Heritage & Vibrant Present</p>
     </div>
   </header>
 
   <nav class="main-nav">
     <div class="container">
-      <a href="#maestros">The Maestros</a>
-      <a href="#saga">The Saga</a>
-      <a href="#products">Offerings</a>
-      <a href="#happenings">Today's Score</a>
+      <a href="#past">Our Past</a>
+      <a href="#present">Our Present</a>
+      <a href="#products-showcase">Products</a> <!-- Will link to a section within "Past" or a separate area -->
       <a href="#connect">Connect</a>
     </div>
   </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h2>Where History Found Its Voice</h2>
-        <p>Journey through Athlone's extraordinary musical saga. Discover how a "rotten borough" became a crucible for revolutionary anthems, world-renowned talent, and innovations that echoed across continents. This is the story of how music shaped a town, and how a town shaped music history.</p>
-      </div>
-    </section>
+  <div class="hero-main-title">
+    <div class="container">
+      <h1>Explore the Music from Athlone</h1>
+    </div>
+  </div>
 
-    <section id="maestros" class="content-section">
-        <div class="container">
-            <h2>The Maestros of Athlone</h2>
-            <div class="maestros-intro">
-                <p>Athlone's musical narrative is woven by visionary figures whose influence transcended generations and borders. Meet the architects of our sound:</p>
-            </div>
-            <div class="figure-spotlight">
-                <article class="figure-card">
-                    <h3>Patrick Keating</h3>
-                    <p>The enigmatic bandmaster who turned melodies into messages of rebellion. His arrival in 1830 marked an overture to an era of change, his legacy echoing in the revolutionary spirit of Athlone's music.</p>
-                </article>
-                <article class="figure-card">
-                    <h3>Patrick Gilmore</h3>
-                    <p>Keating's prodigious protégé, Gilmore took Athlone's spirit to the world stage. From leading Presidential bands to organizing colossal Peace Jubilees, he became America's "March King."</p>
-                </article>
-                <article class="figure-card">
-                    <h3>Michael Kilkelly</h3>
-                    <p>A vital link in the chain of mentorship, Kilkelly carried Keating's torch, training future bandmasters and embedding nationalist sentiment in every note, ensuring the music's flame never died.</p>
-                </article>
-                <article class="figure-card">
-                    <h3>Henry Foy</h3>
-                    <p>The innovator who dared to bring jazz to Athlone, challenging traditions and reflecting a new, modern Ireland. His Musical Society became a hub of evolving sounds.</p>
-                </article>
-                <article class="figure-card">
-                    <h3>Count John McCormack</h3>
-                    <p>The golden-voiced tenor whose journey from Athlone to global stardom captivated hearts. His voice, amplified by Marconi's new radio, became a symbol of Irish cultural pride.</p>
-                </article>
-            </div>
-             <p style="text-align:center; margin-top: var(--spacing-unit);">
-                <a href="#saga" class="call-to-action">Discover Their Interwoven Stories</a>
-            </p>
+  <main class="container">
+    <section id="past" class="content-section">
+        <h2>Our Musical Past: A Storied Legacy</h2>
+        <p class="intro-paragraph">Journey back through time to discover the remarkable individuals and pivotal moments that shaped Athlone's rich musical identity. From revolutionary bandmasters to world-renowned voices, our town has a story to sing.</p>
+
+        <div class="figure-grid">
+            <div class="figure-card"><h4>Patrick Keating</h4><p>The revolutionary bandmaster.</p></div>
+            <div class="figure-card"><h4>Patrick Gilmore</h4><p>Global band leader & composer.</p></div>
+            <div class="figure-card"><h4>Michael Kilkelly</h4><p>Keeper of the musical flame.</p></div>
+            <div class="figure-card"><h4>Henry Foy</h4><p>Jazz pioneer & innovator.</p></div>
+            <div class="figure-card"><h4>Count John McCormack</h4><p>World-famous tenor.</p></div>
+            <!-- Add more brief cards if needed -->
+        </div>
+
+        <div class="historical-narrative">
+            <p>Athlone's musical saga began with figures like <strong>Patrick Keating</strong>, whose bandmaster's baton wove melodies of defiance in the 1830s. His mentorship ignited the prodigious talent of <strong>Patrick Gilmore</strong>, who carried Athlone's spirit onto the world stage, becoming America's "March King."</p>
+            <p>The legacy continued with <strong>Michael Kilkelly</strong>, who tirelessly trained future musicians, ensuring the town's musical pulse remained strong through changing times. Later, <strong>Henry Foy</strong> introduced the vibrant rhythms of jazz, challenging conventions and reflecting a modernizing Ireland. And, of course, the golden voice of <strong>Count John McCormack</strong> soared from Athlone to international acclaim, becoming a symbol of Irish artistry.</p>
+            <p>Their stories, intertwined with historical events like the Great Famine, political movements, and technological advancements like radio, create a compelling narrative of how music has always been at the heart of Athlone.</p>
+        </div>
+
+        <div id="products-showcase" class="products-link-section">
+            <h3>Commemorate Our Heritage</h3>
+            <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
+            <a href="#products-placeholder" class="call-to-action">View Heritage Products</a>
+            <!-- This link can scroll to a more detailed product section below or a separate page -->
         </div>
     </section>
 
-    <section id="saga" class="content-section history-section">
-      <div class="container">
-        <h2>The Saga Unfolds: Athlone's Anthem Through Time</h2>
-        <p style="text-align:center; max-width: 800px; margin-left: auto; margin-right:auto; font-size: 1.1rem;">Athlone's musical history is a dramatic composition, filled with revolutionary fervour, artistic brilliance, and the enduring power of song. Explore its key movements:</p>
+    <section id="present" class="content-section">
+        <h2>Athlone's Music Today: A Living Soundscape</h2>
+        <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Discover lessons, find live music venues, and join in our celebrated festivals.</p>
 
-        <div class="era">
-            <h3>Movement I: Overture to Rebellion (c. 1830 – 1849)</h3>
-            <p>The arrival of <strong>Patrick Keating</strong> ignites a spark. Music becomes a clandestine language of resistance against a backdrop of political turmoil and the looming shadow of the Great Famine. Young <strong>Patrick Gilmore</strong>'s talent emerges, nurtured by Keating amidst rising tensions and calls for change, culminating in defiant anthems at Monster Meetings.</p>
+        <div class="present-grid">
+            <article class="present-item">
+                <h3>Music Lessons & Workshops</h3>
+                <p>Nurture your talent or learn a new instrument. Find information on local music teachers, schools, and workshops for all ages and skill levels.</p>
+                <a href="#" class="call-to-action">Find Lessons (Coming Soon)</a>
+            </article>
+            <article class="present-item">
+                <h3>Live Music Venues</h3>
+                <p>From traditional sessions in cozy pubs to contemporary gigs in dedicated venues, experience the live sound of Athlone. Discover where to catch a performance.</p>
+                <a href="#" class="call-to-action">Explore Venues (Coming Soon)</a>
+            </article>
+            <article class="present-item">
+                <h3>Festivals & Events</h3>
+                <p>Athlone hosts a variety of music festivals and events throughout the year, celebrating diverse genres and local talent. See what's coming up!</p>
+                <a href="#" class="call-to-action">View Festivals (Coming Soon)</a>
+            </article>
         </div>
-
-        <div class="era">
-            <h3>Movement II: Echoes Across Continents & Enduring Notes (c. 1850 – 1900)</h3>
-            <p>As Gilmore conquers America, becoming a musical icon, Keating continues his work in famine-scarred Athlone, mentoring <strong>Michael Kilkelly</strong>. The railway connects, but tragedy strikes. Kilkelly becomes a central figure, intertwining music with nationalist aspirations, even as new talents like young <strong>Henry Foy</strong> and a raw <strong>John McCormack</strong> begin to make their mark.</p>
-        </div>
-
-        <div class="era">
-            <h3>Movement III: A New Century's Score – Tradition & Transformation (c. 1901 – 1932)</h3>
-            <p><strong>Henry Foy</strong> returns, bringing modern rhythms and founding the Athlone Musical Society, clashing with traditionalists. <strong>John McCormack</strong>'s star ascends globally. The sounds of jazz, the turmoil of the Rising, Treaty, and Civil War reshape the musical landscape. Yet, amidst division, a new dream emerges: uniting Ireland through the airwaves with the Athlone radio transmitter, its broadcast a powerful symbol of unison.</p>
-        </div>
-        <p style="text-align:center; margin-top: calc(var(--spacing-unit) * 2);"><em>Further historical details, in-depth biographies, and a comprehensive timeline will be developed to fully chart this incredible journey.</em></p>
-      </div>
     </section>
 
-    <section id="products" class="content-section">
-      <div class="container">
-        <h2>Commemorative Offerings</h2>
-        <p style="text-align:center;">Own a piece of Athlone's legendary musical saga. Our curated collection celebrates the artists, the eras, and the enduring spirit of our town's unique sound.</p>
+    <!-- Placeholder for a more detailed product section if needed, can be linked from #products-showcase -->
+    <section id="products-placeholder" class="content-section" style="display: none;"> <!-- Hidden for now -->
+        <h2>Our Heritage Products</h2>
+        <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
+        <!-- Product items would go here -->
         <div class="product-grid">
-          <article class="product">
-            <div class="product-image-container">
-              <img src="https://placehold.co/400x300/CDAF7D/1a1a1a?text=Heritage+Booklet" alt="Athlone Music Heritage Booklet">
-            </div>
-            <div class="product-info">
-              <h3>The Athlone Harmony: A Heritage Booklet</h3>
-              <p>An illustrated journey through Athlone’s pivotal musical figures and defining moments.</p>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product-image-container">
-              <img src="https://placehold.co/400x300/B8860B/f0f0f0?text=Legends+Poster" alt="Musical Legends of Athlone Poster">
-            </div>
-            <div class="product-info">
-              <h3>Legends of the Shannon: Commemorative Poster</h3>
-              <p>A striking A2 poster immortalizing Athlone's iconic musicians and their enduring legacy.</p>
-            </div>
-          </article>
+             <article class="product"> <!-- Re-using product style from previous examples -->
+                <div class="product-image-container" style="background-color: var(--highlight-color);">
+                  <img src="https://placehold.co/300x200/005A9C/FFFFFF?text=Postcard+Set" alt="Athlone Music Postcards">
+                </div>
+                <div class="product-info">
+                  <h3>Historical Postcard Set</h3>
+                  <p>Set of 5 postcards featuring iconic Athlone musical landmarks and figures.</p>
+                </div>
+              </article>
+              <article class="product">
+                <div class="product-image-container" style="background-color: var(--highlight-color);">
+                  <img src="https://placehold.co/300x200/008080/FFFFFF?text=Legends+Poster" alt="Athlone Music Legends Poster">
+                </div>
+                <div class="product-info">
+                  <h3>Athlone Music Legends Poster</h3>
+                  <p>A2 decorative poster celebrating key musicians from Athlone's history.</p>
+                </div>
+              </article>
         </div>
-         <p style="text-align:center; margin-top: var(--spacing-unit);">
-            <a href="#" class="call-to-action">Explore Full Collection (Coming Soon)</a>
-        </p>
-      </div>
     </section>
 
-    <section id="happenings" class="content-section">
-        <div class="container">
-            <h2>Today's Score: Athlone's Music Now</h2>
-            <p>The legacy continues! Athlone's vibrant music scene thrives today. This space will soon feature upcoming performances, local artist profiles, festivals, and more ways to experience the living sound of our town.</p>
-            <div class="event-placeholder">
-                <p><em>Check back soon for listings of live music, workshops, and community music events!</em></p>
-            </div>
-        </div>
-    </section>
 
     <section id="connect" class="content-section">
-      <div class="container">
-        <h2>Join the Chorus</h2>
-        <p>Be part of Athlone's ongoing musical story. Follow our updates, share your memories, and help us celebrate this rich heritage.</p>
-        <p>
-          Connect with us on
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> and
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>.
-        </p>
-        <p><em>More ways to engage with the Athlone Music Heritage Project will be announced soon.</em></p>
-      </div>
+      <h2>Connect & Contribute</h2>
+      <p>Join our community! Follow us for updates, share your Athlone music stories, or learn how you can support the Athlone Music Heritage Project.</p>
+      <p style="text-align:center;">
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--secondary-color); margin-right: 10px;">Follow on Instagram</a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--secondary-color);">Follow on Facebook</a>
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <script>document.write(new Date().getFullYear())</script> Athlone Music Heritage Project. All rights reserved.</p>
-      <p><a href="#top">Return to Overture</a></p>
+      <p>© <script>document.write(new Date().getFullYear())</script> Athlone Music Heritage. All rights reserved.</p>
+      <p><a href="#top">Back to Top</a></p>
     </div>
   </footer>
+
+  <script>
+    // Simple smooth scroll for anchor links in nav
+    document.querySelectorAll('.main-nav a[href^="#"], .products-link-section a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            // Ensure it's a page anchor and not just "#"
+            if (href.length > 1 && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Optional: Add 'active' class to nav link
+                document.querySelectorAll('.main-nav a').forEach(navA => navA.classList.remove('active'));
+                if(this.closest('.main-nav')) { // only for main nav links
+                    this.classList.add('active');
+                }
+
+                // If linking to the hidden product section, show it
+                if(href === "#products-placeholder") {
+                    document.getElementById('products-placeholder').style.display = 'block';
+                }
+            }
+        });
+    });
+  </script>
+
 </body>
 </html>
