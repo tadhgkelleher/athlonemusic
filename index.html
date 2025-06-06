@@ -199,7 +199,7 @@
     }
     .biography-section h2 { text-align: left; margin-bottom: var(--spacing-unit); }
     .biography-section h2::after { display: none; }
-    .biography-section .bio-subtitle { /* New style for subtitles from booklet */
+    .biography-section .bio-subtitle {
         font-family: var(--font-body);
         font-size: 1.1rem;
         color: var(--secondary-color);
@@ -212,14 +212,41 @@
         display: grid; grid-template-columns: 1fr; gap: calc(var(--spacing-unit) * 1.5); align-items: start;
     }
     @media (min-width: 768px) {
-        .biography-content-wrapper { grid-template-columns: 200px 1fr; }
+        .biography-content-wrapper { grid-template-columns: 200px 1fr; } /* Image: 200px, Text: remaining space */
     }
-    .bio-image-placeholder {
-        width: 100%; max-width: 200px; height: auto; aspect-ratio: 3/4;
-        background-color: var(--highlight-color); border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center;
-        font-style: italic; color: var(--text-color); margin-bottom: var(--spacing-unit);
+    .bio-image-wrapper { /* New wrapper for image styling */
+        width: 100%;
+        max-width: 200px; /* Consistent with grid column */
+        height: auto;
+        margin-bottom: var(--spacing-unit); /* Space below image on small screens */
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        overflow: hidden; /* To clip image if it's not perfectly aspect ratio */
+        background-color: var(--highlight-color); /* Fallback bg */
+
     }
+    .bio-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image covers the area, might crop */
+        display: block;
+    }
+    .bio-image-placeholder-text { /* Only used if no image */
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        aspect-ratio: 3/4;
+        background-color: var(--highlight-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+        color: var(--text-color);
+        margin-bottom: var(--spacing-unit);
+    }
+
     .bio-text p { margin-bottom: var(--spacing-unit); line-height: 1.75; }
     .close-bio-button {
       display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
@@ -294,18 +321,16 @@
             <a href="#bio-count-john-mccormack" class="figure-card-link">
                 <div class="figure-card"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
             </a>
-            <a href="#bio-athlone-pipers" class="figure-card-link"> <!-- New Card -->
+            <a href="#bio-athlone-pipers" class="figure-card-link">
                 <div class="figure-card"><h4>Athlone Pipers & Notable Stories</h4><p>Cultural Defiance & Survival</p></div>
             </a>
         </div>
 
-        <!-- Historical Narrative (can be shorter now that bios are detailed) -->
         <div class="historical-narrative" style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 2);">
              <p>From Keating's revolutionary band to Gilmore's global stages, Kilkelly's defiant tunes, Foy's jazz innovations, McCormack's enchanting voice, and the resilient spirit of its pipers, Athlone's music has echoed through history, shaping culture and inspiring generations.</p>
         </div>
 
         <div id="products-showcase" class="products-link-section">
-             <!-- ... same as before ... -->
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
             <a href="#products-placeholder-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
@@ -313,7 +338,6 @@
     </section>
 
     <section id="present" class="content-section">
-        <!-- ... same as before ... -->
         <h2>Athlone's Music Today: A Living Soundscape</h2>
         <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Discover lessons, find live music venues, and join in our celebrated festivals.</p>
         <div class="present-grid">
@@ -336,7 +360,6 @@
     </section>
 
     <section id="products-placeholder-section" class="content-section" style="display: none;">
-        <!-- ... same as before ... -->
         <h2>Our Heritage Products</h2>
         <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
         <div class="product-grid">
@@ -376,7 +399,7 @@
             <h2>Patrick Keating (1796–1875)</h2>
             <span class="bio-subtitle">Revolution Through Music</span>
             <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Patrick Keating]</div>
+                <div class="bio-image-placeholder-text">[Image: Patrick Keating]</div> <!-- Placeholder Kept -->
                 <div class="bio-text">
                     <p>Patrick Keating was no ordinary bandmaster; he was a transformative force in Athlone’s cultural history. A veteran of the Battle of Waterloo, Keating honed his musical expertise in Naples before returning to his hometown in the 1820s, then derided as a "rotten borough" plagued by corruption and stagnation. Undeterred, he set about revitalizing Athlone’s spirit through music. By training local musicians and forming disciplined bands, Keating sparked a cultural renaissance, and by the 1840s, Athlone had gained renown for its vibrant musical scene.</p>
                     <p>His influence reached far beyond his hometown. His students, ignited by his passion and rigor, carried his legacy to the world stage. Most notably, Patrick Gilmore, one of Keating’s protégés, rose to become a towering figure in music history, celebrated for his contributions to American band music. Keating’s work laid the groundwork for a musical movement that inspired unity and resilience during times of hardship and change, leaving an indelible mark on both Athlone and the global stage.</p>
@@ -391,7 +414,9 @@
             <h2>Patrick Gilmore</h2>
             <span class="bio-subtitle">A Global Music Force & Student Who Would Change the World</span>
             <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Patrick Gilmore]</div>
+                <div class="bio-image-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Patrick_S._Gilmore.jpg/500px-Patrick_S._Gilmore.jpg" alt="Patrick S. Gilmore">
+                </div>
                 <div class="bio-text">
                     <p>While famine ravaged the land, Patrick Keating’s mentorship offered hope. Patrick Gilmore, under his guidance, mastered the art of band leadership, blending Irish melodies with disciplined precision. By the time Gilmore emigrated to America in 1849, he carried Keating’s legacy with him.</p>
                     <p>When the American Civil War erupted, Gilmore, already a celebrated bandmaster, enlisted with the 24th Massachusetts Volunteer Infantry, bringing music to the front lines. His band lifted soldiers’ spirits, entertained prisoners, and served as stretcher-bearers. In 1863, Gilmore penned the iconic “When Johnny Comes Marching Home.”</p>
@@ -406,7 +431,9 @@
             <h2>Michael Kilkelly</h2>
             <span class="bio-subtitle">Mentorship and Resistance & Bands as Symbols of Resistance</span>
              <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Michael Kilkelly]</div>
+                <div class="bio-image-wrapper">
+                     <img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/05/michael-k.jpg?fit=615%2C1131&ssl=1" alt="Michael Kilkelly">
+                </div>
                 <div class="bio-text">
                     <p>Patrick Keating’s influence in Athlone extended beyond music to the heart of resistance. A passionate nationalist, Keating mentored Michael Kilkelly in both the art of music and the spirit of defiance against British rule. Under Keating’s guidance, Kilkelly honed his skills, later becoming a pivotal figure in Athlone’s musical and political scene. Together, they wove music into the fabric of resistance, using performances to inspire hope and unity.</p>
                     <p>In the late 1870s, as the Land War erupted, Kilkelly emerged as a musical and moral force. Leading the Athlone Brass Band, he brought stirring melodies to the front lines, performing at sites of land evictions to bolster beleaguered tenants. His band’s defiant tunes rallied communities, offering solace and solidarity. Kilkelly’s presence transformed his band into a symbol of resistance, echoing the fervor of the Irish National Land League.</p>
@@ -420,7 +447,9 @@
             <h2>Henry Foy</h2>
             <span class="bio-subtitle">New Rhythms in Athlone & The Birth of Irish Jazz</span>
              <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Henry Foy]</div>
+                <div class="bio-image-wrapper">
+                    <img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/10/henry-foy.jpg?fit=189%2C300&ssl=1" alt="Henry Foy">
+                </div>
                 <div class="bio-text">
                     <p>In 1902, Henry “Harry” Foy, a spirited 21-year-old music professor, co-founded the Athlone Musical Society, ushering in a vibrant era. The society staged its first operetta, *The Pirates of Penzance*, in 1907, marking the start of a legacy that would endure for over a century, becoming Ireland’s oldest continuously active musical society.</p>
                     <p>In 1919, Foy launched Ireland’s first jazz band, the Harry Foy Jazz Quartette. Inspired by the Gaelic League and the global jazz craze, his quartet blended syncopated rhythms with Irish melodies. Foy embraced jazz as a modern expression of cultural defiance, resonating with Ireland’s growing nationalist spirit during the War of Independence. His quartet introduced Athlone to jazz’s lively rhythms, challenging traditional norms.</p>
@@ -433,7 +462,9 @@
             <h2>Count John McCormack</h2>
             <span class="bio-subtitle">A Voice Discovered & The World’s Greatest Tenor</span>
              <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Count John McCormack]</div>
+                <div class="bio-image-wrapper">
+                    <img src="https://cdn.britannica.com/52/209352-050-F0C23723/John-McCormack-title-character-Don-Giovanni-opera.jpg" alt="Count John McCormack">
+                </div>
                 <div class="bio-text">
                     <p>In the early 1890s, Michael Kilkelly, Athlone’s esteemed choirmaster, discovered young John McCormack. By 1902, McCormack’s voice, shaped by Kilkelly’s guidance, earned him a gold medal at the Dublin Feis Ceoil, launching him toward international stardom.</p>
                     <p>By the late 1910s, McCormack had risen to become the world’s most celebrated tenor. In America, his concerts filled halls, and his recordings sold millions, making him one of radio’s first major stars. In 1919, he became a U.S. citizen. His tours raised funds for charities, earning him the title of Papal Count in 1928. His performances carried Athlone’s spirit to global stages.</p>
@@ -443,11 +474,11 @@
             <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
         </section>
 
-        <section id="bio-athlone-pipers" class="content-section biography-section" style="display: none;"> <!-- New Section -->
+        <section id="bio-athlone-pipers" class="content-section biography-section" style="display: none;">
             <h2>Athlone Pipers & Notable Stories</h2>
             <span class="bio-subtitle">Cultural Defiance, Survival & Community Spirit</span>
             <div class="biography-content-wrapper">
-                <div class="bio-image-placeholder">[Image: Athlone Pipers / Titanic / Fleadh]</div>
+                <div class="bio-image-placeholder-text">[Image: Athlone Pipers / Titanic / Fleadh]</div> <!-- Placeholder Kept -->
                 <div class="bio-text">
                     <p><strong>Athlone Pipers Rebel:</strong> In the early 20th century, as the Gaelic League ignited a revival of Irish culture, Athlone’s uilleann pipers became vibrant symbols of rebellion. They revitalized the “pipes of the elbow,” performing at local feiseanna and community gatherings, their evocative reels and airs kindling pride in Irish identity. Their music strengthened the town’s resolve, ensuring that Ireland’s traditions thrived.</p>
                     <p><strong>Survival at Sea (Eugene Daly & Bertha Mulvihill):</strong> In April 1912, Athlone piper Eugene Daly and Coosan's Bertha Mulvihill boarded the Titanic. Eugene played “A Nation Once Again” as the ship departed. When disaster struck, Eugene guided Bertha and his cousin to safety in Lifeboat 15, while he himself survived by clinging to an overturned collapsible boat. Their bravery and survival cemented their place in Athlone’s storied legacy.</p>
@@ -462,7 +493,6 @@
 
 
     <section id="connect" class="content-section">
-        <!-- ... same as before ... -->
       <h2>Connect & Contribute</h2>
       <p>Join our community! Follow us for updates, share your Athlone music stories, or learn how you can support the Athlone Music Heritage Project.</p>
       <p style="text-align:center;">
@@ -510,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetBioSection.style.display = 'block';
                 const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
                 const elementPosition = targetBioSection.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navHeight - 20;
+                const offsetPosition = elementPosition - navHeight - 20; // 20px buffer for spacing
                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
@@ -519,12 +549,11 @@ document.addEventListener('DOMContentLoaded', function() {
     allCloseBioButtons.forEach(button => {
         button.addEventListener('click', function() {
             this.closest('.biography-section').style.display = 'none';
-            // Optional: Scroll to the 'Our Musical Past' section title after closing a bio
             const pastSectionTitle = document.querySelector('#past h2');
             if (pastSectionTitle) {
                 const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
                 const elementPosition = pastSectionTitle.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navHeight - 20; // Adjust offset as needed
+                const offsetPosition = elementPosition - navHeight - 20;
                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
@@ -553,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     navLinks.forEach(link => {
-        if (link.id !== 'nav-products-link') {
+        if (link.id !== 'nav-products-link') { // Exclude the products link from this specific handler
             link.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId.startsWith('#') && targetId.length > 1) {
@@ -576,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainSectionsForNav = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]');
     window.addEventListener('scroll', () => {
         let currentActive = '';
-        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 60; // Increased offset
+        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 60;
 
         mainSectionsForNav.forEach(section => {
             if (section.style.display !== 'none' && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
@@ -597,7 +626,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navLink.id === 'nav-products-link' && currentActive === 'products-placeholder-section') {
                 navLink.classList.add('active');
             }
-            // If a bio section is active, keep "Our Past" active in nav
             if (currentActive.startsWith('bio-') && navLink.getAttribute('href') === '#past') {
                 navLink.classList.add('active');
             }
