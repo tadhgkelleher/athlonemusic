@@ -8,10 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #005A9C;
-      --secondary-color: #008080;
-      --accent-color: #558B2F;
-      --highlight-color: #E0F2F7;
+      --primary-color: #005A9C;    /* Deep Blue */
+      --secondary-color: #008080;   /* Teal/Aqua */
+      --accent-color: #558B2F;     /* Olive Green */
+      --maroon-accent: #800000;     /* NEW: Classic Maroon */
+      --highlight-color: #E0F2F7;  /* Very Light Cyan/Blue */
       --neutral-light: #f8f9fa;
       --neutral-surface: #ffffff;
       --text-color: #34495e;
@@ -33,8 +34,17 @@
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading); margin-top: 0; line-height: 1.3; color: var(--primary-color);
     }
-    h1 { font-size: 2.8rem; text-align: center; margin-bottom: calc(var(--spacing-unit) * 0.5); }
-    h2 { font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative; }
+    /* Main Page Title (Hero) */
+    .page-hero-title {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: calc(var(--spacing-unit) * 0.75);
+        color: var(--primary-color); /* Or var(--maroon-accent) for a strong statement */
+        padding-top: var(--spacing-unit); /* Add some space above it */
+    }
+    h2 { /* Section titles */
+        font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative;
+    }
     h2::after {
       content: ''; display: block; width: 70px; height: 3px; background-color: var(--secondary-color);
       margin: calc(var(--spacing-unit) * 0.75) auto 0;
@@ -57,21 +67,24 @@
       max-width: 1100px; margin-left: auto; margin-right: auto;
       padding-left: calc(var(--spacing-unit) * 1.5); padding-right: calc(var(--spacing-unit) * 1.5);
     }
-    .site-header {
+    .site-header { /* This is the top bar */
       background: var(--primary-color); color: var(--text-light);
-      padding: var(--spacing-unit) 0 calc(var(--spacing-unit) * 1.5) 0; text-align: center;
+      padding: calc(var(--spacing-unit)*0.75) 0; /* Reduced padding */
+      text-align: center;
     }
-    .site-header .logo-title {
-      font-family: var(--font-heading); font-size: 2rem; color: var(--text-light);
-      margin-bottom: calc(var(--spacing-unit) * 0.25);
+    .site-header .site-name { /* More generic name for the top bar title */
+      font-family: var(--font-heading); font-size: 1.5rem; /* Smaller, as it's a site name not main title */
+      color: var(--text-light);
+      margin: 0;
+      font-weight: 700;
     }
-    .site-header .subtitle {
-      font-family: var(--font-body); font-size: 1rem; opacity: 0.85; color: var(--highlight-color); margin-top: 0;
-    }
+    /* Removed .site-header .subtitle as main title is now separate */
+
     .main-nav {
       background-color: var(--neutral-surface); box-shadow: 0 2px 8px var(--shadow-color);
       padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 3); position: sticky; top: 0; z-index: 1000;
+      margin-bottom: calc(var(--spacing-unit) * 2.5); /* Space after nav before main title */
+      position: sticky; top: 0; z-index: 1000;
       border-bottom: 1px solid var(--border-color);
     }
     .main-nav a {
@@ -84,13 +97,9 @@
       background-color: var(--secondary-color); color: var(--text-light); text-decoration: none;
     }
     .main-nav a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
-    .page-main-title-container {
-      padding: calc(var(--spacing-unit) * 1.5) 0; margin-bottom: calc(var(--spacing-unit) * 1.5); text-align: center;
-    }
-    .page-main-title-container h1 {
-      font-size: 3rem;
-      color: var(--primary-color);
-    }
+
+    /* Removed .page-main-title-container as the H1 is now .page-hero-title */
+
     .page-intro-text {
         font-size: 1.15rem; line-height: 1.8; text-align: center; max-width: 800px;
         margin: 0 auto calc(var(--spacing-unit) * 2.5) auto; color: #4a5a68;
@@ -135,15 +144,11 @@
       background-color: var(--text-light); color: var(--accent-color) !important; border: 2px solid var(--accent-color);
     }
     .products-link-section .call-to-action:hover { background-color: var(--highlight-color); }
-
-    /* Present Section Grid (for Lessons, Venues, Festivals) */
-    .present-grid, .venue-grid { /* venue-grid is a new specific class */
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: calc(var(--spacing-unit) * 2);
-      margin-top: var(--spacing-unit); /* Add some space above grid if it's directly under a title */
+    .present-grid, .venue-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: calc(var(--spacing-unit) * 2); margin-top: var(--spacing-unit);
     }
-    .present-item, .venue-item { /* venue-item shares styles with present-item */
+    .present-item, .venue-item {
       background-color: var(--neutral-surface); border: 1px solid var(--border-color);
       border-left: 6px solid var(--accent-color); padding: calc(var(--spacing-unit) * 1.5);
       border-radius: var(--border-radius-sm); box-shadow: 0 3px 6px var(--shadow-color);
@@ -152,16 +157,37 @@
     .present-item h3, .venue-item h3 { margin-top: 0; font-size: 1.3rem; color: var(--primary-color);}
     .present-item p, .venue-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); }
     .present-item .call-to-action, .venue-item .call-to-action {
-        margin-top: auto; /* Pushes button to bottom */
-        align-self: flex-start; /* Aligns button to the left if text doesn't fill width */
+        margin-top: auto; align-self: flex-start;
     }
-    .venue-item .venue-type { /* For specific venue info */
-        font-size: 0.9rem;
-        color: var(--secondary-color);
-        font-style: italic;
+    .venue-item .venue-type {
+        font-size: 0.9rem; color: var(--secondary-color); font-style: italic;
         margin-bottom: calc(var(--spacing-unit) * 0.5);
     }
-
+    /* Music Trail Section Style */
+    .music-trail-section {
+        background-color: var(--maroon-accent); /* Using maroon here */
+        color: var(--text-light);
+        text-align: center;
+        padding: calc(var(--spacing-unit) * 2);
+        border-radius: var(--border-radius-md);
+    }
+    .music-trail-section h3 {
+        color: var(--text-light);
+    }
+    .music-trail-section p {
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .music-trail-section .call-to-action {
+        background-color: var(--text-light);
+        color: var(--maroon-accent) !important;
+        border: 2px solid var(--maroon-accent);
+    }
+    .music-trail-section .call-to-action:hover {
+        background-color: var(--highlight-color);
+    }
 
     .call-to-action {
       display: inline-block; background-color: var(--accent-color); color: var(--text-light) !important;
@@ -205,8 +231,7 @@
     .product p { padding: 0 var(--spacing-unit) var(--spacing-unit); font-size: 0.9rem; margin-bottom: 0; }
     #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
     .biography-section {
-        border-left: 8px solid var(--accent-color);
-        padding-top: calc(var(--spacing-unit) * 1.5);
+        border-left: 8px solid var(--accent-color); padding-top: calc(var(--spacing-unit) * 1.5);
     }
     .biography-section h2 { text-align: left; margin-bottom: var(--spacing-unit); }
     .biography-section h2::after { display: none; }
@@ -243,7 +268,8 @@
     .close-bio-button:hover, .close-bio-button:focus { background-color: darken(var(--secondary-color), 10%); }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; } h2 { font-size: 1.9rem; }
+      .page-hero-title { font-size: 2.4rem; }
+      h2 { font-size: 1.9rem; }
       .main-nav a {
         font-size: 0.85rem; margin: 0 calc(var(--spacing-unit) * 0.2);
         padding: 0.6em 1em; letter-spacing: 0.5px;
@@ -251,16 +277,15 @@
       .container { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
       .content-section { padding: calc(var(--spacing-unit) * 1.5); }
       .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
-      .present-grid, .venue-grid { grid-template-columns: 1fr; } /* Stack venue items on mobile too */
+      .present-grid, .venue-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <a id="top"></a>
-  <header class="site-header">
+  <header class="site-header"> <!-- This is the blue bar at the very top -->
     <div class="container">
-      <div class="logo-title">Athlone Music</div>
-      <p class="subtitle">The Birthplace of Modern Music</p>
+      <div class="site-name">Athlone Music Heritage</div> <!-- Changed from logo-title -->
     </div>
   </header>
 
@@ -268,17 +293,14 @@
     <div class="container">
       <a href="#past" class="nav-link">Our Past</a>
       <a href="#present" class="nav-link">Our Present</a>
+      <a href="#music-trail" class="nav-link">Music Trail</a> <!-- New Nav Link -->
       <a href="#products-placeholder-section" id="nav-products-link" class="nav-link">Products</a>
       <a href="#connect" class="nav-link">Connect</a>
     </div>
   </nav>
 
-  <div class="page-main-title-container">
-    <div class="container">
-      <h1>Athlone – The Birthplace of Modern Music</h1>
-    </div>
-  </div>
-  <div class="container">
+  <div class="container"> <!-- Container for the main H1 and intro text -->
+    <h1 class="page-hero-title">Athlone – The Birthplace of Modern Music</h1>
     <p class="page-intro-text">
         This unveils the vibrant musical legacy of Athlone, beginning with Patrick Keating, the legendary bandmaster who returned from the Battle of Waterloo. His students, including the influential Patrick Gilmore, transformed the global music landscape and gave Ireland a unifying voice that resonated far beyond its shores. We’ll trace the journey of John McCormack, Athlone’s beloved son, whose captivating voice enchanted millions worldwide. Through times of hardship, music became Athlone’s heartbeat, offering solace and strength to unsung heroes of Irish history. You’ll discover remarkable figures like Michael Kilkelly, Henry Foy, and the Athlone Pipers—names often overlooked but whose contributions left an indelible mark. This is the untold story of Athlone’s musical heritage—a powerful tale of creativity, resilience, and connection that demands to be heard.
     </p>
@@ -287,7 +309,6 @@
 
   <main class="container">
     <section id="past" class="content-section">
-        <!-- ... existing #past section content ... -->
         <h2>Our Musical Past: A Storied Legacy</h2>
         <p class="intro-paragraph">Delve into the pivotal moments and extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to learn more about their story.</p>
         <div class="figure-grid">
@@ -323,7 +344,6 @@
     <section id="present" class="content-section">
         <h2>Athlone's Music Today: A Living Soundscape</h2>
         <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover lessons, and join in our celebrated festivals.</p>
-
         <h3 style="text-align: center; margin-top: calc(var(--spacing-unit)*2); margin-bottom: var(--spacing-unit);">Popular Music Venues</h3>
         <div class="venue-grid">
             <article class="venue-item">
@@ -336,13 +356,13 @@
                 <h3>The Snug Bar</h3>
                 <p class="venue-type">Pub with Live Music</p>
                 <p>A popular spot for locals and visitors, The Snug often features a variety of live music acts, from contemporary bands to acoustic sessions.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Website (If Available)</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a> <!-- Example for FB -->
             </article>
             <article class="venue-item">
-                <h3>Karma Athlone (or similar nightclub/late bar)</h3>
-                <p class="venue-type">Nightclub / Late Bar with DJs & Live Acts</p>
-                <p>For those seeking a more modern nightlife experience, venues like this often host DJs and occasionally live bands catering to a younger crowd.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Website (If Available)</a>
+                <h3>Karma Athlone</h3>
+                <p class="venue-type">Nightclub / Late Bar</p>
+                <p>Offers DJ nights and a modern nightlife experience, sometimes featuring special music events.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Social Media Link</a>
             </article>
              <article class="venue-item">
                 <h3>Dean Crowe Theatre & Arts Centre</h3>
@@ -350,17 +370,7 @@
                 <p>Hosts a diverse programme including musical performances, theatre shows, and concerts from both local and touring artists.</p>
                 <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
-            <!-- ADD MORE VENUES HERE -->
-            <!-- Example:
-            <article class="venue-item">
-                <h3>[Venue Name]</h3>
-                <p class="venue-type">[Type of Venue/Music]</p>
-                <p>[Brief description of the venue and its music scene.]</p>
-                <a href="[Website URL]" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
-            </article>
-            -->
         </div>
-
         <h3 style="text-align: center; margin-top: calc(var(--spacing-unit)*3); margin-bottom: var(--spacing-unit);">Music Lessons & Festivals</h3>
         <div class="present-grid">
             <article class="present-item">
@@ -376,8 +386,14 @@
         </div>
     </section>
 
+    <!-- Music Trail Placeholder Section -->
+    <section id="music-trail" class="content-section music-trail-section">
+        <h3>Athlone Music Trail</h3>
+        <p>Discover the landmarks and locations that shaped Athlone's musical history. Our interactive Music Trail Map will guide you through the town's most significant musical sites.</p>
+        <a href="#" class="call-to-action">Explore the Trail (Coming Soon)</a>
+    </section>
+
     <section id="products-placeholder-section" class="content-section" style="display: none;">
-        <!-- ... existing products placeholder content ... -->
         <h2>Our Heritage Products</h2>
         <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
         <div class="product-grid">
@@ -411,7 +427,7 @@
         </div>
     </section>
 
-    <!-- Biographies Area -->
+    <!-- Biographies Area (content unchanged from previous version with images) -->
     <div id="biographies-area">
         <section id="bio-patrick-keating" class="content-section biography-section" style="display: none;">
             <h2>Patrick Keating (1796–1875)</h2>
@@ -527,21 +543,27 @@
   </footer>
 
 <script>
+    // JS remains the same as the previous version
 document.addEventListener('DOMContentLoaded', function() {
     const allBiographySections = document.querySelectorAll('.biography-section');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
     const allCloseBioButtons = document.querySelectorAll('.close-bio-button');
     const productsSection = document.getElementById('products-placeholder-section');
+    const musicTrailSection = document.getElementById('music-trail'); // Get music trail section
     const viewProductsCTA = document.getElementById('view-products-cta');
-    const navProductsLink = document.getElementById('nav-products-link');
-    const navLinks = document.querySelectorAll('.main-nav a.nav-link');
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link'); // Includes all nav links with this class
 
-    function hideAllBioSections() {
+    function hideAllDynamicSections() {
         allBiographySections.forEach(section => section.style.display = 'none');
+        if (productsSection) productsSection.style.display = 'none';
+        // if (musicTrailSection) musicTrailSection.style.display = 'none'; // Assuming it might be dynamic too
     }
 
-    function hideProductsSection() {
-        if (productsSection) productsSection.style.display = 'none';
+    function scrollToElement(element) {
+        const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight - 20; // 20px buffer
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
 
     allFigureCardLinks.forEach(link => {
@@ -549,16 +571,10 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetBioId = this.getAttribute('href').substring(1);
             const targetBioSection = document.getElementById(targetBioId);
-
-            hideAllBioSections();
-            hideProductsSection();
-
+            hideAllDynamicSections();
             if (targetBioSection) {
                 targetBioSection.style.display = 'block';
-                const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
-                const elementPosition = targetBioSection.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navHeight - 20;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                scrollToElement(targetBioSection);
             }
         });
     });
@@ -567,82 +583,72 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             this.closest('.biography-section').style.display = 'none';
             const pastSectionTitle = document.querySelector('#past h2');
-            if (pastSectionTitle) {
-                const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
-                const elementPosition = pastSectionTitle.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navHeight - 20;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
+            if (pastSectionTitle) scrollToElement(pastSectionTitle);
         });
     });
 
-    function showProductsAndScroll() {
-        hideAllBioSections();
-        if (productsSection) {
-            productsSection.style.display = 'block';
-            const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
-            const elementPosition = productsSection.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - navHeight - 20;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }
-    }
-
     if (viewProductsCTA) {
         viewProductsCTA.addEventListener('click', function(e) {
-            e.preventDefault(); showProductsAndScroll();
-        });
-    }
-    if (navProductsLink) {
-        navProductsLink.addEventListener('click', function(e) {
-            e.preventDefault(); showProductsAndScroll();
+            e.preventDefault();
+            hideAllDynamicSections();
+            if (productsSection) {
+                productsSection.style.display = 'block';
+                scrollToElement(productsSection);
+            }
         });
     }
 
     navLinks.forEach(link => {
-        if (link.id !== 'nav-products-link') {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#') && targetId.length > 1) {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        hideAllBioSections();
-                        hideProductsSection();
-                        const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - navHeight - 20;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#') && targetId.length > 1) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    hideAllDynamicSections();
+
+                    // Specific handling for products or trail links if they should always show their section
+                    if (targetId === '#products-placeholder-section' && productsSection) {
+                        productsSection.style.display = 'block';
+                    } else if (targetId === '#music-trail' && musicTrailSection) {
+                         // If music trail is meant to be a section on this page and not a separate page
+                        // musicTrailSection.style.display = 'block'; // Or however it's handled
                     }
+                    // For other main sections, they are always visible, so just scroll.
+                    scrollToElement(targetElement);
                 }
-            });
-        }
+            }
+        });
     });
 
-    const mainSectionsForNav = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]');
+    // Active nav link on scroll
+    const sectionsForNavHighlight = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]');
     window.addEventListener('scroll', () => {
         let currentActive = '';
-        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 60;
+        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 70; // Adjusted offset
 
-        mainSectionsForNav.forEach(section => {
+        sectionsForNavHighlight.forEach(section => {
             if (section.style.display !== 'none' && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
                 currentActive = section.id;
             }
         });
         
-        if (!currentActive && productsSection && productsSection.style.display !== 'none' && productsSection.offsetTop <= scrollPosition) {
-            currentActive = productsSection.id;
+        if (!currentActive && productsSection && productsSection.style.display !== 'none' && productsSection.offsetTop <= scrollPosition && (productsSection.offsetTop + productsSection.offsetHeight) > scrollPosition) {
+            currentActive = 'products-placeholder-section';
         }
+         if (!currentActive && musicTrailSection && musicTrailSection.style.display !== 'none' && musicTrailSection.offsetTop <= scrollPosition && (musicTrailSection.offsetTop + musicTrailSection.offsetHeight) > scrollPosition) {
+            currentActive = 'music-trail';
+        }
+
 
         document.querySelectorAll('.main-nav a.nav-link').forEach(navLink => {
             navLink.classList.remove('active');
             const linkHref = navLink.getAttribute('href').substring(1);
+
             if (linkHref === currentActive) {
                 navLink.classList.add('active');
-            }
-            if (navLink.id === 'nav-products-link' && currentActive === 'products-placeholder-section') {
-                navLink.classList.add('active');
-            }
-            if (currentActive.startsWith('bio-') && navLink.getAttribute('href') === '#past') {
+            } else if (currentActive.startsWith('bio-') && linkHref === 'past') {
+                // If a bio is active, also highlight "Our Past"
                 navLink.classList.add('active');
             }
         });
