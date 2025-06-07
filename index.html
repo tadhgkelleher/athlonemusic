@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore Athlone's rich musical legacy, from Patrick Keating and the world-renowned Patrick Gilmore to John McCormack's captivating voice and today's vibrant scene of venues, lessons, and festivals.">
-  <title>Athlone – The Birthplace of Modern Music | Past & Present</title>
+  <meta name="description" content="Explore Athlone's rich musical legacy, from its historic figures to today's vibrant scene of venues, seasonal festivals, music lessons, and the upcoming Music Trail.">
+  <title>Athlone – The Birthplace of Modern Music | Past, Present & Seasonal Events</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #005A9C;    /* Deep Blue */
       --secondary-color: #008080;   /* Teal/Aqua */
       --accent-color: #558B2F;     /* Olive Green */
-      --maroon-accent: #800000;     /* NEW: Classic Maroon */
+      --maroon-accent: #800000;     /* Classic Maroon */
       --highlight-color: #E0F2F7;  /* Very Light Cyan/Blue */
       --neutral-light: #f8f9fa;
       --neutral-surface: #ffffff;
@@ -34,23 +34,30 @@
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading); margin-top: 0; line-height: 1.3; color: var(--primary-color);
     }
-    /* Main Page Title (Hero) */
     .page-hero-title {
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: calc(var(--spacing-unit) * 0.75);
-        color: var(--primary-color); /* Or var(--maroon-accent) for a strong statement */
-        padding-top: var(--spacing-unit); /* Add some space above it */
+        font-size: 3rem; text-align: center; margin-bottom: calc(var(--spacing-unit) * 0.75);
+        color: var(--primary-color); padding-top: var(--spacing-unit);
     }
-    h2 { /* Section titles */
+    h2 { /* Main Section Titles */
         font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative;
     }
     h2::after {
       content: ''; display: block; width: 70px; height: 3px; background-color: var(--secondary-color);
       margin: calc(var(--spacing-unit) * 0.75) auto 0;
     }
-    h3 { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: var(--spacing-unit); }
-    h4 { color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.25rem; font-weight: 700; }
+    h3 { /* Sub-section titles (like Venues, Festivals, Seasonal titles) */
+        font-size: 1.8rem; /* Made H3s for sub-sections larger */
+        color: var(--primary-color);
+        margin-top: calc(var(--spacing-unit) * 2.5);
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
+        text-align: center;
+    }
+    h4 { /* Card titles (e.g., Figure names, Event names) */
+        color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.25rem; font-weight: 700;
+    }
+    /* Ensure no double underline for H3s if they were also H2s before */
+    h3::after { display: none; }
+
     p { margin-bottom: var(--spacing-unit); }
     a {
       color: var(--secondary-color); text-decoration: none; font-weight: 700;
@@ -67,24 +74,18 @@
       max-width: 1100px; margin-left: auto; margin-right: auto;
       padding-left: calc(var(--spacing-unit) * 1.5); padding-right: calc(var(--spacing-unit) * 1.5);
     }
-    .site-header { /* This is the top bar */
+    .site-header {
       background: var(--primary-color); color: var(--text-light);
-      padding: calc(var(--spacing-unit)*0.75) 0; /* Reduced padding */
-      text-align: center;
+      padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
     }
-    .site-header .site-name { /* More generic name for the top bar title */
-      font-family: var(--font-heading); font-size: 1.5rem; /* Smaller, as it's a site name not main title */
-      color: var(--text-light);
-      margin: 0;
-      font-weight: 700;
+    .site-header .site-name {
+      font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light);
+      margin: 0; font-weight: 700;
     }
-    /* Removed .site-header .subtitle as main title is now separate */
-
     .main-nav {
       background-color: var(--neutral-surface); box-shadow: 0 2px 8px var(--shadow-color);
       padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
-      margin-bottom: calc(var(--spacing-unit) * 2.5); /* Space after nav before main title */
-      position: sticky; top: 0; z-index: 1000;
+      margin-bottom: calc(var(--spacing-unit) * 2.5); position: sticky; top: 0; z-index: 1000;
       border-bottom: 1px solid var(--border-color);
     }
     .main-nav a {
@@ -97,9 +98,6 @@
       background-color: var(--secondary-color); color: var(--text-light); text-decoration: none;
     }
     .main-nav a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
-
-    /* Removed .page-main-title-container as the H1 is now .page-hero-title */
-
     .page-intro-text {
         font-size: 1.15rem; line-height: 1.8; text-align: center; max-width: 800px;
         margin: 0 auto calc(var(--spacing-unit) * 2.5) auto; color: #4a5a68;
@@ -111,7 +109,8 @@
     }
     .intro-paragraph {
       font-size: 1.1rem; text-align: center; max-width: 750px; margin-left: auto; margin-right: auto;
-      margin-bottom: calc(var(--spacing-unit) * 2.5); color: #5a6a78;
+      margin-bottom: calc(var(--spacing-unit) * 1.5); /* Reduced margin for tighter layout */
+      color: #5a6a78;
     }
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -138,57 +137,56 @@
       text-align: center; padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 2);
       background-color: var(--accent-color); border-radius: var(--border-radius-md); color: var(--text-light);
     }
-    .products-link-section h3 { color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 0.75); }
+    .products-link-section h3 { color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 0.75); font-size:1.5rem; }
     .products-link-section p { margin-bottom: var(--spacing-unit); color: var(--text-light); opacity: 0.9; }
     .products-link-section .call-to-action {
       background-color: var(--text-light); color: var(--accent-color) !important; border: 2px solid var(--accent-color);
     }
     .products-link-section .call-to-action:hover { background-color: var(--highlight-color); }
-    .present-grid, .venue-grid {
+    .present-grid, .venue-grid, .event-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: calc(var(--spacing-unit) * 2); margin-top: var(--spacing-unit);
+      gap: calc(var(--spacing-unit) * 1.5); /* Slightly reduced gap */
+      margin-top: var(--spacing-unit);
     }
-    .present-item, .venue-item {
+    .present-item, .venue-item, .event-item {
       background-color: var(--neutral-surface); border: 1px solid var(--border-color);
-      border-left: 6px solid var(--accent-color); padding: calc(var(--spacing-unit) * 1.5);
+      border-left: 6px solid var(--accent-color); padding: calc(var(--spacing-unit) * 1.25); /* Adjusted padding */
       border-radius: var(--border-radius-sm); box-shadow: 0 3px 6px var(--shadow-color);
       display: flex; flex-direction: column;
     }
-    .present-item h3, .venue-item h3 { margin-top: 0; font-size: 1.3rem; color: var(--primary-color);}
-    .present-item p, .venue-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); }
-    .present-item .call-to-action, .venue-item .call-to-action {
-        margin-top: auto; align-self: flex-start;
+    /* Card titles are now H4 for events/venues */
+    .present-item h4, .venue-item h4, .event-item h4 { margin-top: 0; font-size: 1.2rem; color: var(--primary-color); font-weight:700;}
+    .present-item p, .venue-item p, .event-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 0.95rem; }
+    .present-item .call-to-action, .venue-item .call-to-action, .event-item .call-to-action {
+        margin-top: auto; align-self: flex-start; font-size: 0.9rem; padding: 0.6em 1.2em;
     }
-    .venue-item .venue-type {
-        font-size: 0.9rem; color: var(--secondary-color); font-style: italic;
-        margin-bottom: calc(var(--spacing-unit) * 0.5);
+    .venue-item .venue-type, .event-item .event-date, .event-item .event-type {
+        font-size: 0.85rem; color: var(--secondary-color); font-style: italic;
+        margin-bottom: calc(var(--spacing-unit) * 0.25); /* Reduced margin */
     }
-    /* Music Trail Section Style */
-    .music-trail-section {
-        background-color: var(--maroon-accent); /* Using maroon here */
-        color: var(--text-light);
+    .event-item .event-date { font-weight: bold; }
+    .seasonal-event-notice {
+        font-size: 0.9rem;
         text-align: center;
-        padding: calc(var(--spacing-unit) * 2);
-        border-radius: var(--border-radius-md);
-    }
-    .music-trail-section h3 {
-        color: var(--text-light);
-    }
-    .music-trail-section p {
-        opacity: 0.9;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .music-trail-section .call-to-action {
-        background-color: var(--text-light);
-        color: var(--maroon-accent) !important;
-        border: 2px solid var(--maroon-accent);
-    }
-    .music-trail-section .call-to-action:hover {
+        font-style: italic;
+        color: #7f8c8d;
+        margin-top: calc(var(--spacing-unit) * 1.5);
+        padding: var(--spacing-unit);
         background-color: var(--highlight-color);
+        border-radius: var(--border-radius-sm);
     }
 
+    .music-trail-section {
+        background-color: var(--maroon-accent); color: var(--text-light); text-align: center;
+        padding: calc(var(--spacing-unit) * 2); border-radius: var(--border-radius-md);
+    }
+    .music-trail-section h3 { color: var(--text-light); font-size: 1.5rem; }
+    .music-trail-section p { opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .music-trail-section .call-to-action {
+        background-color: var(--text-light); color: var(--maroon-accent) !important;
+        border: 2px solid var(--maroon-accent);
+    }
+    .music-trail-section .call-to-action:hover { background-color: var(--highlight-color); }
     .call-to-action {
       display: inline-block; background-color: var(--accent-color); color: var(--text-light) !important;
       padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.8);
@@ -227,13 +225,13 @@
     }
     .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
     .product-info { padding: var(--spacing-unit); }
-    .product h3 { margin: 0.5rem 0; font-size: 1.2rem; color: var(--primary-color); }
+    .product h3 { margin: 0.5rem 0; font-size: 1.2rem; color: var(--primary-color); } /* Product H3s are card titles */
     .product p { padding: 0 var(--spacing-unit) var(--spacing-unit); font-size: 0.9rem; margin-bottom: 0; }
     #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
     .biography-section {
         border-left: 8px solid var(--accent-color); padding-top: calc(var(--spacing-unit) * 1.5);
     }
-    .biography-section h2 { text-align: left; margin-bottom: var(--spacing-unit); }
+    .biography-section h2 { text-align: left; margin-bottom: var(--spacing-unit); } /* Bio main title is H2 */
     .biography-section h2::after { display: none; }
     .biography-section .bio-subtitle {
         font-family: var(--font-body); font-size: 1.1rem; color: var(--secondary-color);
@@ -270,6 +268,7 @@
     @media (max-width: 768px) {
       .page-hero-title { font-size: 2.4rem; }
       h2 { font-size: 1.9rem; }
+      h3 { font-size: 1.6rem; } /* Adjust H3 on mobile */
       .main-nav a {
         font-size: 0.85rem; margin: 0 calc(var(--spacing-unit) * 0.2);
         padding: 0.6em 1em; letter-spacing: 0.5px;
@@ -277,15 +276,15 @@
       .container { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
       .content-section { padding: calc(var(--spacing-unit) * 1.5); }
       .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
-      .present-grid, .venue-grid { grid-template-columns: 1fr; }
+      .present-grid, .venue-grid, .event-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <a id="top"></a>
-  <header class="site-header"> <!-- This is the blue bar at the very top -->
+  <header class="site-header">
     <div class="container">
-      <div class="site-name">Athlone Music Heritage</div> <!-- Changed from logo-title -->
+      <div class="site-name">Athlone Music Heritage</div>
     </div>
   </header>
 
@@ -293,13 +292,13 @@
     <div class="container">
       <a href="#past" class="nav-link">Our Past</a>
       <a href="#present" class="nav-link">Our Present</a>
-      <a href="#music-trail" class="nav-link">Music Trail</a> <!-- New Nav Link -->
+      <a href="#music-trail" class="nav-link">Music Trail</a>
       <a href="#products-placeholder-section" id="nav-products-link" class="nav-link">Products</a>
       <a href="#connect" class="nav-link">Connect</a>
     </div>
   </nav>
 
-  <div class="container"> <!-- Container for the main H1 and intro text -->
+  <div class="container">
     <h1 class="page-hero-title">Athlone – The Birthplace of Modern Music</h1>
     <p class="page-intro-text">
         This unveils the vibrant musical legacy of Athlone, beginning with Patrick Keating, the legendary bandmaster who returned from the Battle of Waterloo. His students, including the influential Patrick Gilmore, transformed the global music landscape and gave Ireland a unifying voice that resonated far beyond its shores. We’ll trace the journey of John McCormack, Athlone’s beloved son, whose captivating voice enchanted millions worldwide. Through times of hardship, music became Athlone’s heartbeat, offering solace and strength to unsung heroes of Irish history. You’ll discover remarkable figures like Michael Kilkelly, Henry Foy, and the Athlone Pipers—names often overlooked but whose contributions left an indelible mark. This is the untold story of Athlone’s musical heritage—a powerful tale of creativity, resilience, and connection that demands to be heard.
@@ -343,50 +342,166 @@
 
     <section id="present" class="content-section">
         <h2>Athlone's Music Today: A Living Soundscape</h2>
-        <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover lessons, and join in our celebrated festivals.</p>
-        <h3 style="text-align: center; margin-top: calc(var(--spacing-unit)*2); margin-bottom: var(--spacing-unit);">Popular Music Venues</h3>
+        <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities for music lessons.</p>
+
+        <h3>Popular Music Venues</h3>
         <div class="venue-grid">
             <article class="venue-item">
-                <h3>Sean's Bar</h3>
+                <h4>Sean's Bar</h4>
                 <p class="venue-type">Historic Pub with Traditional Irish Music</p>
-                <p>Known as Ireland's oldest pub, Sean's Bar frequently hosts lively traditional Irish music sessions, offering an authentic cultural experience.</p>
+                <p>Ireland's oldest pub, frequently hosting lively traditional Irish music sessions, often nightly or several times a week. A must-visit for an authentic experience.</p>
                 <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
             <article class="venue-item">
-                <h3>The Snug Bar</h3>
+                <h4>The Snug Bar</h4>
                 <p class="venue-type">Pub with Live Music</p>
-                <p>A popular spot for locals and visitors, The Snug often features a variety of live music acts, from contemporary bands to acoustic sessions.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a> <!-- Example for FB -->
+                <p>A popular spot for locals and visitors, The Snug often features a variety of live music acts on weekends, from contemporary bands to acoustic sessions.</p>
+                <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
             </article>
             <article class="venue-item">
-                <h3>Karma Athlone</h3>
-                <p class="venue-type">Nightclub / Late Bar</p>
-                <p>Offers DJ nights and a modern nightlife experience, sometimes featuring special music events.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Social Media Link</a>
+                <h4>Flannery's Bar</h4>
+                <p class="venue-type">Pub with Regular Live Music & DJs</p>
+                <p>Flannery's is a well-known Athlone pub that often has a lively atmosphere with both live bands (especially rock/covers) and DJ sets, particularly at weekends.</p>
+                <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
             </article>
              <article class="venue-item">
-                <h3>Dean Crowe Theatre & Arts Centre</h3>
+                <h4>Dean Crowe Theatre & Arts Centre</h4>
                 <p class="venue-type">Theatre & Concert Venue</p>
-                <p>Hosts a diverse programme including musical performances, theatre shows, and concerts from both local and touring artists.</p>
+                <p>Hosts a diverse year-round programme including musical performances by national and international artists, theatre shows, opera, and community arts events.</p>
                 <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
+            <article class="venue-item">
+                <h4>Nut's Corner / The Tack Room</h4>
+                <p class="venue-type">Local Pub / Music Spot</p>
+                <p>A local favorite, potentially hosting impromptu sessions or scheduled music nights, particularly known for a traditional feel. (Verify details locally).</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Social Media/Info</a>
+            </article>
+            <article class="venue-item">
+                <h4>Gertie Browne's Pub</h4>
+                <p class="venue-type">Traditional Pub with Music Sessions</p>
+                <p>Another classic Athlone pub that is known to host traditional Irish music sessions, contributing to the town's vibrant trad scene.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Social Media/Info</a>
+            </article>
         </div>
-        <h3 style="text-align: center; margin-top: calc(var(--spacing-unit)*3); margin-bottom: var(--spacing-unit);">Music Lessons & Festivals</h3>
+
+        <h3 id="festivals-events">Festivals & Events by Season</h3>
+        <p class="intro-paragraph" style="font-size:0.95rem;">Athlone hosts a variety of musical and cultural events throughout the year. Below are some typical seasonal highlights. Always check local listings for specific dates and new events!</p>
+
+        <!-- SPRING EVENTS -->
+        <div class="season-events">
+            <h4>Spring (March - May)</h4>
+            <div class="event-grid">
+                <article class="event-item">
+                    <h4>St. Patrick's Festival Athlone</h4>
+                    <p class="event-date">Mid-March (around March 17th)</p>
+                    <p class="event-type">Town Celebrations, Parade & Music</p>
+                    <p>Athlone hosts a vibrant St. Patrick's Day parade and festival, with numerous pubs and venues featuring live traditional Irish music and other performances.</p>
+                    <a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Athlone.ie (for updates)</a>
+                </article>
+                <article class="event-item">
+                    <h4>[Local Spring Music Series/Event - Placeholder]</h4>
+                    <p class="event-date">April/May</p>
+                    <p class="event-type">Concerts / Local Talent Showcase</p>
+                    <p>Keep an eye on Dean Crowe Theatre and local pub listings for Spring concert series or special musical evenings as the weather improves.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Check Local Listings</a>
+                </article>
+            </div>
+        </div>
+
+        <!-- SUMMER EVENTS -->
+        <div class="season-events">
+            <h4 style="margin-top:var(--spacing-unit);">Summer (June - August)</h4>
+            <div class="event-grid">
+                <article class="event-item">
+                    <h4>Athlone Agri-Show</h4>
+                    <p class="event-date">Typically June</p>
+                    <p class="event-type">Agricultural Show & Family Day Out</p>
+                    <p>While primarily an agricultural event, the show often includes a range of family entertainment, which can feature local musicians and bands.</p>
+                    <a href="http://www.athloneshow.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Official Show Website</a>
+                </article>
+                <article class="event-item">
+                    <h4>TriAthlone</h4>
+                    <p class="event-date">Typically June/July</p>
+                    <p class="event-type">Sporting Event with Festival Atmosphere</p>
+                    <p>This major triathlon often brings a buzz to the town, with supporting entertainment that may include live music.</p>
+                    <a href="https://triathlone.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">TriAthlone Website</a>
+                </article>
+                <article class="event-item">
+                    <h4>[Summer Outdoor Music Event - Placeholder]</h4>
+                    <p class="event-date">July/August</p>
+                    <p class="event-type">Outdoor Concert / Pub Garden Sessions</p>
+                    <p>Look out for special summer music events in pub beer gardens or outdoor spaces, weather permitting.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Check Venue Social Media</a>
+                </article>
+            </div>
+        </div>
+
+        <!-- AUTUMN EVENTS -->
+        <div class="season-events">
+            <h4 style="margin-top:var(--spacing-unit);">Autumn (September - November)</h4>
+            <div class="event-grid">
+                <article class="event-item">
+                    <h4>Athlone River & Food Festival / Shannon Feast-ival</h4>
+                    <p class="event-date">Typically September</p>
+                    <p class="event-type">Family Festival with Live Music Stages</p>
+                    <p>A major highlight on the Shannon, this festival celebrates local food, heritage, and family fun, usually featuring live music performances across various genres.</p>
+                    <a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Athlone.ie (for updates)</a>
+                </article>
+                <article class="event-item">
+                    <h4>[Halloween Themed Music Night - Placeholder]</h4>
+                    <p class="event-date">Late October</p>
+                    <p class="event-type">Themed Pub Nights / Concerts</p>
+                    <p>Some venues might host special Halloween events with live music or themed DJ nights.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Check Local Listings</a>
+                </article>
+            </div>
+        </div>
+
+        <!-- WINTER EVENTS -->
+        <div class="season-events">
+            <h4 style="margin-top:var(--spacing-unit);">Winter (December - February)</h4>
+            <div class="event-grid">
+                <article class="event-item">
+                    <h4>Christmas Markets & Concerts</h4>
+                    <p class="event-date">December</p>
+                    <p class="event-type">Seasonal Music & Festive Events</p>
+                    <p>Look out for Christmas markets with music, carol services, and festive concerts by local choirs and bands in various venues around Athlone.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Local Community Listings</a>
+                </article>
+                <article class="event-item">
+                    <h4>New Year's Eve Celebrations</h4>
+                    <p class="event-date">December 31st</p>
+                    <p class="event-type">Live Music & DJ Sets in Pubs/Venues</p>
+                    <p>Many pubs and venues will host special New Year's Eve events with live music to ring in the new year.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Check Venue Pages Closer to Date</a>
+                </article>
+                 <article class="event-item">
+                    <h4>[Cosy Winter Trad Sessions - Placeholder]</h4>
+                    <p class="event-date">January/February</p>
+                    <p class="event-type">Indoor Pub Music</p>
+                    <p>Winter is a great time for intimate traditional music sessions in Athlone's welcoming pubs. Check schedules for Sean's Bar, The Snug etc.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="call-to-action">Pub Social Media</a>
+                </article>
+            </div>
+        </div>
+        <p class="seasonal-event-notice">For the most current and comprehensive event listings, please always refer to official venue websites, Athlone.ie, and local news sources.</p>
+
+
+        <h3 style="margin-top: calc(var(--spacing-unit)*3);">Music Lessons</h3>
         <div class="present-grid">
             <article class="present-item">
-                <h3>Music Lessons & Workshops</h3>
-                <p>Nurture your talent or learn a new instrument. Find information on local music teachers, schools, and workshops for all ages and skill levels.</p>
-                <a href="#" class="call-to-action">Find Lessons (Info Coming)</a>
+                <h4>Local Music Teachers & Schools</h4>
+                <p>Whether you're a beginner or looking to refine your skills, Athlone has options for learning various instruments (e.g., guitar, piano, fiddle, pipes) and vocal coaching. Enquire locally for recommendations.</p>
+                <a href="#" class="call-to-action">Search Local Directories</a>
             </article>
-            <article class="present-item">
-                <h3>Festivals & Events</h3>
-                <p>Athlone hosts a variety of music festivals and events throughout the year, celebrating diverse genres and local talent. See what's coming up!</p>
-                <a href="#" class="call-to-action">View Festivals (Info Coming)</a>
+             <article class="present-item">
+                <h4>Comhaltas Ceoltóirí Éireann</h4>
+                <p>The local branch of Comhaltas may offer traditional Irish music lessons or workshops. Check their national or regional websites for Athlone contacts.</p>
+                <a href="https://comhaltas.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Comhaltas Website</a>
             </article>
         </div>
     </section>
 
-    <!-- Music Trail Placeholder Section -->
     <section id="music-trail" class="content-section music-trail-section">
         <h3>Athlone Music Trail</h3>
         <p>Discover the landmarks and locations that shaped Athlone's musical history. Our interactive Music Trail Map will guide you through the town's most significant musical sites.</p>
@@ -427,7 +542,7 @@
         </div>
     </section>
 
-    <!-- Biographies Area (content unchanged from previous version with images) -->
+    <!-- Biographies Area (content unchanged) -->
     <div id="biographies-area">
         <section id="bio-patrick-keating" class="content-section biography-section" style="display: none;">
             <h2>Patrick Keating (1796–1875)</h2>
@@ -543,26 +658,25 @@
   </footer>
 
 <script>
-    // JS remains the same as the previous version
+    // JS remains the same
 document.addEventListener('DOMContentLoaded', function() {
     const allBiographySections = document.querySelectorAll('.biography-section');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
     const allCloseBioButtons = document.querySelectorAll('.close-bio-button');
     const productsSection = document.getElementById('products-placeholder-section');
-    const musicTrailSection = document.getElementById('music-trail'); // Get music trail section
+    const musicTrailSection = document.getElementById('music-trail');
     const viewProductsCTA = document.getElementById('view-products-cta');
-    const navLinks = document.querySelectorAll('.main-nav a.nav-link'); // Includes all nav links with this class
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link');
 
     function hideAllDynamicSections() {
         allBiographySections.forEach(section => section.style.display = 'none');
         if (productsSection) productsSection.style.display = 'none';
-        // if (musicTrailSection) musicTrailSection.style.display = 'none'; // Assuming it might be dynamic too
     }
 
     function scrollToElement(element) {
         const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - navHeight - 20; // 20px buffer
+        const offsetPosition = elementPosition - navHeight - 20;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
 
@@ -606,26 +720,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (targetElement) {
                     e.preventDefault();
                     hideAllDynamicSections();
-
-                    // Specific handling for products or trail links if they should always show their section
                     if (targetId === '#products-placeholder-section' && productsSection) {
                         productsSection.style.display = 'block';
-                    } else if (targetId === '#music-trail' && musicTrailSection) {
-                         // If music trail is meant to be a section on this page and not a separate page
-                        // musicTrailSection.style.display = 'block'; // Or however it's handled
                     }
-                    // For other main sections, they are always visible, so just scroll.
                     scrollToElement(targetElement);
                 }
             }
         });
     });
 
-    // Active nav link on scroll
     const sectionsForNavHighlight = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]');
     window.addEventListener('scroll', () => {
         let currentActive = '';
-        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 70; // Adjusted offset
+        const scrollPosition = window.pageYOffset + (document.querySelector('.main-nav')?.offsetHeight || 0) + 70;
 
         sectionsForNavHighlight.forEach(section => {
             if (section.style.display !== 'none' && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
@@ -640,15 +747,12 @@ document.addEventListener('DOMContentLoaded', function() {
             currentActive = 'music-trail';
         }
 
-
         document.querySelectorAll('.main-nav a.nav-link').forEach(navLink => {
             navLink.classList.remove('active');
             const linkHref = navLink.getAttribute('href').substring(1);
-
             if (linkHref === currentActive) {
                 navLink.classList.add('active');
             } else if (currentActive.startsWith('bio-') && linkHref === 'past') {
-                // If a bio is active, also highlight "Our Past"
                 navLink.classList.add('active');
             }
         });
