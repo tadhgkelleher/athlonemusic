@@ -38,13 +38,10 @@
       position: relative;
       padding: 4rem 0;
       color: var(--text-light);
-      /* === FIX APPLIED HERE === */
-      /* Replaced the massive data URI with a link to an actual image file. */
-      /* This fixes the ERR_INVALID_URL and improves page load speed. */
       background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1280&q=80');
       background-size: cover;
       background-position: center 40%;
-      overflow: hidden; /* To contain the particles canvas */
+      overflow: hidden;
     }
     #particles-js {
       position: absolute;
@@ -59,19 +56,19 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 58, 106, 0.65);
-      z-index: 2; /* Increased z-index */
+      z-index: 2;
     }
     .page-hero .container {
       position: relative;
-      z-index: 3; /* Increased z-index */
+      z-index: 3;
     }
     .page-hero .page-hero-title {
-        color: var(--text-light); /* Override default h1 color */
-        padding-top: 0; /* Remove padding from original style */
+        color: var(--text-light);
+        padding-top: 0;
         text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
     .page-hero .page-intro-text {
-        color: var(--highlight-color); /* Lighter color for intro text */
+        color: var(--highlight-color);
         opacity: 0.95;
         text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
@@ -79,21 +76,21 @@
         font-size: 3rem; text-align: center; margin-bottom: calc(var(--spacing-unit) * 0.75);
         color: var(--primary-color); padding-top: var(--spacing-unit);
     }
-    h2 { /* Main Section Titles */
+    h2 {
         font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative;
     }
     h2::after {
       content: ''; display: block; width: 70px; height: 3px; background-color: var(--secondary-color);
       margin: calc(var(--spacing-unit) * 0.75) auto 0;
     }
-    h3 { /* Sub-section titles */
+    h3 {
         font-size: 1.8rem;
         color: var(--primary-color);
         margin-top: calc(var(--spacing-unit) * 2.5);
         margin-bottom: calc(var(--spacing-unit) * 1.5);
         text-align: center;
     }
-    h4 { /* Card titles */
+    h4 {
         color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.25rem; font-weight: 700;
     }
     h3::after { display: none; }
@@ -124,7 +121,7 @@
     .main-nav {
       background-color: var(--neutral-surface); box-shadow: 0 2px 8px var(--shadow-color);
       padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
-      margin-bottom: 0; /* Connect with hero */
+      margin-bottom: 0;
       position: sticky; top: 0; z-index: 1000;
       border-bottom: 1px solid var(--border-color);
     }
@@ -156,6 +153,19 @@
       font-size: 1.1rem; text-align: center; max-width: 750px; margin-left: auto; margin-right: auto;
       margin-bottom: calc(var(--spacing-unit) * 1.5);
       color: #5a6a78;
+    }
+    /* NEW: Style for section images */
+    .section-image-wrapper {
+        margin: calc(var(--spacing-unit) * -1) auto calc(var(--spacing-unit) * 2.5);
+        max-width: 700px;
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 6px 16px var(--shadow-color);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+    }
+    .section-image-wrapper img {
+        width: 100%;
+        display: block;
     }
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -219,12 +229,17 @@
         background-color: var(--highlight-color);
         border-radius: var(--border-radius-sm);
     }
+    /* UPDATED: Added a subtle texture to the music trail section */
     .music-trail-section {
-        background-color: var(--maroon-accent); color: var(--text-light); text-align: center;
+        background-color: var(--maroon-accent);
+        background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+        background-blend-mode: multiply;
+        color: var(--text-light); text-align: center;
         padding: calc(var(--spacing-unit) * 2); border-radius: var(--border-radius-md);
+        position: relative;
     }
-    .music-trail-section h3 { color: var(--text-light); font-size: 1.5rem; }
-    .music-trail-section p { opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .music-trail-section h3 { color: var(--text-light); font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);}
+    .music-trail-section p { opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);}
     .music-trail-section .call-to-action {
         background-color: var(--text-light); color: var(--maroon-accent) !important;
         border: 2px solid var(--maroon-accent);
@@ -245,7 +260,7 @@
       border: none; font-family: var(--font-body); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .call-to-action:hover, .call-to-action:focus {
-      background-color: #4a7a28; /* Replaced darken() with a static darker hex value */
+      background-color: #4a7a28;
       color: var(--text-light) !important;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -308,7 +323,7 @@
       transition: background-color 0.2s ease; text-decoration: none !important;
     }
     .close-bio-button:hover, .close-bio-button:focus { 
-      background-color: #006666; /* Replaced darken() with a static darker hex value */
+      background-color: #006666;
     }
 
     @media (max-width: 768px) {
@@ -324,6 +339,7 @@
       .content-section { padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 1.5);}
       .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
       .present-grid, .venue-grid, .event-grid { grid-template-columns: 1fr; }
+      .section-image-wrapper { margin-top: 0; }
     }
   </style>
 </head>
@@ -358,6 +374,10 @@
   <main>
     <section id="past" class="content-section">
         <h2>Our Musical Past: A Storied Legacy</h2>
+        <!-- NEW: Image added for the "Past" section -->
+        <div class="section-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1542486983-22B4a682d131?auto=format&fit=crop&w=1280&q=80" alt="Vintage musical instruments including a fiddle and a concertina resting on a rustic wooden surface.">
+        </div>
         <p class="intro-paragraph">Delve into the pivotal moments and extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to learn more about their story.</p>
         <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card-link">
@@ -391,6 +411,10 @@
 
     <section id="present" class="content-section">
         <h2>Athlone's Music Today: A Living Soundscape</h2>
+         <!-- NEW: Image added for the "Present" section -->
+        <div class="section-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1280&q=80" alt="A vibrant, warm-lit pub with musicians playing live music for an audience.">
+        </div>
         <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities for music lessons.</p>
 
         <h3>Popular Music Venues</h3>
