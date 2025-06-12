@@ -154,7 +154,6 @@
       margin-bottom: calc(var(--spacing-unit) * 1.5);
       color: #5a6a78;
     }
-    /* NEW: Style for section images */
     .section-image-wrapper {
         margin: calc(var(--spacing-unit) * -1) auto calc(var(--spacing-unit) * 2.5);
         max-width: 700px;
@@ -229,7 +228,6 @@
         background-color: var(--highlight-color);
         border-radius: var(--border-radius-sm);
     }
-    /* UPDATED: Added a subtle texture to the music trail section */
     .music-trail-section {
         background-color: var(--maroon-accent);
         background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
@@ -356,7 +354,7 @@
       <a href="#past" class="nav-link">Our Past</a>
       <a href="#present" class="nav-link">Our Present</a>
       <a href="#music-trail" class="nav-link">Music Trail</a>
-      <a href="#products-placeholder-section" id="nav-products-link" class="nav-link">Products</a>
+      <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
       <a href="#connect" class="nav-link">Connect</a>
     </div>
   </nav>
@@ -374,7 +372,6 @@
   <main>
     <section id="past" class="content-section">
         <h2>Our Musical Past: A Storied Legacy</h2>
-        <!-- NEW: Image added for the "Past" section -->
         <div class="section-image-wrapper">
             <img src="https://images.unsplash.com/photo-1542486983-22B4a682d131?auto=format&fit=crop&w=1280&q=80" alt="Vintage musical instruments including a fiddle and a concertina resting on a rustic wooden surface.">
         </div>
@@ -405,13 +402,12 @@
         <div id="products-showcase" class="products-link-section">
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
-            <a href="#products-placeholder-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
+            <a href="#products-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
         </div>
     </section>
 
     <section id="present" class="content-section">
         <h2>Athlone's Music Today: A Living Soundscape</h2>
-         <!-- NEW: Image added for the "Present" section -->
         <div class="section-image-wrapper">
             <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1280&q=80" alt="A vibrant, warm-lit pub with musicians playing live music for an audience.">
         </div>
@@ -506,7 +502,7 @@
         <a href="#" class="call-to-action coming-soon">Explore the Trail (Coming Soon)</a>
     </section>
     
-    <section id="products-placeholder-section" class="content-section" style="display: none;">
+    <section id="products-section" class="content-section" style="display: none;">
         <h2>Our Heritage Products</h2>
         <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
         <div class="product-grid">
@@ -686,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const allBiographySections = document.querySelectorAll('.biography-section');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
     const allCloseBioButtons = document.querySelectorAll('.close-bio-button');
-    const productsSection = document.getElementById('products-placeholder-section');
+    const productsSection = document.getElementById('products-section');
     const musicTrailSection = document.getElementById('music-trail');
     const viewProductsCTA = document.getElementById('view-products-cta');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link');
@@ -751,7 +747,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (targetElement.classList.contains('coming-soon')) return;
                     
                     hideAllDynamicSections();
-                    if (targetId === '#products-placeholder-section' && productsSection) {
+                    if (targetId === '#products-section' && productsSection) {
                         productsSection.style.display = 'block';
                     }
                     scrollToElement(targetElement);
@@ -773,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (!currentActive && productsSection && productsSection.style.display !== 'none' && productsSection.offsetTop <= scrollPosition && (productsSection.offsetTop + productsSection.offsetHeight) > scrollPosition) {
-            currentActive = 'products-placeholder-section';
+            currentActive = 'products-section';
         }
          if (!currentActive && musicTrailSection && musicTrailSection.style.display !== 'none' && musicTrailSection.offsetTop <= scrollPosition && (musicTrailSection.offsetTop + musicTrailSection.offsetHeight) > scrollPosition) {
             currentActive = 'music-trail';
@@ -788,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isActive = true;
             } else if (currentActive.startsWith('bio-') && linkHref === 'past') {
                 isActive = true;
-            } else if (currentActive === 'products-placeholder-section' && linkHref === 'products-placeholder-section'){
+            } else if (currentActive === 'products-section' && linkHref === 'products-section'){
                 isActive = true;
             }
 
