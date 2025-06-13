@@ -38,7 +38,7 @@
       position: relative;
       padding: 4rem 0;
       color: var(--text-light);
-      background-image: url('https://drive.google.com/uc?export=view&id=1ZjmZ4bdKBB7Wgkvyyw4Xs-VZpp88E75i');
+      background-image: url('https://i.imgur.com/H1tBvW7.jpeg'); /* <-- CORRECTED IMAGE LINK */
       background-size: cover;
       background-position: center center;
       overflow: hidden;
@@ -153,18 +153,6 @@
       font-size: 1.1rem; text-align: center; max-width: 750px; margin-left: auto; margin-right: auto;
       margin-bottom: calc(var(--spacing-unit) * 1.5);
       color: #5a6a78;
-    }
-    .section-image-wrapper {
-        margin: calc(var(--spacing-unit) * -1) auto calc(var(--spacing-unit) * 2.5);
-        max-width: 700px;
-        border-radius: var(--border-radius-md);
-        box-shadow: 0 6px 16px var(--shadow-color);
-        overflow: hidden;
-        border: 1px solid var(--border-color);
-    }
-    .section-image-wrapper img {
-        width: 100%;
-        display: block;
     }
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -337,7 +325,6 @@
       .content-section { padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 1.5);}
       .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
       .present-grid, .venue-grid, .event-grid { grid-template-columns: 1fr; }
-      .section-image-wrapper { margin-top: 0; }
     }
   </style>
 </head>
@@ -372,10 +359,8 @@
   <main>
     <section id="past" class="content-section">
         <h2>Our Musical Past: A Storied Legacy</h2>
-        <div class="section-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1542486983-22B4a682d131?auto=format&fit=crop&w=1280&q=80" alt="Vintage musical instruments including a fiddle and a concertina resting on a rustic wooden surface.">
-        </div>
-        <p class="intro-paragraph">Delve into the pivotal moments and extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to learn more about their story.</p>
+        <!-- VINTAGE INSTRUMENTS IMAGE REMOVED FROM HERE -->
+        <p class="intro-paragraph" style="margin-top: 2rem;">Delve into the pivotal moments and extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to learn more about their story.</p>
         <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card-link">
                 <div class="figure-card"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
