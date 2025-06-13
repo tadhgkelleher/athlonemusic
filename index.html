@@ -7,342 +7,398 @@
   <title>Athlone – The Birthplace of Modern Music | Past, Present & Seasonal Events</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
+    /*
+    ==========================================================================
+    STYLE IMPROVEMENT OVERHAUL
+    Key Changes:
+    1.  New "Modern Heritage" Color Palette: Deep navy, gold accent, and warm neutrals for a sophisticated feel.
+    2.  Enhanced Typography: Improved readability, rhythm, and hierarchy.
+    3.  Layout & Spacing: More generous whitespace for a cleaner, more professional look.
+    4.  Component Redesign: Major visual upgrades to nav, hero, cards, and interactive elements.
+    5.  Micro-interactions: Smooth transitions and hover effects for better UX.
+    6.  Accessibility: Clear focus-visible styles.
+    ==========================================================================
+    */
     :root {
-      --primary-color: #005A9C;    /* Deep Blue */
-      --secondary-color: #008080;   /* Teal/Aqua */
-      --accent-color: #558B2F;     /* Olive Green */
-      --maroon-accent: #800000;     /* Classic Maroon */
-      --highlight-color: #E0F2F7;  /* Very Light Cyan/Blue */
-      --neutral-light: #f8f9fa;
-      --neutral-surface: #ffffff;
-      --text-color: #34495e;
-      --text-light: #ffffff;
-      --border-color: #cce0e5;
-      --shadow-color: rgba(0, 70, 120, 0.12);
+      --primary-color: #0d2c4b;    /* Deep Navy */
+      --secondary-color: #4a6fa5;   /* Lighter Slate Blue */
+      --accent-color: #c5a66a;     /* Sophisticated Gold/Ochre */
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --text-light: #f8f9fa;
+      --bg-color: #fdfdfb;         /* Warm Off-White */
+      --surface-color: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow-color: rgba(13, 44, 75, 0.08);
       --font-heading: 'Merriweather', serif;
       --font-body: 'Lato', sans-serif;
       --spacing-unit: 1rem;
-      --border-radius-sm: 4px;
-      --border-radius-md: 8px;
+      --border-radius-sm: 6px;
+      --border-radius-md: 10px;
+      --transition-fast: 0.2s ease-in-out;
+      --transition-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-body); margin: 0; padding: 0; background: var(--neutral-light);
-      color: var(--text-color); line-height: 1.7;
+      font-family: var(--font-body);
+      font-size: 17px;
+      margin: 0; padding: 0; background: var(--bg-color);
+      color: var(--text-primary); line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading); margin-top: 0; line-height: 1.3; color: var(--primary-color);
+      font-weight: 700;
     }
     .page-hero {
       position: relative;
-      padding: 4rem 0;
+      padding: 6rem 0;
       color: var(--text-light);
-      background-image: url('https://i.imgur.com/H1tBvW7.jpeg'); /* <-- CORRECTED IMAGE LINK */
+      background-image: url('https://i.imgur.com/H1tBvW7.jpeg');
       background-size: cover;
-      background-position: center center;
+      background-position: center 30%;
       overflow: hidden;
+      text-align: center;
     }
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
+    #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
     .page-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 58, 106, 0.65);
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, rgba(13, 44, 75, 0.8) 0%, rgba(13, 44, 75, 0.5) 100%);
       z-index: 2;
     }
-    .page-hero .container {
-      position: relative;
-      z-index: 3;
-    }
+    .page-hero .container { position: relative; z-index: 3; }
     .page-hero .page-hero-title {
         color: var(--text-light);
-        padding-top: 0;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+        margin-bottom: 1rem;
     }
     .page-hero .page-intro-text {
-        color: var(--highlight-color);
-        opacity: 0.95;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    }
-    .page-hero-title {
-        font-size: 3rem; text-align: center; margin-bottom: calc(var(--spacing-unit) * 0.75);
-        color: var(--primary-color); padding-top: var(--spacing-unit);
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        max-width: 750px;
+        font-size: 1.25rem;
     }
     h2 {
-        font-size: 2.2rem; margin-bottom: calc(var(--spacing-unit) * 2); text-align: center; position: relative;
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: calc(var(--spacing-unit) * 1.5);
+        text-align: center;
+        position: relative;
+        letter-spacing: -0.5px;
     }
     h2::after {
-      content: ''; display: block; width: 70px; height: 3px; background-color: var(--secondary-color);
-      margin: calc(var(--spacing-unit) * 0.75) auto 0;
+      content: ''; display: block; width: 80px; height: 4px; background-color: var(--accent-color);
+      margin: var(--spacing-unit) auto 0;
     }
     h3 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         color: var(--primary-color);
-        margin-top: calc(var(--spacing-unit) * 2.5);
+        margin-top: calc(var(--spacing-unit) * 3);
         margin-bottom: calc(var(--spacing-unit) * 1.5);
         text-align: center;
     }
     h4 {
-        color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.25rem; font-weight: 700;
+        color: var(--primary-color); margin-bottom: calc(var(--spacing-unit) / 2); font-size:1.3rem; font-weight: 700;
     }
-    h3::after { display: none; }
     p { margin-bottom: var(--spacing-unit); }
     a {
       color: var(--secondary-color); text-decoration: none; font-weight: 700;
-      transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
-      text-decoration: underline; text-decoration-color: transparent;
+      transition: color var(--transition-fast);
     }
-    a:hover, a:focus {
-      color: var(--accent-color); text-decoration-color: var(--accent-color);
-      outline: 2px solid transparent; outline-offset: 2px;
-    }
-    a:focus-visible { outline: 2px dashed var(--accent-color); }
+    a:hover, a:focus { color: var(--accent-color); }
+    a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; border-radius: 2px; }
     img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius-sm); }
     .container {
-      max-width: 1100px; margin-left: auto; margin-right: auto;
+      max-width: 1200px; margin-left: auto; margin-right: auto;
       padding-left: calc(var(--spacing-unit) * 1.5); padding-right: calc(var(--spacing-unit) * 1.5);
     }
-    .site-header {
-      background: var(--primary-color); color: var(--text-light);
-      padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
-    }
-    .site-header .site-name {
-      font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light);
-      margin: 0; font-weight: 700;
-    }
+    .site-header { display: none; /* Merged into nav for cleaner look */ }
     .main-nav {
-      background-color: var(--neutral-surface); box-shadow: 0 2px 8px var(--shadow-color);
-      padding: calc(var(--spacing-unit)*0.75) 0; text-align: center;
-      margin-bottom: 0;
+      background-color: var(--surface-color);
+      padding: calc(var(--spacing-unit) * 1) 0; text-align: center;
       position: sticky; top: 0; z-index: 1000;
       border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 10px var(--shadow-color);
     }
-    .main-nav a {
-      margin: 0 calc(var(--spacing-unit) * 0.6); color: var(--primary-color); font-weight: 700;
-      padding: 0.7em 1.4em; border-radius: 50px; font-size: 0.95rem;
-      text-transform: uppercase; letter-spacing: 0.8px;
-      transition: background-color 0.2s ease, color 0.2s ease; text-decoration: none;
+    .main-nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .main-nav .site-name {
+      font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary-color);
+      margin: 0; font-weight: 700;
     }
-    .main-nav a:hover, .main-nav a:focus, .main-nav a.active {
-      background-color: var(--secondary-color); color: var(--text-light); text-decoration: none;
+    .main-nav .nav-links { display: flex; gap: 0.5rem; }
+    .main-nav a.nav-link {
+      color: var(--text-secondary); font-weight: 700; padding: 0.5em 1em;
+      border-radius: var(--border-radius-sm); font-size: 0.95rem;
+      letter-spacing: 0.5px; position: relative;
+      transition: color var(--transition-fast);
     }
-    .main-nav a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+    .main-nav a.nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 50%;
+      transform: translateX(-50%); width: 0; height: 2px;
+      background-color: var(--accent-color);
+      transition: width var(--transition-smooth);
+    }
+    .main-nav a.nav-link:hover, .main-nav a.nav-link:focus, .main-nav a.nav-link.active {
+      color: var(--primary-color);
+    }
+    .main-nav a.nav-link:hover::after, .main-nav a.nav-link:focus::after, .main-nav a.nav-link.active::after {
+      width: 60%;
+    }
     .page-intro-text {
-        font-size: 1.15rem; line-height: 1.8; text-align: center; max-width: 800px;
-        margin: 0 auto calc(var(--spacing-unit) * 2.5) auto; color: #4a5a68;
+        font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px;
+        margin: 0 auto calc(var(--spacing-unit) * 3) auto; color: var(--text-secondary);
     }
     .content-section {
-      padding: calc(var(--spacing-unit) * 2.5); margin-top: calc(var(--spacing-unit) * 2.5);
-      background-color: var(--neutral-surface); border-radius: var(--border-radius-md);
-      box-shadow: 0 4px 12px var(--shadow-color);
+      padding: calc(var(--spacing-unit) * 4) 0;
     }
-    main > .content-section:first-of-type {
-        margin-top: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-    .intro-paragraph {
-      font-size: 1.1rem; text-align: center; max-width: 750px; margin-left: auto; margin-right: auto;
-      margin-bottom: calc(var(--spacing-unit) * 1.5);
-      color: #5a6a78;
-    }
+    /* === REDESIGNED FIGURE CARDS === */
     .figure-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: calc(var(--spacing-unit) * 1.25); margin-bottom: calc(var(--spacing-unit) * 2);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
     }
     .figure-card-link {
-        display: block; text-decoration: none; color: inherit;
-        border-radius: var(--border-radius-sm);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: block; text-decoration: none; color: var(--text-light);
+      position: relative; overflow: hidden;
+      border-radius: var(--border-radius-md);
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
     .figure-card-link:hover, .figure-card-link:focus-within {
-        transform: translateY(-4px); box-shadow: 0 6px 12px var(--shadow-color);
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
-    .figure-card {
-      text-align: center; padding: var(--spacing-unit); background: var(--highlight-color);
-      border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);
-      height: 100%; display: flex; flex-direction: column; justify-content: center;
+    .figure-card-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      transition: transform var(--transition-smooth);
+      transform: scale(1.05);
     }
-    .figure-card p { font-size: 0.9rem; color: var(--text-color); margin-bottom: 0; }
-    .historical-narrative { padding: 0 var(--spacing-unit); }
-    .historical-narrative p { margin-bottom: var(--spacing-unit); line-height: 1.75; }
-    .historical-narrative strong { color: var(--primary-color); font-weight: 700; }
+    .figure-card-link:hover .figure-card-bg, .figure-card-link:focus-within .figure-card-bg {
+      transform: scale(1.15);
+    }
+    .figure-card-content {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: calc(var(--spacing-unit) * 1.5);
+      background: linear-gradient(to top, rgba(13, 44, 75, 0.9) 10%, rgba(13, 44, 75, 0.2) 60%, transparent 100%);
+    }
+    .figure-card-content h4 {
+        color: var(--text-light); font-size: 1.5rem; margin-bottom: 0.25rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .figure-card-content p {
+        color: var(--accent-color); font-weight: 700; margin-bottom: 0;
+        font-size: 1rem; opacity: 0; transform: translateY(10px);
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+    .figure-card-link:hover p, .figure-card-link:focus-within p {
+      opacity: 1; transform: translateY(0);
+    }
+    /* Specific background images for cards */
+    #fig-keating .figure-card-bg { background-image: url('https://i.imgur.com/0I3qj4H.jpeg'); }
+    #fig-gilmore .figure-card-bg { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Patrick_S._Gilmore.jpg/500px-Patrick_S._Gilmore.jpg'); }
+    #fig-kilkelly .figure-card-bg { background-image: url('https://i0.wp.com/muso.ie/wp-content/uploads/2023/05/michael-k.jpg?fit=615%2C1131&ssl=1'); }
+    #fig-foy .figure-card-bg { background-image: url('https://i0.wp.com/muso.ie/wp-content/uploads/2023/10/henry-foy.jpg?fit=189%2C300&ssl=1'); }
+    #fig-mccormack .figure-card-bg { background-image: url('https://cdn.britannica.com/52/209352-050-F0C23723/John-McCormack-title-character-Don-Giovanni-opera.jpg'); }
+    #fig-pipers .figure-card-bg { background-image: url('https://i.imgur.com/8Qp21jH.jpeg'); }
+
+    /* Call to Action Bar */
     .products-link-section {
-      text-align: center; padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 2);
-      background-color: var(--accent-color); border-radius: var(--border-radius-md); color: var(--text-light);
+      text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
+      margin-top: calc(var(--spacing-unit) * 4);
+      background-color: var(--primary-color);
+      border-radius: var(--border-radius-md); color: var(--text-light);
     }
-    .products-link-section h3 { color: var(--text-light); margin-bottom: calc(var(--spacing-unit) * 0.75); font-size:1.5rem; }
-    .products-link-section p { margin-bottom: var(--spacing-unit); color: var(--text-light); opacity: 0.9; }
-    .products-link-section .call-to-action {
-      background-color: var(--text-light); color: var(--accent-color) !important; border: 2px solid var(--accent-color);
+    .products-link-section h3 { color: var(--text-light); margin-bottom: var(--spacing-unit); font-size:1.8rem; }
+    .products-link-section p { margin-bottom: calc(var(--spacing-unit) * 1.5); color: var(--text-light); opacity: 0.8; max-width: 600px; margin-left:auto; margin-right: auto;}
+    .products-link-section .call-to-action { background-color: var(--accent-color); color: var(--primary-color) !important; }
+    .products-link-section .call-to-action:hover { background-color: #dcc18a; }
+
+    /* Present Day Section */
+    .section-image-wrapper {
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+        margin-bottom: calc(var(--spacing-unit) * 2.5);
+        box-shadow: 0 10px 30px var(--shadow-color);
     }
-    .products-link-section .call-to-action:hover { background-color: var(--highlight-color); }
     .present-grid, .venue-grid, .event-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: calc(var(--spacing-unit) * 1.5);
-      margin-top: var(--spacing-unit);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
     }
     .present-item, .venue-item, .event-item {
-      background-color: var(--neutral-surface); border: 1px solid var(--border-color);
-      border-left: 6px solid var(--accent-color); padding: calc(var(--spacing-unit) * 1.25);
-      border-radius: var(--border-radius-sm); box-shadow: 0 3px 6px var(--shadow-color);
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      padding: calc(var(--spacing-unit) * 1.5);
+      border-radius: var(--border-radius-md);
       display: flex; flex-direction: column;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
-    .present-item h4, .venue-item h4, .event-item h4 { margin-top: 0; font-size: 1.2rem; color: var(--primary-color); font-weight:700;}
-    .present-item p, .venue-item p, .event-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 0.95rem; }
-    .present-item .call-to-action, .venue-item .call-to-action, .event-item .call-to-action {
-        margin-top: auto; align-self: flex-start; font-size: 0.9rem; padding: 0.6em 1.2em;
+    .present-item:hover, .venue-item:hover, .event-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12);
     }
+    .present-item p, .venue-item p, .event-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 1rem; color: var(--text-secondary); }
     .venue-item .venue-type, .event-item .event-date, .event-item .event-type {
-        font-size: 0.85rem; color: var(--secondary-color); font-style: italic;
-        margin-bottom: calc(var(--spacing-unit) * 0.25);
+        font-size: 0.9rem; color: var(--accent-color); font-weight: 700;
+        margin-bottom: calc(var(--spacing-unit) * 0.5);
     }
-    .event-item .event-date { font-weight: bold; }
+    .event-item .event-date { color: var(--secondary-color); font-style: italic; }
     .seasonal-event-notice {
-        font-size: 0.9rem;
-        text-align: center;
-        font-style: italic;
-        color: #7f8c8d;
-        margin-top: calc(var(--spacing-unit) * 1.5);
-        padding: var(--spacing-unit);
-        background-color: var(--highlight-color);
-        border-radius: var(--border-radius-sm);
+        font-size: 0.95rem; text-align: center; font-style: italic; color: var(--text-secondary);
+        margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5);
+        background-color: var(--bg-color); border: 1px dashed var(--border-color);
+        border-radius: var(--border-radius-md);
     }
+    /* Music Trail Section */
     .music-trail-section {
-        background-color: var(--maroon-accent);
-        background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
-        background-blend-mode: multiply;
+        background-color: var(--primary-color);
+        background-image: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('https://www.transparenttextures.com/patterns/old-paper.png');
         color: var(--text-light); text-align: center;
-        padding: calc(var(--spacing-unit) * 2); border-radius: var(--border-radius-md);
-        position: relative;
+        padding: calc(var(--spacing-unit) * 3); border-radius: var(--border-radius-md);
+        border: 1px solid var(--accent-color);
     }
-    .music-trail-section h3 { color: var(--text-light); font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);}
-    .music-trail-section p { opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);}
-    .music-trail-section .call-to-action {
-        background-color: var(--text-light); color: var(--maroon-accent) !important;
-        border: 2px solid var(--maroon-accent);
-    }
-    .music-trail-section .call-to-action.coming-soon {
-        cursor: not-allowed; background-color: #cccccc; color: #666666 !important;
-    }
-    .music-trail-section .call-to-action:hover { background-color: var(--highlight-color); }
-    .music-trail-section .call-to-action.coming-soon:hover {
-        background-color: #cccccc; transform: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+    .music-trail-section h3 { color: var(--text-light); font-size: 2rem; }
+    .music-trail-section p { opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+    /* Generic Call to Action Button */
     .call-to-action {
-      display: inline-block; background-color: var(--accent-color); color: var(--text-light) !important;
-      padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.8);
+      display: inline-block; background-color: var(--primary-color); color: var(--text-light) !important;
+      padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
       border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
       margin-top: var(--spacing-unit);
-      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-      border: none; font-family: var(--font-body); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      border: 2px solid transparent; font-family: var(--font-body);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .call-to-action:hover, .call-to-action:focus {
-      background-color: #4a7a28;
-      color: var(--text-light) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background-color: var(--secondary-color);
     }
-    .call-to-action:focus-visible { outline: 2px dashed var(--primary-color); outline-offset: 3px; }
-    #connect p { text-align: center; font-size: 1.1rem; margin-bottom: var(--spacing-unit); }
-    #connect .call-to-action {
-      margin-left: calc(var(--spacing-unit) / 2); margin-right: calc(var(--spacing-unit) / 2);
+    .call-to-action.coming-soon {
+        cursor: not-allowed; background-color: #b0bec5; color: #546e7a !important;
     }
-    .site-footer {
-      background: var(--primary-color); color: var(--text-light); text-align: center;
-      padding: calc(var(--spacing-unit) * 2.5) 0; margin-top: calc(var(--spacing-unit) * 3);
-      border-top: 5px solid var(--secondary-color);
-    }
-    .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.85; }
-    .site-footer a { color: var(--highlight-color); }
-    .site-footer a:hover, .site-footer a:focus { color: var(--text-light); text-decoration-color: var(--text-light); }
-    .product-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: calc(var(--spacing-unit) * 1.5); margin-top: var(--spacing-unit);
-    }
-    .product {
-      background: white; border-radius: var(--border-radius-md); box-shadow: 0 2px 5px var(--shadow-color);
-      overflow: hidden; text-align: center; border: 1px solid var(--border-color);
-    }
-    .product-image-container {
-      width: 100%; height: 180px; overflow: hidden; background-color: var(--highlight-color);
-    }
-    .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
-    .product-info { padding: var(--spacing-unit); }
-    .product h3 { margin: 0.5rem 0; font-size: 1.2rem; color: var(--primary-color); }
-    .product p { padding: 0 var(--spacing-unit) var(--spacing-unit); font-size: 0.9rem; margin-bottom: 0; }
-    #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
-    .biography-section {
-        border-left: 8px solid var(--accent-color); padding-top: calc(var(--spacing-unit) * 1.5);
-    }
-    .biography-section h2 { text-align: left; margin-bottom: var(--spacing-unit); }
-    .biography-section h2::after { display: none; }
-    .biography-section .bio-subtitle {
-        font-family: var(--font-body); font-size: 1.1rem; color: var(--secondary-color);
-        font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 1.5); text-align: left;
-    }
-    .biography-content-wrapper {
-        display: grid; grid-template-columns: 1fr; gap: calc(var(--spacing-unit) * 1.5); align-items: start;
-    }
-    @media (min-width: 768px) {
-        .biography-content-wrapper { grid-template-columns: 200px 1fr; }
-    }
-    .bio-image-wrapper {
-        width: 100%; max-width: 200px; height: auto; margin-bottom: var(--spacing-unit);
-        border: 1px solid var(--border-color); border-radius: var(--border-radius-sm);
-        overflow: hidden; background-color: var(--highlight-color);
-    }
-    .bio-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .close-bio-button {
-      display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
-      padding: calc(var(--spacing-unit) * 0.6) calc(var(--spacing-unit) * 1.2);
-      border-radius: var(--border-radius-sm); font-weight: 700; font-size: 0.9rem;
-      border: none; cursor: pointer; margin-top: var(--spacing-unit);
-      transition: background-color 0.2s ease; text-decoration: none !important;
-    }
-    .close-bio-button:hover, .close-bio-button:focus { 
-      background-color: #006666;
+    .call-to-action.coming-soon:hover {
+        background-color: #b0bec5; transform: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    @media (max-width: 768px) {
-      .page-hero { padding: 3rem 0; }
-      .page-hero-title { font-size: 2.4rem; }
-      h2 { font-size: 1.9rem; }
-      h3 { font-size: 1.6rem; }
-      .main-nav a {
-        font-size: 0.85rem; margin: 0 calc(var(--spacing-unit) * 0.2);
-        padding: 0.6em 1em; letter-spacing: 0.5px;
+    .site-footer {
+      background: var(--primary-color); color: var(--text-light); text-align: center;
+      padding: calc(var(--spacing-unit) * 3) 0; margin-top: calc(var(--spacing-unit) * 4);
+      border-top: 5px solid var(--accent-color);
+    }
+    .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.8; }
+    .site-footer a { color: var(--accent-color); }
+    .site-footer a:hover, .site-footer a:focus { color: var(--text-light); }
+
+    /* Product Section */
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: calc(var(--spacing-unit) * 2); margin-top: var(--spacing-unit);
+    }
+    .product {
+      background: white; border-radius: var(--border-radius-md);
+      box-shadow: 0 5px 15px var(--shadow-color);
+      overflow: hidden; text-align: center;
+      border: 1px solid var(--border-color);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    }
+    .product:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12);
+    }
+    .product-image-container { width: 100%; height: 200px; overflow: hidden; }
+    .product-image-container img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: var(--spacing-unit) * 1.5; }
+    .product h3 { margin: 1rem 0; font-size: 1.3rem; color: var(--primary-color); }
+    .product p { padding: 0 var(--spacing-unit) var(--spacing-unit); font-size: 1rem; margin-bottom: 0; color: var(--text-secondary); }
+
+    /* Biography Section */
+    #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
+    .biography-section {
+        background-color: var(--surface-color);
+        padding: calc(var(--spacing-unit) * 3);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 5px 20px var(--shadow-color);
+        border-left: 8px solid var(--accent-color);
+    }
+    .biography-section h2 { text-align: left; margin-bottom: 0.5rem; font-size: 2.8rem; }
+    .biography-section h2::after { display: none; }
+    .biography-section .bio-subtitle {
+        font-family: var(--font-body); font-size: 1.3rem; color: var(--secondary-color);
+        font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 2); text-align: left;
+    }
+    .biography-content-wrapper {
+        display: grid; grid-template-columns: 1fr; gap: calc(var(--spacing-unit) * 2); align-items: start;
+    }
+    .bio-image-wrapper {
+        width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem auto;
+        border-radius: var(--border-radius-sm); overflow: hidden;
+        border: 4px solid var(--surface-color); box-shadow: 0 4px 15px var(--shadow-color);
+    }
+    .bio-text p { font-size: 1.1rem; max-width: 80ch; }
+    .close-bio-button {
+      display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
+      padding: 0.7rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      border: none; cursor: pointer; margin-top: var(--spacing-unit);
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+      text-decoration: none !important;
+    }
+    .close-bio-button:hover, .close-bio-button:focus { background-color: var(--primary-color); transform: translateY(-2px); }
+
+    @media (min-width: 768px) {
+        .biography-content-wrapper { grid-template-columns: 250px 1fr; }
+        .bio-image-wrapper { margin: 0; }
+    }
+
+    @media (max-width: 992px) {
+      .main-nav .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--surface-color);
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 5px 10px var(--shadow-color);
+        transform: translateY(-120%);
+        transition: transform var(--transition-smooth);
+        /* Simple implementation, would need JS for a toggle button */
+        /* For now, let's just make it wrap */
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0; border: none; box-shadow: none;
+        background: transparent;
       }
-      .container { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
-      .content-section { padding: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 1.5);}
-      .figure-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-unit); }
+      .main-nav .container { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      .page-hero { padding: 4rem 0; }
+      .content-section { padding: calc(var(--spacing-unit) * 3) 0;}
       .present-grid, .venue-grid, .event-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <a id="top"></a>
-  <header class="site-header">
-    <div class="container">
-      <div class="site-name">Athlone Music Heritage</div>
-    </div>
-  </header>
-
+  
   <nav class="main-nav">
     <div class="container">
-      <a href="#past" class="nav-link">Our Past</a>
-      <a href="#present" class="nav-link">Our Present</a>
-      <a href="#music-trail" class="nav-link">Music Trail</a>
-      <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
-      <a href="#connect" class="nav-link">Connect</a>
+      <div class="site-name">Athlone Music Heritage</div>
+      <div class="nav-links">
+          <a href="#past" class="nav-link">Our Past</a>
+          <a href="#present" class="nav-link">Our Present</a>
+          <a href="#music-trail" class="nav-link">Music Trail</a>
+          <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
+          <a href="#connect" class="nav-link">Connect</a>
+      </div>
     </div>
   </nav>
 
@@ -351,131 +407,127 @@
     <div class="container">
         <h1 class="page-hero-title">Athlone – The Birthplace of Modern Music</h1>
         <p class="page-intro-text page-hero-intro-text">
-            From the bandmaster who survived Waterloo to the tenor who captivated the world, discover the untold story of a small Irish town that became a global source of music. This is a powerful tale of resilience, rebellion, and the enduring power of song.
+            From the bandmaster who survived Waterloo to the tenor who captivated the world, discover the untold story of a small Irish town that became a global source of music.
         </p>
     </div>
   </div>
 
-  <main>
+  <main class="container">
     <section id="past" class="content-section">
-        <h2>Our Musical Past: A Storied Legacy</h2>
-        <!-- VINTAGE INSTRUMENTS IMAGE REMOVED FROM HERE -->
-        <p class="intro-paragraph" style="margin-top: 2rem;">Delve into the pivotal moments and extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to learn more about their story.</p>
+        <h2>A Storied Legacy</h2>
+        <p class="page-intro-text" style="margin-top: 2rem;">Delve into the extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to uncover their remarkable story and contribution to a global soundscape.</p>
+        
         <div class="figure-grid">
-            <a href="#bio-patrick-keating" class="figure-card-link">
-                <div class="figure-card"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
+            <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
             </a>
-            <a href="#bio-patrick-gilmore" class="figure-card-link">
-                <div class="figure-card"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
+            <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
             </a>
-            <a href="#bio-michael-kilkelly" class="figure-card-link">
-                <div class="figure-card"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
+            <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
             </a>
-            <a href="#bio-henry-foy" class="figure-card-link">
-                <div class="figure-card"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
+            <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
             </a>
-            <a href="#bio-count-john-mccormack" class="figure-card-link">
-                <div class="figure-card"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
+            <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
             </a>
-            <a href="#bio-athlone-pipers" class="figure-card-link">
-                <div class="figure-card"><h4>Athlone Pipers & Notable Stories</h4><p>Cultural Defiance & Survival</p></div>
+            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
+                <div class="figure-card-bg"></div>
+                <div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div>
             </a>
         </div>
-        <div class="historical-narrative" style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 2);">
-             <p>From Keating's revolutionary band to Gilmore's global stages, Kilkelly's defiant tunes, Foy's jazz innovations, McCormack's enchanting voice, and the resilient spirit of its pipers, Athlone's music has echoed through history, shaping culture and inspiring generations.</p>
-        </div>
+        
         <div id="products-showcase" class="products-link-section">
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
             <a href="#products-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
         </div>
     </section>
+    
+    <div id="biographies-area">
+        <!-- Biography sections will be injected here by JS -->
+    </div>
 
     <section id="present" class="content-section">
-        <h2>Athlone's Music Today: A Living Soundscape</h2>
+        <h2>A Living Soundscape</h2>
         <div class="section-image-wrapper">
             <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1280&q=80" alt="A vibrant, warm-lit pub with musicians playing live music for an audience.">
         </div>
-        <p class="intro-paragraph">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities for music lessons.</p>
+        <p class="page-intro-text">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities to learn.</p>
 
         <h3>Popular Music Venues</h3>
         <div class="venue-grid">
             <article class="venue-item">
                 <h4>Sean's Bar</h4>
-                <p class="venue-type">Historic Pub with Traditional Irish Music</p>
-                <p>Ireland's oldest pub, frequently hosting lively traditional Irish music sessions, often nightly or several times a week. A must-visit for an authentic experience.</p>
+                <p class="venue-type">Historic Pub & Trad Music Hub</p>
+                <p>Ireland's oldest pub, hosting lively traditional Irish music sessions. A must-visit for an authentic experience.</p>
                 <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
             <article class="venue-item">
+                <h4>Dean Crowe Theatre</h4>
+                <p class="venue-type">Theatre & Concert Venue</p>
+                <p>Hosts a diverse programme including musical performances by national and international artists and community events.</p>
+                <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+            </article>
+             <article class="venue-item">
                 <h4>The Snug Bar</h4>
                 <p class="venue-type">Pub with Live Music</p>
-                <p>A popular spot for locals and visitors, The Snug often features a variety of live music acts on weekends, from contemporary bands to acoustic sessions.</p>
+                <p>A popular spot for locals, The Snug often features a variety of live music acts on weekends, from contemporary to acoustic.</p>
                 <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
             </article>
             <article class="venue-item">
                 <h4>Flannery's Bar</h4>
-                <p class="venue-type">Pub with Regular Live Music & DJs</p>
-                <p>Flannery's is a well-known Athlone pub that often has a lively atmosphere with both live bands (especially rock/covers) and DJ sets, particularly at weekends.</p>
+                <p class="venue-type">Pub with Live Music & DJs</p>
+                <p>A well-known pub with a lively atmosphere, often featuring live bands (rock/covers) and DJ sets at weekends.</p>
                 <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-            </article>
-             <article class="venue-item">
-                <h4>Dean Crowe Theatre & Arts Centre</h4>
-                <p class="venue-type">Theatre & Concert Venue</p>
-                <p>Hosts a diverse year-round programme including musical performances by national and international artists, theatre shows, opera, and community arts events.</p>
-                <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
-            </article>
-            <article class="venue-item">
-                <h4>The Tack Room (Nuts Corner)</h4>
-                <p class="venue-type">Local Pub / Music Spot</p>
-                <p>A local favorite, known for hosting both scheduled and impromptu music nights with a great traditional atmosphere. Check their social media for the latest listings.</p>
-                <a href="https://www.facebook.com/TheTackRoomNutsCorner/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-            </article>
-            <article class="venue-item">
-                <h4>Gertie Browne's Pub</h4>
-                <p class="venue-type">Traditional Pub with Music Sessions</p>
-                <p>Another classic Athlone pub that is known to host traditional Irish music sessions, contributing to the town's vibrant trad scene.</p>
-                <a href="https://gertiebrowne.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
         </div>
 
         <h3 id="festivals-events">Festivals & Events</h3>
-        <p class="intro-paragraph" style="font-size:0.95rem;">Athlone hosts a variety of musical and cultural events throughout the year. Below are some annual highlights. Always check local listings for specific dates!</p>
+        <p class="page-intro-text" style="font-size:1.1rem;">Athlone hosts a variety of musical and cultural events throughout the year. Below are some annual highlights. Always check local listings for specific dates!</p>
         
         <div class="event-grid">
             <article class="event-item">
-                <h4>St. Patrick's Festival Athlone</h4>
+                <h4>St. Patrick's Festival</h4>
                 <p class="event-date">Mid-March</p>
-                <p class="event-type">Town Celebrations, Parade & Music</p>
-                <p>A vibrant St. Patrick's Day parade and festival, with pubs and venues featuring live traditional Irish music and other performances.</p>
+                <p class="event-type">Town Celebrations & Music</p>
+                <p>A vibrant St. Patrick's Day parade and festival, with pubs and venues featuring live traditional Irish music.</p>
                 <a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
             </article>
             <article class="event-item">
-                <h4>Athlone River & Food Festival</h4>
+                <h4>River & Food Festival</h4>
                 <p class="event-date">Typically September</p>
                 <p class="event-type">Family Festival with Live Music</p>
-                <p>A major highlight on the Shannon, this festival celebrates local food and heritage, usually featuring live music performances.</p>
+                <p>A major highlight on the Shannon, this festival celebrates local food and heritage with live music performances.</p>
                 <a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
             </article>
             <article class="event-item">
                 <h4>Seasonal & Pop-Up Events</h4>
                 <p class="event-date">Year-Round</p>
                 <p class="event-type">Concerts, Gigs & Sessions</p>
-                <p>Many venues host special events throughout the year. For the most current gig guides, check local news and the social media pages of individual venues.</p>
+                <p>For the most current gig guides, check local news and the social media pages of individual venues.</p>
                 <a href="https://www.westmeathindependent.ie/entertainment/" target="_blank" rel="noopener noreferrer" class="call-to-action">Local News & Listings</a>
             </article>
         </div>
-        <p class="seasonal-event-notice">Event details and dates can change. Please always refer to official venue websites, Athlone.ie, and local news sources for the most current information.</p>
+        <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
 
         <h3 style="margin-top: calc(var(--spacing-unit)*3);">Music Lessons</h3>
         <div class="present-grid">
             <article class="present-item">
                 <h4>Athlone School of Music</h4>
-                <p>A center for music education in the Midlands, offering lessons for a wide range of instruments and vocal training to students of all ages and levels.</p>
+                <p>A center for music education, offering lessons for a wide range of instruments and vocal training to all ages and levels.</p>
                 <a href="https://athloneschoolofmusic.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
             </article>
              <article class="present-item">
                 <h4>Comhaltas Ceoltóirí Éireann</h4>
-                <p>The local branch of Comhaltas is dedicated to the promotion of traditional Irish music, song, and dance. They often offer lessons and host sessions. </p>
+                <p>The local branch of Comhaltas is dedicated to the promotion of traditional Irish music, song, and dance. They often offer lessons.</p>
                 <a href="https://comhaltas.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Find Local Branch</a>
             </article>
         </div>
@@ -483,13 +535,13 @@
 
     <section id="music-trail" class="content-section music-trail-section">
         <h3>Athlone Music Trail</h3>
-        <p>Discover the landmarks and locations that shaped Athlone's musical history. Our interactive Music Trail Map will guide you through the town's most significant musical sites.</p>
+        <p>Discover the landmarks that shaped Athlone's musical history. Our interactive Music Trail Map will guide you through the town's most significant sites.</p>
         <a href="#" class="call-to-action coming-soon">Explore the Trail (Coming Soon)</a>
     </section>
     
     <section id="products-section" class="content-section" style="display: none;">
         <h2>Our Heritage Products</h2>
-        <p class="intro-paragraph">A selection of our beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
+        <p class="page-intro-text">A selection of beautiful postcards, posters, and booklets celebrating Athlone's musical past.</p>
         <div class="product-grid">
              <article class="product">
                 <div class="product-image-container">
@@ -521,113 +573,12 @@
         </div>
     </section>
 
-    <div id="biographies-area">
-        <section id="bio-patrick-keating" class="content-section biography-section" style="display: none;">
-            <h2>Patrick Keating (1796–1875)</h2>
-            <span class="bio-subtitle">Revolution Through Music</span>
-            <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                    <img src="https://i.imgur.com/0I3qj4H.jpeg" alt="Historical illustration of a 19th-century Irish bandmaster.">
-                </div>
-                <div class="bio-text">
-                    <p>Patrick Keating was no ordinary bandmaster; he was a transformative force in Athlone’s cultural history. A veteran of the Battle of Waterloo, Keating honed his musical expertise in Naples before returning to his hometown in the 1820s, then derided as a "rotten borough" plagued by corruption and stagnation. Undeterred, he set about revitalizing Athlone’s spirit through music. By training local musicians and forming disciplined bands, Keating sparked a cultural renaissance, and by the 1840s, Athlone had gained renown for its vibrant musical scene.</p>
-                    <p>His influence reached far beyond his hometown. His students, ignited by his passion and rigor, carried his legacy to the world stage. Most notably, Patrick Gilmore, one of Keating’s protégés, rose to become a towering figure in music history, celebrated for his contributions to American band music. Keating’s work laid the groundwork for a musical movement that inspired unity and resilience during times of hardship and change, leaving an indelible mark on both Athlone and the global stage.</p>
-                    <p>In the summer of 1843, Keating stood at the heart of a historic moment, conducting his Athlone band at Daniel O’Connell’s colossal Monster Meeting in Summerhill. As a fervent supporter of O’Connell’s campaign for Irish self-governance, Keating brought his musical prowess to the fore, rallying thousands with stirring melodies that echoed the call for change. His band, meticulously trained and infused with patriotic zeal, performed with such power that it transformed the gathering into a symphony of unity and hope.</p>
-                    <p>As Ireland staggered under the weight of the Great Famine in the late 1840s, Patrick Keating’s music became a beacon of resilience in Athlone. Amidst widespread suffering, he continued to teach, pouring his expertise into a young Patrick Gilmore. Keating’s rigorous training instilled in Gilmore not just technical skill but a profound sense of music’s power to uplift and unite.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Patrick Keating biography">Close Biography</button>
-        </section>
-
-        <section id="bio-patrick-gilmore" class="content-section biography-section" style="display: none;">
-            <h2>Patrick Gilmore</h2>
-            <span class="bio-subtitle">A Global Music Force & Student Who Would Change the World</span>
-            <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Patrick_S._Gilmore.jpg/500px-Patrick_S._Gilmore.jpg" alt="Patrick S. Gilmore">
-                </div>
-                <div class="bio-text">
-                    <p>While famine ravaged the land, Patrick Keating’s mentorship offered hope. Patrick Gilmore, under his guidance, mastered the art of band leadership, blending Irish melodies with disciplined precision. By the time Gilmore emigrated to America in 1849, he carried Keating’s legacy with him.</p>
-                    <p>When the American Civil War erupted, Gilmore, already a celebrated bandmaster, enlisted with the 24th Massachusetts Volunteer Infantry, bringing music to the front lines. His band lifted soldiers’ spirits, entertained prisoners, and served as stretcher-bearers. In 1863, Gilmore penned the iconic “When Johnny Comes Marching Home.”</p>
-                    <p>In June 1869, Gilmore orchestrated the National Peace Jubilee in Boston, uniting 1,000 instrumentalists and 10,000 vocalists to celebrate peace. The event's crowning moment, Verdi’s “Anvil Chorus” with 100 firemen hammering anvils, showcased his flair for showmanship. On October 28, 1886, Gilmore led his band at the dedication of the Statue of Liberty. His career included gracing the 1876 Centennial Celebration, launching New Year’s Eve in Times Square, and founding Gilmore’s Concert Garden (later Madison Square Garden), earning him the title “Father of the American Band.”</p>
-                     <p>In New York, Gilmore championed Charles Stewart Parnell’s vision for Irish Home Rule. At an 1880 concert, his band performed for Parnell’s speech, raising funds for the Irish Land League and weaving nationalist themes into his programs.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Patrick Gilmore biography">Close Biography</button>
-        </section>
-
-        <section id="bio-michael-kilkelly" class="content-section biography-section" style="display: none;">
-            <h2>Michael Kilkelly</h2>
-            <span class="bio-subtitle">Mentorship and Resistance & Bands as Symbols of Resistance</span>
-             <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                     <img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/05/michael-k.jpg?fit=615%2C1131&ssl=1" alt="Michael Kilkelly">
-                </div>
-                <div class="bio-text">
-                    <p>Patrick Keating’s influence in Athlone extended beyond music to the heart of resistance. A passionate nationalist, Keating mentored Michael Kilkelly in both the art of music and the spirit of defiance against British rule. Under Keating’s guidance, Kilkelly honed his skills, later becoming a pivotal figure in Athlone’s musical and political scene. Together, they wove music into the fabric of resistance, using performances to inspire hope and unity.</p>
-                    <p>In the late 1870s, as the Land War erupted, Kilkelly emerged as a musical and moral force. Leading the Athlone Brass Band, he brought stirring melodies to the front lines, performing at sites of land evictions to bolster beleaguered tenants. His band’s defiant tunes rallied communities, offering solace and solidarity. Kilkelly’s presence transformed his band into a symbol of resistance, echoing the fervor of the Irish National Land League.</p>
-                    <p>Back in Athlone, Kilkelly also led the Athlone Brass Band to bolster local support for Parnell’s Land League. During the Land War’s tense eviction scenes, Kilkelly’s band played defiant Irish airs, uplifting tenants. In the early 1890s, as choirmaster at St. Peter’s Church, he discovered young John McCormack, nurturing his extraordinary gift.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Michael Kilkelly biography">Close Biography</button>
-        </section>
-
-        <section id="bio-henry-foy" class="content-section biography-section" style="display: none;">
-            <h2>Henry Foy</h2>
-            <span class="bio-subtitle">New Rhythms in Athlone & The Birth of Irish Jazz</span>
-             <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                    <img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/10/henry-foy.jpg?fit=189%2C300&ssl=1" alt="Henry Foy">
-                </div>
-                <div class="bio-text">
-                    <p>In 1902, Henry “Harry” Foy, a spirited 21-year-old music professor, co-founded the Athlone Musical Society, ushering in a vibrant era. The society staged its first operetta, *The Pirates of Penzance*, in 1907, marking the start of a legacy that would endure for over a century, becoming Ireland’s oldest continuously active musical society.</p>
-                    <p>In 1919, Foy launched Ireland’s first jazz band, the Harry Foy Jazz Quartette. Inspired by the Gaelic League and the global jazz craze, his quartet blended syncopated rhythms with Irish melodies. Foy embraced jazz as a modern expression of cultural defiance, resonating with Ireland’s growing nationalist spirit during the War of Independence. His quartet introduced Athlone to jazz’s lively rhythms, challenging traditional norms.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Henry Foy biography">Close Biography</button>
-        </section>
-
-        <section id="bio-count-john-mccormack" class="content-section biography-section" style="display: none;">
-            <h2>Count John McCormack</h2>
-            <span class="bio-subtitle">A Voice Discovered & The World’s Greatest Tenor</span>
-             <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                    <img src="https://cdn.britannica.com/52/209352-050-F0C23723/John-McCormack-title-character-Don-Giovanni-opera.jpg" alt="Count John McCormack">
-                </div>
-                <div class="bio-text">
-                    <p>In the early 1890s, Michael Kilkelly, Athlone’s esteemed choirmaster, discovered young John McCormack. By 1902, McCormack’s voice, shaped by Kilkelly’s guidance, earned him a gold medal at the Dublin Feis Ceoil, launching him toward international stardom.</p>
-                    <p>By the late 1910s, McCormack had risen to become the world’s most celebrated tenor. In America, his concerts filled halls, and his recordings sold millions, making him one of radio’s first major stars. In 1919, he became a U.S. citizen. His tours raised funds for charities, earning him the title of Papal Count in 1928. His performances carried Athlone’s spirit to global stages.</p>
-                    <p>In June 1932, McCormack performed César Franck’s *Panis Angelicus* at the Eucharistic Congress in Dublin, captivating an estimated one million attendees. His voice, broadcast through Athlone’s new radio transmission station at Moydrum, a symbol of the new Irish state, reached homes across Ireland and Europe, uniting a nation healing from the divisions of the Civil War.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
-        </section>
-
-        <section id="bio-athlone-pipers" class="content-section biography-section" style="display: none;">
-            <h2>Athlone Pipers & Notable Stories</h2>
-            <span class="bio-subtitle">Cultural Defiance, Survival & Community Spirit</span>
-            <div class="biography-content-wrapper">
-                <div class="bio-image-wrapper">
-                    <img src="https://i.imgur.com/8Qp21jH.jpeg" alt="A conceptual collage showing uilleann pipes, the Titanic ship, and a historic photo of an early Fleadh Cheoil.">
-                </div>
-                <div class="bio-text">
-                    <p><strong>Athlone Pipers Rebel:</strong> In the early 20th century, as the Gaelic League ignited a revival of Irish culture, Athlone’s uilleann pipers became vibrant symbols of rebellion. They revitalized the “pipes of the elbow,” performing at local feiseanna and community gatherings, their evocative reels and airs kindling pride in Irish identity. Their music strengthened the town’s resolve, ensuring that Ireland’s traditions thrived.</p>
-                    <p><strong>Survival at Sea (Eugene Daly & Bertha Mulvihill):</strong> In April 1912, Athlone piper Eugene Daly and Coosan's Bertha Mulvihill boarded the Titanic. Eugene played “A Nation Once Again” as the ship departed. When disaster struck, Eugene guided Bertha and his cousin to safety in Lifeboat 15, while he himself survived by clinging to an overturned collapsible boat. Their bravery and survival cemented their place in Athlone’s storied legacy.</p>
-                    <p><strong>Silence Falls & A New Beginning:</strong> The Irish Civil War (1922–1923) quieted Athlone's music scene. However, by 1926, Moydrum became home to Ireland’s first national radio station, 2RN (later Radio Éireann in 1938), broadcasting traditional Irish music and sparking a nationwide musical revival. This, along with the construction of the new Church of Saints Peter and Paul (begun 1932), symbolized Athlone's resilience.</p>
-                    <p><strong>Hosting the Fleadh:</strong> On May 24–25, 1953, Athlone hosted the third Fleadh Cheoil na hÉireann, drawing over 200 musicians and revitalizing its musical heritage. The event showcased talent and strengthened community ties.</p>
-                </div>
-            </div>
-            <button class="close-bio-button" aria-label="Close Athlone Pipers & Notable Stories biography">Close Biography</button>
-        </section>
-
-    </div>
-
     <section id="connect" class="content-section">
       <h2>Connect & Contribute</h2>
-      <p>Join our community! Follow us for updates, share your Athlone music stories, or learn how you can support the Athlone Music Heritage Project.</p>
+      <p class="page-intro-text">Join our community! Follow us for updates, share your Athlone music stories, or learn how you can support the Athlone Music Heritage Project.</p>
       <p style="text-align:center;">
-          <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--primary-color);">Follow on Instagram</a>
-          <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="background-color: var(--primary-color);">Follow on Facebook</a>
+          <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Follow on Instagram</a>
+          <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 1rem;">Follow on Facebook</a>
       </p>
     </section>
   </main>
@@ -642,45 +593,108 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+    // --- TEMPLATES FOR DYNAMIC CONTENT ---
+    const biographyTemplates = {
+        'bio-patrick-keating': `
+            <section id="bio-patrick-keating" class="content-section biography-section">
+                <h2>Patrick Keating (1796–1875)</h2> <span class="bio-subtitle">Revolution Through Music</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://i.imgur.com/0I3qj4H.jpeg" alt="Historical illustration of a 19th-century Irish bandmaster."></div>
+                    <div class="bio-text">
+                        <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of Waterloo, he returned in the 1820s to revitalize the town’s spirit through music. By training local musicians, he sparked a cultural renaissance, earning Athlone renown for its vibrant musical scene.</p>
+                        <p>His influence reached far beyond, most notably through his protégé, Patrick Gilmore. Keating’s work laid the groundwork for a musical movement that inspired unity and resilience, leaving an indelible mark on Athlone and the world.</p>
+                        <p>In 1843, he conducted his band at Daniel O’Connell’s colossal Monster Meeting, rallying thousands with stirring melodies. As the Great Famine struck, his music became a beacon of resilience, instilling in a young Patrick Gilmore the power of song to uplift and unite.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Patrick Keating biography">Close Biography</button>
+            </section>`,
+        'bio-patrick-gilmore': `
+            <section id="bio-patrick-gilmore" class="content-section biography-section">
+                <h2>Patrick Gilmore</h2> <span class="bio-subtitle">A Global Music Force</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Patrick_S._Gilmore.jpg/500px-Patrick_S._Gilmore.jpg" alt="Patrick S. Gilmore"></div>
+                    <div class="bio-text">
+                        <p>Carrying his mentor Patrick Keating’s legacy to America in 1849, Patrick Gilmore became a celebrated bandmaster. During the Civil War, his band lifted soldiers’ spirits, and he penned the iconic “When Johnny Comes Marching Home.”</p>
+                        <p>A master showman, he orchestrated the National Peace Jubilee in 1869, uniting 1,000 instrumentalists and 10,000 vocalists. He led the music for the dedication of the Statue of Liberty, launched New Year’s Eve in Times Square, and founded what would become Madison Square Garden, earning him the title “Father of the American Band.”</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Patrick Gilmore biography">Close Biography</button>
+            </section>`,
+        'bio-michael-kilkelly': `
+            <section id="bio-michael-kilkelly" class="content-section biography-section">
+                <h2>Michael Kilkelly</h2> <span class="bio-subtitle">Mentorship and Resistance</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/05/michael-k.jpg?fit=615%2C1131&ssl=1" alt="Michael Kilkelly"></div>
+                    <div class="bio-text">
+                        <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political scene. During the Land War of the 1870s, he led the Athlone Brass Band, performing at land evictions to bolster beleaguered tenants. His band’s defiant tunes rallied communities, becoming a symbol of resistance.</p>
+                        <p>In the early 1890s, as choirmaster at St. Peter’s Church, he discovered the extraordinary gift of young John McCormack, setting in motion the career of a future global star.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Michael Kilkelly biography">Close Biography</button>
+            </section>`,
+        'bio-henry-foy': `
+            <section id="bio-henry-foy" class="content-section biography-section">
+                <h2>Henry Foy</h2> <span class="bio-subtitle">New Rhythms in Athlone</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://i0.wp.com/muso.ie/wp-content/uploads/2023/10/henry-foy.jpg?fit=189%2C300&ssl=1" alt="Henry Foy"></div>
+                    <div class="bio-text">
+                        <p>In 1902, music professor Henry “Harry” Foy co-founded the Athlone Musical Society, which would become Ireland’s oldest continuously active musical society. In 1919, he launched Ireland’s first jazz band, the Harry Foy Jazz Quartette.</p>
+                        <p>Inspired by the Gaelic League and the global jazz craze, his quartet blended syncopated rhythms with Irish melodies, embracing jazz as a modern expression of cultural defiance that resonated with Ireland’s growing nationalist spirit.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Henry Foy biography">Close Biography</button>
+            </section>`,
+        'bio-count-john-mccormack': `
+            <section id="bio-count-john-mccormack" class="content-section biography-section">
+                <h2>Count John McCormack</h2> <span class="bio-subtitle">The World’s Greatest Tenor</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://cdn.britannica.com/52/209352-050-F0C23723/John-McCormack-title-character-Don-Giovanni-opera.jpg" alt="Count John McCormack"></div>
+                    <div class="bio-text">
+                        <p>Discovered by Michael Kilkelly, John McCormack’s voice, shaped in Athlone, earned him a gold medal at the 1902 Dublin Feis Ceoil, launching him to stardom. By the late 1910s, he was the world’s most celebrated tenor. His recordings sold millions, making him one of radio’s first major stars.</p>
+                        <p>In 1932, his performance at the Eucharistic Congress in Dublin was broadcast from Athlone’s new radio station, his voice uniting a nation and carrying his hometown's spirit to the world.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
+            </section>`,
+        'bio-athlone-pipers': `
+            <section id="bio-athlone-pipers" class="content-section biography-section">
+                <h2>Athlone Pipers & Notable Stories</h2> <span class="bio-subtitle">Cultural Defiance & Community Spirit</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper"><img src="https://i.imgur.com/8Qp21jH.jpeg" alt="A conceptual collage showing uilleann pipes and historic photos."></div>
+                    <div class="bio-text">
+                        <p><strong>Cultural Revival:</strong> In the early 20th century, Athlone’s uilleann pipers became symbols of rebellion, their evocative reels and airs kindling pride in Irish identity. Their music strengthened the town’s resolve, ensuring that Ireland’s traditions thrived.</p>
+                        <p><strong>Titanic Survivors:</strong> In April 1912, Athlone piper Eugene Daly and local Bertha Mulvihill boarded the Titanic. Eugene played as the ship departed and later helped guide Bertha to safety before his own remarkable survival, cementing their place in Athlone’s legacy.</p>
+                        <p><strong>A New Beginning:</strong> In 1953, Athlone hosted the third Fleadh Cheoil na hÉireann, drawing over 200 musicians and revitalizing its musical heritage, showcasing talent and strengthening community ties for generations to come.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Athlone Pipers & Notable Stories biography">Close Biography</button>
+            </section>`
+    };
+
     // --- Particles.js Initialization ---
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
-          "particles": {
-            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#ffffff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": false },
-            "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-            "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
-          },
+          "particles": { "number": { "value": 50, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false } },
+          "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true } },
           "retina_detect": true
         });
     }
 
     // --- Page Functionality ---
-    const allBiographySections = document.querySelectorAll('.biography-section');
+    const biographiesArea = document.getElementById('biographies-area');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
-    const allCloseBioButtons = document.querySelectorAll('.close-bio-button');
     const productsSection = document.getElementById('products-section');
-    const musicTrailSection = document.getElementById('music-trail');
     const viewProductsCTA = document.getElementById('view-products-cta');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link');
+    let activeBioSection = null;
 
     function hideAllDynamicSections() {
-        allBiographySections.forEach(section => section.style.display = 'none');
+        if (activeBioSection) {
+            activeBioSection.remove();
+            activeBioSection = null;
+        }
         if (productsSection) productsSection.style.display = 'none';
     }
 
     function scrollToElement(element) {
         const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - navHeight - 20;
+        const offsetPosition = elementPosition - navHeight - 30;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
 
@@ -688,20 +702,19 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetBioId = this.getAttribute('href').substring(1);
-            const targetBioSection = document.getElementById(targetBioId);
             hideAllDynamicSections();
-            if (targetBioSection) {
-                targetBioSection.style.display = 'block';
-                scrollToElement(targetBioSection);
-            }
-        });
-    });
+            
+            if (biographyTemplates[targetBioId]) {
+                biographiesArea.innerHTML = biographyTemplates[targetBioId];
+                activeBioSection = biographiesArea.querySelector('.biography-section');
+                scrollToElement(activeBioSection);
 
-    allCloseBioButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            this.closest('.biography-section').style.display = 'none';
-            const pastSectionTitle = document.querySelector('#past h2');
-            if (pastSectionTitle) scrollToElement(pastSectionTitle);
+                activeBioSection.querySelector('.close-bio-button').addEventListener('click', () => {
+                     hideAllDynamicSections();
+                     const pastSection = document.getElementById('past');
+                     scrollToElement(pastSection);
+                });
+            }
         });
     });
 
@@ -717,9 +730,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     document.querySelectorAll('.coming-soon').forEach(el => {
-        el.addEventListener('click', (e) => {
-            e.preventDefault();
-        });
+        el.addEventListener('click', (e) => e.preventDefault());
     });
 
     navLinks.forEach(link => {
@@ -742,42 +753,65 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const sectionsForNavHighlight = document.querySelectorAll('main > section[id], main > div#biographies-area > section[id]');
-    window.addEventListener('scroll', () => {
-        let currentActive = '';
-        const navHeight = document.querySelector('.main-nav')?.offsetHeight || 0;
-        const scrollPosition = window.pageYOffset + navHeight + 70;
-
-        sectionsForNavHighlight.forEach(section => {
-            if (section.style.display !== 'none' && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                currentActive = section.id;
+    
+    const observer = new IntersectionObserver((entries) => {
+        let currentActiveId = '';
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                currentActiveId = entry.target.id;
             }
         });
-        
-        if (!currentActive && productsSection && productsSection.style.display !== 'none' && productsSection.offsetTop <= scrollPosition && (productsSection.offsetTop + productsSection.offsetHeight) > scrollPosition) {
-            currentActive = 'products-section';
-        }
-         if (!currentActive && musicTrailSection && musicTrailSection.style.display !== 'none' && musicTrailSection.offsetTop <= scrollPosition && (musicTrailSection.offsetTop + musicTrailSection.offsetHeight) > scrollPosition) {
-            currentActive = 'music-trail';
-        }
 
-        document.querySelectorAll('.main-nav a.nav-link').forEach(navLink => {
+        // Fallback for when scrolling out of view
+        if (!currentActiveId) {
+            const visibleSections = Array.from(sectionsForNavHighlight).filter(section => {
+                const rect = section.getBoundingClientRect();
+                return rect.top < window.innerHeight && rect.bottom >= 0;
+            });
+            if (visibleSections.length > 0) {
+                 // get the one closest to the top of the viewport
+                 visibleSections.sort((a,b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+                 currentActiveId = visibleSections[0].id;
+            }
+        }
+        
+        navLinks.forEach(navLink => {
             navLink.classList.remove('active');
             const linkHref = navLink.getAttribute('href').substring(1);
-
+            
             let isActive = false;
-            if (linkHref === currentActive) {
+            if (linkHref === currentActiveId) {
                 isActive = true;
-            } else if (currentActive.startsWith('bio-') && linkHref === 'past') {
-                isActive = true;
-            } else if (currentActive === 'products-section' && linkHref === 'products-section'){
+            } else if (currentActiveId && currentActiveId.startsWith('bio-') && linkHref === 'past') {
                 isActive = true;
             }
-
-            if(isActive){
+            
+            if (isActive) {
                  navLink.classList.add('active');
             }
         });
+    }, { rootMargin: '-40% 0px -60% 0px', threshold: 0 });
+
+    document.querySelectorAll('main > section[id]').forEach(section => observer.observe(section));
+    // We also need to observe the biography section when it's created.
+    const bioObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.addedNodes.length) {
+                const newSection = mutation.addedNodes[0];
+                if (newSection && newSection.matches('.biography-section')) {
+                    observer.observe(newSection);
+                }
+            }
+             if (mutation.removedNodes.length) {
+                const removedSection = mutation.removedNodes[0];
+                if (removedSection && removedSection.matches('.biography-section')) {
+                    observer.unobserve(removedSection);
+                }
+            }
+        });
     });
+    bioObserver.observe(biographiesArea, { childList: true });
+
 });
 </script>
 </body>
