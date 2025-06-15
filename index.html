@@ -438,7 +438,9 @@
         
         <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
-                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-image">
+                     <img src="keationg4.jpg" alt="Portrait of Patrick Keating">
+                </div>
                 <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
             </a>
             <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
@@ -465,11 +467,15 @@
                 </div>
                 <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
             </a>
-            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
+            <a href="#bio-eugene-daly" class="figure-card-link" id="fig-daly">
                 <div class="figure-card-image">
-                    <img src="IMG_2170_480x480.webp" alt="Historic photo of the Athlone Pipers">
+                    <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band">
                 </div>
-                <div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div>
+                <div class="figure-card-content"><h4>Eugene Daly</h4><p>The Titanic Piper</p></div>
+            </a>
+            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
+                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-content"><h4>The Athlone Pipers</h4><p>A Century of Tradition</p></div>
             </a>
         </div>
         
@@ -615,6 +621,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-patrick-keating" class="content-section biography-section">
                 <h2>Patrick Keating (1796–1875)</h2> <span class="bio-subtitle">Revolution Through Music</span>
                 <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper">
+                        <img src="keationg4.jpg" alt="Portrait of Patrick Keating">
+                    </div>
                     <div class="bio-text">
                         <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of Waterloo, he returned in the 1820s to revitalize the town’s spirit through music. By training local musicians, he sparked a cultural renaissance, earning Athlone renown for its vibrant musical scene.</p>
                         <p>His influence reached far beyond, most notably through his protégé, Patrick Gilmore. Keating’s work laid the groundwork for a musical movement that inspired unity and resilience, leaving an indelible mark on Athlone and the world.</p>
@@ -673,18 +682,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
             </section>`,
-        'bio-athlone-pipers': `
-            <section id="bio-athlone-pipers" class="content-section biography-section">
-                <h2>The Athlone Pipers</h2> <span class="bio-subtitle">A Legacy of Resilience and Revival</span>
+        'bio-eugene-daly': `
+            <section id="bio-eugene-daly" class="content-section biography-section">
+                <h2>Eugene Daly</h2> <span class="bio-subtitle">The Titanic Piper</span>
                 <div class="biography-content-wrapper">
                     <div class="bio-image-wrapper">
-                        <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band of Athlone">
+                        <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band, featuring Eugene Daly">
                     </div>
                     <div class="bio-text">
-                        <p>Athlone's proud piping tradition stretches back for more than a century, anchored by the renowned <strong>Clan Uisneach Pipe Band</strong>. This band was a cultural beacon, representing the town's spirit in the late 19th and early 20th centuries.</p>
-                        <p>Among its most famous members was <strong>Eugene Daly</strong>, the 'Titanic Piper'. A member of the band pictured here, he famously played his pipes as the ship departed from Queenstown. While Eugene was a remarkable survivor of the 1912 tragedy, his pipes were lost to the Atlantic, cementing a poignant Athlone story into world history.</p>
-                        <p>Held in high regard, the band was presented with a ceremonial banner by historian Francis Joseph Bigger, a mark of their cultural importance. The tradition evolved over time, with many members later appearing in the <strong>St. Mary's Pioneer Pipe Band</strong>, ensuring the legacy continued.</p>
-                        <p>Today, the legacy is proudly carried on by the <strong>Athlone Town Pipe Band</strong>. Formed in 2009, this modern revival brings the stirring sound of the pipes to St. Patrick's Day parades, festivals, and competitions, inspiring a new generation and ensuring that Athlone's unique piping heritage thrives.</p>
+                        <p>A member of Athlone's famed Clan Uisneach Pipe Band, uilleann piper Eugene Daly has one of the most remarkable stories in the town's history. In April 1912, he boarded the RMS Titanic, famously playing his pipes as the ship departed from Queenstown (now Cobh).</p>
+                        <p>As the tragedy unfolded, Daly's quick thinking and courage helped guide fellow Athlone passenger Bertha Mulvihill to the safety of a lifeboat. In a miraculous tale of survival, he too managed to escape the sinking ship. While his pipes were lost to the Atlantic, his story of resilience cemented a poignant Athlone connection into world history.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Eugene Daly biography">Close Biography</button>
+            </section>`,
+        'bio-athlone-pipers': `
+            <section id="bio-athlone-pipers" class="content-section biography-section">
+                <h2>The Athlone Pipers</h2> <span class="bio-subtitle">A Century of Tradition</span>
+                <div class="biography-content-wrapper">
+                    <div class="bio-text">
+                        <p>Athlone's proud piping tradition stretches back for more than a century, anchored by the renowned <strong>Clan Uisneach Pipe Band</strong>. This band was a cultural beacon, representing the town's spirit in the late 19th and early 20th centuries. Held in high regard, the band was presented with a ceremonial banner by historian Francis Joseph Bigger, a mark of their cultural importance.</p>
+                        <p>The tradition evolved over time, with many members later appearing in the <strong>St. Mary's Pioneer Pipe Band</strong>, ensuring the legacy continued through generations of local families.</p>
+                        <p>Today, the legacy is proudly carried on by the <strong>Athlone Town Pipe Band</strong>. Formed in 2009 after a resurgence of local interest, this modern revival brings the stirring sound of the pipes to St. Patrick's Day parades, festivals, and competitions, inspiring a new generation and ensuring that Athlone's unique piping heritage thrives.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Athlone Pipers biography">Close Biography</button>
             </section>`
