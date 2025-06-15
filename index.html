@@ -49,7 +49,8 @@
       background-color: var(--primary-color);
       background-image: url('dba6c1a7-189f-424c-aa40-53ff6a8a3175.png');
       background-size: cover;
-      background-position: center 65%;
+      /* --- THIS LINE WAS CORRECTED --- */
+      background-position: center 25%; /* Was 65%. A value < 50% shifts image down to show more of the top. */
       background-repeat: no-repeat;
     }
     #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
@@ -230,7 +231,6 @@
     .vision-point h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .vision-point p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
     
-    /* NEW: Styles for the embedded Google Form */
     .form-container {
       max-width: 720px;
       margin: calc(var(--spacing-unit) * 2) auto 0 auto;
@@ -318,7 +318,6 @@
           <a href="#vision" class="nav-link">The Vision</a>
           <a href="#music-trail" class="nav-link">Music Trail</a>
           <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
-          <!-- UPDATED: Link text and target ID -->
           <a href="#get-involved" class="nav-link">Get Involved</a>
       </div>
     </div>
@@ -398,7 +397,6 @@
     <section id="music-trail" class="content-section music-trail-section">
         <h3>The Athlone Music Trail is Coming!</h3>
         <p>Our interactive Music Trail Map is under development. It will guide you through the town's most significant sites. Be the first to know when it launches and show your support for the Athlone Music Museum project!</p>
-        <!-- UPDATED: Link now points to the new form section -->
         <a href="#get-involved" class="call-to-action">Get Notified & Join the Cause</a>
     </section>
     
@@ -412,7 +410,6 @@
         </div>
     </section>
 
-    <!-- UPDATED/NEW SECTION: Replaced "Connect" with "Get Involved" and added the form -->
     <section id="get-involved" class="content-section">
       <h2>Get Involved & Show Your Support</h2>
       <p class="page-intro-text">Your support is crucial. By registering your interest, you help us demonstrate the community's desire for an Athlone Music Museum. Please fill out the form below to join our mailing list for updates and to share your own stories.</p>
@@ -441,7 +438,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- TEMPLATES FOR DYNAMIC CONTENT ---
     const biographyTemplates = {
         'bio-patrick-keating': `
             <section id="bio-patrick-keating" class="content-section biography-section">
@@ -505,7 +501,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </section>`
     };
 
-    // --- Particles.js Initialization ---
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
           "particles": { "number": { "value": 50, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true }, "line_linked": { "enable": false }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false } },
@@ -514,7 +509,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Page Functionality ---
     const biographiesArea = document.getElementById('biographies-area');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link');
