@@ -193,47 +193,45 @@
       padding: calc(var(--spacing-unit) * 4) 0;
     }
 
-    /* --- UPDATED CSS FOR FIGURE CARDS WITH IMAGES --- */
+    /* --- CORRECTED CSS FOR FIGURE CARDS --- */
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
     }
     .figure-card-link {
-      display: flex; /* Changed */
-      flex-direction: column; /* Added */
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       background-color: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-md);
       box-shadow: 0 4px 15px var(--shadow-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-      overflow: hidden; /* Added */
+      overflow: hidden;
     }
     .figure-card-link:hover, .figure-card-link:focus-within {
         transform: translateY(-8px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
     .figure-card-image {
-        height: 180px;
-        background-size: cover;
-        background-position: center center;
-        transition: transform var(--transition-smooth);
+        height: 220px; /* Increased height for better portrait display */
+        background-color: #000; /* Black background for letterboxing */
     }
-    .figure-card-link:hover .figure-card-image {
-        transform: scale(1.05);
+    .figure-card-image.fig-no-img {
+        background-color: var(--primary-color); /* Fallback for cards without an image */
     }
-    /* Classes for specific images */
-    .fig-gilmore-img { background-image: url('Patrick_S._Gilmore (6).jpg'); }
-    .fig-mccormack-img { background-image: url('cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg'); }
-    .fig-kilkelly-img { background-image: url('michaelkilkelly.jpg'); }
-    /* Fallback for cards without an image */
-    .fig-no-img { background-color: var(--primary-color); }
+    .figure-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* This is the key change: fits image without cropping */
+        object-position: center;
+    }
     
     .figure-card-content {
         padding: calc(var(--spacing-unit) * 1.5);
     }
     .figure-card-content h4 {
-        font-size: 1.4rem; /* Adjusted size */
+        font-size: 1.4rem;
         margin-bottom: 0.5rem;
     }
     .figure-card-content p {
@@ -439,18 +437,21 @@
         <h2>A Storied Legacy</h2>
         <p class="page-intro-text" style="margin-top: 2rem;">Delve into the extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to uncover their remarkable story and contribution to a global soundscape.</p>
         
-        <!-- UPDATED HTML for Figure Cards -->
         <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
                 <div class="figure-card-image fig-no-img"></div>
                 <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
             </a>
             <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
-                <div class="figure-card-image fig-gilmore-img"></div>
+                <div class="figure-card-image">
+                    <img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore">
+                </div>
                 <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
             </a>
             <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
-                <div class="figure-card-image fig-kilkelly-img"></div>
+                <div class="figure-card-image">
+                    <img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly">
+                </div>
                 <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
             </a>
             <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
@@ -458,7 +459,9 @@
                 <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
             </a>
             <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
-                <div class="figure-card-image fig-mccormack-img"></div>
+                <div class="figure-card-image">
+                     <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack">
+                </div>
                 <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
             </a>
             <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
@@ -748,12 +751,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
         let intersectingId = null;
-        entries.forEach(entry => {
+        for (const entry of entries) {
             if (entry.isIntersecting) {
                 intersectingId = entry.target.id;
+                break;
             }
-        });
-
+        }
+        
         document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
 
         if (intersectingId) {
