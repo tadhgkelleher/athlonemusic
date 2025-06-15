@@ -47,17 +47,17 @@
       text-align: center;
       overflow: hidden;
 
-      /* --- HERO IMAGE ADDED HERE --- */
+      /* --- HERO IMAGE STYLES --- */
       background-color: var(--primary-color); /* Fallback color */
       background-image: url('dba6c1a7-189f-424c-aa40-53ff6a8a3175.png');
       background-size: cover;
-      background-position: center center;
+      /* --- THIS LINE WAS CHANGED --- */
+      background-position: center 65%; /* Was 'center center'. Moves image up to show more of the bottom. */
       background-repeat: no-repeat;
     }
     #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
     .page-hero::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      /* This overlay ensures text readability over the background image */
       background: linear-gradient(to top, rgba(13, 44, 75, 0.8) 0%, rgba(13, 44, 75, 0.5) 100%);
       z-index: 2;
     }
@@ -230,8 +230,8 @@
     
     /* Generic Call to Action Button */
     .call-to-action {
-      display: inline-block; background-color: var(--accent-color); /* CHANGED to accent color for more pop */
-      color: var(--primary-color) !important; /* CHANGED to primary color for contrast */
+      display: inline-block; background-color: var(--accent-color);
+      color: var(--primary-color) !important;
       padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
       border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
       margin-top: var(--spacing-unit);
@@ -242,16 +242,10 @@
     .call-to-action:hover, .call-to-action:focus {
       transform: translateY(-3px);
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      background-color: #dcc18a; /* Lighter gold on hover */
-    }
-    .call-to-action.coming-soon {
-        cursor: not-allowed; background-color: #b0bec5; color: #546e7a !important;
-    }
-    .call-to-action.coming-soon:hover {
-        background-color: #b0bec5; transform: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #dcc18a;
     }
 
-    /* NEW: Outline style button for hero section */
+    /* Outline style button for hero section */
     .call-to-action-outline {
         display: inline-block;
         background-color: transparent;
@@ -268,7 +262,7 @@
         transform: translateY(-3px);
     }
 
-    /* NEW: Styles for the Vision section */
+    /* Styles for the Vision section */
     .vision-section {
         background-color: var(--surface-color);
         border-radius: var(--border-radius-md);
