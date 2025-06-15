@@ -193,7 +193,6 @@
       padding: calc(var(--spacing-unit) * 4) 0;
     }
 
-    /* --- CORRECTED CSS FOR FIGURE CARDS --- */
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
@@ -214,16 +213,16 @@
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
     .figure-card-image {
-        height: 220px; /* Increased height for better portrait display */
-        background-color: #000; /* Black background for letterboxing */
+        height: 220px;
+        background-color: #000;
     }
     .figure-card-image.fig-no-img {
-        background-color: var(--primary-color); /* Fallback for cards without an image */
+        background-color: var(--primary-color);
     }
     .figure-card-image img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* This is the key change: fits image without cropping */
+        object-fit: contain;
         object-position: center;
     }
     
@@ -455,7 +454,9 @@
                 <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
             </a>
             <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
-                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-image">
+                    <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy">
+                </div>
                 <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
             </a>
             <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
@@ -465,7 +466,9 @@
                 <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
             </a>
             <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
-                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-image">
+                    <img src="IMG_2170_480x480.webp" alt="Historic photo of the Athlone Pipers">
+                </div>
                 <div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div>
             </a>
         </div>
@@ -648,6 +651,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-henry-foy" class="content-section biography-section">
                 <h2>Henry Foy</h2> <span class="bio-subtitle">New Rhythms in Athlone</span>
                 <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper">
+                        <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy">
+                    </div>
                     <div class="bio-text">
                         <p>In 1902, music professor Henry “Harry” Foy co-founded the Athlone Musical Society, which would become Ireland’s oldest continuously active musical society. In 1919, he launched Ireland’s first jazz band, the Harry Foy Jazz Quartette.</p>
                         <p>Inspired by the Gaelic League and the global jazz craze, his quartet blended syncopated rhythms with Irish melodies, embracing jazz as a modern expression of cultural defiance that resonated with Ireland’s growing nationalist spirit.</p>
@@ -669,13 +675,18 @@ document.addEventListener('DOMContentLoaded', function() {
             </section>`,
         'bio-athlone-pipers': `
             <section id="bio-athlone-pipers" class="content-section biography-section">
-                <h2>Athlone Pipers & Notable Stories</h2> <span class="bio-subtitle">Cultural Defiance & Community Spirit</span>
+                <h2>The Athlone Pipers</h2> <span class="bio-subtitle">A Legacy of Resilience and Revival</span>
                 <div class="biography-content-wrapper">
-                    <div class="bio-text">
-                        <p><strong>Cultural Revival:</strong> In the early 20th century, Athlone’s uilleann pipers became symbols of rebellion, their evocative reels and airs kindling pride in Irish identity. Their music strengthened the town’s resolve, ensuring that Ireland’s traditions thrived.</p>
-                        <p><strong>Titanic Survivors:</strong> In April 1912, Athlone piper Eugene Daly and local Bertha Mulvihill boarded the Titanic. Eugene played as the ship departed and later helped guide Bertha to safety before his own remarkable survival, cementing their place in Athlone’s legacy.</p>
+                    <div class="bio-image-wrapper">
+                        <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band of Athlone">
                     </div>
-                </div> <button class="close-bio-button" aria-label="Close Athlone Pipers & Notable Stories biography">Close Biography</button>
+                    <div class="bio-text">
+                        <p>Athlone's proud piping tradition stretches back for more than a century, anchored by the renowned <strong>Clan Uisneach Pipe Band</strong>. This band was a cultural beacon, representing the town's spirit in the late 19th and early 20th centuries.</p>
+                        <p>Among its most famous members was <strong>Eugene Daly</strong>, the 'Titanic Piper'. A member of the band pictured here, he famously played his pipes as the ship departed from Queenstown. While Eugene was a remarkable survivor of the 1912 tragedy, his pipes were lost to the Atlantic, cementing a poignant Athlone story into world history.</p>
+                        <p>Held in high regard, the band was presented with a ceremonial banner by historian Francis Joseph Bigger, a mark of their cultural importance. The tradition evolved over time, with many members later appearing in the <strong>St. Mary's Pioneer Pipe Band</strong>, ensuring the legacy continued.</p>
+                        <p>Today, the legacy is proudly carried on by the <strong>Athlone Town Pipe Band</strong>. Formed in 2009, this modern revival brings the stirring sound of the pipes to St. Patrick's Day parades, festivals, and competitions, inspiring a new generation and ensuring that Athlone's unique piping heritage thrives.</p>
+                    </div>
+                </div> <button class="close-bio-button" aria-label="Close Athlone Pipers biography">Close Biography</button>
             </section>`
     };
 
