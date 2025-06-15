@@ -134,8 +134,6 @@
     .main-nav a.nav-link:hover::after, .main-nav a.nav-link:focus::after, .main-nav a.nav-link.active::after {
       width: 60%;
     }
-
-    /* --- NEW CSS FOR DROPDOWN NAVIGATION --- */
     .nav-item-dropdown { position: relative; }
     .dropdown-toggle {
       cursor: pointer;
@@ -194,31 +192,57 @@
     .content-section {
       padding: calc(var(--spacing-unit) * 4) 0;
     }
+
+    /* --- UPDATED CSS FOR FIGURE CARDS WITH IMAGES --- */
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
     }
     .figure-card-link {
-      display: block; text-decoration: none;
+      display: flex; /* Changed */
+      flex-direction: column; /* Added */
+      text-decoration: none;
       background-color: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-md);
-      padding: calc(var(--spacing-unit) * 1.5);
-      aspect-ratio: 4 / 3;
       box-shadow: 0 4px 15px var(--shadow-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      overflow: hidden; /* Added */
     }
     .figure-card-link:hover, .figure-card-link:focus-within {
         transform: translateY(-8px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
-    .figure-card-content h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
+    .figure-card-image {
+        height: 180px;
+        background-size: cover;
+        background-position: center center;
+        transition: transform var(--transition-smooth);
+    }
+    .figure-card-link:hover .figure-card-image {
+        transform: scale(1.05);
+    }
+    /* Classes for specific images */
+    .fig-gilmore-img { background-image: url('Patrick_S._Gilmore (6).jpg'); }
+    .fig-mccormack-img { background-image: url('cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg'); }
+    .fig-kilkelly-img { background-image: url('michaelkilkelly.jpg'); }
+    /* Fallback for cards without an image */
+    .fig-no-img { background-color: var(--primary-color); }
+    
+    .figure-card-content {
+        padding: calc(var(--spacing-unit) * 1.5);
+    }
+    .figure-card-content h4 {
+        font-size: 1.4rem; /* Adjusted size */
+        margin-bottom: 0.5rem;
+    }
+    .figure-card-content p {
+        color: var(--secondary-color);
+        font-weight: 700;
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+    
     .products-link-section {
       text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
       margin-top: calc(var(--spacing-unit) * 4);
@@ -381,7 +405,6 @@
       <div class="site-name">Athlone Music Heritage</div>
       <div class="nav-links">
           <a href="#past" class="nav-link">Our Past</a>
-          <!-- UPDATED NAVIGATION ITEM WITH DROPDOWN -->
           <div class="nav-item-dropdown">
             <a href="#whats-on" class="nav-link dropdown-toggle">What's On</a>
             <div class="dropdown-menu">
@@ -415,14 +438,35 @@
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
         <p class="page-intro-text" style="margin-top: 2rem;">Delve into the extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to uncover their remarkable story and contribution to a global soundscape.</p>
+        
+        <!-- UPDATED HTML for Figure Cards -->
         <div class="figure-grid">
-            <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating"><div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div></a>
-            <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore"><div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div></a>
-            <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly"><div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div></a>
-            <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy"><div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div></a>
-            <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack"><div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div></a>
-            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers"><div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div></a>
+            <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
+                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
+            </a>
+            <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
+                <div class="figure-card-image fig-gilmore-img"></div>
+                <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
+            </a>
+            <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
+                <div class="figure-card-image fig-kilkelly-img"></div>
+                <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
+            </a>
+            <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
+                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
+            </a>
+            <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
+                <div class="figure-card-image fig-mccormack-img"></div>
+                <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
+            </a>
+            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
+                <div class="figure-card-image fig-no-img"></div>
+                <div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div>
+            </a>
         </div>
+        
         <div id="products-showcase" class="products-link-section">
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
@@ -432,11 +476,9 @@
     
     <div id="biographies-area"><!-- Biography sections will be injected here by JS --></div>
 
-    <!-- UPDATED: Renamed section ID from 'present' to 'whats-on' -->
     <section id="whats-on" class="content-section">
         <h2>What's On In Athlone</h2>
         <p class="page-intro-text">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities to learn.</p>
-        <!-- UPDATED: Added ID to h3 for dropdown linking -->
         <h3 id="venues">Popular Music Venues</h3>
         <div class="venue-grid">
             <article class="venue-item"><h4>Sean's Bar</h4><p class="venue-type">Historic Pub & Trad Music Hub</p><p>Ireland's oldest pub, hosting lively traditional Irish music sessions. A must-visit for an authentic experience.</p><a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
@@ -644,7 +686,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const biographiesArea = document.getElementById('biographies-area');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
-    // UPDATED: Include dropdown links in the selector
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     let activeBioSection = null;
@@ -690,11 +731,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Updated to handle all relevant links, including those in the dropdown
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            // Prevent default only for hash links that have a corresponding element
             if (targetId.startsWith('#') && targetId.length > 1) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -708,27 +747,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
-        // Deactivate all first
-        document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
-
+        let intersectingId = null;
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const id = entry.target.id;
-                let activeLink;
-
-                if (id === 'whats-on') {
-                    // Highlight the "What's On" parent for its entire section
-                    activeLink = dropdownToggle;
-                } else {
-                    // Find other links by their direct href
-                    activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
-                }
-
-                if(activeLink) {
-                    activeLink.classList.add('active');
-                }
+                intersectingId = entry.target.id;
             }
         });
+
+        document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
+
+        if (intersectingId) {
+             if (intersectingId === 'whats-on') {
+                if (dropdownToggle) dropdownToggle.classList.add('active');
+            } else {
+                const activeLink = document.querySelector(`.main-nav a[href="#${intersectingId}"]`);
+                if(activeLink) activeLink.classList.add('active');
+            }
+        }
     }, { rootMargin: `-${navHeight}px 0px -50% 0px` });
 
     sections.forEach(section => {
