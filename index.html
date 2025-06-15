@@ -115,7 +115,7 @@
       font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary-color);
       margin: 0; font-weight: 700;
     }
-    .main-nav .nav-links { display: flex; gap: 0.5rem; }
+    .main-nav .nav-links { display: flex; align-items: center; gap: 0.5rem; }
     .main-nav a.nav-link {
       color: var(--text-secondary); font-weight: 700; padding: 0.5em 1em;
       border-radius: var(--border-radius-sm); font-size: 0.95rem;
@@ -134,6 +134,59 @@
     .main-nav a.nav-link:hover::after, .main-nav a.nav-link:focus::after, .main-nav a.nav-link.active::after {
       width: 60%;
     }
+
+    /* --- NEW CSS FOR DROPDOWN NAVIGATION --- */
+    .nav-item-dropdown { position: relative; }
+    .dropdown-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+    .dropdown-toggle::after {
+      content: '▼';
+      font-size: 0.6em;
+      display: inline-block;
+      transition: transform var(--transition-fast);
+    }
+    .nav-item-dropdown:hover .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--surface-color);
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 0.5rem 0;
+      list-style: none;
+      margin: 0;
+      z-index: 1001;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
+    }
+    .nav-item-dropdown:hover .dropdown-menu,
+    .nav-item-dropdown:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+    
     .page-intro-text {
         font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px;
         margin: 0 auto calc(var(--spacing-unit) * 3) auto; color: var(--text-secondary);
@@ -279,7 +332,7 @@
         font-family: var(--font-body); font-size: 1.3rem; color: var(--secondary-color);
         font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 2); text-align: left;
     }
-    .biography-content-wrapper { display: grid; grid-template-columns: 1fr; }
+    .biography-content-wrapper { display: grid; grid-template-columns: 1fr; align-items: start; }
     .bio-text p { font-size: 1.1rem; max-width: 80ch; }
     .close-bio-button {
       display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
@@ -289,6 +342,18 @@
       text-decoration: none !important;
     }
     .close-bio-button:hover, .close-bio-button:focus { background-color: var(--primary-color); transform: translateY(-2px); }
+
+    .biography-content-wrapper.has-image {
+        grid-template-columns: 250px 1fr;
+        gap: calc(var(--spacing-unit) * 2);
+    }
+    .bio-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 5px 15px rgba(13, 44, 75, 0.1);
+    }
 
     @media (max-width: 992px) {
       .main-nav .nav-links {
@@ -302,6 +367,9 @@
       .page-hero { padding: 4rem 0; }
       .content-section { padding: calc(var(--spacing-unit) * 3) 0;}
       .present-grid, .venue-grid, .event-grid, .vision-points { grid-template-columns: 1fr; }
+      .biography-content-wrapper.has-image {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -313,7 +381,14 @@
       <div class="site-name">Athlone Music Heritage</div>
       <div class="nav-links">
           <a href="#past" class="nav-link">Our Past</a>
-          <a href="#present" class="nav-link">Our Present</a>
+          <!-- UPDATED NAVIGATION ITEM WITH DROPDOWN -->
+          <div class="nav-item-dropdown">
+            <a href="#whats-on" class="nav-link dropdown-toggle">What's On</a>
+            <div class="dropdown-menu">
+              <a href="#venues">Venues</a>
+              <a href="#festivals-events">Festivals & Events</a>
+            </div>
+          </div>
           <a href="#vision" class="nav-link">The Vision</a>
           <a href="#music-trail" class="nav-link">Music Trail</a>
           <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
@@ -357,10 +432,12 @@
     
     <div id="biographies-area"><!-- Biography sections will be injected here by JS --></div>
 
-    <section id="present" class="content-section">
-        <h2>A Living Soundscape</h2>
+    <!-- UPDATED: Renamed section ID from 'present' to 'whats-on' -->
+    <section id="whats-on" class="content-section">
+        <h2>What's On In Athlone</h2>
         <p class="page-intro-text">The music doesn't stop with history! Athlone boasts a vibrant contemporary music scene. Explore local venues, discover seasonal festivals, and find opportunities to learn.</p>
-        <h3>Popular Music Venues</h3>
+        <!-- UPDATED: Added ID to h3 for dropdown linking -->
+        <h3 id="venues">Popular Music Venues</h3>
         <div class="venue-grid">
             <article class="venue-item"><h4>Sean's Bar</h4><p class="venue-type">Historic Pub & Trad Music Hub</p><p>Ireland's oldest pub, hosting lively traditional Irish music sessions. A must-visit for an authentic experience.</p><a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
             <article class="venue-item"><h4>Dean Crowe Theatre</h4><p class="venue-type">Theatre & Concert Venue</p><p>Hosts a diverse programme including musical performances by national and international artists and community events.</p><a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
@@ -500,6 +577,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-patrick-gilmore" class="content-section biography-section">
                 <h2>Patrick Gilmore</h2> <span class="bio-subtitle">A Global Music Force</span>
                 <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper">
+                        <img src="Patrick_S._Gilmore (6).jpg" alt="A formal, black and white portrait of Patrick S. Gilmore.">
+                    </div>
                     <div class="bio-text">
                         <p>Carrying his mentor Patrick Keating’s legacy to America in 1849, Patrick Gilmore became a celebrated bandmaster. During the Civil War, his band lifted soldiers’ spirits, and he penned the iconic “When Johnny Comes Marching Home.”</p>
                         <p>A master showman, he orchestrated the National Peace Jubilee in 1869, uniting 1,000 instrumentalists and 10,000 vocalists. He led the music for the dedication of the Statue of Liberty and founded what would become Madison Square Garden, earning him the title “Father of the American Band.”</p>
@@ -510,6 +590,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-michael-kilkelly" class="content-section biography-section">
                 <h2>Michael Kilkelly</h2> <span class="bio-subtitle">Mentorship and Resistance</span>
                 <div class="biography-content-wrapper">
+                     <div class="bio-image-wrapper">
+                        <img src="michaelkilkelly.jpg" alt="A portrait photograph of Michael Kilkelly.">
+                    </div>
                     <div class="bio-text">
                         <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political scene. During the Land War of the 1870s, he led the Athlone Brass Band, performing at land evictions to bolster beleaguered tenants. His band’s defiant tunes rallied communities, becoming a symbol of resistance.</p>
                         <p>In the early 1890s, as choirmaster, he discovered the extraordinary gift of young John McCormack, setting in motion the career of a future global star.</p>
@@ -530,6 +613,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-count-john-mccormack" class="content-section biography-section">
                 <h2>Count John McCormack</h2> <span class="bio-subtitle">The World’s Greatest Tenor</span>
                 <div class="biography-content-wrapper">
+                    <div class="bio-image-wrapper">
+                        <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Count John McCormack, a famous tenor, in a formal photograph.">
+                    </div>
                     <div class="bio-text">
                         <p>Discovered by Michael Kilkelly, John McCormack’s voice, shaped in Athlone, earned him a gold medal at the 1902 Dublin Feis Ceoil, launching him to stardom. By the late 1910s, he was the world’s most celebrated tenor. His recordings sold millions, making him one of radio’s first major stars.</p>
                         <p>In 1932, his performance at the Eucharistic Congress in Dublin was broadcast from Athlone’s new radio station, his voice uniting a nation and carrying his hometown's spirit to the world.</p>
@@ -558,7 +644,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const biographiesArea = document.getElementById('biographies-area');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
-    const navLinks = document.querySelectorAll('.main-nav a.nav-link');
+    // UPDATED: Include dropdown links in the selector
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
     let activeBioSection = null;
     const navHeight = document.querySelector('.main-nav')?.offsetHeight || 70;
 
@@ -585,6 +673,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (biographyTemplates[targetBioId]) {
                 biographiesArea.innerHTML = biographyTemplates[targetBioId];
                 activeBioSection = biographiesArea.querySelector('.biography-section');
+                
+                const wrapper = activeBioSection.querySelector('.biography-content-wrapper');
+                if (wrapper && activeBioSection.querySelector('.bio-image-wrapper')) {
+                    wrapper.classList.add('has-image');
+                }
+                
                 scrollToElement(activeBioSection);
 
                 activeBioSection.querySelector('.close-bio-button').addEventListener('click', () => {
@@ -596,9 +690,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Updated to handle all relevant links, including those in the dropdown
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
+            // Prevent default only for hash links that have a corresponding element
             if (targetId.startsWith('#') && targetId.length > 1) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -612,14 +708,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
+        // Deactivate all first
+        document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + entry.target.id) {
-                        link.classList.add('active');
-                    }
-                });
+                const id = entry.target.id;
+                let activeLink;
+
+                if (id === 'whats-on') {
+                    // Highlight the "What's On" parent for its entire section
+                    activeLink = dropdownToggle;
+                } else {
+                    // Find other links by their direct href
+                    activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
+                }
+
+                if(activeLink) {
+                    activeLink.classList.add('active');
+                }
             }
         });
     }, { rootMargin: `-${navHeight}px 0px -50% 0px` });
