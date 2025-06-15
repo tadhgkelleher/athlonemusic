@@ -46,13 +46,10 @@
       color: var(--text-light);
       text-align: center;
       overflow: hidden;
-
-      /* --- HERO IMAGE STYLES --- */
-      background-color: var(--primary-color); /* Fallback color */
+      background-color: var(--primary-color);
       background-image: url('dba6c1a7-189f-424c-aa40-53ff6a8a3175.png');
       background-size: cover;
-      /* --- THIS LINE WAS CHANGED --- */
-      background-position: center 65%; /* Was 'center center'. Moves image up to show more of the bottom. */
+      background-position: center 65%;
       background-repeat: no-repeat;
     }
     #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
@@ -144,7 +141,6 @@
     .content-section {
       padding: calc(var(--spacing-unit) * 4) 0;
     }
-    /* === REDESIGNED FIGURE CARDS (IMAGE-FREE) === */
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
@@ -168,15 +164,8 @@
         transform: translateY(-8px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
-    .figure-card-content h4 {
-        color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;
-    }
-    .figure-card-content p {
-        color: var(--secondary-color); font-weight: 700; margin-bottom: 0;
-        font-size: 1rem;
-    }
-    
-    /* Call to Action Bar */
+    .figure-card-content h4 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
     .products-link-section {
       text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
       margin-top: calc(var(--spacing-unit) * 4);
@@ -187,51 +176,34 @@
     .products-link-section p { margin-bottom: calc(var(--spacing-unit) * 1.5); color: var(--text-light); opacity: 0.8; max-width: 600px; margin-left:auto; margin-right: auto;}
     .products-link-section .call-to-action { background-color: var(--accent-color); color: var(--primary-color) !important; }
     .products-link-section .call-to-action:hover { background-color: #dcc18a; }
-
-    /* Present Day Section */
     .present-grid, .venue-grid, .event-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
     }
     .present-item, .venue-item, .event-item {
-      background-color: var(--surface-color);
-      border: 1px solid var(--border-color);
-      padding: calc(var(--spacing-unit) * 1.5);
-      border-radius: var(--border-radius-md);
-      display: flex; flex-direction: column;
-      box-shadow: 0 4px 15px var(--shadow-color);
+      background-color: var(--surface-color); border: 1px solid var(--border-color);
+      padding: calc(var(--spacing-unit) * 1.5); border-radius: var(--border-radius-md);
+      display: flex; flex-direction: column; box-shadow: 0 4px 15px var(--shadow-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
-    .present-item:hover, .venue-item:hover, .event-item:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12);
-    }
+    .present-item:hover, .venue-item:hover, .event-item:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12); }
     .present-item p, .venue-item p, .event-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 1rem; color: var(--text-secondary); }
-    .venue-item .venue-type, .event-item .event-date, .event-item .event-type {
-        font-size: 0.9rem; color: var(--accent-color); font-weight: 700;
-        margin-bottom: calc(var(--spacing-unit) * 0.5);
-    }
+    .venue-item .venue-type, .event-item .event-date, .event-item .event-type { font-size: 0.9rem; color: var(--accent-color); font-weight: 700; margin-bottom: calc(var(--spacing-unit) * 0.5); }
     .event-item .event-date { color: var(--secondary-color); font-style: italic; }
     .seasonal-event-notice {
         font-size: 0.95rem; text-align: center; font-style: italic; color: var(--text-secondary);
         margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5);
-        background-color: var(--bg-color); border: 1px dashed var(--border-color);
-        border-radius: var(--border-radius-md);
+        background-color: var(--bg-color); border: 1px dashed var(--border-color); border-radius: var(--border-radius-md);
     }
-    /* Music Trail Section */
     .music-trail-section {
-        background-color: var(--primary-color);
-        color: var(--text-light); text-align: center;
+        background-color: var(--primary-color); color: var(--text-light); text-align: center;
         padding: calc(var(--spacing-unit) * 3); border-radius: var(--border-radius-md);
         border: 1px solid var(--accent-color);
     }
     .music-trail-section h3 { color: var(--text-light); font-size: 2rem; }
     .music-trail-section p { opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
-    
-    /* Generic Call to Action Button */
     .call-to-action {
-      display: inline-block; background-color: var(--accent-color);
-      color: var(--primary-color) !important;
+      display: inline-block; background-color: var(--accent-color); color: var(--primary-color) !important;
       padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
       border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
       margin-top: var(--spacing-unit);
@@ -239,52 +211,40 @@
       border: 2px solid transparent; font-family: var(--font-body);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .call-to-action:hover, .call-to-action:focus {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      background-color: #dcc18a;
-    }
-
-    /* Outline style button for hero section */
+    .call-to-action:hover, .call-to-action:focus { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); background-color: #dcc18a; }
     .call-to-action-outline {
-        display: inline-block;
-        background-color: transparent;
-        color: var(--text-light) !important;
-        border: 2px solid var(--accent-color);
+        display: inline-block; background-color: transparent; color: var(--text-light) !important; border: 2px solid var(--accent-color);
         padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
         border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
-        margin-top: var(--spacing-unit); margin-left: 1rem;
-        transition: all var(--transition-fast);
+        margin-top: var(--spacing-unit); margin-left: 1rem; transition: all var(--transition-fast);
     }
-    .call-to-action-outline:hover, .call-to-action-outline:focus {
-        background-color: var(--accent-color);
-        color: var(--primary-color) !important;
-        transform: translateY(-3px);
-    }
-
-    /* Styles for the Vision section */
+    .call-to-action-outline:hover, .call-to-action-outline:focus { background-color: var(--accent-color); color: var(--primary-color) !important; transform: translateY(-3px); }
     .vision-section {
-        background-color: var(--surface-color);
-        border-radius: var(--border-radius-md);
-        padding: calc(var(--spacing-unit) * 3);
-        border-top: 6px solid var(--accent-color);
-        box-shadow: 0 5px 20px var(--shadow-color);
+        background-color: var(--surface-color); border-radius: var(--border-radius-md); padding: calc(var(--spacing-unit) * 3);
+        border-top: 6px solid var(--accent-color); box-shadow: 0 5px 20px var(--shadow-color);
     }
     .vision-points {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: calc(var(--spacing-unit) * 2);
-        margin-top: calc(var(--spacing-unit) * 2);
-        text-align: center;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2); text-align: center;
     }
-    .vision-point h4 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
+    .vision-point h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .vision-point p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+    
+    /* NEW: Styles for the embedded Google Form */
+    .form-container {
+      max-width: 720px;
+      margin: calc(var(--spacing-unit) * 2) auto 0 auto;
+      padding: var(--spacing-unit);
+      background: var(--surface-color);
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 5px 20px var(--shadow-color);
+      border: 1px solid var(--border-color);
     }
-    .vision-point p {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        line-height: 1.6;
+    .form-container iframe {
+      width: 100%;
+      min-height: 680px;
+      border: none;
+      border-radius: var(--border-radius-sm);
     }
 
     .site-footer {
@@ -295,36 +255,24 @@
     .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.8; }
     .site-footer a { color: var(--accent-color); }
     .site-footer a:hover, .site-footer a:focus { color: var(--text-light); }
-
-    /* Product Section */
     .product-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: var(--spacing-unit);
     }
     .product {
-      background: white; border-radius: var(--border-radius-md);
-      box-shadow: 0 5px 15px var(--shadow-color);
-      overflow: hidden; text-align: center;
-      border: 1px solid var(--border-color);
+      background: white; border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color);
+      overflow: hidden; text-align: center; border: 1px solid var(--border-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
       padding: calc(var(--spacing-unit) * 1.5);
     }
-    .product:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12);
-    }
+    .product:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12); }
     .product h3 { margin: 0 0 0.5rem 0; font-size: 1.3rem; color: var(--primary-color); }
     .product p { font-size: 1rem; margin-bottom: 0; color: var(--text-secondary); }
-
-    /* Biography Section */
     #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
     .biography-section {
-        background-color: var(--surface-color);
-        padding: calc(var(--spacing-unit) * 3);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-md);
-        box-shadow: 0 5px 20px var(--shadow-color);
-        border-left: 8px solid var(--accent-color);
+        background-color: var(--surface-color); padding: calc(var(--spacing-unit) * 3);
+        border: 1px solid var(--border-color); border-radius: var(--border-radius-md);
+        box-shadow: 0 5px 20px var(--shadow-color); border-left: 8px solid var(--accent-color);
     }
     .biography-section h2 { text-align: left; margin-bottom: 0.5rem; font-size: 2.8rem; }
     .biography-section h2::after { display: none; }
@@ -332,9 +280,7 @@
         font-family: var(--font-body); font-size: 1.3rem; color: var(--secondary-color);
         font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 2); text-align: left;
     }
-    .biography-content-wrapper {
-        display: grid; grid-template-columns: 1fr;
-    }
+    .biography-content-wrapper { display: grid; grid-template-columns: 1fr; }
     .bio-text p { font-size: 1.1rem; max-width: 80ch; }
     .close-bio-button {
       display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
@@ -372,7 +318,8 @@
           <a href="#vision" class="nav-link">The Vision</a>
           <a href="#music-trail" class="nav-link">Music Trail</a>
           <a href="#products-section" id="nav-products-link" class="nav-link">Products</a>
-          <a href="#connect" class="nav-link">Connect</a>
+          <!-- UPDATED: Link text and target ID -->
+          <a href="#get-involved" class="nav-link">Get Involved</a>
       </div>
     </div>
   </nav>
@@ -395,7 +342,6 @@
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
         <p class="page-intro-text" style="margin-top: 2rem;">Delve into the extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to uncover their remarkable story and contribution to a global soundscape.</p>
-        
         <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating"><div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div></a>
             <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore"><div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div></a>
@@ -404,7 +350,6 @@
             <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack"><div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div></a>
             <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers"><div class="figure-card-content"><h4>Athlone Pipers</h4><p>Cultural Defiance & Survival</p></div></a>
         </div>
-        
         <div id="products-showcase" class="products-link-section">
             <h3>Commemorate Our Heritage</h3>
             <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
@@ -412,9 +357,7 @@
         </div>
     </section>
     
-    <div id="biographies-area">
-        <!-- Biography sections will be injected here by JS -->
-    </div>
+    <div id="biographies-area"><!-- Biography sections will be injected here by JS --></div>
 
     <section id="present" class="content-section">
         <h2>A Living Soundscape</h2>
@@ -445,49 +388,40 @@
       <h2>Our Vision: The Athlone Music Museum</h2>
       <p class="page-intro-text">This rich history deserves a permanent home. We believe Athlone needs a dedicated space to celebrate its musical pioneers, inspire future generations, and serve as a cultural landmark for the entire region.</p>
       <div class="vision-points">
-        <div class="vision-point">
-          <h4>Preserve the Legacy</h4>
-          <p>Create a permanent archive for the stories, instruments, and artifacts of Athlone's musical giants.</p>
-        </div>
-        <div class="vision-point">
-          <h4>Inspire the Future</h4>
-          <p>Provide an interactive space for education, workshops, and performances, nurturing the next wave of musicians.</p>
-        </div>
-        <div class="vision-point">
-          <h4>Boost Our Town</h4>
-          <p>Establish a key tourist destination that enriches Athlone's cultural and economic life.</p>
-        </div>
+        <div class="vision-point"><h4>Preserve the Legacy</h4><p>Create a permanent archive for the stories, instruments, and artifacts of Athlone's musical giants.</p></div>
+        <div class="vision-point"><h4>Inspire the Future</h4><p>Provide an interactive space for education, workshops, and performances, nurturing the next wave of musicians.</p></div>
+        <div class="vision-point"><h4>Boost Our Town</h4><p>Establish a key tourist destination that enriches Athlone's cultural and economic life.</p></div>
       </div>
-      <p style="text-align: center; margin-top: 2rem;">
-        <strong>This vision can only become a reality with your support.</strong>
-      </p>
+      <p style="text-align: center; margin-top: 2rem;"><strong>This vision can only become a reality with your support.</strong></p>
     </section>
     
     <section id="music-trail" class="content-section music-trail-section">
         <h3>The Athlone Music Trail is Coming!</h3>
         <p>Our interactive Music Trail Map is under development. It will guide you through the town's most significant sites. Be the first to know when it launches and show your support for the Athlone Music Museum project!</p>
-        <a href="#connect" class="call-to-action">Get Notified & Join the Cause</a>
+        <!-- UPDATED: Link now points to the new form section -->
+        <a href="#get-involved" class="call-to-action">Get Notified & Join the Cause</a>
     </section>
     
     <section id="products-section" class="content-section">
         <h2>Our Heritage Products</h2>
         <p class="page-intro-text">Support the museum project by taking a piece of Athlone's musical history home. All proceeds go towards preserving our town's legacy.</p>
         <div class="product-grid">
-             <article class="product">
-                <div class="product-info"><h3>Historical Postcard Set</h3><p>Set of 5 postcards featuring iconic Athlone musical landmarks and figures.</p></div>
-              </article>
-              <article class="product">
-                <div class="product-info"><h3>Athlone Music Legends Poster</h3><p>A2 decorative poster celebrating key musicians from Athlone's history.</p></div>
-              </article>
-              <article class="product">
-                <div class="product-info"><h3>Heritage Booklet</h3><p>A detailed guide to Athlone's rich musical history and its key figures.</p></div>
-              </article>
+             <article class="product"><div class="product-info"><h3>Historical Postcard Set</h3><p>Set of 5 postcards featuring iconic Athlone musical landmarks and figures.</p></div></article>
+              <article class="product"><div class="product-info"><h3>Athlone Music Legends Poster</h3><p>A2 decorative poster celebrating key musicians from Athlone's history.</p></div></article>
+              <article class="product"><div class="product-info"><h3>Heritage Booklet</h3><p>A detailed guide to Athlone's rich musical history and its key figures.</p></div></article>
         </div>
     </section>
 
-    <section id="connect" class="content-section">
-      <h2>Connect & Contribute</h2>
-      <p class="page-intro-text">This is more than a website—it's a movement. Follow us for updates, share your own Athlone music stories, and join the community working to build the Athlone Music Museum.</p>
+    <!-- UPDATED/NEW SECTION: Replaced "Connect" with "Get Involved" and added the form -->
+    <section id="get-involved" class="content-section">
+      <h2>Get Involved & Show Your Support</h2>
+      <p class="page-intro-text">Your support is crucial. By registering your interest, you help us demonstrate the community's desire for an Athlone Music Museum. Please fill out the form below to join our mailing list for updates and to share your own stories.</p>
+      
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+
+      <p style="text-align:center; margin-top: 2rem;">You can also follow the project's journey on social media:</p>
       <p style="text-align:center;">
           <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Follow on Instagram</a>
           <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 1rem;">Follow on Facebook</a>
@@ -621,7 +555,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Smooth scrolling for all nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -636,7 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll-spy for active nav link highlighting
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
