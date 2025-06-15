@@ -7,16 +7,6 @@
   <title>Athlone Music Heritage | Support the Vision for a Museum</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    /*
-    ==========================================================================
-    STYLE OVERHAUL (V3 - IMAGE-FREE VERSION)
-    Key Changes:
-    - ALL `<img>` tags and `background-image` properties have been removed.
-    - Hero section now uses a solid color background.
-    - Figure cards redesigned as clean, text-only cards.
-    - Biography and product layouts adjusted for an image-free design.
-    ==========================================================================
-    */
     :root {
       --primary-color: #0d2c4b;    /* Deep Navy */
       --secondary-color: #4a6fa5;   /* Lighter Slate Blue */
@@ -54,13 +44,20 @@
       position: relative;
       padding: 6rem 0;
       color: var(--text-light);
-      background-color: var(--primary-color); /* Fallback for no image */
-      overflow: hidden;
       text-align: center;
+      overflow: hidden;
+
+      /* --- HERO IMAGE ADDED HERE --- */
+      background-color: var(--primary-color); /* Fallback color */
+      background-image: url('dba6c1a7-189f-424c-aa40-53ff6a8a3175.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
     #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
     .page-hero::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      /* This overlay ensures text readability over the background image */
       background: linear-gradient(to top, rgba(13, 44, 75, 0.8) 0%, rgba(13, 44, 75, 0.5) 100%);
       z-index: 2;
     }
@@ -516,7 +513,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- TEMPLATES FOR DYNAMIC CONTENT (IMAGE-FREE) ---
+    // --- TEMPLATES FOR DYNAMIC CONTENT ---
     const biographyTemplates = {
         'bio-patrick-keating': `
             <section id="bio-patrick-keating" class="content-section biography-section">
@@ -645,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // NEW: Scroll-spy for active nav link highlighting
+    // Scroll-spy for active nav link highlighting
     const sections = document.querySelectorAll('main > section[id]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
