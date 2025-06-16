@@ -208,7 +208,6 @@
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
     .figure-card-image { height: 220px; background-color: #000; }
-    .figure-card-image.fig-no-img { background-color: var(--primary-color); }
     .figure-card-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
     
     .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; }
@@ -216,7 +215,7 @@
     .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
     
     .info-card-grid {
-      display: grid; grid-template-columns: 1fr;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
     }
     .info-card {
@@ -231,7 +230,6 @@
     }
     .info-card p { color: var(--text-secondary); }
 
-    /* --- NEW CSS FOR TIMELINE --- */
     .timeline-container {
         position: relative;
         max-width: 900px;
@@ -482,6 +480,7 @@
             <div class="dropdown-menu">
               <a href="#key-figures">Key Figures</a>
               <a href="#societies-groups">Societies & Groups</a>
+              <a href="#popular-bands">Popular Bands</a>
               <a href="#timeline">Timeline</a>
             </div>
           </div>
@@ -517,7 +516,7 @@
   <main class="container">
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
-        <p class="page-intro-text" style="margin-top: 2rem;">From foundational figures to vibrant community groups, Athlone's musical history is a rich tapestry. Explore the key figures, societies, and the epic timeline of events that shaped our town's unique soundscape.</p>
+        <p class="page-intro-text" style="margin-top: 2rem;">From foundational figures to vibrant community groups and legendary bands, Athlone's musical history is a rich tapestry. Explore the key people, societies, and the epic timeline of events that shaped our town's unique soundscape.</p>
         
         <div id="key-figures" class="subsection">
           <h3>Pioneers & Personalities</h3>
@@ -563,7 +562,36 @@
               <span class="info-card-subtitle">Ireland's Oldest Musical Society</span>
               <p>Co-founded by Henry Foy in 1902, the society has been a cornerstone of Athlone's performing arts scene, staging beloved productions for over a century and continuing to delight audiences at the Dean Crowe Theatre.</p>
             </article>
+            <article class="info-card">
+              <h4>Athlone Choral Society</h4>
+              <span class="info-card-subtitle">A Community in Harmony</span>
+              <p>For decades, the Athlone Choral Society has brought together voices from all walks of life, performing a wide repertoire of classical and contemporary works and enriching the town's cultural calendar with their concerts.</p>
+            </article>
+             <article class="info-card">
+              <h4>Comhaltas Ceoltóirí Éireann</h4>
+              <span class="info-card-subtitle">Guardians of Tradition</span>
+              <p>The local branch of Comhaltas is dedicated to the promotion of traditional Irish music, song, and dance. They are instrumental in passing on these vital cultural traditions to new generations through lessons, sessions, and events.</p>
+            </article>
           </div>
+        </div>
+
+        <div id="popular-bands" class="subsection">
+            <h3>Popular Bands: 1940s - Present</h3>
+             <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">From the dancehall days of the showbands to the rock, pop, and indie acts that followed, Athlone has produced and hosted countless popular bands. This section is a growing archive of those who provided the soundtrack for generations.</p>
+            <div class="info-card-grid">
+              <article class="info-card">
+                <h4>The Showband Era (1950s-60s)</h4>
+                <p>The dancehalls of Athlone and the surrounding areas were alive with the sound of Ireland's showbands. Bands like... (Help us fill in the names!)</p>
+              </article>
+               <article class="info-card">
+                <h4>Rock, Pop & Folk (1970s-80s)</h4>
+                <p>As musical tastes changed, a new wave of rock, pop, and folk acts emerged from the pubs and clubs of the town. Who do you remember from this era?</p>
+              </article>
+               <article class="info-card">
+                <h4>Modern & Indie Acts (1990s-Present)</h4>
+                <p>From the alternative boom of the 90s to the diverse sounds of today, Athlone continues to produce talented bands and musicians. Let us know who should be on this list!</p>
+              </article>
+            </div>
         </div>
 
         <div id="timeline" class="subsection">
@@ -616,12 +644,6 @@
                 <div class="timeline-content">
                   <h5>1932: Unison</h5>
                   <p>The Athlone radio transmitter roars to life. Three million listen as Pope Pius XI and John McCormack’s voice—broadcast from the heart of Ireland—unite a nation. Music, once a weapon, becomes a bridge.</p>
-                </div>
-              </div>
-               <div class="timeline-item left">
-                <div class="timeline-content">
-                  <h5>Season 4</h5>
-                  <p>The story continues... More to be added soon.</p>
                 </div>
               </div>
             </div>
@@ -699,7 +721,6 @@
         <h3 style="margin-top: calc(var(--spacing-unit)*3);">Music Lessons</h3>
         <div class="present-grid">
             <article class="present-item"><h4>Athlone School of Music</h4><p>A center for music education, offering lessons for a wide range of instruments and vocal training to all ages and levels.</p><a href="https://athloneschoolofmusic.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
-            <article class="present-item"><h4>Comhaltas Ceoltóirí Éireann</h4><p>The local branch of Comhaltas is dedicated to the promotion of traditional Irish music, song, and dance. They often offer lessons.</p><a href="https://comhaltas.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Find Local Branch</a></article>
         </div>
     </section>
 
@@ -926,24 +947,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('main > section[id], main .subsection[id]');
     const observer = new IntersectionObserver((entries) => {
         document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
-
-        let visibleSection = null;
+        
         for (const entry of entries) {
             if (entry.isIntersecting) {
-                visibleSection = entry.target.id;
-                break;
-            }
-        }
-        
-        if (visibleSection) {
-             const pastSubSections = ['key-figures', 'societies-groups', 'timeline'];
-             if (pastSubSections.includes(visibleSection) || visibleSection === 'past') {
-                if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
-            } else if (visibleSection === 'whats-on' || visibleSection === 'venues' || visibleSection === 'festivals-events') {
-                if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
-            } else {
-                const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${visibleSection}"]`);
-                if(activeLink) activeLink.classList.add('active');
+                const id = entry.target.id;
+                
+                const pastSubSections = ['key-figures', 'societies-groups', 'popular-bands', 'timeline'];
+                const whatsOnSubSections = ['venues', 'festivals-events'];
+
+                if (pastSubSections.includes(id) || id === 'past') {
+                    if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
+                } else if (whatsOnSubSections.includes(id) || id === 'whats-on') {
+                    if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
+                } else {
+                    const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
+                    if(activeLink) activeLink.classList.add('active');
+                }
+                return; 
             }
         }
     }, { rootMargin: `-${navHeight}px 0px -60% 0px` });
