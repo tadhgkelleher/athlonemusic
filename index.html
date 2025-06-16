@@ -322,7 +322,12 @@
     .products-link-section p { margin-bottom: calc(var(--spacing-unit) * 1.5); color: var(--text-light); opacity: 0.8; max-width: 600px; margin-left:auto; margin-right: auto;}
     .products-link-section .call-to-action { background-color: var(--accent-color); color: var(--primary-color) !important; }
     .products-link-section .call-to-action:hover { background-color: #dcc18a; }
-    .present-grid, .venue-grid, .event-grid {
+    /* UPDATED: Venue grid now 3 columns on desktop */
+    .venue-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
+    }
+    .present-grid, .event-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
     }
@@ -523,22 +528,26 @@
         <div id="venues" class="subsection">
             <h3>Popular Music Venues</h3>
             <div class="venue-grid">
-                <article class="venue-item"><h4>Sean's Bar</h4><p class="venue-type">Historic Pub & Trad Music Hub</p><p>Ireland's oldest pub, hosting lively traditional Irish music sessions. A must-visit for an authentic experience.</p><a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
-                <article class="venue-item"><h4>Dean Crowe Theatre</h4><p class="venue-type">Theatre & Concert Venue</p><p>Hosts a diverse programme including musical performances by national and international artists and community events.</p><a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
-                <article class="venue-item"><h4>The Snug Bar</h4><p class="venue-type">Pub with Live Music</p><p>A popular spot for locals, The Snug often features a variety of live music acts on weekends, from contemporary to acoustic.</p><a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a></article>
-                <article class="venue-item"><h4>Flannery's Bar</h4><p class="venue-type">Pub with Live Music & DJs</p><p>A well-known pub with a lively atmosphere, often featuring live bands (rock/covers) and DJ sets at weekends.</p><a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a></article>
+                <article class="venue-item"><h4>Sean's Bar</h4><p class="venue-type">Historic Pub & Trad Music Hub</p><p>Ireland's oldest pub, hosting lively traditional Irish music sessions. A must-visit for an authentic experience.</p></article>
+                <article class="venue-item"><h4>Dean Crowe Theatre</h4><p class="venue-type">Theatre & Concert Venue</p><p>Hosts a diverse programme including musical performances by national and international artists and community events.</p></article>
+                <article class="venue-item"><h4>Flannery's Bar</h4><p class="venue-type">Pub with Live Music & DJs</p><p>A well-known pub with a lively atmosphere, often featuring live bands (rock/covers) and DJ sets at weekends.</p></article>
+                 <article class="venue-item"><h4>The Snug Bar</h4><p class="venue-type">Pub with Live Music</p><p>A popular spot for locals, The Snug often features a variety of live music acts on weekends, from contemporary to acoustic.</p></article>
+                <article class="venue-item"><h4>Nuts Corner</h4><p class="venue-type">Live Music Venue</p><p>A staple of the local scene, known for hosting regular gigs featuring both established and up-and-coming acts.</p></article>
+                <article class="venue-item"><h4>Peddler Mac's</h4><p class="venue-type">Pub with Live Music</p><p>A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists.</p></article>
+                <article class="venue-item"><h4>Maisie's</h4><p class="venue-type">Pub & Music Venue</p><p>Known for its friendly vibe and support of live music, Maisie's is a frequent spot for weekend entertainment.</p></article>
+                 <article class="venue-item"><h4>The Shack</h4><p class="venue-type">Intimate Music Sessions</p><p>A great spot for more intimate acoustic sessions and discovering new talent in a cozy setting.</p></article>
             </div>
         </div>
 
         <div id="festivals-events" class="subsection">
             <h3>Festivals & Events</h3>
             <div class="event-grid">
-                <article class="event-item"><h4>St. Patrick's Festival</h4><p class="event-date">Mid-March</p><p class="event-type">Town Celebrations & Music</p><p>A vibrant St. Patrick's Day parade and festival, with pubs and venues featuring live traditional Irish music.</p><a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a></article>
-                <article class="event-item"><h4>Croílár Music & Arts Festival</h4><p class="event-date">Typically April</p><p class="event-type">Music & Arts Festival</p><p>A celebration of contemporary and traditional arts, with a strong focus on live music performances across various town venues.</p><a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Dates</a></article>
-                <article class="event-item"><h4>Flan Fest</h4><p class="event-date">June Bank Holiday Weekend</p><p class="event-type">Live Music at Flannery's Bar</p><p>Flannery's Bar hosts its annual music festival with a packed lineup of live bands and entertainment all weekend long.</p><a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">See Lineup</a></article>
-                <article class="event-item"><h4>Féile na Sionainne</h4><p class="event-date">1st - 3rd August 2025</p><p class="event-type">Traditional Music Festival</p><p>A weekend celebration of traditional Irish music, song, and dance, attracting top musicians to the banks of the Shannon.</p><a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a></article>
-                <article class="event-item"><h4>Viking River Fest</h4><p class="event-date">Typically August Bank Holiday</p><p class="event-type">Family Festival & Viking Heritage</p><p>Experience Athlone's Viking roots with reenactments, family activities, and of course, great live music by the river.</p><a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a></article>
-                <article class="event-item"><h4>River & Food Festival</h4><p class="event-date">Typically September</p><p class="event-type">Family Festival with Live Music</p><p>A major highlight on the Shannon, this festival celebrates local food and heritage with live music performances.</p><a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a></article>
+                <article class="event-item"><h4>St. Patrick's Festival</h4><p class="event-date">Mid-March</p><p class="event-type">Town Celebrations & Music</p><p>A vibrant St. Patrick's Day parade and festival, with pubs and venues featuring live traditional Irish music.</p></article>
+                <article class="event-item"><h4>Croílár Music & Arts Festival</h4><p class="event-date">Typically April</p><p class="event-type">Music & Arts Festival</p><p>A celebration of contemporary and traditional arts, with a strong focus on live music performances across various town venues.</p></article>
+                <article class="event-item"><h4>Flan Fest</h4><p class="event-date">June Bank Holiday Weekend</p><p class="event-type">Live Music at Flannery's Bar</p><p>Flannery's Bar hosts its annual music festival with a packed lineup of live bands and entertainment all weekend long.</p></article>
+                <article class="event-item"><h4>Féile na Sionainne</h4><p class="event-date">1st - 3rd August 2025</p><p class="event-type">Traditional Music Festival</p><p>A weekend celebration of traditional Irish music, song, and dance, attracting top musicians to the banks of the Shannon.</p></article>
+                 <article class="event-item"><h4>Viking River Fest</h4><p class="event-date">Typically August Bank Holiday</p><p class="event-type">Family Festival & Viking Heritage</p><p>Experience Athlone's Viking roots with reenactments, family activities, and of course, great live music by the river.</p></article>
+                <article class="event-item"><h4>River & Food Festival</h4><p class="event-date">Typically September</p><p class="event-type">Family Festival with Live Music</p><p>A major highlight on the Shannon, this festival celebrates local food and heritage with live music performances.</p></article>
             </div>
              <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
         </div>
