@@ -162,7 +162,7 @@
       list-style: none;
       margin: 0;
       z-index: 1001;
-      min-width: 160px;
+      min-width: 180px; /* Increased width */
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
@@ -189,22 +189,17 @@
         font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px;
         margin: 0 auto calc(var(--spacing-unit) * 3) auto; color: var(--text-secondary);
     }
-    .content-section {
-      padding: calc(var(--spacing-unit) * 4) 0;
-    }
+    .content-section { padding: calc(var(--spacing-unit) * 4) 0; }
+    .subsection { padding-top: calc(var(--spacing-unit) * 2); }
 
     .figure-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
     }
     .figure-card-link {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      background-color: var(--surface-color);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      box-shadow: 0 4px 15px var(--shadow-color);
+      display: flex; flex-direction: column; text-decoration: none;
+      background-color: var(--surface-color); border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md); box-shadow: 0 4px 15px var(--shadow-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
       overflow: hidden;
     }
@@ -212,35 +207,31 @@
         transform: translateY(-8px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
-    .figure-card-image {
-        height: 220px;
-        background-color: #000;
-    }
-    .figure-card-image.fig-no-img {
-        background-color: var(--primary-color);
-    }
-    .figure-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-    }
+    .figure-card-image { height: 220px; background-color: #000; }
+    .figure-card-image.fig-no-img { background-color: var(--primary-color); }
+    .figure-card-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
     
-    .figure-card-content {
-        padding: calc(var(--spacing-unit) * 1.5);
-        text-align: center;
-    }
-    .figure-card-content h4 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-    }
-    .figure-card-content p {
-        color: var(--secondary-color);
-        font-weight: 700;
-        margin-bottom: 0;
-        font-size: 1rem;
-    }
+    .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; }
+    .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
     
+    /* --- NEW CSS FOR INFO CARDS (Societies, Events) --- */
+    .info-card-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
+    }
+    .info-card {
+      background-color: var(--surface-color); border-left: 6px solid var(--accent-color);
+      padding: calc(var(--spacing-unit) * 2); border-radius: var(--border-radius-sm);
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+    .info-card h4 { text-align: left; }
+    .info-card-subtitle {
+        font-size: 1rem; color: var(--accent-color); font-weight: 700;
+        margin-bottom: calc(var(--spacing-unit) * 0.5); display: block;
+    }
+    .info-card p { color: var(--text-secondary); }
+
     .products-link-section {
       text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
       margin-top: calc(var(--spacing-unit) * 4);
@@ -388,7 +379,7 @@
       body { font-size: 16px; }
       .page-hero { padding: 4rem 0; }
       .content-section { padding: calc(var(--spacing-unit) * 3) 0;}
-      .present-grid, .venue-grid, .event-grid, .vision-points { grid-template-columns: 1fr; }
+      .present-grid, .venue-grid, .event-grid, .vision-points, .info-card-grid { grid-template-columns: 1fr; }
       .biography-content-wrapper.has-image {
         grid-template-columns: 1fr;
       }
@@ -402,7 +393,15 @@
     <div class="container">
       <div class="site-name">Athlone Music Heritage</div>
       <div class="nav-links">
-          <a href="#past" class="nav-link">Our Past</a>
+          <div class="nav-item-dropdown">
+            <a href="#past" class="nav-link dropdown-toggle">Our Past</a>
+            <div class="dropdown-menu">
+              <a href="#key-figures">Key Figures</a>
+              <a href="#societies-groups">Societies & Groups</a>
+              <a href="#events-milestones">Events & Milestones</a>
+              <a href="#timeline">Timeline</a>
+            </div>
+          </div>
           <div class="nav-item-dropdown">
             <a href="#whats-on" class="nav-link dropdown-toggle">What's On</a>
             <div class="dropdown-menu">
@@ -435,57 +434,76 @@
   <main class="container">
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
-        <p class="page-intro-text" style="margin-top: 2rem;">Delve into the extraordinary individuals who shaped Athlone's rich musical identity. Click on a figure to uncover their remarkable story and contribution to a global soundscape.</p>
+        <p class="page-intro-text" style="margin-top: 2rem;">From the foundational influence of ancient harpists to the vibrant community groups of today, Athlone's musical history is a rich tapestry. Explore the key figures, groups, and events that shaped our town's unique soundscape.</p>
         
-        <div class="figure-grid">
-            <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
-                <div class="figure-card-image">
-                     <img src="keationg4.jpg" alt="Portrait of Patrick Keating">
-                </div>
-                <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
-            </a>
-            <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
-                <div class="figure-card-image">
-                    <img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore">
-                </div>
-                <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
-            </a>
-            <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
-                <div class="figure-card-image">
-                    <img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly">
-                </div>
-                <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
-            </a>
-            <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
-                <div class="figure-card-image">
-                    <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy">
-                </div>
-                <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
-            </a>
-            <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
-                <div class="figure-card-image">
-                     <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack">
-                </div>
-                <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
-            </a>
-            <a href="#bio-eugene-daly" class="figure-card-link" id="fig-daly">
-                <div class="figure-card-image">
-                    <img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly, the Titanic Piper">
-                </div>
-                <div class="figure-card-content"><h4>Eugene Daly</h4><p>The Titanic Piper</p></div>
-            </a>
-            <a href="#bio-athlone-pipers" class="figure-card-link" id="fig-pipers">
-                <div class="figure-card-image">
-                     <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band">
-                </div>
-                <div class="figure-card-content"><h4>The Athlone Pipers</h4><p>A Century of Tradition</p></div>
-            </a>
+        <div id="key-figures" class="subsection">
+          <h3>Pioneers & Personalities</h3>
+          <div class="figure-grid">
+              <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
+                  <div class="figure-card-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating"></div>
+                  <div class="figure-card-content"><h4>Patrick Keating</h4><p>Revolution Through Music</p></div>
+              </a>
+              <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
+                  <div class="figure-card-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore"></div>
+                  <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>A Global Music Force</p></div>
+              </a>
+              <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
+                  <div class="figure-card-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly"></div>
+                  <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
+              </a>
+              <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
+                  <div class="figure-card-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy"></div>
+                  <div class="figure-card-content"><h4>Henry Foy</h4><p>New Rhythms in Athlone</p></div>
+              </a>
+              <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
+                  <div class="figure-card-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack"></div>
+                  <div class="figure-card-content"><h4>Count John McCormack</h4><p>A Voice Discovered</p></div>
+              </a>
+              <a href="#bio-eugene-daly" class="figure-card-link" id="fig-daly">
+                  <div class="figure-card-image"><img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly, the Titanic Piper"></div>
+                  <div class="figure-card-content"><h4>Eugene Daly</h4><p>The Titanic Piper</p></div>
+              </a>
+          </div>
         </div>
-        
-        <div id="products-showcase" class="products-link-section">
-            <h3>Commemorate Our Heritage</h3>
-            <p>Take a piece of Athlone's musical history home with you. Explore our collection of commemorative postcards, posters, and booklets.</p>
-            <a href="#products-section" class="call-to-action" id="view-products-cta">View Heritage Products</a>
+
+        <div id="societies-groups" class="subsection">
+          <h3>Societies & Groups</h3>
+          <div class="info-card-grid">
+            <article class="info-card">
+              <h4>The Athlone Pipers</h4>
+              <span class="info-card-subtitle">A Century of Tradition</span>
+              <p>From the Clan Uisneach Pipe Band of the 1800s, through St. Mary's Pioneer Pipe Band, to the modern Athlone Town Pipe Band formed in 2009, the sound of the pipes has been a constant, resilient thread in the town's cultural fabric.</p>
+              <a href="#bio-athlone-pipers" class="call-to-action">Learn More</a>
+            </article>
+            <article class="info-card">
+              <h4>Athlone Musical Society</h4>
+              <span class="info-card-subtitle">Ireland's Oldest Musical Society</span>
+              <p>Co-founded by Henry Foy in 1902, the society has been a cornerstone of Athlone's performing arts scene, staging beloved productions for over a century and continuing to delight audiences at the Dean Crowe Theatre.</p>
+              <!-- Future link: <a href="#bio-musical-society" class="call-to-action">View History & Shows</a> -->
+            </article>
+          </div>
+        </div>
+
+        <div id="events-milestones" class="subsection">
+          <h3>Events & Milestones</h3>
+          <div class="info-card-grid">
+             <article class="info-card">
+              <h4>Turlough O'Carolan</h4>
+              <span class="info-card-subtitle">The Last of the Bards (c. 1670–1738)</span>
+              <p>Born near Nobber, County Meath, but living much of his life in nearby County Roscommon, the legacy of the blind harpist Turlough O'Carolan profoundly influenced the musical landscape of the Irish Midlands, including Athlone. His compositions are still celebrated as treasures of the national repertoire.</p>
+            </article>
+            <article class="info-card">
+              <h4>The 1953 Fleadh Cheoil</h4>
+              <span class="info-card-subtitle">A National Stage</span>
+              <p>In 1953, Athlone was honoured to host the All-Ireland Fleadh Cheoil. The event brought the finest traditional musicians from across the country to the town, cementing its reputation as a major centre for Irish music and culture on a national scale.</p>
+            </article>
+          </div>
+        </div>
+
+        <div id="timeline" class="subsection">
+          <h3>Athlone Music Timeline</h3>
+          <p class="page-intro-text">A comprehensive, interactive timeline of Athlone's rich musical history is currently under development. Stay tuned!</p>
+          <p style="text-align:center;"><a href="#" class="call-to-action coming-soon">Timeline (Coming Soon)</a></p>
         </div>
     </section>
     
@@ -725,7 +743,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const biographiesArea = document.getElementById('biographies-area');
     const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const pastDropdownToggle = document.querySelector('a.nav-link[href="#past"]');
+    const whatsOnDropdownToggle = document.querySelector('a.nav-link[href="#whats-on"]');
     let activeBioSection = null;
     const navHeight = document.querySelector('.main-nav')?.offsetHeight || 70;
 
@@ -784,29 +803,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const sections = document.querySelectorAll('main > section[id]');
+    const pastSubSections = ['key-figures', 'societies-groups', 'events-milestones', 'timeline'];
     const observer = new IntersectionObserver((entries) => {
-        let intersectingId = null;
+        document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
+        
         for (const entry of entries) {
             if (entry.isIntersecting) {
-                intersectingId = entry.target.id;
-                break;
-            }
-        }
-        
-        document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
-
-        if (intersectingId) {
-             if (intersectingId === 'whats-on') {
-                if (dropdownToggle) dropdownToggle.classList.add('active');
-            } else {
-                const activeLink = document.querySelector(`.main-nav a[href="#${intersectingId}"]`);
-                if(activeLink) activeLink.classList.add('active');
+                const id = entry.target.id;
+                
+                if (pastSubSections.includes(id) || id === 'past') {
+                    if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
+                } else if (id === 'whats-on') {
+                    if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
+                } else {
+                    const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
+                    if(activeLink) activeLink.classList.add('active');
+                }
+                return; 
             }
         }
     }, { rootMargin: `-${navHeight}px 0px -50% 0px` });
 
     sections.forEach(section => {
         observer.observe(section);
+        // Observe subsections as well
+        section.querySelectorAll('.subsection[id]').forEach(sub => observer.observe(sub));
     });
 
 });
