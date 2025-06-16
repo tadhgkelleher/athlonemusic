@@ -489,6 +489,7 @@
             <div class="dropdown-menu">
               <a href="#venues">Venues</a>
               <a href="#festivals-events">Festivals & Events</a>
+              <a href="#studios-spaces">Studios & Spaces</a>
             </div>
           </div>
           <a href="#vision" class="nav-link">The Vision</a>
@@ -747,6 +748,32 @@
         </div>
         <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
 
+        <div id="studios-spaces" class="subsection">
+            <h3>Studios & Rehearsal Spaces</h3>
+            <div class="info-card-grid">
+                <article class="info-card">
+                  <h4>85DB Studio & Sound System Hire</h4>
+                  <span class="info-card-subtitle">Blyry Industrial Park</span>
+                  <p>A key resource for local bands, offering both professional rehearsal space and sound equipment hire for live events.</p>
+                </article>
+                <article class="info-card">
+                  <h4>Summerhill Recording & Rehearsal Studio</h4>
+                  <span class="info-card-subtitle">Local Recording Hub</span>
+                  <p>A dedicated space for bands and solo artists to professionally record their music and hone their craft in a studio environment.</p>
+                </article>
+                <article class="info-card">
+                  <h4>Lakelands Recording Studio</h4>
+                  <span class="info-card-subtitle">Creative Recording Space</span>
+                  <p>Another vital facility for Athlone's musicians, providing the tools and environment needed to produce high-quality recordings.</p>
+                </article>
+                <article class="info-card">
+                  <h4>Grouse Lodge Studios</h4>
+                  <span class="info-card-subtitle">Rosemount, Co. Westmeath</span>
+                  <p>Located just outside Athlone, this world-renowned residential studio has hosted international superstars like Michael Jackson, Muse, and Snow Patrol, adding to the region's incredible musical pedigree.</p>
+                </article>
+            </div>
+        </div>
+
         <h3 style="margin-top: calc(var(--spacing-unit)*3);">Music Lessons</h3>
         <div class="present-grid">
             <article class="present-item"><h4>Athlone School of Music</h4><p>A center for music education, offering lessons for a wide range of instruments and vocal training to all ages and levels.</p><a href="https://athloneschoolofmusic.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
@@ -982,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const id = entry.target.id;
                 
                 const pastSubSections = ['key-figures', 'societies-groups', 'popular-bands', 'timeline'];
-                const whatsOnSubSections = ['venues', 'festivals-events'];
+                const whatsOnSubSections = ['venues', 'festivals-events', 'studios-spaces'];
 
                 if (pastSubSections.includes(id) || id === 'past') {
                     if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
