@@ -162,7 +162,7 @@
       list-style: none;
       margin: 0;
       z-index: 1001;
-      min-width: 180px; /* Increased width */
+      min-width: 180px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
@@ -215,7 +215,6 @@
     .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
     
-    /* --- NEW CSS FOR INFO CARDS (Societies, Events) --- */
     .info-card-grid {
       display: grid; grid-template-columns: 1fr;
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
@@ -231,6 +230,89 @@
         margin-bottom: calc(var(--spacing-unit) * 0.5); display: block;
     }
     .info-card p { color: var(--text-secondary); }
+
+    /* --- NEW CSS FOR TIMELINE --- */
+    .timeline-container {
+        position: relative;
+        max-width: 900px;
+        margin: 4rem auto;
+    }
+    .timeline-container::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: var(--accent-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+    }
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px;
+        background-color: white;
+        border: 4px solid var(--primary-color);
+        top: 25px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .timeline-item.left { left: 0; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item.left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 32px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid var(--surface-color);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--surface-color);
+    }
+    .timeline-item.right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 32px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid var(--surface-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--surface-color) transparent transparent;
+    }
+    .timeline-item.right::after { left: -13px; }
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: var(--surface-color);
+        position: relative;
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 4px 15px var(--shadow-color);
+    }
+    .timeline-content h5 { font-size: 1.1rem; color: var(--accent-color); font-weight: 900; letter-spacing: 0.5px; }
+    .timeline-content p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+    
+    @media (max-width: 768px) {
+        .timeline-container::after { left: 25px; }
+        .timeline-item { width: 100%; padding-left: 60px; padding-right: 15px; }
+        .timeline-item.left, .timeline-item.right { left: 0%; }
+        .timeline-item::after { left: 13px; }
+        .timeline-item.left::before, .timeline-item.right::before {
+            left: 50px;
+            border-color: transparent var(--surface-color) transparent transparent;
+            border-width: 10px 10px 10px 0;
+        }
+    }
 
     .products-link-section {
       text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
@@ -277,6 +359,8 @@
       border: 2px solid transparent; font-family: var(--font-body);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+    .call-to-action.coming-soon { cursor: not-allowed; background-color: #b0bec5; color: #546e7a !important; }
+    .call-to-action.coming-soon:hover { background-color: #b0bec5; transform: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     .call-to-action:hover, .call-to-action:focus { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); background-color: #dcc18a; }
     .call-to-action-outline {
         display: inline-block; background-color: transparent; color: var(--text-light) !important; border: 2px solid var(--accent-color);
@@ -398,7 +482,6 @@
             <div class="dropdown-menu">
               <a href="#key-figures">Key Figures</a>
               <a href="#societies-groups">Societies & Groups</a>
-              <a href="#events-milestones">Events & Milestones</a>
               <a href="#timeline">Timeline</a>
             </div>
           </div>
@@ -434,7 +517,7 @@
   <main class="container">
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
-        <p class="page-intro-text" style="margin-top: 2rem;">From the foundational influence of ancient harpists to the vibrant community groups of today, Athlone's musical history is a rich tapestry. Explore the key figures, groups, and events that shaped our town's unique soundscape.</p>
+        <p class="page-intro-text" style="margin-top: 2rem;">From foundational figures to vibrant community groups, Athlone's musical history is a rich tapestry. Explore the key figures, societies, and the epic timeline of events that shaped our town's unique soundscape.</p>
         
         <div id="key-figures" class="subsection">
           <h3>Pioneers & Personalities</h3>
@@ -472,38 +555,76 @@
             <article class="info-card">
               <h4>The Athlone Pipers</h4>
               <span class="info-card-subtitle">A Century of Tradition</span>
-              <p>From the Clan Uisneach Pipe Band of the 1800s, through St. Mary's Pioneer Pipe Band, to the modern Athlone Town Pipe Band formed in 2009, the sound of the pipes has been a constant, resilient thread in the town's cultural fabric.</p>
+              <p>From the Clan Uisneach Pipe Band of the 1800s to the modern Athlone Town Pipe Band, the sound of the pipes has been a constant, resilient thread in the town's cultural fabric. Click to learn more about this enduring legacy.</p>
               <a href="#bio-athlone-pipers" class="call-to-action">Learn More</a>
             </article>
             <article class="info-card">
               <h4>Athlone Musical Society</h4>
               <span class="info-card-subtitle">Ireland's Oldest Musical Society</span>
               <p>Co-founded by Henry Foy in 1902, the society has been a cornerstone of Athlone's performing arts scene, staging beloved productions for over a century and continuing to delight audiences at the Dean Crowe Theatre.</p>
-              <!-- Future link: <a href="#bio-musical-society" class="call-to-action">View History & Shows</a> -->
-            </article>
-          </div>
-        </div>
-
-        <div id="events-milestones" class="subsection">
-          <h3>Events & Milestones</h3>
-          <div class="info-card-grid">
-             <article class="info-card">
-              <h4>Turlough O'Carolan</h4>
-              <span class="info-card-subtitle">The Last of the Bards (c. 1670–1738)</span>
-              <p>Born near Nobber, County Meath, but living much of his life in nearby County Roscommon, the legacy of the blind harpist Turlough O'Carolan profoundly influenced the musical landscape of the Irish Midlands, including Athlone. His compositions are still celebrated as treasures of the national repertoire.</p>
-            </article>
-            <article class="info-card">
-              <h4>The 1953 Fleadh Cheoil</h4>
-              <span class="info-card-subtitle">A National Stage</span>
-              <p>In 1953, Athlone was honoured to host the All-Ireland Fleadh Cheoil. The event brought the finest traditional musicians from across the country to the town, cementing its reputation as a major centre for Irish music and culture on a national scale.</p>
             </article>
           </div>
         </div>
 
         <div id="timeline" class="subsection">
-          <h3>Athlone Music Timeline</h3>
-          <p class="page-intro-text">A comprehensive, interactive timeline of Athlone's rich musical history is currently under development. Stay tuned!</p>
-          <p style="text-align:center;"><a href="#" class="call-to-action coming-soon">Timeline (Coming Soon)</a></p>
+          <h3>Timeline of Music & Rebellion</h3>
+            <p class="page-intro-text">Follow the dramatic story of how music and history intertwined in Athlone, from the arrival of a revolutionary bandmaster to the dawn of the radio age.</p>
+            <div class="timeline-container">
+              <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h5>1830: The Overture</h5>
+                  <p>Patrick Keating arrives in a fractured Athlone. A veteran with revolutionary intent, he begins weaving music and rebellion into a single, dangerous thread.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h5>1843: Monster Anthem</h5>
+                  <p>Keating’s band performs for 100,000 people at Daniel O’Connell’s Monster Meeting in Athlone, their anthem a powerful cry for change.</p>
+                </div>
+              </div>
+              <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h5>1848: Echoes of Hunger</h5>
+                  <p>Amid the devastation of the Great Famine, a 19-year-old Patrick Gilmore emigrates to Boston, carrying Keating's teachings and Athlone's spirit with him.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h5>1872-1881: A Legacy Continues</h5>
+                  <p>Gilmore stuns the world with his World Peace Jubilee. After Keating's death, his protégé Michael Kilkelly keeps the flame alive, using music to stoke nationalist sentiment during the Land War.</p>
+                </div>
+              </div>
+               <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h5>1902: New Societies, New Sounds</h5>
+                  <p>A teenaged Henry Foy co-founds the Athlone Musical Society. Meanwhile, Kilkelly discovers the raw vocal brilliance of a young John McCormack, who wins gold at the 1903 Feis Ceoil.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h5>1912-1919: A Sinking Ship & a New Beat</h5>
+                  <p>Piper Eugene Daly survives the Titanic. As McCormack captivates America, Henry Foy pioneers Ireland’s first jazz band, shocking conservatives and mirroring the nation's political turmoil.</p>
+                </div>
+              </div>
+              <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h5>1922-1923: Civil War</h5>
+                  <p>Athlone burns. As the new Free State is born, musicians choose sides. When the dust settles, the music has been forever changed by conflict and loss.</p>
+                </div>
+              </div>
+              <div class="timeline-item right">
+                <div class="timeline-content">
+                  <h5>1932: Unison</h5>
+                  <p>The Athlone radio transmitter roars to life. Three million listen as Pope Pius XI and John McCormack’s voice—broadcast from the heart of Ireland—unite a nation. Music, once a weapon, becomes a bridge.</p>
+                </div>
+              </div>
+               <div class="timeline-item left">
+                <div class="timeline-content">
+                  <h5>Season 4</h5>
+                  <p>The story continues... More to be added soon.</p>
+                </div>
+              </div>
+            </div>
         </div>
     </section>
     
@@ -741,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const biographiesArea = document.getElementById('biographies-area');
-    const allFigureCardLinks = document.querySelectorAll('.figure-card-link');
+    const allClickableLinks = document.querySelectorAll('.figure-card-link, .info-card a.call-to-action');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
     const pastDropdownToggle = document.querySelector('a.nav-link[href="#past"]');
     const whatsOnDropdownToggle = document.querySelector('a.nav-link[href="#whats-on"]');
@@ -762,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
 
-    allFigureCardLinks.forEach(link => {
+    allClickableLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetBioId = this.getAttribute('href').substring(1);
@@ -802,32 +923,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const sections = document.querySelectorAll('main > section[id]');
-    const pastSubSections = ['key-figures', 'societies-groups', 'events-milestones', 'timeline'];
+    const sections = document.querySelectorAll('main > section[id], main .subsection[id]');
     const observer = new IntersectionObserver((entries) => {
         document.querySelectorAll('.main-nav .active').forEach(a => a.classList.remove('active'));
-        
+
+        let visibleSection = null;
         for (const entry of entries) {
             if (entry.isIntersecting) {
-                const id = entry.target.id;
-                
-                if (pastSubSections.includes(id) || id === 'past') {
-                    if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
-                } else if (id === 'whats-on') {
-                    if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
-                } else {
-                    const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
-                    if(activeLink) activeLink.classList.add('active');
-                }
-                return; 
+                visibleSection = entry.target.id;
+                break;
             }
         }
-    }, { rootMargin: `-${navHeight}px 0px -50% 0px` });
+        
+        if (visibleSection) {
+             const pastSubSections = ['key-figures', 'societies-groups', 'timeline'];
+             if (pastSubSections.includes(visibleSection) || visibleSection === 'past') {
+                if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
+            } else if (visibleSection === 'whats-on' || visibleSection === 'venues' || visibleSection === 'festivals-events') {
+                if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
+            } else {
+                const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${visibleSection}"]`);
+                if(activeLink) activeLink.classList.add('active');
+            }
+        }
+    }, { rootMargin: `-${navHeight}px 0px -60% 0px` });
 
     sections.forEach(section => {
         observer.observe(section);
-        // Observe subsections as well
-        section.querySelectorAll('.subsection[id]').forEach(sub => observer.observe(sub));
     });
 
 });
