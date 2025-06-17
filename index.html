@@ -207,10 +207,10 @@
         transform: translateY(-8px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
-    .figure-card-image { height: 220px; background-color: #000; }
+    .figure-card-image { height: 220px; background-color: var(--primary-color); }
     .figure-card-image.fig-no-img { background-color: var(--primary-color); }
     .figure-card-image img { width: 100%; height: 100%; object-fit: cover; }
-    #key-figures .figure-card-image img { object-fit: contain; } /* Portrait style for figures */
+    #key-figures .figure-card-image img { object-fit: contain; background-color: #000; } 
     
     .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; flex-grow: 1; }
     .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
@@ -326,20 +326,19 @@
     .products-link-section .call-to-action { background-color: var(--accent-color); color: var(--primary-color) !important; }
     .products-link-section .call-to-action:hover { background-color: #dcc18a; }
     
-    .present-grid, .event-grid {
+    .present-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
     }
-    .present-item, .event-item {
+    .present-item {
       background-color: var(--surface-color); border: 1px solid var(--border-color);
       padding: calc(var(--spacing-unit) * 1.5); border-radius: var(--border-radius-md);
       display: flex; flex-direction: column; box-shadow: 0 4px 15px var(--shadow-color);
       transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
     }
-    .present-item:hover, .event-item:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12); }
-    .present-item p, .event-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 1rem; color: var(--text-secondary); }
-    .event-item .event-date, .event-item .event-type { font-size: 0.9rem; color: var(--accent-color); font-weight: 700; margin-bottom: calc(var(--spacing-unit) * 0.5); }
-    .event-item .event-date { color: var(--secondary-color); font-style: italic; }
+    .present-item:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12); }
+    .present-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 1rem; color: var(--text-secondary); }
+    
     .seasonal-event-notice {
         font-size: 0.95rem; text-align: center; font-style: italic; color: var(--text-secondary);
         margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5);
@@ -465,7 +464,7 @@
       body { font-size: 16px; }
       .page-hero { padding: 4rem 0; }
       .content-section { padding: calc(var(--spacing-unit) * 3) 0;}
-      .present-grid, .event-grid, .vision-points, .info-card-grid { grid-template-columns: 1fr; }
+      .present-grid, .vision-points, .info-card-grid { grid-template-columns: 1fr; }
       .biography-content-wrapper.has-image {
         grid-template-columns: 1fr;
       }
@@ -526,7 +525,7 @@
         
         <div id="venues" class="subsection">
             <h3>Popular Music Venues</h3>
-            <div class="figure-grid">
+            <div class="figure-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
                 <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
                     <div class="figure-card-image"><img src="seans-bar-ireland-216497-1.webp" alt="Sean's Bar"></div>
                     <div class="figure-card-content">
@@ -555,13 +554,6 @@
                         <p class="description">A popular spot for locals, The Snug is true to its name, offering a cozy setting for a variety of live music acts on weekends, from contemporary to acoustic.</p>
                     </div>
                 </a>
-                <a href="#" class="figure-card-link">
-                    <div class="figure-card-image"><img src="nutts.jpg" alt="Nuts Corner"></div>
-                    <div class="figure-card-content">
-                        <h4>Nuts Corner</h4>
-                        <p class="description">A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
-                    </div>
-                </a>
                 <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
                     <div class="figure-card-image"><img src="Peddlar-Mac-s-facebook.JPG" alt="Peddler Mac's Pub"></div>
                     <div class="figure-card-content">
@@ -569,21 +561,28 @@
                         <p class="description">A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists in the heart of the town.</p>
                     </div>
                 </a>
-                <a href="#" class="figure-card-link">
+                <a href="https://www.facebook.p.com/p/Maisies-Athlone-100063718884024/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
                     <div class="figure-card-image"><img src="maisies.jpg" alt="Maisie's Pub"></div>
                     <div class="figure-card-content">
                         <h4>Maisie's</h4>
                         <p class="description">Known for its friendly vibe and strong support of live music, Maisie's is a frequent and beloved spot for weekend entertainment and local gigs.</p>
                     </div>
                 </a>
-                 <a href="#" class="figure-card-link">
+                 <a href="https://www.facebook.com/theshackathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
                     <div class="figure-card-image"><img src="shack.webp" alt="The Shack"></div>
                     <div class="figure-card-content">
                         <h4>The Shack</h4>
                         <p class="description">A great spot for more intimate acoustic sessions and for discovering new talent in a cozy, welcoming setting that focuses on the music.</p>
                     </div>
                 </a>
-                <a href="https://www.theprinceofwales.ie/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                <a href="https://www.facebook.com/NutsCornerAthlone" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="nutts.jpg" alt="Nuts Corner pub."></div>
+                    <div class="figure-card-content">
+                        <h4>Nuts Corner</h4>
+                        <p class="description">A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
+                    </div>
+                </a>
+                <a href="https://www.theprinceofwales.ie/the-venue/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
                     <div class="figure-card-image fig-no-img"></div>
                     <div class="figure-card-content">
                         <h4>The Venue @ The Prince</h4>
@@ -595,13 +594,27 @@
 
         <div id="festivals-events" class="subsection">
             <h3>Festivals & Events</h3>
-            <div class="event-grid">
-                <article class="event-item"><h4>St. Patrick's Festival</h4><p class="event-date">Mid-March</p><p class="event-type">Town Celebrations & Music</p><p>A vibrant St. Patrick's Day parade and festival, with pubs and venues featuring live traditional Irish music.</p></article>
-                <article class="event-item"><h4>Croílár Music & Arts Festival</h4><p class="event-date">Typically April</p><p class="event-type">Music & Arts Festival</p><p>A celebration of contemporary and traditional arts, with a strong focus on live music performances across various town venues.</p></article>
-                <article class="event-item"><h4>Flan Fest</h4><p class="event-date">June Bank Holiday Weekend</p><p class="event-type">Live Music at Flannery's Bar</p><p>Flannery's Bar hosts its annual music festival with a packed lineup of live bands and entertainment all weekend long.</p></article>
-                <article class="event-item"><h4>Féile na Sionainne</h4><p class="event-date">1st - 3rd August 2025</p><p class="event-type">Traditional Music Festival</p><p>A weekend celebration of traditional Irish music, song, and dance, attracting top musicians to the banks of the Shannon.</p></article>
-                 <article class="event-item"><h4>Viking River Fest</h4><p class="event-date">Typically August Bank Holiday</p><p class="event-type">Family Festival & Viking Heritage</p><p>Experience Athlone's Viking roots with reenactments, family activities, and of course, great live music by the river.</p></article>
-                <article class="event-item"><h4>River & Food Festival</h4><p class="event-date">Typically September</p><p class="event-type">Family Festival with Live Music</p><p>A major highlight on the Shannon, this festival celebrates local food and heritage with live music performances.</p></article>
+            <div class="figure-grid">
+                <div class="figure-card-link">
+                    <div class="figure-card-image"><img src="St patricks.jpg" alt="St. Patrick's Day Parade in Athlone."></div>
+                    <div class="figure-card-content"><h4>St. Patrick's Festival</h4><p>Mid-March</p></div>
+                </div>
+                <div class="figure-card-link">
+                    <div class="figure-card-image"><img src="croilar.webp" alt="Croilar festival branding."></div>
+                    <div class="figure-card-content"><h4>Croílár Music & Arts Festival</h4><p>Typically April</p></div>
+                </div>
+                 <div class="figure-card-link">
+                    <div class="figure-card-image"><img src="flan-fest-2023-16.jpg" alt="Live band performing at Flan Fest."></div>
+                    <div class="figure-card-content"><h4>Flan Fest</h4><p>June Bank Holiday</p></div>
+                </div>
+                <div class="figure-card-link">
+                    <div class="figure-card-image"><img src="feilenasion.jfif" alt="Feile na Sionainne event poster."></div>
+                    <div class="figure-card-content"><h4>Féile na Sionainne</h4><p>August Bank Holiday</p></div>
+                </div>
+                 <div class="figure-card-link">
+                    <div class="figure-card-image"><img src="viking river.jfif" alt="Viking reenactors at the Viking Food & River Festival."></div>
+                    <div class="figure-card-content"><h4>Viking Food & River Festival</h4><p>Typically September</p></div>
+                </div>
             </div>
              <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
         </div>
@@ -964,7 +977,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const biographiesArea = document.getElementById('biographies-area');
-    const allBioLinks = document.querySelectorAll('#past .figure-card-link, #past .info-card a.call-to-action');
+    const allBioLinks = document.querySelectorAll('#key-figures .figure-card-link, #societies-groups .info-card a.call-to-action');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
     const pastDropdownToggle = document.querySelector('a.nav-link[href="#past"]');
     const whatsOnDropdownToggle = document.querySelector('a.nav-link[href="#whats-on"]');
