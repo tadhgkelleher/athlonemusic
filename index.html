@@ -1,3 +1,5 @@
+what direction would you go with this
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,7 +195,7 @@
     .subsection { padding-top: calc(var(--spacing-unit) * 2); }
 
     .figure-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted for better spacing with more cards */
       gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
     }
     .figure-card-link {
@@ -209,8 +211,8 @@
     }
     .figure-card-image { height: 220px; background-color: var(--primary-color); }
     .figure-card-image.fig-no-img { background-color: var(--primary-color); }
-    .figure-card-image img { width: 100%; height: 100%; object-fit: cover; }
-    #key-figures .figure-card-image img { object-fit: contain; background-color: #000; } 
+    .figure-card-image img { width: 100%; height: 100%; object-fit: cover; } /* Cover for venues/events */
+    #key-figures .figure-card-image img { object-fit: contain; background-color: #000; } /* Contain for portraits */
     
     .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; flex-grow: 1; display:flex; flex-direction:column; }
     .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
@@ -355,7 +357,7 @@
       display: inline-block; background-color: var(--accent-color); color: var(--primary-color) !important;
       padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
       border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
-      margin-top: auto;
+      margin-top: auto; /* Pushes button to bottom of card */
       transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
       border: 2px solid transparent; font-family: var(--font-body);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -483,7 +485,6 @@
             <div class="dropdown-menu">
               <a href="#venues">Venues</a>
               <a href="#festivals-events">Festivals & Events</a>
-              <a href="#featured-artists">Featured Artists</a>
               <a href="#studios-spaces">Studios & Spaces</a>
             </div>
           </div>
@@ -492,15 +493,8 @@
             <div class="dropdown-menu">
               <a href="#key-figures">Key Figures</a>
               <a href="#societies-groups">Societies & Groups</a>
-              <a href="#past-bands">Past Bands & Artists</a>
+              <a href="#popular-bands">Popular Bands</a>
               <a href="#timeline">Timeline</a>
-            </div>
-          </div>
-          <div class="nav-item-dropdown">
-            <a href="#artists" class="nav-link dropdown-toggle">Artists</a>
-            <div class="dropdown-menu">
-                <a href="#featured-artists">Featured Artists</a>
-                <a href="#past-bands">Past Bands & Artists</a>
             </div>
           </div>
           <a href="#vision" class="nav-link">The Vision</a>
@@ -534,116 +528,126 @@
         <div id="venues" class="subsection">
             <h3>Popular Music Venues</h3>
             <div class="figure-grid">
-                <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="seans-bar-ireland-216497-1.webp" alt="Sean's Bar"></div>
-                    <div class="figure-card-content"><h4>Sean's Bar</h4><p>Historic Pub & Trad Music Hub</p></div>
-                </a>
-                <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Sean's Bar</h4>
+                        <p class="description">As Ireland's oldest pub, Sean's Bar offers a truly authentic experience with lively traditional Irish music sessions that attract locals and tourists alike.</p>
+                        <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="seancrowe.jpg" alt="Dean Crowe Theatre"></div>
-                    <div class="figure-card-content"><h4>Dean Crowe Theatre</h4><p>Theatre & Concert Venue</p></div>
-                </a>
-                <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Dean Crowe Theatre</h4>
+                        <p class="description">A central pillar of Athlone's arts scene, the Dean Crowe hosts a diverse programme including musical performances by national and international artists.</p>
+                        <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="flanns.webp" alt="Flannery's Bar"></div>
-                    <div class="figure-card-content"><h4>Flannery's Bar</h4><p>Pub with Live Music & DJs</p></div>
-                </a>
-                 <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Flannery's Bar</h4>
+                        <p class="description">A well-known pub with a lively atmosphere, often featuring live rock and cover bands as well as DJ sets that keep the energy high into the night.</p>
+                        <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                 <article class="figure-card-link">
                     <div class="figure-card-image"><img src="snug.jpg" alt="The Snug Bar"></div>
-                    <div class="figure-card-content"><h4>The Snug Bar</h4><p>Pub with Live Music</p></div>
-                </a>
-                <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>The Snug Bar</h4>
+                        <p class="description">A popular spot for locals, The Snug is true to its name, offering a cozy setting for a variety of live music acts on weekends, from contemporary to acoustic.</p>
+                        <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="Peddlar-Mac-s-facebook.JPG" alt="Peddler Mac's Pub"></div>
-                    <div class="figure-card-content"><h4>Peddler Mac's</h4><p>Pub with Live Music</p></div>
-                </a>
-                <a href="https://www.facebook.p.com/p/Maisies-Athlone-100063718884024/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Peddler Mac's</h4>
+                        <p class="description">A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists in the heart of the town.</p>
+                        <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="maisies.jpg" alt="Maisie's Pub"></div>
-                    <div class="figure-card-content"><h4>Maisie's</h4><p>Pub & Music Venue</p></div>
-                </a>
-                 <a href="https://www.facebook.com/theshackathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Maisie's</h4>
+                        <p class="description">Known for its friendly vibe and strong support of live music, Maisie's is a frequent and beloved spot for weekend entertainment and local gigs.</p>
+                        <a href="https://www.facebook.p.com/p/Maisies-Athlone-100063718884024/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                 <article class="figure-card-link">
                     <div class="figure-card-image"><img src="shack.webp" alt="The Shack"></div>
-                    <div class="figure-card-content"><h4>The Shack</h4><p>Intimate Music Sessions</p></div>
-                </a>
-                <a href="https://www.facebook.com/NutsCornerAthlone" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>The Shack</h4>
+                        <p class="description">A great spot for more intimate acoustic sessions and for discovering new talent in a cozy, welcoming setting that focuses on the music.</p>
+                        <a href="https://www.facebook.com/theshackathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="nutts.jpg" alt="Nuts Corner pub."></div>
-                    <div class="figure-card-content"><h4>Nuts Corner</h4><p>Live Music Venue</p></div>
-                </a>
-                <a href="https://www.theprinceofwales.ie/the-venue/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-content">
+                        <h4>Nuts Corner</h4>
+                        <p class="description">A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
+                         <a href="https://www.facebook.com/NutsCornerAthlone" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                    </div>
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image fig-no-img"></div>
-                    <div class="figure-card-content"><h4>The Venue @ The Prince</h4><p>Modern Event Space</p></div>
-                </a>
+                    <div class="figure-card-content">
+                        <h4>The Venue @ The Prince</h4>
+                        <p class="description">Attached to the Prince of Wales Hotel, this modern space hosts a variety of events, including larger concerts, tribute acts, and special performances.</p>
+                         <a href="https://www.theprinceofwales.ie/the-venue/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                    </div>
+                </article>
             </div>
         </div>
 
         <div id="festivals-events" class="subsection">
             <h3>Festivals & Events</h3>
-             <div class="figure-grid">
-                <a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+            <div class="figure-grid">
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="St patricks.jpg" alt="St. Patrick's Day Parade in Athlone."></div>
                     <div class="figure-card-content">
                         <h4>St. Patrick's Festival</h4><p>Mid-March</p>
                         <p class="description">A vibrant town-wide celebration, with the parade and pubs filled with live traditional Irish music.</p>
+                        <a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
                     </div>
-                </a>
-                <a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="croilar.webp" alt="Croilar festival branding."></div>
                     <div class="figure-card-content">
                         <h4>Croílár Music & Arts Festival</h4><p>Typically April</p>
                         <p class="description">A celebration of contemporary and traditional arts, with a strong focus on live music across various town venues.</p>
+                        <a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Dates</a>
                     </div>
-                </a>
-                 <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                </article>
+                 <article class="figure-card-link">
                     <div class="figure-card-image"><img src="flan-fest-2023-16.jpg" alt="Live band performing at Flan Fest."></div>
                     <div class="figure-card-content">
                         <h4>Flan Fest</h4><p>June Bank Holiday</p>
                         <p class="description">Flannery's Bar hosts its annual music festival with a packed lineup of live bands and entertainment all weekend long.</p>
+                        <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">See Lineup</a>
                     </div>
-                </a>
-                <a href="https://www.facebook.com/FeileNaSionainne/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                </article>
+                <article class="figure-card-link">
                     <div class="figure-card-image"><img src="feilenasion.jfif" alt="Feile na Sionainne event poster."></div>
                     <div class="figure-card-content">
                         <h4>Féile na Sionainne</h4><p>August Bank Holiday</p>
                         <p class="description">A weekend celebration of traditional Irish music, song, and dance, attracting top musicians to the banks of the Shannon.</p>
+                        <a href="https://www.facebook.com/FeileNaSionainne/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
                     </div>
-                </a>
-                 <a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                </article>
+                 <article class="figure-card-link">
                     <div class="figure-card-image"><img src="viking river.jfif" alt="Viking reenactors at the Viking Food & River Festival."></div>
                     <div class="figure-card-content">
                         <h4>Viking Food & River Festival</h4><p>Typically September</p>
                         <p class="description">Experience Athlone's Viking heritage and celebrate local food with family activities and live music by the river.</p>
+                        <a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
                     </div>
-                </a>
+                </article>
             </div>
              <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
-        </div>
-
-        <div id="featured-artists" class="subsection">
-          <h3>Featured Artists & Bands</h3>
-          <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">Athlone is a hotbed of current musical talent. This is a directory to help you discover the sounds of the town today. To be featured, get in touch via our form below!</p>
-          <div class="figure-grid">
-              <a href="#" class="figure-card-link">
-                  <div class="figure-card-image fig-no-img"></div>
-                  <div class="figure-card-content">
-                    <h4>The Shannon Waves</h4>
-                    <p class="description">Hard-hitting indie rock with infectious melodies. A staple of the local pub scene.</p>
-                    <div style="margin-top: auto;"><span class="call-to-action">Listen on Spotify</span></div>
-                  </div>
-              </a>
-              <a href="#" class="figure-card-link">
-                  <div class="figure-card-image fig-no-img"></div>
-                  <div class="figure-card-content">
-                    <h4>Aoife Keane</h4>
-                    <p class="description">A powerful folk singer-songwriter whose lyrics capture stories of the heartlands.</p>
-                     <div style="margin-top: auto;"><span class="call-to-action">Visit Bandcamp</span></div>
-                  </div>
-              </a>
-              <a href="#" class="figure-card-link">
-                  <div class="figure-card-image fig-no-img"></div>
-                  <div class="figure-card-content">
-                    <h4>Solar Flare</h4>
-                    <p class="description">High-energy electronic duo creating immersive soundscapes and dancefloor-ready beats.</p>
-                     <div style="margin-top: auto;"><span class="call-to-action">Follow on Instagram</span></div>
-                  </div>
-              </a>
-          </div>
         </div>
 
         <div id="studios-spaces" class="subsection">
@@ -740,8 +744,8 @@
           </div>
         </div>
 
-        <div id="past-bands" class="subsection">
-            <h3>Past Bands & Artists</h3>
+        <div id="popular-bands" class="subsection">
+            <h3>Popular Bands: 1930s - Present</h3>
              <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">From the dancehall days of the orchestras to the rock, pop, and indie acts that followed, Athlone has produced and hosted countless popular bands. This section is a growing archive of those who provided the soundtrack for generations.</p>
             <div class="info-card-grid">
               <article class="info-card">
@@ -751,18 +755,23 @@
               </article>
               <article class="info-card">
                 <h4>The Showband Era</h4>
-                <span class="info-card-subtitle">1960s - 1970s</span>
-                <p>The dancehall craze reached its peak, and Athlone was at the heart of it. Legendary local showbands like the <strong>Brendan Shine Band</strong>, <strong>The Central Seven Showband</strong>, <strong>Ray Lynam and The Hillbillies</strong>, and the <strong>Saints Showband</strong> packed venues across the country. They were joined by other popular acts like <strong>The Avengers</strong>, <strong>The Goldsmiths</strong>, and the <strong>Sheerin Family Band</strong>.</p>
+                <span class="info-card-subtitle">1960s</span>
+                <p>The dancehall craze reached its peak, and Athlone was at the heart of it. Legendary local showbands like <strong>Syd and the Saints</strong> and <strong>The Central 7</strong> packed venues across the country.</p>
               </article>
               <article class="info-card">
-                <h4>The Rise of Rock & Pop</h4>
+                <h4>Showbands Evolve</h4>
+                <span class="info-card-subtitle">1970s</span>
+                <p>As tastes shifted, so did the bands. The 70s saw a new wave of popular groups who kept the showband spirit alive, including <strong>The Avengers</strong>, <strong>Tarzan and the Monkees</strong>, and <strong>The Goldsmiths</strong>.</p>
+              </article>
+              <article class="info-card">
+                <h4>The Rise of Rock</h4>
                 <span class="info-card-subtitle">1980s</span>
-                <p>Inspired by global trends, the 80s marked the emergence of rock, pop, and folk music in Athlone's pubs and clubs, with a new generation of musicians like **Pearly Whites**, **Quest For Fire**, and **Southern Flame** creating a louder, edgier sound.</p>
+                <p>Inspired by global trends, the 80s marked the emergence of rock music in Athlone's pubs and clubs, with a new generation of musicians trading brass for electric guitars and creating a louder, edgier sound.</p>
               </article>
               <article class="info-card">
                 <h4>The Indie Explosion</h4>
                 <span class="info-card-subtitle">1990s</span>
-                <p>The 90s saw an explosion of young, alternative bands forming across the town. This era was defined by acts like **Murv**, **Spiderbaby**, **Sativa**, **Libido**, and **Pen15**, who represented a new wave of original music in Athlone.</p>
+                <p>The 90s saw an explosion of young, alternative bands forming across the town. The most popular of these was <strong>Murv</strong>, who became local legends and represented a new era for original music in Athlone.</p>
               </article>
               <article class="info-card">
                 <h4>A New Millennium</h4>
@@ -772,11 +781,12 @@
               <article class="info-card">
                 <h4>The Modern Shift</h4>
                 <span class="info-card-subtitle">2010s</span>
-                <p>This decade saw a shift towards acclaimed solo performers, while still producing distinct and creative bands like <strong>The Driftwood Manor</strong>, <strong>Philharmongrel</strong>, **Kiosoma**, **Black Island**, and **Old Soul Brigade**.</p>
+                <p>This decade saw a shift towards acclaimed solo performers, while still producing distinct and creative bands like <strong>The Driftwood Manor</strong>, <strong>Philharmongrel</strong>, and <strong>Kiosoma</strong>.</p>
               </article>
               <article class="info-card">
-                <h4>The Musicians Who Shaped the Sound</h4>
-                <p>Behind these bands were countless talented individuals. This is a growing list of the musicians who made the music happen: <strong>Aidan Kearney, Aine O Reagan, Trish Nolan, Ciaran Kelly, Aoife Doolan, Sarah Donnelly, Dermot Kearney, Cha Nicholson, Francis Kearney, Frank Kearney, Frankie McDonald, Johnny Dawson, Kevin Sheerin, Larry Benson, Mai Kelly, Michael Kearney, Pascal Kelly, Tadhg O Regan, Terry Benson, Tony Allen, Billy Henshaw Jr & Sr, Brian Dolan, Davey Henshaw, Eamon Hatton, Eddie Keenan, Fergie Milton, Fiona Ducke, Gerry Flynn, Lee Roche, Leigh Duncan, Mark Henshaw, Neil Fitzgibbon, Paul Curly, Philly Powell, Richard StJohn, Ritchie Browne, Ru Powell, Brian McCormack, Robbie McManus, Willie Kiernan, David Dockery, Bob Batty, Brian Goggin, Chuck Daly, Clem Higgenbotham, Colm Bulger, Conor & David Irwin, Dermot Kaye, Gerry Lacey, Joe Byrne, Kenny Lee, Liam Kealthy, Lorraine McDonald, Noel Stronge, Olwyn O Sullivan, Sammy Rohan, Tadhg Kelleher, Terry Donovan</strong>, and many more we invite you to share.</p>
+                <h4>Today's Scene & The Future</h4>
+                <span class="info-card-subtitle">Present Day</span>
+                <p>Today, a new generation of young bands is nurtured and developed in the town's rehearsal spaces and recording studios, continuing Athlone's unbroken chain of musical innovation and ensuring the legacy lives on.</p>
               </article>
             </div>
         </div>
@@ -1002,7 +1012,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
     const pastDropdownToggle = document.querySelector('a.nav-link[href="#past"]');
     const whatsOnDropdownToggle = document.querySelector('a.nav-link[href="#whats-on"]');
-    const artistsDropdownToggle = document.querySelector('a.nav-link[href="#artists"]');
     let activeBioSection = null;
     const navHeight = document.querySelector('.main-nav')?.offsetHeight || 70;
 
@@ -1068,16 +1077,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
                 
-                const pastSubSections = ['key-figures', 'societies-groups', 'past-bands', 'timeline'];
-                const whatsOnSubSections = ['venues', 'festivals-events', 'featured-artists', 'studios-spaces'];
-                const artistsSubSections = ['featured-artists', 'past-bands'];
+                const pastSubSections = ['key-figures', 'societies-groups', 'popular-bands', 'timeline'];
+                const whatsOnSubSections = ['venues', 'festivals-events', 'studios-spaces'];
 
                 if (pastSubSections.includes(id) || id === 'past') {
                     if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
                 } else if (whatsOnSubSections.includes(id) || id === 'whats-on') {
                     if(whatsOnDropdownToggle) whatsOnDropdownToggle.classList.add('active');
-                } else if (artistsSubSections.includes(id)) {
-                    if(artistsDropdownToggle) artistsDropdownToggle.classList.add('active');
                 } else {
                     const activeLink = document.querySelector(`.main-nav a.nav-link[href="#${id}"]`);
                     if(activeLink) activeLink.classList.add('active');
