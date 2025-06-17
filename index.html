@@ -209,11 +209,13 @@
     }
     .figure-card-image { height: 220px; background-color: #000; }
     .figure-card-image.fig-no-img { background-color: var(--primary-color); }
-    .figure-card-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+    .figure-card-image img { width: 100%; height: 100%; object-fit: cover; }
+    #key-figures .figure-card-image img { object-fit: contain; } /* Portrait style for figures */
     
     .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; flex-grow: 1; }
     .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
+    .figure-card-content .description { font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); }
     
     .info-card-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -324,44 +326,6 @@
     .products-link-section .call-to-action { background-color: var(--accent-color); color: var(--primary-color) !important; }
     .products-link-section .call-to-action:hover { background-color: #dcc18a; }
     
-    /* --- NEW CSS FOR VENUE CARDS --- */
-    .venue-card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: calc(var(--spacing-unit) * 2);
-      margin-top: calc(var(--spacing-unit) * 2.5);
-    }
-    .venue-card {
-      background-color: var(--surface-color);
-      border-radius: var(--border-radius-md);
-      box-shadow: 0 4px 15px var(--shadow-color);
-      display: flex;
-      overflow: hidden;
-      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-    }
-    .venue-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12);
-    }
-    .venue-image {
-      flex: 0 0 200px;
-      background-color: var(--primary-color);
-    }
-    .venue-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .venue-details {
-      padding: calc(var(--spacing-unit) * 1.5);
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .venue-details h4 { text-align: left; }
-    .venue-details p { flex-grow: 1; font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem;}
-    .venue-type { font-size: 0.9rem; color: var(--accent-color); font-weight: 700; margin-bottom: 0.5rem !important; }
-
     .present-grid, .event-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
@@ -505,9 +469,6 @@
       .biography-content-wrapper.has-image {
         grid-template-columns: 1fr;
       }
-      /* Responsive stacking for venue cards */
-      .venue-card { flex-direction: column; }
-      .venue-image { flex-basis: 200px; }
     }
   </style>
 </head>
@@ -565,88 +526,70 @@
         
         <div id="venues" class="subsection">
             <h3>Popular Music Venues</h3>
-            <div class="venue-card-grid">
-                <article class="venue-card">
-                    <div class="venue-image"><img src="seans-bar-ireland-216497-1.webp" alt="The front of Sean's Bar, Ireland's oldest pub."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Historic Pub & Trad Music Hub</p>
+            <div class="figure-grid">
+                <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="seans-bar-ireland-216497-1.webp" alt="Sean's Bar"></div>
+                    <div class="figure-card-content">
                         <h4>Sean's Bar</h4>
-                        <p>As Ireland's oldest pub, Sean's Bar offers a truly authentic experience with lively traditional Irish music sessions that attract locals and tourists alike.</p>
-                        <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                        <p class="description">As Ireland's oldest pub, Sean's Bar offers a truly authentic experience with lively traditional Irish music sessions that attract locals and tourists alike.</p>
                     </div>
-                </article>
-                <article class="venue-card">
-                    <div class="venue-image"><img src="seancrowe.jpg" alt="The interior auditorium of the Dean Crowe Theatre."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Theatre & Concert Venue</p>
+                </a>
+                <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="seancrowe.jpg" alt="Dean Crowe Theatre"></div>
+                    <div class="figure-card-content">
                         <h4>Dean Crowe Theatre</h4>
-                        <p>A central pillar of Athlone's arts scene, the Dean Crowe hosts a diverse programme including musical performances by national and international artists.</p>
-                        <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                        <p class="description">A central pillar of Athlone's arts scene, the Dean Crowe hosts a diverse programme including musical performances by national and international artists.</p>
                     </div>
-                </article>
-                 <article class="venue-card">
-                    <div class="venue-image"><img src="flanns.webp" alt="The exterior of Flannery's Bar in Athlone."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Pub with Live Music & DJs</p>
+                </a>
+                <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="flanns.webp" alt="Flannery's Bar"></div>
+                    <div class="figure-card-content">
                         <h4>Flannery's Bar</h4>
-                        <p>A well-known pub with a lively atmosphere, often featuring live rock and cover bands as well as DJ sets that keep the energy high into the night.</p>
-                        <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                        <p class="description">A well-known pub with a lively atmosphere, often featuring live rock and cover bands as well as DJ sets that keep the energy high into the night.</p>
                     </div>
-                </article>
-                 <article class="venue-card">
-                    <div class="venue-image"><img src="snug.jpg" alt="The traditional front of The Snug Bar."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Pub with Live Music</p>
+                </a>
+                 <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="snug.jpg" alt="The Snug Bar"></div>
+                    <div class="figure-card-content">
                         <h4>The Snug Bar</h4>
-                        <p>A popular spot for locals, The Snug is true to its name, offering a cozy setting for a variety of live music acts on weekends, from contemporary to acoustic.</p>
-                        <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
+                        <p class="description">A popular spot for locals, The Snug is true to its name, offering a cozy setting for a variety of live music acts on weekends, from contemporary to acoustic.</p>
                     </div>
-                </article>
-                <article class="venue-card">
-                    <div class="venue-image"><img src="Peddlar-Mac-s-facebook.JPG" alt="The colourful front of Peddler Mac's pub."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Pub with Live Music</p>
-                        <h4>Peddler Mac's</h4>
-                        <p>A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists in the heart of the town.</p>
-                        <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                <article class="venue-card">
-                    <div class="venue-image"><img src="maisies.jpg" alt="The front entrance of Maisie's pub."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Pub & Music Venue</p>
-                        <h4>Maisie's</h4>
-                        <p>Known for its friendly vibe and strong support of live music, Maisie's is a frequent and beloved spot for weekend entertainment and local gigs.</p>
-                        <a href="#" class="call-to-action">Find on Socials</a>
-                    </div>
-                </article>
-                 <article class="venue-card">
-                    <div class="venue-image"><img src="shack.webp" alt="The logo for The Shack bar."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Intimate Music Sessions</p>
-                        <h4>The Shack</h4>
-                        <p>A great spot for more intimate acoustic sessions and for discovering new talent in a cozy, welcoming setting that focuses on the music.</p>
-                        <a href="#" class="call-to-action">Find on Socials</a>
-                    </div>
-                </article>
-                <article class="venue-card">
-                    <div class="venue-image"><img src="nutts.jpg" alt="The front of Nuts Corner pub."></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Live Music Venue</p>
+                </a>
+                <a href="#" class="figure-card-link">
+                    <div class="figure-card-image"><img src="nutts.jpg" alt="Nuts Corner"></div>
+                    <div class="figure-card-content">
                         <h4>Nuts Corner</h4>
-                        <p>A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
-                         <a href="#" class="call-to-action">Find on Socials</a>
+                        <p class="description">A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
                     </div>
-                </article>
-                <article class="venue-card">
-                    <div class="venue-image" style="background-color: var(--primary-color);"></div>
-                    <div class="venue-details">
-                        <p class="venue-type">Modern Event Space</p>
+                </a>
+                <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image"><img src="Peddlar-Mac-s-facebook.JPG" alt="Peddler Mac's Pub"></div>
+                    <div class="figure-card-content">
+                        <h4>Peddler Mac's</h4>
+                        <p class="description">A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists in the heart of the town.</p>
+                    </div>
+                </a>
+                <a href="#" class="figure-card-link">
+                    <div class="figure-card-image"><img src="maisies.jpg" alt="Maisie's Pub"></div>
+                    <div class="figure-card-content">
+                        <h4>Maisie's</h4>
+                        <p class="description">Known for its friendly vibe and strong support of live music, Maisie's is a frequent and beloved spot for weekend entertainment and local gigs.</p>
+                    </div>
+                </a>
+                 <a href="#" class="figure-card-link">
+                    <div class="figure-card-image"><img src="shack.webp" alt="The Shack"></div>
+                    <div class="figure-card-content">
+                        <h4>The Shack</h4>
+                        <p class="description">A great spot for more intimate acoustic sessions and for discovering new talent in a cozy, welcoming setting that focuses on the music.</p>
+                    </div>
+                </a>
+                <a href="https://www.theprinceofwales.ie/" target="_blank" rel="noopener noreferrer" class="figure-card-link">
+                    <div class="figure-card-image fig-no-img"></div>
+                    <div class="figure-card-content">
                         <h4>The Venue @ The Prince</h4>
-                        <p>Attached to the Prince of Wales Hotel, this modern space hosts a variety of events, including larger concerts, tribute acts, and special performances.</p>
-                         <a href="https://www.theprinceofwales.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
+                        <p class="description">Attached to the Prince of Wales Hotel, this modern space hosts a variety of events, including larger concerts, tribute acts, and special performances.</p>
                     </div>
-                </article>
+                </a>
             </div>
         </div>
 
@@ -1021,7 +964,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const biographiesArea = document.getElementById('biographies-area');
-    const allClickableLinks = document.querySelectorAll('.figure-card-link, .info-card a.call-to-action');
+    const allBioLinks = document.querySelectorAll('#past .figure-card-link, #past .info-card a.call-to-action');
     const navLinks = document.querySelectorAll('.main-nav a.nav-link, .main-nav .dropdown-menu a');
     const pastDropdownToggle = document.querySelector('a.nav-link[href="#past"]');
     const whatsOnDropdownToggle = document.querySelector('a.nav-link[href="#whats-on"]');
@@ -1042,10 +985,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
 
-    allClickableLinks.forEach(link => {
-        // This check prevents venue cards from trying to open biographies
-        if (link.closest('#venues')) return; 
-
+    allBioLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetBioId = this.getAttribute('href').substring(1);
