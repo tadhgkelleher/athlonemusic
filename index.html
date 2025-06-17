@@ -1,3 +1,5 @@
+what direction would you go with this
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -314,57 +316,6 @@
             border-width: 10px 10px 10px 0;
         }
     }
-    
-    /* --- A-Z Directory Styles --- */
-    .az-directory {
-      margin-top: calc(var(--spacing-unit) * 2);
-      display: grid;
-      grid-template-columns: 1fr; /* Default to single column */
-      gap: calc(var(--spacing-unit) * 1);
-    }
-    .az-item {
-      display: flex;
-      align-items: flex-start;
-      gap: calc(var(--spacing-unit) * 1.5);
-      padding-bottom: var(--spacing-unit);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .az-letter {
-      flex-shrink: 0;
-      width: 50px;
-      height: 50px;
-      background-color: var(--secondary-color);
-      color: var(--text-light);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-    .az-names p {
-      margin: 0;
-      padding-top: 0.5rem; /* Align text better with the middle of the letter */
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-    }
-    .az-names p a {
-        font-weight: 400; /* Make artist names less bold than standard links */
-        border-bottom: 1px dotted var(--secondary-color);
-    }
-    .az-names p a:hover {
-        border-bottom-style: solid;
-        color: var(--accent-color);
-    }
-    
-    @media (min-width: 768px) {
-      .az-directory {
-        grid-template-columns: 1fr 1fr;
-        gap: calc(var(--spacing-unit) * 2);
-      }
-    }
 
     .products-link-section {
       text-align: center; padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1.5);
@@ -535,8 +486,6 @@
               <a href="#venues">Venues</a>
               <a href="#festivals-events">Festivals & Events</a>
               <a href="#studios-spaces">Studios & Spaces</a>
-              <a href="#current-musicians">Current Musicians (A-Z)</a>
-              <a href="#current-bands">Current Bands (A-Z)</a>
             </div>
           </div>
           <div class="nav-item-dropdown">
@@ -544,9 +493,7 @@
             <div class="dropdown-menu">
               <a href="#key-figures">Key Figures</a>
               <a href="#societies-groups">Societies & Groups</a>
-              <a href="#popular-bands">Popular Bands History</a>
-              <a href="#past-musicians">Past Musicians (A-Z)</a>
-              <a href="#past-bands">Past Bands (A-Z)</a>
+              <a href="#popular-bands">Popular Bands</a>
               <a href="#timeline">Timeline</a>
             </div>
           </div>
@@ -733,46 +680,6 @@
         <div class="present-grid">
             <article class="present-item"><h4>Athlone School of Music</h4><p>A center for music education, offering lessons for a wide range of instruments and vocal training to all ages and levels.</p><a href="https://athloneschoolofmusic.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
         </div>
-
-        <!-- New A-Z section for Current Musicians -->
-        <div id="current-musicians" class="subsection">
-            <h3>Current Musicians of Note (A-Z)</h3>
-            <p class="page-intro-text" style="font-size: 1rem;">A directory of talented solo artists, singers, and traditional musicians active in Athlone today.</p>
-            <div class="az-directory">
-                <div class="az-item">
-                    <div class="az-letter">A</div>
-                    <div class="az-names"><p>Artist Name One, Another Artist</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">B</div>
-                    <div class="az-names"><p>Example Person B</p></div>
-                </div>
-                 <div class="az-item">
-                    <div class="az-letter">...</div>
-                    <div class="az-names"><p>More musicians will be added here.</p></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- New A-Z section for Current Bands -->
-        <div id="current-bands" class="subsection">
-            <h3>Current Bands (A-Z)</h3>
-            <p class="page-intro-text" style="font-size: 1rem;">A directory of active bands and musical groups currently shaping the sound of Athlone.</p>
-            <div class="az-directory">
-                <div class="az-item">
-                    <div class="az-letter">A</div>
-                    <div class="az-names"><p>Active Band Alpha</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">B</div>
-                    <div class="az-names"><p>The Bards of Blyry</p></div>
-                </div>
-                 <div class="az-item">
-                    <div class="az-letter">...</div>
-                    <div class="az-names"><p>More bands will be added here.</p></div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="past" class="content-section">
@@ -881,74 +788,6 @@
                 <span class="info-card-subtitle">Present Day</span>
                 <p>Today, a new generation of young bands is nurtured and developed in the town's rehearsal spaces and recording studios, continuing Athlone's unbroken chain of musical innovation and ensuring the legacy lives on.</p>
               </article>
-            </div>
-        </div>
-
-        <!-- New A-Z section for Past Musicians -->
-        <div id="past-musicians" class="subsection">
-            <h3>Past Musicians of Note (A-Z)</h3>
-            <p class="page-intro-text" style="font-size: 1rem;">An archive of the influential solo artists and individual musicians from Athlone's history.</p>
-            <div class="az-directory">
-                <div class="az-item">
-                    <div class="az-letter">D</div>
-                    <div class="az-names"><p>Daly, Eugene (The Titanic Piper)</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">F</div>
-                    <div class="az-names"><p>Foy, Henry</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">G</div>
-                    <div class="az-names"><p>Gilmore, Patrick</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">K</div>
-                    <div class="az-names"><p>Keating, Patrick, Kilkelly, Michael</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">M</div>
-                    <div class="az-names"><p>McCormack, Count John</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">...</div>
-                    <div class="az-names"><p>More historical figures will be added here.</p></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- New A-Z section for Past Bands -->
-        <div id="past-bands" class="subsection">
-            <h3>Past Bands (A-Z)</h3>
-            <p class="page-intro-text" style="font-size: 1rem;">From dance orchestras to rock and indie legends, this is an archive of the bands that provided the soundtrack for generations in Athlone.</p>
-            <div class="az-directory">
-                <div class="az-item">
-                    <div class="az-letter">A</div>
-                    <div class="az-names"><p>The Avengers</p></div>
-                </div>
-                 <div class="az-item">
-                    <div class="az-letter">C</div>
-                    <div class="az-names"><p>The Central 7, The Crescent Orchestra</p></div>
-                </div>
-                 <div class="az-item">
-                    <div class="az-letter">G</div>
-                    <div class="az-names"><p>The Goldsmiths</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">J</div>
-                    <div class="az-names"><p>Jack Behan's Blue Crotchets</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">M</div>
-                    <div class="az-names"><p>Murv, My Fallen Empire</p></div>
-                </div>
-                <div class="az-item">
-                    <div class="az-letter">S</div>
-                    <div class="az-names"><p>Skinsize Kings, Syd and the Saints</p></div>
-                </div>
-                 <div class="az-item">
-                    <div class="az-letter">...</div>
-                    <div class="az-names"><p>More bands will be added here.</p></div>
-                </div>
             </div>
         </div>
 
@@ -1238,8 +1077,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
                 
-                const pastSubSections = ['key-figures', 'societies-groups', 'popular-bands', 'past-musicians', 'past-bands', 'timeline'];
-                const whatsOnSubSections = ['venues', 'festivals-events', 'studios-spaces', 'current-musicians', 'current-bands'];
+                const pastSubSections = ['key-figures', 'societies-groups', 'popular-bands', 'timeline'];
+                const whatsOnSubSections = ['venues', 'festivals-events', 'studios-spaces'];
 
                 if (pastSubSections.includes(id) || id === 'past') {
                     if(pastDropdownToggle) pastDropdownToggle.classList.add('active');
