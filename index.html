@@ -219,7 +219,8 @@
     .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
     .figure-card-content .description { font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); flex-grow: 1; margin-top: 0.5rem; margin-bottom: 1rem; }
-    
+    .figure-card-caption { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); padding: 0 1.5rem 1rem; text-align: center; }
+
     .info-card-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
@@ -390,13 +391,15 @@
     }
 
     .site-footer {
-      background: var(--primary-color); color: var(--text-light); text-align: center;
+      background: var(--primary-color); color: var(--text-light);
       padding: calc(var(--spacing-unit) * 3) 0; margin-top: calc(var(--spacing-unit) * 4);
       border-top: 5px solid var(--accent-color);
     }
+    .site-footer .container { text-align: center; }
     .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.8; }
-    .site-footer a { color: var(--accent-color); }
+    .site-footer a { color: var(--accent-color); font-weight: 400; }
     .site-footer a:hover, .site-footer a:focus { color: var(--text-light); }
+    .footer-nav { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 2rem; }
     .footer-credits { font-size: 0.9rem; opacity: 0.7; margin-top: 2rem;}
 
     #biographies-area { margin-top: calc(var(--spacing-unit) * 2); }
@@ -498,12 +501,28 @@
       text-decoration: none;
       border-bottom: 1px dotted var(--border-color);
       transition: all var(--transition-fast);
+      cursor: pointer;
     }
     .az-list li a:hover,
     .az-list li a:focus {
       color: var(--accent-color);
       border-bottom-color: var(--accent-color);
     }
+
+    /* Policy & About Page Styles */
+    .policy-section {
+      background-color: var(--surface-color);
+      border-top: 4px solid var(--accent-color);
+      padding: calc(var(--spacing-unit) * 3);
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 5px 20px var(--shadow-color);
+    }
+    .policy-section h2 { text-align: left; }
+    .policy-section h2::after { display: none; }
+    .policy-section h3 { text-align: left; margin-top: 2rem; font-size: 1.5rem; }
+    .policy-section p, .policy-section ul { max-width: 80ch; }
+    .policy-section a { border-bottom: 1px dotted var(--secondary-color); }
+    .policy-section a:hover { border-bottom-style: solid; }
 
     @media (max-width: 992px) {
       .main-nav .nav-links {
@@ -595,7 +614,6 @@
           <a href="#past" class="nav-link">Our Past</a>
           <a href="#music-trail" class="nav-link">Music Trail</a>
           <a href="#vision" class="nav-link">The Vision</a>
-          <a href="#about" class="nav-link">About Us</a>
           <a href="#get-involved" class="nav-link">Get Involved</a>
       </div>
     </div>
@@ -786,26 +804,32 @@
               <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
                   <div class="figure-card-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating"></div>
                   <div class="figure-card-content"><h4>Patrick Keating</h4><p>The Father of Athlone's Music</p></div>
+                  <p class="figure-card-caption">Photo courtesy of Athlone Archives.</p>
               </a>
               <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
                   <div class="figure-card-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore"></div>
                   <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>Father of the American Band</p></div>
+                  <p class="figure-card-caption">Image: Library of Congress.</p>
               </a>
               <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
                   <div class="figure-card-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly"></div>
                   <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
+                  <p class="figure-card-caption">Photo courtesy of the Kilkelly family.</p>
               </a>
               <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
                   <div class="figure-card-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy"></div>
                   <div class="figure-card-content"><h4>Henry Foy</h4><p>Ireland's First Jazzman</p></div>
+                  <p class="figure-card-caption">Photo courtesy of Athlone Archives.</p>
               </a>
               <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
                   <div class="figure-card-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack"></div>
                   <div class="figure-card-content"><h4>Count John McCormack</h4><p>Athlone's Global Voice</p></div>
+                   <p class="figure-card-caption">Image: Wikimedia Commons.</p>
               </a>
               <a href="#bio-eugene-daly" class="figure-card-link" id="fig-daly">
                   <div class="figure-card-image"><img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly, the Titanic Piper"></div>
                   <div class="figure-card-content"><h4>Eugene Daly</h4><p>The Titanic Piper</p></div>
+                   <p class="figure-card-caption">Photo courtesy of Encyclopedia Titanica.</p>
               </a>
           </div>
         </div>
@@ -886,24 +910,24 @@
           </nav>
           
           <div class="az-content">
-            <div id="bands-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a href="#get-involved">Amber Moon</a></li></ul></div>
-            <div id="bands-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a href="#get-involved">Bad Penny</a></li><li><a href="#get-involved">Black Island</a></li><li><a href="#get-involved">Black Satellite</a></li><li><a href="#get-involved">Bog Frogs</a></li><li><a href="#get-involved">Brainwashington</a></li><li><a href="#get-involved">Brendan Shine Band</a></li></ul></div>
-            <div id="bands-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a href="#get-involved">Central Seven Showband</a></li><li><a href="#get-involved">Connected Musicians</a></li><li><a href="#get-involved">Coosan Folk Group</a></li></ul></div>
-            <div id="bands-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a href="#get-involved">D’Bize</a></li><li><a href="#get-involved">Driftwood Manor</a></li><li><a href="#get-involved">Dummy Kid</a></li></ul></div>
-            <div id="bands-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a href="#get-involved">Evil Elviss</a></li></ul></div>
-            <div id="bands-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a href="#get-involved">Fokofandai</a></li><li><a href="#get-involved">Foster & Allen</a></li><li><a href="#get-involved">Fuzz Rockets</a></li></ul></div>
-            <div id="bands-h" class="az-group"><h4 class="az-letter-heading">H</h4><ul class="az-list"><li><a href="#get-involved">Hickory Wind</a></li></ul></div>
-            <div id="bands-i" class="az-group"><h4 class="az-letter-heading">I</h4><ul class="az-list"><li><a href="#get-involved">In The Bin</a></li></ul></div>
-            <div id="bands-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a href="#get-involved">Kara & the Klass</a></li><li><a href="#get-involved">Kill Goliath</a></li><li><a href="#get-involved">Kiosoma</a></li></ul></div>
-            <div id="bands-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a href="#get-involved">Libido</a></li><li><a href="#get-involved">Life After Monologue</a></li></ul></div>
-            <div id="bands-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a href="#get-involved">Making Space</a></li><li><a href="#get-involved">Mandrax Dream</a></li><li><a href="#get-involved">Midlands Big Band</a></li><li><a href="#get-involved">My Fallen Empire</a></li></ul></div>
-            <div id="bands-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a href="#get-involved">Neodrach</a></li><li><a href="#get-involved">Nomatrix</a></li></ul></div>
-            <div id="bands-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a href="#get-involved">Old Soul Brigade</a></li><li><a href="#get-involved">One Pull Rush</a></li></ul></div>
-            <div id="bands-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a href="#get-involved">Pen15</a></li><li><a href="#get-involved">Philharmongrel</a></li><li><a href="#get-involved">Pinheads</a></li></ul></div>
-            <div id="bands-q" class="az-group"><h4 class="az-letter-heading">Q</h4><ul class="az-list"><li><a href="#get-involved">Quest For Fire</a></li></ul></div>
-            <div id="bands-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a href="#get-involved">Ray Lynam and The Hillbillies</a></li><li><a href="#get-involved">Renegades of Funk</a></li><li><a href="#get-involved">Resurection Fern</a></li><li><a href="#get-involved">Ribbitt</a></li><li><a href="#get-involved">RRadio Gee</a></li><li><a href="#get-involved">Rubber</a></li></ul></div>
-            <div id="bands-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a href="#get-involved">Saints Showband</a></li><li><a href="#get-involved">Sativa</a></li><li><a href="#get-involved">Screaming Stone</a></li><li><a href="#get-involved">Sheerin Family Band</a></li><li><a href="#get-involved">Skinsize Kings</a></li><li><a href="#get-involved">Sons of Gingerbread</a></li><li><a href="#get-involved">Southern Flame</a></li><li><a href="#get-involved">Spiderbaby</a></li></ul></div>
-            <div id="bands-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a href="#get-involved">The Driftwood Manor</a></li><li><a href="#get-involved">The Fabulous Bonker Boys</a></li><li><a href="#get-involved">The Lols</a></li><li><a href="#get-involved">The Noshow Band</a></li><li><a href="#get-involved">The Savoy Band</a></li><li><a href="#get-involved">The Shit Hot Sili Peppers</a></li><li><a href="#get-involved">Those Sacred Mushrooms</a></li><li><a href="#get-involved">Thunderslap</a></li><li><a href="#get-involved">Trippin Chickens</a></li><li><a href="#get-involved">Tv After Midnight</a></li><li><a href="#get-involved">Twilight Dance Band</a></li></ul></div>
+            <div id="bands-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a>Amber Moon</a></li></ul></div>
+            <div id="bands-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a>Bad Penny</a></li><li><a>Black Island</a></li><li><a>Black Satellite</a></li><li><a>Bog Frogs</a></li><li><a>Brainwashington</a></li><li><a>Brendan Shine Band</a></li></ul></div>
+            <div id="bands-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a>Central Seven Showband</a></li><li><a>Connected Musicians</a></li><li><a>Coosan Folk Group</a></li></ul></div>
+            <div id="bands-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a>D’Bize</a></li><li><a>Driftwood Manor</a></li><li><a>Dummy Kid</a></li></ul></div>
+            <div id="bands-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a>Evil Elviss</a></li></ul></div>
+            <div id="bands-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a>Fokofandai</a></li><li><a>Foster & Allen</a></li><li><a>Fuzz Rockets</a></li></ul></div>
+            <div id="bands-h" class="az-group"><h4 class="az-letter-heading">H</h4><ul class="az-list"><li><a>Hickory Wind</a></li></ul></div>
+            <div id="bands-i" class="az-group"><h4 class="az-letter-heading">I</h4><ul class="az-list"><li><a>In The Bin</a></li></ul></div>
+            <div id="bands-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a>Kara & the Klass</a></li><li><a>Kill Goliath</a></li><li><a>Kiosoma</a></li></ul></div>
+            <div id="bands-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a>Libido</a></li><li><a>Life After Monologue</a></li></ul></div>
+            <div id="bands-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a>Making Space</a></li><li><a>Mandrax Dream</a></li><li><a>Midlands Big Band</a></li><li><a>My Fallen Empire</a></li></ul></div>
+            <div id="bands-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a>Neodrach</a></li><li><a>Nomatrix</a></li></ul></div>
+            <div id="bands-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a>Old Soul Brigade</a></li><li><a>One Pull Rush</a></li></ul></div>
+            <div id="bands-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a>Pen15</a></li><li><a>Philharmongrel</a></li><li><a>Pinheads</a></li></ul></div>
+            <div id="bands-q" class="az-group"><h4 class="az-letter-heading">Q</h4><ul class="az-list"><li><a>Quest For Fire</a></li></ul></div>
+            <div id="bands-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a>Ray Lynam and The Hillbillies</a></li><li><a>Renegades of Funk</a></li><li><a>Resurection Fern</a></li><li><a>Ribbitt</a></li><li><a>RRadio Gee</a></li><li><a>Rubber</a></li></ul></div>
+            <div id="bands-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a>Saints Showband</a></li><li><a>Sativa</a></li><li><a>Screaming Stone</a></li><li><a>Sheerin Family Band</a></li><li><a>Skinsize Kings</a></li><li><a>Sons of Gingerbread</a></li><li><a>Southern Flame</a></li><li><a>Spiderbaby</a></li></ul></div>
+            <div id="bands-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a>The Driftwood Manor</a></li><li><a>The Fabulous Bonker Boys</a></li><li><a>The Lols</a></li><li><a>The Noshow Band</a></li><li><a>The Savoy Band</a></li><li><a>The Shit Hot Sili Peppers</a></li><li><a>Those Sacred Mushrooms</a></li><li><a>Thunderslap</a></li><li><a>Trippin Chickens</a></li><li><a>Tv After Midnight</a></li><li><a>Twilight Dance Band</a></li></ul></div>
           </div>
         </div>
 
@@ -918,24 +942,24 @@
           </nav>
           
           <div class="az-content">
-            <div id="musicians-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a href="#get-involved">Aidan Kearney</a></li><li><a href="#get-involved">Aine O Reagan</a></li><li><a href="#get-involved">Aoife Doolan</a></li></ul></div>
-            <div id="musicians-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a href="#get-involved">Billy Henshaw Jr</a></li><li><a href="#get-involved">Billy Henshaw Sr</a></li><li><a href="#get-involved">Bob Batty</a></li><li><a href="#get-involved">Brendan Shine</a></li><li><a href="#get-involved">Brian Dolan</a></li><li><a href="#get-involved">Brian Goggin</a></li><li><a href="#get-involved">Brian McCormack</a></li></ul></div>
-            <div id="musicians-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a href="#get-involved">Cha Nicholson</a></li><li><a href="#get-involved">Chuck Daly</a></li><li><a href="#get-involved">Ciaran Kelly</a></li><li><a href="#get-involved">Clem Higgenbotham</a></li><li><a href="#get-involved">Colm Bulger</a></li><li><a href="#get-involved">Conor Irwin</a></li></ul></div>
-            <div id="musicians-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a href="#get-involved">Davey Henshaw</a></li><li><a href="#get-involved">David Dockery</a></li><li><a href="#get-involved">David Irwin</a></li><li><a href="#get-involved">Dermot Kaye</a></li><li><a href="#get-involved">Dermot Kearney</a></li></ul></div>
-            <div id="musicians-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a href="#get-involved">Eamon Hatton</a></li><li><a href="#get-involved">Eddie Keenan</a></li></ul></div>
-            <div id="musicians-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a href="#get-involved">Fergie Milton</a></li><li><a href="#get-involved">Fiona Ducke</a></li><li><a href="#get-involved">Francis Kearney</a></li><li><a href="#get-involved">Frank Kearney</a></li><li><a href="#get-involved">Frankie McDonald</a></li></ul></div>
-            <div id="musicians-g" class="az-group"><h4 class="az-letter-heading">G</h4><ul class="az-list"><li><a href="#get-involved">Gerry Flynn</a></li><li><a href="#get-involved">Gerry Lacey</a></li></ul></div>
-            <div id="musicians-j" class="az-group"><h4 class="az-letter-heading">J</h4><ul class="az-list"><li><a href="#get-involved">Jessica Shine</a></li><li><a href="#get-involved">Joe Byrne</a></li><li><a href="#get-involved">Johnny Dawson</a></li></ul></div>
-            <div id="musicians-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a href="#get-involved">Kenny Lee</a></li><li><a href="#get-involved">Kevin Sheerin</a></li></ul></div>
-            <div id="musicians-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a href="#get-involved">Larry Benson</a></li><li><a href="#get-involved">Lee Roche</a></li><li><a href="#get-involved">Leigh Duncan</a></li><li><a href="#get-involved">Liam Kealthy</a></li><li><a href="#get-involved">Lorraine McDonald</a></li></ul></div>
-            <div id="musicians-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a href="#get-involved">Mai Kelly</a></li><li><a href="#get-involved">Mark Henshaw</a></li><li><a href="#get-involved">Michael Kearney</a></li></ul></div>
-            <div id="musicians-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a href="#get-involved">Neil Fitzgibbon</a></li><li><a href="#get-involved">Noel Stronge</a></li></ul></div>
-            <div id="musicians-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a href="#get-involved">Olwyn O Sullivan</a></li></ul></div>
-            <div id="musicians-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a href="#get-involved">Pascal Kelly</a></li><li><a href="#get-involved">Paul Curly</a></li><li><a href="#get-involved">Philly Powell</a></li></ul></div>
-            <div id="musicians-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a href="#get-involved">Richard StJohn</a></li><li><a href="#get-involved">Ritchie Browne</a></li><li><a href="#get-involved">Robbie McManus</a></li><li><a href="#get-involved">Ross McDonald</a></li><li><a href="#get-involved">Ru Powell</a></li></ul></div>
-            <div id="musicians-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a href="#get-involved">Sammy Rohan</a></li><li><a href="#get-involved">Shane Tivenan</a></li><li><a href="#get-involved">Srah Donnelly</a></li></ul></div>
-            <div id="musicians-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a href="#get-involved">Tadhg Kelleher</a></li><li><a href="#get-involved">Tadhg O Regan</a></li><li><a href="#get-involved">Terry Benson</a></li><li><a href="#get-involved">Terry Donovan</a></li><li><a href="#get-involved">Tommy Ryan</a></li><li><a href="#get-involved">Tony Allen</a></li><li><a href="#get-involved">Trish Nolan</a></li></ul></div>
-            <div id="musicians-w" class="az-group"><h4 class="az-letter-heading">W</h4><ul class="az-list"><li><a href="#get-involved">Willie Kiernan</a></li></ul></div>
+            <div id="musicians-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a>Aidan Kearney</a></li><li><a>Aine O Reagan</a></li><li><a>Aoife Doolan</a></li></ul></div>
+            <div id="musicians-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a>Billy Henshaw Jr</a></li><li><a>Billy Henshaw Sr</a></li><li><a>Bob Batty</a></li><li><a>Brendan Shine</a></li><li><a>Brian Dolan</a></li><li><a>Brian Goggin</a></li><li><a>Brian McCormack</a></li></ul></div>
+            <div id="musicians-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a>Cha Nicholson</a></li><li><a>Chuck Daly</a></li><li><a>Ciaran Kelly</a></li><li><a>Clem Higgenbotham</a></li><li><a>Colm Bulger</a></li><li><a>Conor Irwin</a></li></ul></div>
+            <div id="musicians-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a>Davey Henshaw</a></li><li><a>David Dockery</a></li><li><a>David Irwin</a></li><li><a>Dermot Kaye</a></li><li><a>Dermot Kearney</a></li></ul></div>
+            <div id="musicians-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a>Eamon Hatton</a></li><li><a>Eddie Keenan</a></li></ul></div>
+            <div id="musicians-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a>Fergie Milton</a></li><li><a>Fiona Ducke</a></li><li><a>Francis Kearney</a></li><li><a>Frank Kearney</a></li><li><a>Frankie McDonald</a></li></ul></div>
+            <div id="musicians-g" class="az-group"><h4 class="az-letter-heading">G</h4><ul class="az-list"><li><a>Gerry Flynn</a></li><li><a>Gerry Lacey</a></li></ul></div>
+            <div id="musicians-j" class="az-group"><h4 class="az-letter-heading">J</h4><ul class="az-list"><li><a>Jessica Shine</a></li><li><a>Joe Byrne</a></li><li><a>Johnny Dawson</a></li></ul></div>
+            <div id="musicians-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a>Kenny Lee</a></li><li><a>Kevin Sheerin</a></li></ul></div>
+            <div id="musicians-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a>Larry Benson</a></li><li><a>Lee Roche</a></li><li><a>Leigh Duncan</a></li><li><a>Liam Kealthy</a></li><li><a>Lorraine McDonald</a></li></ul></div>
+            <div id="musicians-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a>Mai Kelly</a></li><li><a>Mark Henshaw</a></li><li><a>Michael Kearney</a></li></ul></div>
+            <div id="musicians-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a>Neil Fitzgibbon</a></li><li><a>Noel Stronge</a></li></ul></div>
+            <div id="musicians-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a>Olwyn O Sullivan</a></li></ul></div>
+            <div id="musicians-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a>Pascal Kelly</a></li><li><a>Paul Curly</a></li><li><a>Philly Powell</a></li></ul></div>
+            <div id="musicians-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a>Richard StJohn</a></li><li><a>Ritchie Browne</a></li><li><a>Robbie McManus</a></li><li><a>Ross McDonald</a></li><li><a>Ru Powell</a></li></ul></div>
+            <div id="musicians-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a>Sammy Rohan</a></li><li><a>Shane Tivenan</a></li><li><a>Srah Donnelly</a></li></ul></div>
+            <div id="musicians-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a>Tadhg Kelleher</a></li><li><a>Tadhg O Regan</a></li><li><a>Terry Benson</a></li><li><a>Terry Donovan</a></li><li><a>Tommy Ryan</a></li><li><a>Tony Allen</a></li><li><a>Trish Nolan</a></li></ul></div>
+            <div id="musicians-w" class="az-group"><h4 class="az-letter-heading">W</h4><ul class="az-list"><li><a>Willie Kiernan</a></li></ul></div>
           </div>
         </div>
 
@@ -1001,31 +1025,78 @@
       <p style="text-align: center; margin-top: 2rem;"><strong>This vision can only become a reality with your support.</strong></p>
     </section>
     
-    <section id="about" class="content-section">
-      <h2>About the Project</h2>
-      <p class="page-intro-text">The Athlone Music Heritage Project is a community-led initiative founded by local historians, musicians, and enthusiasts. Our mission is to research, preserve, and celebrate the incredible musical legacy of our town. This website is the first step towards our ultimate goal: establishing a permanent, interactive Music Museum in the heart of Athlone. We believe that by sharing these stories, we can honor our past and inspire the next generation of artists.</p>
-    </section>
-
     <section id="get-involved" class="content-section">
-      <h2>Get Involved & Show Your Support</h2>
+      <h2>Get Involved & Share Your Story</h2>
       <p class="page-intro-text">Your support is crucial to making the Athlone Music Museum a reality. By registering your interest, you help demonstrate the community's passion for this project. Use the form to join our mailing list for updates, share your own stories and memorabilia, or learn about volunteering. Every voice adds to the chorus calling for this vital cultural space.</p>
       
       <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
-
-      <p style="text-align:center; margin-top: 2rem;">You can also follow the project's journey on social media:</p>
-      <p style="text-align:center;">
-          <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Follow on Instagram</a>
-          <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 1rem;">Follow on Facebook</a>
-      </p>
     </section>
+    
+    <section id="about" class="content-section policy-section">
+      <h2>About The Project</h2>
+      <p>The Athlone Music Heritage Project is a community-led initiative founded by local historians, musicians, and enthusiasts. Our mission is to research, preserve, and celebrate the incredible musical legacy of our town. This website is the first step towards our ultimate goal: establishing a permanent, interactive Music Museum in the heart of Athlone.</p>
+      <p>We believe that by sharing these stories, we can honor our past and inspire the next generation of artists. The content on this site has been compiled through extensive research in local archives, newspapers, and, most importantly, through the stories and memorabilia shared by the people of Athlone.</p>
+      <h3>Our Team</h3>
+      <p>Our project is driven by a volunteer team of dedicated individuals. (This is a great place to add short bios and photos of the main people involved to build trust and authority).</p>
+      <ul>
+        <li><strong>Jane Doe</strong> - Lead Historian & Researcher</li>
+        <li><strong>John Smith</strong> - Musician & Community Outreach</li>
+        <li><strong>Pat Murphy</strong> - Web Development & Digital Archiving</li>
+      </ul>
+    </section>
+    
+    <section id="contact" class="content-section policy-section">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you. Whether you have a question, a story to share, or want to get involved with the project, please don't hesitate to reach out.</p>
+        <p><strong>Email:</strong> <a href="mailto:info@athlonemusicheritage.ie">info@athlonemusicheritage.ie</a> (example email)</p>
+        <p>You can also follow the project's journey on social media:</p>
+        <p>
+            <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Follow on Instagram</a>
+            <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 1rem;">Follow on Facebook</a>
+        </p>
+    </section>
+
+    <section id="privacy" class="content-section policy-section">
+        <h2>Privacy Policy</h2>
+        <p><em>Last Updated: 14 September 2025</em></p>
+        <p>The Athlone Music Heritage Project ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+        
+        <h3>Information We Collect</h3>
+        <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+        <ul>
+            <li><strong>Personal Data:</strong> Personally identifiable information, such as your name and email address, which you voluntarily give to us when you submit information through our "Get Involved" form. You are under no obligation to provide us with personal information of any kind.</li>
+            <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+        </ul>
+
+        <h3>Use of Your Information</h3>
+        <p>Having accurate information permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:</p>
+        <ul>
+            <li>Respond to your inquiries and offer support for the project.</li>
+            <li>Send you a newsletter or other updates about the project, should you opt-in.</li>
+            <li>Compile anonymous statistical data and analysis for use internally.</li>
+        </ul>
+        
+        <h3>Third-Party Services</h3>
+        <p><strong>Google Forms:</strong> We use an embedded Google Form to collect submissions. Your data is stored on Google's servers and is subject to Google's Privacy Policy.</p>
+        <p><strong>Google AdSense:</strong> We may use Google AdSense to display ads on this website. Google uses cookies to serve ads based on a user's prior visits to this website or other websites. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>.</p>
+        
+        <h3>Contact Us</h3>
+        <p>If you have questions or comments about this Privacy Policy, please contact us using the information on our <a href="#contact">Contact page</a>.</p>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <p>© <script>document.write(new Date().getFullYear())</script> Athlone Music Heritage Project.</p>
       <p>Working towards the establishment of the Athlone Music Museum.</p>
+      <ul class="footer-nav">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
       <p class="footer-credits">Historical research and content compiled by the Athlone Music Heritage Project team. With thanks to local archives and community contributors.</p>
       <p><a href="#top">Back to Top</a></p>
     </div>
@@ -1120,7 +1191,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const biographiesArea = document.getElementById('biographies-area');
     const allBioLinks = document.querySelectorAll('#key-figures .figure-card-link, #societies-groups .info-card a.call-to-action');
-    const navLinks = document.querySelectorAll('.main-nav a.nav-link, .az-nav a, .az-list a');
+    const azArchiveLinks = document.querySelectorAll('.az-list a');
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link, .az-nav a, .footer-nav a');
     let activeBioSection = null;
     const navHeight = document.querySelector('.main-nav')?.offsetHeight || 70;
 
@@ -1137,21 +1209,56 @@ document.addEventListener('DOMContentLoaded', function() {
         const offsetPosition = elementPosition - navHeight - 30;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
+    
+    function createAndShowBio(content, scrollTarget) {
+        hideActiveBio();
+        biographiesArea.innerHTML = content;
+        activeBioSection = biographiesArea.querySelector('.biography-section');
+        scrollToElement(scrollTarget || activeBioSection);
+        activeBioSection.querySelector('.close-bio-button').addEventListener('click', () => {
+             hideActiveBio();
+             const pastSection = document.getElementById('past');
+             scrollToElement(pastSection);
+        });
+    }
 
     allBioLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetBioId = this.getAttribute('href').substring(1);
-            hideActiveBio();
-            
             if (biographyTemplates[targetBioId]) {
-                biographiesArea.innerHTML = biographyTemplates[targetBioId];
-                activeBioSection = biographiesArea.querySelector('.biography-section');
-                scrollToElement(activeBioSection);
-                activeBioSection.querySelector('.close-bio-button').addEventListener('click', () => {
-                     hideActiveBio();
-                     const pastSection = document.getElementById('past');
-                     scrollToElement(pastSection);
+                createAndShowBio(biographyTemplates[targetBioId]);
+            }
+        });
+    });
+    
+    azArchiveLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const name = this.textContent.trim();
+            const stubTemplate = `
+                <section class="content-section biography-section">
+                    <h2>${name}</h2> <span class="bio-subtitle">Community Archive Entry</span>
+                    <div class="biography-content-wrapper">
+                        <div class="bio-text">
+                            <p>This is a placeholder for information about <strong>${name}</strong>. The Athlone Music Heritage Project is actively seeking stories, photographs, recordings, and memories related to this artist/band.</p>
+                            <p>Do you remember seeing them play? Were you a member? Do you have a story to share? Your contribution can help us build a complete picture of Athlone's rich musical history.</p>
+                            <p>Please use the form below to share what you know. Every detail, no matter how small, is valuable.</p>
+                            <a href="#get-involved" class="call-to-action contributor-link">Contribute Information</a>
+                        </div>
+                    </div> <button class="close-bio-button" aria-label="Close ${name} biography">Close Biography</button>
+                </section>`;
+            createAndShowBio(stubTemplate);
+
+            // Add smooth scroll to the contribution button
+            const contributorLink = activeBioSection.querySelector('.contributor-link');
+            if (contributorLink) {
+                contributorLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                        scrollToElement(targetElement);
+                    }
                 });
             }
         });
