@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="From a storied heritage to a vibrant present, explore the complete story of music in Athlone. Discover venues, events, artists, and the vision for a new Music Museum.">
-  <title>Athlone Music | Past, Present & Future</title>
+  <meta name="description" content="Athlone Music & Radio Heritage — the official precursor site for the Athlone Music and Radio Museum. Explore the deep history of music and broadcasting in Athlone, from Patrick Keating and John McCormack to the Moydrum transmitter and Radio Éireann.">
+  <title>Athlone Music & Radio Heritage | Precursor to the Museum</title>
   
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5470051995144012"
-     crossorigin="anonymous"></script>
-     
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #0d2c4b;    /* Deep Navy */
-      --secondary-color: #4a6fa5;   /* Lighter Slate Blue */
-      --accent-color: #c5a66a;     /* Sophisticated Gold/Ochre */
+      --primary-color: #0d2c4b;
+      --secondary-color: #4a6fa5;
+      --accent-color: #c5a66a;
       --text-primary: #1a1a1a;
       --text-secondary: #555;
       --text-light: #f8f9fa;
-      --bg-color: #fdfdfb;         /* Warm Off-White */
+      --bg-color: #fdfdfb;
       --surface-color: #ffffff;
       --border-color: #e0e0e0;
       --shadow-color: rgba(13, 44, 75, 0.08);
@@ -58,21 +55,23 @@
     }
     .page-hero::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to top, rgba(13, 44, 75, 0.8) 0%, rgba(13, 44, 75, 0.5) 100%);
+      background: linear-gradient(to top, rgba(13, 44, 75, 0.85) 0%, rgba(13, 44, 75, 0.55) 100%);
       z-index: 1;
     }
     .page-hero .container { position: relative; z-index: 2; }
     .page-hero .page-hero-title {
         color: var(--text-light);
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
         text-shadow: 0 3px 8px rgba(0,0,0,0.6);
         margin-bottom: 1rem;
     }
     .page-hero .page-intro-text {
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.92);
         text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        max-width: 750px;
+        max-width: 780px;
         font-size: 1.25rem;
+        margin-left: auto;
+        margin-right: auto;
     }
     h2 {
         font-size: clamp(2rem, 4vw, 2.5rem);
@@ -115,14 +114,14 @@
     }
     .main-nav .container { display: flex; justify-content: space-between; align-items: center; }
     .main-nav .site-name {
-      font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary-color);
+      font-family: var(--font-heading); font-size: 1.45rem; color: var(--primary-color);
       margin: 0; font-weight: 700;
     }
-    .main-nav .nav-links { display: flex; align-items: center; gap: 0.5rem; }
+    .main-nav .nav-links { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; justify-content: center; }
     .main-nav a.nav-link {
-      color: var(--text-secondary); font-weight: 700; padding: 0.5em 1em;
-      border-radius: var(--border-radius-sm); font-size: 0.95rem;
-      letter-spacing: 0.5px; position: relative;
+      color: var(--text-secondary); font-weight: 700; padding: 0.5em 0.9em;
+      border-radius: var(--border-radius-sm); font-size: 0.92rem;
+      letter-spacing: 0.4px; position: relative;
       transition: color var(--transition-fast);
     }
     .main-nav a.nav-link::after {
@@ -137,67 +136,17 @@
     .main-nav a.nav-link:hover::after, .main-nav a.nav-link:focus::after, .main-nav a.nav-link.active::after {
       width: 60%;
     }
-    .nav-item-dropdown { position: relative; }
-    .dropdown-toggle {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.3em;
-    }
-    .dropdown-toggle::after {
-      content: '▼';
-      font-size: 0.6em;
-      display: inline-block;
-      transition: transform var(--transition-fast);
-    }
-    .nav-item-dropdown:hover .dropdown-toggle::after {
-      transform: rotate(180deg);
-    }
-    .dropdown-menu {
-      position: absolute;
-      top: 120%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--surface-color);
-      border-radius: var(--border-radius-sm);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      padding: 0.5rem 0;
-      list-style: none;
-      margin: 0;
-      z-index: 1001;
-      min-width: 180px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
-    }
-    .nav-item-dropdown:hover .dropdown-menu,
-    .nav-item-dropdown:focus-within .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      top: 100%;
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-    .dropdown-menu a:hover {
-      background-color: var(--bg-color);
-      color: var(--primary-color);
-    }
-    
+
     .page-intro-text {
-        font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px;
-        margin: 0 auto calc(var(--spacing-unit) * 3) auto; color: var(--text-secondary);
+        font-size: 1.15rem; line-height: 1.8; text-align: center; max-width: 820px;
+        margin: 0 auto calc(var(--spacing-unit) * 2.5) auto; color: var(--text-secondary);
     }
     .content-section { padding: calc(var(--spacing-unit) * 4) 0; }
     .subsection { padding-top: calc(var(--spacing-unit) * 2); }
 
     .figure-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 3);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.5); margin-top: calc(var(--spacing-unit) * 2.5);
     }
     .figure-card-link {
       display: flex; flex-direction: column; text-decoration: none;
@@ -207,40 +156,39 @@
       overflow: hidden;
     }
     .figure-card-link:hover, .figure-card-link:focus-within {
-        transform: translateY(-8px);
+        transform: translateY(-6px);
         box-shadow: 0 10px 25px rgba(13, 44, 75, 0.15);
     }
     .figure-card-image { height: 220px; background-color: var(--primary-color); }
     .figure-card-image.fig-no-img { background-color: var(--primary-color); }
     .figure-card-image img { width: 100%; height: 100%; object-fit: cover; }
-    #key-figures .figure-card-image img { object-fit: contain; background-color: #000; }
+    #key-figures .figure-card-image img { object-fit: contain; background-color: #111; }
     
-    .figure-card-content { padding: calc(var(--spacing-unit) * 1.5); text-align: center; flex-grow: 1; display:flex; flex-direction:column; }
-    .figure-card-content h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 1rem; }
-    .figure-card-content .description { font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); flex-grow: 1; margin-top: 0.5rem; margin-bottom: 1rem; }
-    .figure-card-caption { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); padding: 0 1.5rem 1rem; text-align: center; }
+    .figure-card-content { padding: calc(var(--spacing-unit) * 1.4); text-align: center; flex-grow: 1; display:flex; flex-direction:column; }
+    .figure-card-content h4 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+    .figure-card-content p { color: var(--secondary-color); font-weight: 700; margin-bottom: 0; font-size: 0.98rem; }
+    .figure-card-caption { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); padding: 0 1.4rem 1rem; text-align: center; }
 
     .info-card-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: calc(var(--spacing-unit) * 1.8); margin-top: calc(var(--spacing-unit) * 2);
     }
     .info-card {
       background-color: var(--surface-color); border-left: 6px solid var(--accent-color);
-      padding: calc(var(--spacing-unit) * 2); border-radius: var(--border-radius-sm);
+      padding: calc(var(--spacing-unit) * 1.8); border-radius: var(--border-radius-sm);
       box-shadow: 0 4px 15px var(--shadow-color);
     }
     .info-card h4 { text-align: left; }
     .info-card-subtitle {
-        font-size: 1rem; color: var(--accent-color); font-weight: 700;
-        margin-bottom: calc(var(--spacing-unit) * 0.5); display: block;
+        font-size: 0.98rem; color: var(--accent-color); font-weight: 700;
+        margin-bottom: calc(var(--spacing-unit) * 0.4); display: block;
     }
-    .info-card p { color: var(--text-secondary); }
+    .info-card p { color: var(--text-secondary); font-size: 0.98rem; }
 
     .timeline-container {
         position: relative;
         max-width: 900px;
-        margin: 4rem auto;
+        margin: 3.5rem auto;
     }
     .timeline-container::after {
         content: '';
@@ -261,9 +209,9 @@
     .timeline-item::after {
         content: '';
         position: absolute;
-        width: 25px;
-        height: 25px;
-        right: -13px;
+        width: 22px;
+        height: 22px;
+        right: -11px;
         background-color: white;
         border: 4px solid var(--primary-color);
         top: 25px;
@@ -276,10 +224,10 @@
         content: " ";
         height: 0;
         position: absolute;
-        top: 32px;
+        top: 30px;
         width: 0;
         z-index: 1;
-        right: 30px;
+        right: 28px;
         border: medium solid var(--surface-color);
         border-width: 10px 0 10px 10px;
         border-color: transparent transparent transparent var(--surface-color);
@@ -288,68 +236,50 @@
         content: " ";
         height: 0;
         position: absolute;
-        top: 32px;
+        top: 30px;
         width: 0;
         z-index: 1;
-        left: 30px;
+        left: 28px;
         border: medium solid var(--surface-color);
         border-width: 10px 10px 10px 0;
         border-color: transparent var(--surface-color) transparent transparent;
     }
-    .timeline-item.right::after { left: -13px; }
+    .timeline-item.right::after { left: -11px; }
     .timeline-content {
-        padding: 20px 30px;
+        padding: 18px 26px;
         background-color: var(--surface-color);
         position: relative;
         border-radius: var(--border-radius-md);
         box-shadow: 0 4px 15px var(--shadow-color);
     }
-    .timeline-content h5 { font-size: 1.1rem; color: var(--accent-color); font-weight: 900; letter-spacing: 0.5px; }
-    .timeline-content p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+    .timeline-content h5 { font-size: 1.05rem; color: var(--accent-color); font-weight: 900; letter-spacing: 0.4px; margin: 0 0 0.4rem 0; }
+    .timeline-content p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 0; }
     
-    .present-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2.5);
-    }
-    .present-item {
-      background-color: var(--surface-color); border: 1px solid var(--border-color);
-      padding: calc(var(--spacing-unit) * 1.5); border-radius: var(--border-radius-md);
-      display: flex; flex-direction: column; box-shadow: 0 4px 15px var(--shadow-color);
-      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-    }
-    .present-item:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(13, 44, 75, 0.12); }
-    .present-item p { flex-grow: 1; margin-bottom: var(--spacing-unit); font-size: 1rem; color: var(--text-secondary); }
-    
-    .seasonal-event-notice {
-        font-size: 0.95rem; text-align: center; font-style: italic; color: var(--text-secondary);
-        margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5);
-        background-color: var(--bg-color); border: 1px dashed var(--border-color); border-radius: var(--border-radius-md);
-    }
     .music-trail-section {
         background-color: var(--primary-color); color: var(--text-light); text-align: center;
         padding: calc(var(--spacing-unit) * 4); border-radius: var(--border-radius-md);
     }
-    .music-trail-section h3 { color: var(--text-light); font-size: 2rem; }
-    .music-trail-section p { opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .music-trail-section h3 { color: var(--text-light); font-size: 2rem; margin-top: 0; }
+    .music-trail-section p { opacity: 0.92; max-width: 720px; margin-left: auto; margin-right: auto; }
     .music-trail-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.4rem;
         text-align: left;
-        margin-top: 2.5rem;
+        margin-top: 2.2rem;
     }
     .trail-stop {
-        background: rgba(255,255,255, 0.05);
-        padding: 1.5rem;
+        background: rgba(255,255,255, 0.06);
+        padding: 1.4rem;
         border-radius: var(--border-radius-sm);
         border: 1px solid var(--secondary-color);
     }
-    .trail-stop h4 { color: var(--accent-color); font-family: var(--font-body); font-weight: 900; margin-bottom: 0.5rem; }
-    .trail-stop p { margin: 0; font-size: 0.95rem; opacity: 0.9; }
+    .trail-stop h4 { color: var(--accent-color); font-family: var(--font-body); font-weight: 900; margin-bottom: 0.45rem; font-size: 1.15rem; }
+    .trail-stop p { margin: 0; font-size: 0.95rem; opacity: 0.92; }
 
     .call-to-action {
       display: inline-block; background-color: var(--accent-color); color: var(--primary-color) !important;
-      padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
-      border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
+      padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.8);
+      border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 0.98rem;
       margin-top: auto;
       transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
       border: 2px solid transparent; font-family: var(--font-body);
@@ -358,21 +288,22 @@
     .call-to-action:hover, .call-to-action:focus { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); background-color: #dcc18a; }
     .call-to-action-outline {
         display: inline-block; background-color: transparent; color: var(--text-light) !important; border: 2px solid var(--accent-color);
-        padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 2);
-        border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 1rem;
-        margin-top: var(--spacing-unit); margin-left: 1rem; transition: all var(--transition-fast);
+        padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.8);
+        border-radius: 50px; text-decoration: none !important; font-weight: 700; font-size: 0.98rem;
+        margin-top: var(--spacing-unit); margin-left: 0.8rem; transition: all var(--transition-fast);
     }
     .call-to-action-outline:hover, .call-to-action-outline:focus { background-color: var(--accent-color); color: var(--primary-color) !important; transform: translateY(-3px); }
+    
     .vision-section {
         background-color: var(--surface-color); border-radius: var(--border-radius-md); padding: calc(var(--spacing-unit) * 3);
         border-top: 6px solid var(--accent-color); box-shadow: 0 5px 20px var(--shadow-color);
     }
     .vision-points {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2); text-align: center;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: calc(var(--spacing-unit) * 1.8); margin-top: calc(var(--spacing-unit) * 2); text-align: center;
     }
-    .vision-point h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .vision-point p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+    .vision-point h4 { font-size: 1.3rem; margin-bottom: 0.45rem; }
+    .vision-point p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.55; }
     
     .form-container {
       max-width: 720px;
@@ -396,7 +327,7 @@
       border-top: 5px solid var(--accent-color);
     }
     .site-footer .container { text-align: center; }
-    .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.8; }
+    .site-footer p { margin-bottom: calc(var(--spacing-unit) * 0.5); opacity: 0.85; }
     .site-footer a { color: var(--accent-color); font-weight: 400; }
     .site-footer a:hover, .site-footer a:focus { color: var(--text-light); }
     .footer-nav { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 2rem; }
@@ -408,17 +339,17 @@
         border: 1px solid var(--border-color); border-radius: var(--border-radius-md);
         box-shadow: 0 5px 20px var(--shadow-color); border-left: 8px solid var(--accent-color);
     }
-    .biography-section h2 { text-align: left; margin-bottom: 0.5rem; font-size: 2.8rem; }
+    .biography-section h2 { text-align: left; margin-bottom: 0.4rem; font-size: 2.5rem; }
     .biography-section h2::after { display: none; }
     .biography-section .bio-subtitle {
-        font-family: var(--font-body); font-size: 1.3rem; color: var(--secondary-color);
-        font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 2); text-align: left;
+        font-family: var(--font-body); font-size: 1.25rem; color: var(--secondary-color);
+        font-style: italic; display: block; margin-bottom: calc(var(--spacing-unit) * 1.8); text-align: left;
     }
     .biography-content-wrapper { display: grid; grid-template-columns: 1fr; align-items: start; }
-    .bio-text p { font-size: 1.1rem; max-width: 80ch; }
+    .bio-text p { font-size: 1.08rem; max-width: 78ch; }
     .close-bio-button {
       display: inline-block; background-color: var(--secondary-color); color: var(--text-light) !important;
-      padding: 0.7rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      padding: 0.65rem 1.4rem; border-radius: 50px; font-weight: 700; font-size: 0.92rem;
       border: none; cursor: pointer; margin-top: var(--spacing-unit);
       transition: background-color var(--transition-fast), transform var(--transition-fast);
       text-decoration: none !important;
@@ -426,7 +357,7 @@
     .close-bio-button:hover, .close-bio-button:focus { background-color: var(--primary-color); transform: translateY(-2px); }
 
     .biography-content-wrapper.has-image {
-        grid-template-columns: 250px 1fr;
+        grid-template-columns: 240px 1fr;
         gap: calc(var(--spacing-unit) * 2);
     }
     .bio-image-wrapper img {
@@ -437,79 +368,6 @@
         box-shadow: 0 5px 15px rgba(13, 44, 75, 0.1);
     }
 
-    /* A-Z Archive Styles */
-    .az-nav {
-      text-align: center;
-      margin: calc(var(--spacing-unit) * 1.5) 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .az-nav a {
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      background-color: var(--bg-color);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-sm);
-      font-weight: 700;
-      color: var(--secondary-color);
-      text-align: center;
-      font-size: 0.9rem;
-      transition: all var(--transition-fast);
-    }
-    .az-nav a:hover, .az-nav a:focus {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      border-color: var(--accent-color);
-      transform: scale(1.1);
-    }
-    .az-content {
-      margin-top: calc(var(--spacing-unit) * 2);
-    }
-    .az-group {
-      margin-bottom: calc(var(--spacing-unit) * 2);
-      padding-top: var(--spacing-unit);
-    }
-    .az-letter-heading {
-      font-size: 2rem;
-      font-family: var(--font-heading);
-      color: var(--accent-color);
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      text-align: left;
-    }
-    .az-list {
-      list-style: none;
-      padding-left: 0;
-      column-count: 2;
-      column-gap: 2rem;
-    }
-    .az-list li {
-      margin-bottom: 0.75rem;
-      font-size: 1.1rem;
-      -webkit-column-break-inside: avoid;
-              page-break-inside: avoid;
-                   break-inside: avoid;
-    }
-    .az-list li a {
-      color: var(--text-primary);
-      font-weight: 400;
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border-color);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-    .az-list li a:hover,
-    .az-list li a:focus {
-      color: var(--accent-color);
-      border-bottom-color: var(--accent-color);
-    }
-
-    /* Policy & About Page Styles */
     .policy-section {
       background-color: var(--surface-color);
       border-top: 4px solid var(--accent-color);
@@ -519,71 +377,55 @@
     }
     .policy-section h2 { text-align: left; }
     .policy-section h2::after { display: none; }
-    .policy-section h3 { text-align: left; margin-top: 2rem; font-size: 1.5rem; }
+    .policy-section h3 { text-align: left; margin-top: 2rem; font-size: 1.45rem; }
     .policy-section p, .policy-section ul { max-width: 80ch; }
     .policy-section a { border-bottom: 1px dotted var(--secondary-color); }
     .policy-section a:hover { border-bottom-style: solid; }
 
+    .radio-highlight {
+      background: linear-gradient(135deg, rgba(13,44,75,0.04), rgba(197,166,106,0.08));
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .radio-highlight h4 { margin-top: 0; }
+
     @media (max-width: 992px) {
-      .main-nav .nav-links {
-        position: static; flex-direction: row; flex-wrap: wrap; justify-content: center;
-        padding: 0; border: none; box-shadow: none; background: transparent;
-      }
-      .main-nav .container { flex-direction: column; gap: 1rem; }
+      .main-nav .container { flex-direction: column; gap: 0.8rem; }
     }
     @media (max-width: 768px) {
       body { font-size: 16px; }
       .page-hero { padding: 4rem 0; }
       .content-section { padding: calc(var(--spacing-unit) * 3) 0;}
-      .present-grid, .vision-points, .info-card-grid, .music-trail-grid { grid-template-columns: 1fr; }
+      .vision-points, .info-card-grid, .music-trail-grid { grid-template-columns: 1fr; }
       .biography-content-wrapper.has-image {
         grid-template-columns: 1fr;
       }
-      .timeline-container::after { left: 25px; }
-      .timeline-item { width: 100%; padding-left: 60px; padding-right: 15px; }
+      .timeline-container::after { left: 22px; }
+      .timeline-item { width: 100%; padding-left: 55px; padding-right: 12px; }
       .timeline-item.left, .timeline-item.right { left: 0%; }
-      .timeline-item::after { left: 13px; }
+      .timeline-item::after { left: 11px; }
       .timeline-item.left::before, .timeline-item.right::before {
-          left: 50px;
+          left: 45px;
           border-color: transparent var(--surface-color) transparent transparent;
           border-width: 10px 10px 10px 0;
       }
-    }
-    @media (max-width: 576px) {
-      .az-list {
-        column-count: 1;
-      }
+      .call-to-action-outline { margin-left: 0; display: block; margin-top: 0.8rem; }
     }
   </style>
 
-  <!-- SEO & VALUE-ADD: Added Schema.org markup with realistic placeholders. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Athlone Music | Past, Present & Future",
+    "name": "Athlone Music & Radio Heritage",
     "url": "https://athlone-music-heritage.ie/",
-    "description": "From a storied heritage to a vibrant present, explore the complete story of music in Athlone. Discover venues, events, artists, and the vision for a new Music Museum.",
+    "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the musical and broadcasting legacy of Athlone from the 19th century to the present.",
     "publisher": {
       "@type": "Organization",
-      "name": "Athlone Music Heritage Project",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://athlone-music-heritage.ie/images/logo.png" 
-      }
+      "name": "Athlone Music Heritage Project"
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicVenue",
-    "name": "Sean's Bar",
-    "address": "13 Main St, Athlone, Co. Westmeath, Ireland",
-    "telephone": "+353906492358",
-    "url": "https://www.seansbar.ie/",
-    "image": "https://athlone-music-heritage.ie/seans-bar-ireland-216497-1.webp",
-    "description": "As Ireland's oldest pub, Sean's Bar offers a truly authentic experience with lively traditional Irish music sessions."
   }
   </script>
   <script type="application/ld+json">
@@ -597,21 +439,20 @@
       "@type": "Place",
       "address": "The Bawn, Athlone, Co. Westmeath, Ireland"
     },
-    "description": "Born and raised in Athlone, John McCormack became one of the most famous tenors of the 20th century, celebrated for his peerless voice and vast recording catalogue.",
+    "description": "Born and raised in Athlone, John McCormack became one of the most celebrated tenors of the 20th century.",
     "url": "https://athlone-music-heritage.ie/#bio-count-john-mccormack"
   }
   </script>
-
 </head>
 <body>
   <a id="top"></a>
   
   <nav class="main-nav">
     <div class="container">
-      <div class="site-name">Athlone Music</div>
+      <div class="site-name">Athlone Music &amp; Radio</div>
       <div class="nav-links">
-          <a href="#whats-on" class="nav-link">What's On</a>
           <a href="#past" class="nav-link">Our Past</a>
+          <a href="#radio" class="nav-link">Radio Heritage</a>
           <a href="#music-trail" class="nav-link">Music Trail</a>
           <a href="#vision" class="nav-link">The Vision</a>
           <a href="#get-involved" class="nav-link">Get Involved</a>
@@ -621,209 +462,49 @@
 
   <div class="page-hero">
     <div class="container">
-        <h1 class="page-hero-title">Athlone – A Town of Music</h1>
+        <h1 class="page-hero-title">Athlone — Music &amp; Radio Heritage</h1>
         <p class="page-intro-text page-hero-intro-text">
-            From a storied heritage of global icons to a vibrant present of live venues and new artists, discover the complete story of music in Athlone.
+            From the bands of the early 19th century to the high-power transmitter that carried Ireland’s voice to the world, Athlone holds a unique place in the story of Irish music and broadcasting. This site is the living archive and precursor to a permanent Music &amp; Radio Museum.
         </p>
         <div>
-            <a href="#whats-on" class="call-to-action">Discover What's On</a>
-            <a href="#past" class="call-to-action-outline">Explore Our Heritage</a>
+            <a href="#past" class="call-to-action">Explore the Heritage</a>
+            <a href="#vision" class="call-to-action-outline">The Museum Vision</a>
         </div>
     </div>
   </div>
 
   <main class="container">
-    <section id="whats-on" class="content-section">
-        <h2>A Living Soundscape</h2>
-        <p class="page-intro-text">Athlone's music scene is alive and kicking. From legendary pubs to professional studios, discover the venues, events, and resources that make our town a hub for musicians and music lovers today.</p>
-        
-        <div id="venues" class="subsection">
-            <h3>Popular Music Venues</h3>
-            <div class="figure-grid">
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="seans-bar-ireland-216497-1.webp" alt="The vibrant blue and yellow exterior of Sean's Bar, Ireland's Oldest Pub."></div>
-                    <div class="figure-card-content">
-                        <h4>Sean's Bar</h4>
-                        <p class="description">As Ireland's oldest pub, Sean's Bar offers a truly authentic experience with lively traditional Irish music sessions that attract locals and tourists alike.</p>
-                        <a href="https://www.seansbar.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="seancrowe.jpg" alt="The modern exterior of the Dean Crowe Theatre in Athlone."></div>
-                    <div class="figure-card-content">
-                        <h4>Dean Crowe Theatre</h4>
-                        <p class="description">A central pillar of Athlone's arts scene, the Dean Crowe hosts a diverse programme including musical performances by national and international artists.</p>
-                        <a href="https://www.deancrowetheatre.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="flanns.webp" alt="Interior of Flannery's Bar during a live music event."></div>
-                    <div class="figure-card-content">
-                        <h4>Flannery's Bar</h4>
-                        <p class="description">A well-known pub with a lively atmosphere, often featuring live rock and cover bands as well as DJ sets that keep the energy high into the night.</p>
-                        <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                 <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="snug.jpg" alt="The traditional pub front of The Snug Bar in Athlone."></div>
-                    <div class="figure-card-content">
-                        <h4>The Snug Bar</h4>
-                        <p class="description">A popular spot for locals, The Snug is true to its name, offering a cozy setting for a variety of live music acts on weekends, from contemporary to acoustic.</p>
-                        <a href="https://www.facebook.com/thesnugbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="Peddlar-Mac-s-facebook.JPG" alt="A busy night at Peddler Mac's pub."></div>
-                    <div class="figure-card-content">
-                        <h4>Peddler Mac's</h4>
-                        <p class="description">A popular destination for live music, offering a great atmosphere for enjoying local bands and solo artists in the heart of the town.</p>
-                        <a href="https://www.facebook.com/peddlermacs/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="maisies.jpg" alt="Maisie's pub front with hanging flower baskets."></div>
-                    <div class="figure-card-content">
-                        <h4>Maisie's</h4>
-                        <p class="description">Known for its friendly vibe and strong support of live music, Maisie's is a frequent and beloved spot for weekend entertainment and local gigs.</p>
-                        <a href="https://www.facebook.p.com/p/Maisies-Athlone-100063718884024/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                 <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="shack.webp" alt="Acoustic musician performing inside The Shack pub."></div>
-                    <div class="figure-card-content">
-                        <h4>The Shack</h4>
-                        <p class="description">A great spot for more intimate acoustic sessions and for discovering new talent in a cozy, welcoming setting that focuses on the music.</p>
-                        <a href="https://www.facebook.com/theshackathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="nutts.jpg" alt="Nuts Corner pub sign lit up at night."></div>
-                    <div class="figure-card-content">
-                        <h4>Nuts Corner</h4>
-                        <p class="description">A staple of the local scene for years, known for hosting regular gigs featuring both established and up-and-coming rock and alternative acts.</p>
-                         <a href="https://www.facebook.com/NutsCornerAthlone" target="_blank" rel="noopener noreferrer" class="call-to-action">Facebook Page</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image fig-no-img"></div>
-                    <div class="figure-card-content">
-                        <h4>The Venue @ The Prince</h4>
-                        <p class="description">Attached to the Prince of Wales Hotel, this modern space hosts a variety of events, including larger concerts, tribute acts, and special performances.</p>
-                         <a href="https://www.theprinceofwales.ie/the-venue/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div id="festivals-events" class="subsection">
-            <h3>Festivals & Events</h3>
-            <div class="figure-grid">
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="St patricks.jpg" alt="St. Patrick's Day Parade in Athlone."></div>
-                    <div class="figure-card-content">
-                        <h4>St. Patrick's Festival</h4><p>Mid-March</p>
-                        <p class="description">A vibrant town-wide celebration, with the parade and pubs filled with live traditional Irish music.</p>
-                        <a href="https://www.athlone.ie/visit/st-patricks-festival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="croilar.webp" alt="Croilar festival branding."></div>
-                    <div class="figure-card-content">
-                        <h4>Croílár Music & Arts Festival</h4><p>Typically April</p>
-                        <p class="description">A celebration of contemporary and traditional arts, with a strong focus on live music across various town venues.</p>
-                        <a href="https://www.athlone.ie/visit/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Dates</a>
-                    </div>
-                </article>
-                 <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="flan-fest-2023-16.jpg" alt="Live band performing at Flan Fest."></div>
-                    <div class="figure-card-content">
-                        <h4>Flan Fest</h4><p>June Bank Holiday</p>
-                        <p class="description">Flannery's Bar hosts its annual music festival with a packed lineup of live bands and entertainment all weekend long.</p>
-                        <a href="https://www.facebook.com/flannerysbarathlone/" target="_blank" rel="noopener noreferrer" class="call-to-action">See Lineup</a>
-                    </div>
-                </article>
-                <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="feilenasion.jfif" alt="Feile na Sionainne event poster."></div>
-                    <div class="figure-card-content">
-                        <h4>Féile na Sionainne</h4><p>August Bank Holiday</p>
-                        <p class="description">A weekend celebration of traditional Irish music, song, and dance, attracting top musicians to the banks of the Shannon.</p>
-                        <a href="https://www.facebook.com/FeileNaSionainne/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
-                    </div>
-                </article>
-                 <article class="figure-card-link">
-                    <div class="figure-card-image"><img src="viking river.jfif" alt="Viking reenactors at the Viking Food & River Festival."></div>
-                    <div class="figure-card-content">
-                        <h4>Viking Food & River Festival</h4><p>Typically September</p>
-                        <p class="description">Experience Athlone's Viking heritage and celebrate local food with family activities and live music by the river.</p>
-                        <a href="https://www.athlone.ie/visit/shannon-feastival/" target="_blank" rel="noopener noreferrer" class="call-to-action">Check for Updates</a>
-                    </div>
-                </article>
-            </div>
-             <p class="seasonal-event-notice">Event details and dates can change. Please refer to official sources for the most current information.</p>
-        </div>
-
-        <div id="studios-spaces" class="subsection">
-            <h3>Studios & Rehearsal Spaces</h3>
-            <div class="info-card-grid">
-                <article class="info-card">
-                  <h4>85DB Studio & Sound System Hire</h4>
-                  <span class="info-card-subtitle">Blyry Industrial Park</span>
-                  <p>A key resource for local bands, offering both professional rehearsal space and sound equipment hire for live events.</p>
-                </article>
-                <article class="info-card">
-                  <h4>Summerhill Recording & Rehearsal Studio</h4>
-                  <span class="info-card-subtitle">Local Recording Hub</span>
-                  <p>A dedicated space for bands and solo artists to professionally record their music and hone their craft in a studio environment.</p>
-                </article>
-                <article class="info-card">
-                  <h4>Lakelands Recording Studio</h4>
-                  <span class="info-card-subtitle">Creative Recording Space</span>
-                  <p>Another vital facility for Athlone's musicians, providing the tools and environment needed to produce high-quality recordings.</p>
-                </article>
-                <article class="info-card">
-                  <h4>Grouse Lodge Studios</h4>
-                  <span class="info-card-subtitle">Rosemount, Co. Westmeath</span>
-                  <p>Located just outside Athlone, this world-renowned residential studio has hosted international superstars like Michael Jackson, Muse, and Snow Patrol, adding to the region's incredible musical pedigree.</p>
-                </article>
-            </div>
-        </div>
-
-        <h3 style="margin-top: calc(var(--spacing-unit)*3);">Music Lessons</h3>
-        <div class="present-grid">
-            <article class="present-item"><h4>Athlone School of Music</h4><p>A center for music education, offering lessons for a wide range of instruments and vocal training to all ages and levels.</p><a href="https://athloneschoolofmusic.com/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit Website</a></article>
-        </div>
-    </section>
 
     <section id="past" class="content-section">
         <h2>A Storied Legacy</h2>
-        <p class="page-intro-text" style="margin-top: 2rem;">To understand Athlone's vibrant present, we must explore its past. Discover the key figures, community groups, and the epic timeline of events that built our town's enduring musical heritage.</p>
+        <p class="page-intro-text">Athlone’s musical identity was forged across more than two centuries of bandmasters, tenors, pipers, societies and broadcasters. The figures and institutions below form the core of the heritage the future museum will preserve and interpret.</p>
         
         <div id="key-figures" class="subsection">
-          <h3>Pioneers & Personalities</h3>
+          <h3>Pioneers &amp; Personalities</h3>
           <div class="figure-grid">
               <a href="#bio-patrick-keating" class="figure-card-link" id="fig-keating">
                   <div class="figure-card-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating"></div>
-                  <div class="figure-card-content"><h4>Patrick Keating</h4><p>The Father of Athlone's Music</p></div>
+                  <div class="figure-card-content"><h4>Patrick Keating</h4><p>Father of Athlone’s Musical Renaissance</p></div>
                   <p class="figure-card-caption">Photo courtesy of Athlone Archives.</p>
               </a>
               <a href="#bio-patrick-gilmore" class="figure-card-link" id="fig-gilmore">
                   <div class="figure-card-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore"></div>
-                  <div class="figure-card-content"><h4>Patrick Gilmore</h4><p>Father of the American Band</p></div>
+                  <div class="figure-card-content"><h4>Patrick S. Gilmore</h4><p>Father of the American Band</p></div>
                   <p class="figure-card-caption">Image: Library of Congress.</p>
               </a>
               <a href="#bio-michael-kilkelly" class="figure-card-link" id="fig-kilkelly">
                   <div class="figure-card-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly"></div>
-                  <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship & Resistance</p></div>
+                  <div class="figure-card-content"><h4>Michael Kilkelly</h4><p>Mentorship &amp; Resistance</p></div>
                   <p class="figure-card-caption">Photo courtesy of the Kilkelly family.</p>
               </a>
               <a href="#bio-henry-foy" class="figure-card-link" id="fig-foy">
                   <div class="figure-card-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy"></div>
-                  <div class="figure-card-content"><h4>Henry Foy</h4><p>Ireland's First Jazzman</p></div>
+                  <div class="figure-card-content"><h4>Henry Foy</h4><p>Ireland’s First Jazzman</p></div>
                   <p class="figure-card-caption">Photo courtesy of Athlone Archives.</p>
               </a>
               <a href="#bio-count-john-mccormack" class="figure-card-link" id="fig-mccormack">
                   <div class="figure-card-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack"></div>
-                  <div class="figure-card-content"><h4>Count John McCormack</h4><p>Athlone's Global Voice</p></div>
+                  <div class="figure-card-content"><h4>Count John McCormack</h4><p>Athlone’s Global Voice</p></div>
                    <p class="figure-card-caption">Image: Wikimedia Commons.</p>
               </a>
               <a href="#bio-eugene-daly" class="figure-card-link" id="fig-daly">
@@ -835,199 +516,129 @@
         </div>
 
         <div id="societies-groups" class="subsection">
-          <h3>Societies & Groups</h3>
+          <h3>Societies &amp; Groups</h3>
           <div class="info-card-grid">
             <article class="info-card">
               <h4>The Athlone Pipers</h4>
               <span class="info-card-subtitle">A Century of Tradition</span>
-              <p>From the Clan Uisneach Pipe Band of the 1800s to the modern Athlone Town Pipe Band, the sound of the pipes has been a constant, resilient thread in the town's cultural fabric. Click to learn more about this enduring legacy.</p>
+              <p>From the Clan Uisneach Pipe Band of the late 19th and early 20th centuries to the modern Athlone Town Pipe Band, the pipes have been a continuous thread in the town’s cultural life. Members included Eugene Daly, the Titanic piper.</p>
               <a href="#bio-athlone-pipers" class="call-to-action">Learn More</a>
             </article>
             <article class="info-card">
               <h4>Athlone Musical Society</h4>
-              <span class="info-card-subtitle">Ireland's Oldest Musical Society</span>
-              <p>Co-founded by Henry Foy in 1902, the society has been a cornerstone of Athlone's performing arts scene, staging beloved productions for over a century and continuing to delight audiences at the Dean Crowe Theatre.</p>
+              <span class="info-card-subtitle">Ireland’s Oldest Musical Society</span>
+              <p>Co-founded by Henry Foy in 1902, the society is the longest continuously active musical society in Ireland. It has staged productions for well over a century and remains a cornerstone of the town’s performing-arts tradition.</p>
             </article>
              <article class="info-card">
               <h4>Athlone Choral Society</h4>
               <span class="info-card-subtitle">A Community in Harmony</span>
-              <p>For decades, the Athlone Choral Society has brought together voices from all walks of life, performing a wide repertoire of classical and contemporary works and enriching the town's cultural calendar with their concerts.</p>
+              <p>For decades the Athlone Choral Society has brought together voices from across the community, performing classical and contemporary repertoire and enriching the town’s cultural calendar.</p>
             </article>
              <article class="info-card">
               <h4>Comhaltas Ceoltóirí Éireann</h4>
               <span class="info-card-subtitle">Guardians of Tradition</span>
-              <p>The local branch of Comhaltas is the vibrant heart of traditional Irish culture in Athlone. From regular music sessions for all ages to classes in instruments and the Irish language, they are instrumental in passing on vital skills. They play a central role in major events like the Fleadh Cheoil and Féile na Sionainne, ensuring the tradition is not just preserved, but lived.</p>
-               <a href="https://comhaltas.ie/" target="_blank" rel="noopener noreferrer" class="call-to-action">Visit National Site</a>
+              <p>The local branch of Comhaltas has long been central to the transmission of traditional Irish music, song and dance in Athlone, supporting sessions, classes and major festivals including the 1953 Fleadh Cheoil na hÉireann hosted in the town.</p>
             </article>
           </div>
         </div>
 
-        <div id="popular-bands" class="subsection">
-            <h3>Popular Bands: 1930s - Present</h3>
-             <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">From the dancehall days of the orchestras to the rock, pop, and indie acts that followed, Athlone has produced and hosted countless popular bands. This section is a growing archive of those who provided the soundtrack for generations.</p>
-            <div class="info-card-grid">
-              <article class="info-card">
-                <h4>The Dance Orchestras</h4>
-                <span class="info-card-subtitle">1930s - 1950s</span>
-                <p>Before the showbands, dance orchestras ruled the halls. Venues like The Crescent Ballroom were filled with the sounds of acts like <strong>Jack Behan's Blue Crotchets</strong>, <strong>The Crescent Orchestra</strong>, and <strong>The Twilight Dance Band</strong>.</p>
-              </article>
-              <article class="info-card">
-                <h4>The Showband Era</h4>
-                <span class="info-card-subtitle">1960s</span>
-                <p>The dancehall craze reached its peak, and Athlone was at the heart of it. Legendary local showbands like <strong>Syd and the Saints</strong> and <strong>The Central 7</strong> packed venues across the country.</p>
-              </article>
-              <article class="info-card">
-                <h4>Showbands Evolve</h4>
-                <span class="info-card-subtitle">1970s</span>
-                <p>As tastes shifted, so did the bands. The 70s saw a new wave of popular groups who kept the showband spirit alive, including <strong>The Avengers</strong>, <strong>Tarzan and the Monkees</strong>, and <strong>The Goldsmiths</strong>.</p>
-              </article>
-              <article class="info-card">
-                <h4>The Rise of Rock</h4>
-                <span class="info-card-subtitle">1980s</span>
-                <p>Inspired by global trends, the 80s marked the emergence of rock music in Athlone's pubs and clubs, with a new generation of musicians trading brass for electric guitars and creating a louder, edgier sound.</p>
-              </article>
-              <article class="info-card">
-                <h4>The Indie Explosion</h4>
-                <span class="info-card-subtitle">1990s</span>
-                <p>The 90s saw an explosion of young, alternative bands forming across the town. The most popular of these was <strong>Murv</strong>, who became local legends and represented a new era for original music in Athlone.</p>
-              </article>
-              <article class="info-card">
-                <h4>A New Millennium</h4>
-                <span class="info-card-subtitle">2000s</span>
-                <p>The independent scene continued to thrive into the 2000s with a diverse range of sounds from bands like <strong>Skinsize Kings</strong>, <strong>My Fallen Empire</strong>, and <strong>Nomatrix</strong>.</p>
-              </article>
-            </div>
-        </div>
-
-        <div id="bands-az" class="subsection">
-          <h3>Bands A-Z Community Archive</h3>
-          <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">
-            This is a growing list of the many bands that have shaped Athlone's sound. It is a work in progress built by the community. If you have a story, photo, or correction for any of these names, please click on one and use the form to get in touch!
-          </p>
-          
-          <nav class="az-nav" aria-label="Bands A-Z Navigation">
-            <a href="#bands-a">A</a><a href="#bands-b">B</a><a href="#bands-c">C</a><a href="#bands-d">D</a><a href="#bands-e">E</a><a href="#bands-f">F</a><a href="#bands-h">H</a><a href="#bands-i">I</a><a href="#bands-k">K</a><a href="#bands-l">L</a><a href="#bands-m">M</a><a href="#bands-n">N</a><a href="#bands-o">O</a><a href="#bands-p">P</a><a href="#bands-q">Q</a><a href="#bands-r">R</a><a href="#bands-s">S</a><a href="#bands-t">T</a>
-          </nav>
-          
-          <div class="az-content">
-            <div id="bands-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a>Amber Moon</a></li></ul></div>
-            <div id="bands-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a>Bad Penny</a></li><li><a>Black Island</a></li><li><a>Black Satellite</a></li><li><a>Bog Frogs</a></li><li><a>Brainwashington</a></li><li><a>Brendan Shine Band</a></li></ul></div>
-            <div id="bands-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a>Central Seven Showband</a></li><li><a>Connected Musicians</a></li><li><a>Coosan Folk Group</a></li></ul></div>
-            <div id="bands-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a>D’Bize</a></li><li><a>Driftwood Manor</a></li><li><a>Dummy Kid</a></li></ul></div>
-            <div id="bands-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a>Evil Elviss</a></li></ul></div>
-            <div id="bands-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a>Fokofandai</a></li><li><a>Foster & Allen</a></li><li><a>Fuzz Rockets</a></li></ul></div>
-            <div id="bands-h" class="az-group"><h4 class="az-letter-heading">H</h4><ul class="az-list"><li><a>Hickory Wind</a></li></ul></div>
-            <div id="bands-i" class="az-group"><h4 class="az-letter-heading">I</h4><ul class="az-list"><li><a>In The Bin</a></li></ul></div>
-            <div id="bands-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a>Kara & the Klass</a></li><li><a>Kill Goliath</a></li><li><a>Kiosoma</a></li></ul></div>
-            <div id="bands-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a>Libido</a></li><li><a>Life After Monologue</a></li></ul></div>
-            <div id="bands-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a>Making Space</a></li><li><a>Mandrax Dream</a></li><li><a>Midlands Big Band</a></li><li><a>My Fallen Empire</a></li></ul></div>
-            <div id="bands-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a>Neodrach</a></li><li><a>Nomatrix</a></li></ul></div>
-            <div id="bands-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a>Old Soul Brigade</a></li><li><a>One Pull Rush</a></li></ul></div>
-            <div id="bands-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a>Pen15</a></li><li><a>Philharmongrel</a></li><li><a>Pinheads</a></li></ul></div>
-            <div id="bands-q" class="az-group"><h4 class="az-letter-heading">Q</h4><ul class="az-list"><li><a>Quest For Fire</a></li></ul></div>
-            <div id="bands-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a>Ray Lynam and The Hillbillies</a></li><li><a>Renegades of Funk</a></li><li><a>Resurection Fern</a></li><li><a>Ribbitt</a></li><li><a>RRadio Gee</a></li><li><a>Rubber</a></li></ul></div>
-            <div id="bands-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a>Saints Showband</a></li><li><a>Sativa</a></li><li><a>Screaming Stone</a></li><li><a>Sheerin Family Band</a></li><li><a>Skinsize Kings</a></li><li><a>Sons of Gingerbread</a></li><li><a>Southern Flame</a></li><li><a>Spiderbaby</a></li></ul></div>
-            <div id="bands-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a>The Driftwood Manor</a></li><li><a>The Fabulous Bonker Boys</a></li><li><a>The Lols</a></li><li><a>The Noshow Band</a></li><li><a>The Savoy Band</a></li><li><a>The Shit Hot Sili Peppers</a></li><li><a>Those Sacred Mushrooms</a></li><li><a>Thunderslap</a></li><li><a>Trippin Chickens</a></li><li><a>Tv After Midnight</a></li><li><a>Twilight Dance Band</a></li></ul></div>
-          </div>
-        </div>
-
-        <div id="musicians-az" class="subsection">
-          <h3>Musicians A-Z Community Archive</h3>
-          <p class="page-intro-text" style="font-size: 1rem; max-width: 600px;">
-             An index of individual artists from or associated with Athlone. Help us build this archive by sharing your knowledge. Click a name to contribute.
-          </p>
-          
-          <nav class="az-nav" aria-label="Musicians A-Z Navigation">
-            <a href="#musicians-a">A</a><a href="#musicians-b">B</a><a href="#musicians-c">C</a><a href="#musicians-d">D</a><a href="#musicians-e">E</a><a href="#musicians-f">F</a><a href="#musicians-g">G</a><a href="#musicians-j">J</a><a href="#musicians-k">K</a><a href="#musicians-l">L</a><a href="#musicians-m">M</a><a href="#musicians-n">N</a><a href="#musicians-o">O</a><a href="#musicians-p">P</a><a href="#musicians-r">R</a><a href="#musicians-s">S</a><a href="#musicians-t">T</a><a href="#musicians-w">W</a>
-          </nav>
-          
-          <div class="az-content">
-            <div id="musicians-a" class="az-group"><h4 class="az-letter-heading">A</h4><ul class="az-list"><li><a>Aidan Kearney</a></li><li><a>Aine O Reagan</a></li><li><a>Aoife Doolan</a></li></ul></div>
-            <div id="musicians-b" class="az-group"><h4 class="az-letter-heading">B</h4><ul class="az-list"><li><a>Billy Henshaw Jr</a></li><li><a>Billy Henshaw Sr</a></li><li><a>Bob Batty</a></li><li><a>Brendan Shine</a></li><li><a>Brian Dolan</a></li><li><a>Brian Goggin</a></li><li><a>Brian McCormack</a></li></ul></div>
-            <div id="musicians-c" class="az-group"><h4 class="az-letter-heading">C</h4><ul class="az-list"><li><a>Cha Nicholson</a></li><li><a>Chuck Daly</a></li><li><a>Ciaran Kelly</a></li><li><a>Clem Higgenbotham</a></li><li><a>Colm Bulger</a></li><li><a>Conor Irwin</a></li></ul></div>
-            <div id="musicians-d" class="az-group"><h4 class="az-letter-heading">D</h4><ul class="az-list"><li><a>Davey Henshaw</a></li><li><a>David Dockery</a></li><li><a>David Irwin</a></li><li><a>Dermot Kaye</a></li><li><a>Dermot Kearney</a></li></ul></div>
-            <div id="musicians-e" class="az-group"><h4 class="az-letter-heading">E</h4><ul class="az-list"><li><a>Eamon Hatton</a></li><li><a>Eddie Keenan</a></li></ul></div>
-            <div id="musicians-f" class="az-group"><h4 class="az-letter-heading">F</h4><ul class="az-list"><li><a>Fergie Milton</a></li><li><a>Fiona Ducke</a></li><li><a>Francis Kearney</a></li><li><a>Frank Kearney</a></li><li><a>Frankie McDonald</a></li></ul></div>
-            <div id="musicians-g" class="az-group"><h4 class="az-letter-heading">G</h4><ul class="az-list"><li><a>Gerry Flynn</a></li><li><a>Gerry Lacey</a></li></ul></div>
-            <div id="musicians-j" class="az-group"><h4 class="az-letter-heading">J</h4><ul class="az-list"><li><a>Jessica Shine</a></li><li><a>Joe Byrne</a></li><li><a>Johnny Dawson</a></li></ul></div>
-            <div id="musicians-k" class="az-group"><h4 class="az-letter-heading">K</h4><ul class="az-list"><li><a>Kenny Lee</a></li><li><a>Kevin Sheerin</a></li></ul></div>
-            <div id="musicians-l" class="az-group"><h4 class="az-letter-heading">L</h4><ul class="az-list"><li><a>Larry Benson</a></li><li><a>Lee Roche</a></li><li><a>Leigh Duncan</a></li><li><a>Liam Kealthy</a></li><li><a>Lorraine McDonald</a></li></ul></div>
-            <div id="musicians-m" class="az-group"><h4 class="az-letter-heading">M</h4><ul class="az-list"><li><a>Mai Kelly</a></li><li><a>Mark Henshaw</a></li><li><a>Michael Kearney</a></li></ul></div>
-            <div id="musicians-n" class="az-group"><h4 class="az-letter-heading">N</h4><ul class="az-list"><li><a>Neil Fitzgibbon</a></li><li><a>Noel Stronge</a></li></ul></div>
-            <div id="musicians-o" class="az-group"><h4 class="az-letter-heading">O</h4><ul class="az-list"><li><a>Olwyn O Sullivan</a></li></ul></div>
-            <div id="musicians-p" class="az-group"><h4 class="az-letter-heading">P</h4><ul class="az-list"><li><a>Pascal Kelly</a></li><li><a>Paul Curly</a></li><li><a>Philly Powell</a></li></ul></div>
-            <div id="musicians-r" class="az-group"><h4 class="az-letter-heading">R</h4><ul class="az-list"><li><a>Richard StJohn</a></li><li><a>Ritchie Browne</a></li><li><a>Robbie McManus</a></li><li><a>Ross McDonald</a></li><li><a>Ru Powell</a></li></ul></div>
-            <div id="musicians-s" class="az-group"><h4 class="az-letter-heading">S</h4><ul class="az-list"><li><a>Sammy Rohan</a></li><li><a>Shane Tivenan</a></li><li><a>Srah Donnelly</a></li></ul></div>
-            <div id="musicians-t" class="az-group"><h4 class="az-letter-heading">T</h4><ul class="az-list"><li><a>Tadhg Kelleher</a></li><li><a>Tadhg O Regan</a></li><li><a>Terry Benson</a></li><li><a>Terry Donovan</a></li><li><a>Tommy Ryan</a></li><li><a>Tony Allen</a></li><li><a>Trish Nolan</a></li></ul></div>
-            <div id="musicians-w" class="az-group"><h4 class="az-letter-heading">W</h4><ul class="az-list"><li><a>Willie Kiernan</a></li></ul></div>
-          </div>
-        </div>
-
         <div id="timeline" class="subsection">
-          <h3>A Timeline of Music & History</h3>
-            <p class="page-intro-text">Athlone's history is written in its music. This timeline chronicles over a century of key moments, from revolutionary bandmasters and global superstars to tragic voyages and the birth of a national broadcast service, all shaping the town's unique sound.</p>
+          <h3>A Timeline of Music &amp; Broadcasting</h3>
+            <p class="page-intro-text">Key moments that shaped Athlone’s place in Irish and international musical history, from the Napoleonic era to the high-power radio age.</p>
             <div class="timeline-container">
-                <div class="timeline-item left"><div class="timeline-content"><h5>1796</h5><p>Patrick Keating is born, the man who would become the father of Athlone's musical renaissance.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1820s</h5><p>A veteran of Waterloo, Patrick Keating returns to Athlone and begins forming bands, sparking a vibrant cultural revival.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1843</h5><p>Keating’s band performs at Daniel O’Connell’s historic Monster Meeting in Summerhill, their music a powerful voice for change.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>Late 1840s</h5><p>Amid the devastation of the Great Famine, Keating mentors a young Patrick Gilmore, passing on his musical and revolutionary ideals.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1849</h5><p>Patrick Gilmore emigrates to America, carrying the spirit of Athlone's music scene with him to a new world.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1861</h5><p>Patrick Gilmore and his band enlist in the Union Army during the American Civil War, bringing music to the front lines.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1863</h5><p>While serving in the war, Gilmore pens the iconic anthem “When Johnny Comes Marching Home.”</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1869</h5><p>Gilmore organizes the monumental National Peace Jubilee in Boston to celebrate the end of the Civil War.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>Late 1870s</h5><p>Mentored by Keating, Michael Kilkelly leads the Athlone Brass Band at land evictions, using music to support tenants during the Land War.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1880</h5><p>Patrick Gilmore’s band performs for Charles Stewart Parnell at a rally in Madison Square Garden, New York.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1886</h5><p>In a patriotic highlight, Patrick Gilmore’s band performs at the dedication of the Statue of Liberty.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>Early 1890s</h5><p>As choirmaster, Michael Kilkelly discovers the extraordinary talent of a young John McCormack, setting him on a path to stardom.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1902</h5><p>Henry Foy co-founds the Athlone Musical Society. In the same year, John McCormack wins gold at the Dublin Feis Ceoil.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1912</h5><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill miraculously survive the sinking of the Titanic.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1919</h5><p>Henry Foy starts Ireland's first jazz band, the Harry Foy Jazz Quartette, while John McCormack becomes a U.S. citizen at the height of his fame.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1922–1923</h5><p>The Irish Civil War fractures the community, causing Athlone’s vibrant music scene to fall silent as bands disband.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1926</h5><p>Ireland’s first national radio station, 2RN, is launched near Athlone, heralding a new era for music broadcasting.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1928</h5><p>In recognition of his global stature and charity work, John McCormack is given the title of Papal Count.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1932</h5><p>McCormack's voice unites the nation, broadcast from Athlone's new high-powered transmitter during the Eucharistic Congress.</p></div></div>
-                <div class="timeline-item right"><div class="timeline-content"><h5>1938</h5><p>The radio station in Athlone is officially named Radio Éireann, sparking a new explosion of bands and orchestras.</p></div></div>
-                <div class="timeline-item left"><div class="timeline-content"><h5>1953</h5><p>Athlone hosts the Fleadh Cheoil na hÉireann, the prestigious national festival of traditional Irish music, cementing its status as a musical hub.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1796</h5><p>Patrick Keating is born. A future Waterloo veteran, he will become the father of Athlone’s 19th-century musical renaissance.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1820s</h5><p>Keating returns to Athlone and begins forming and training local bands, sparking a cultural revival in a post-Napoleonic garrison town.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1843</h5><p>Keating’s band performs at Daniel O’Connell’s Monster Meeting at Summerhill, their music a public voice for political change.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>Late 1840s</h5><p>Amid the Great Famine, Keating mentors a young Patrick Sarsfield Gilmore in Athlone, passing on musical skill and political ideals.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1849</h5><p>Gilmore emigrates to America, carrying Athlone’s band tradition to Boston and beyond.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1861–1863</h5><p>Gilmore and his band serve with the Union Army. In 1863 he writes “When Johnny Comes Marching Home.”</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1869</h5><p>Gilmore organises the National Peace Jubilee in Boston — over 1,000 instrumentalists and a choir of 10,000 — to mark the end of the Civil War.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>Late 1870s</h5><p>Michael Kilkelly, mentored by Keating, leads the Athlone Brass Band at land evictions during the Land War, using music as public resistance.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1880 &amp; 1886</h5><p>Gilmore’s band performs for Charles Stewart Parnell in New York and at the dedication of the Statue of Liberty.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>Early 1890s</h5><p>As choirmaster, Michael Kilkelly recognises the extraordinary talent of a young John McCormack and gives him early training.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1902</h5><p>Henry Foy co-founds the Athlone Musical Society. The same year John McCormack wins gold at the Dublin Feis Ceoil.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1912</h5><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill survive the sinking of the Titanic. Daly had played his uilleann pipes for fellow passengers.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1919</h5><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band — while McCormack is at the height of international fame.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1922–1923</h5><p>The Irish Civil War fractures community life; many local bands fall silent.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1926</h5><p>Ireland’s first national radio service, 2RN, begins broadcasting from Dublin. Athlone will soon become central to its expansion.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1932</h5><p>The new high-power Athlone transmitter is used to broadcast the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>6 February 1933</h5><p>Éamon de Valera officially opens the Athlone transmitting station, calling it “a new bridge of Athlone” linking Ireland with its diaspora.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><h5>1938 onwards</h5><p>The service is known as Radio Éireann. Athlone’s transmitter becomes synonymous with Irish radio across Europe.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><h5>1953</h5><p>Athlone hosts Fleadh Cheoil na hÉireann, affirming its status as a centre of traditional music.</p></div></div>
             </div>
         </div>
     </section>
     
-    <div id="biographies-area"><!-- Biography sections will be injected here by JS --></div>
+    <div id="biographies-area"><!-- Biography sections injected by JS --></div>
+
+    <section id="radio" class="content-section">
+      <h2>Radio Heritage</h2>
+      <p class="page-intro-text">Athlone occupies a singular place in the history of Irish broadcasting. From the first national service to the high-power Moydrum transmitter that carried the nation’s voice across Europe, the town was at the centre of Ireland’s radio age.</p>
+
+      <div class="radio-highlight">
+        <h4>The Athlone Transmitting Station, Moydrum</h4>
+        <p>Built to give the young Irish Free State nationwide and international reach, the Athlone transmitter entered temporary service for the 1932 Eucharistic Congress and was officially opened on 6 February 1933 by Taoiseach Éamon de Valera. He described it as “Droichead nua Átha Luain” — a new bridge of Athlone — linking the Irish at home with those abroad.</p>
+        <p>Equipped first with a Marconi transmitter (later upgraded) and a T-aerial suspended between two tall masts, the station operated for decades as the primary medium-wave outlet for Radio Athlone and then Radio Éireann. Its signal was so well known that many European valve radios carried an “Athlone” marking on the dial. The original transmitters remain on site; the location has long been proposed as the natural home for a broadcasting and music heritage museum.</p>
+      </div>
+
+      <div class="info-card-grid">
+        <article class="info-card">
+          <h4>2RN to Radio Éireann</h4>
+          <span class="info-card-subtitle">1926 – 1930s</span>
+          <p>2RN, Ireland’s first national radio station, began in Dublin in 1926. The Athlone high-power site transformed coverage, making the service truly national and audible far beyond Ireland’s shores.</p>
+        </article>
+        <article class="info-card">
+          <h4>McCormack &amp; the Congress</h4>
+          <span class="info-card-subtitle">1932</span>
+          <p>John McCormack’s performance at the Eucharistic Congress in Dublin was broadcast via the new Athlone transmitter, uniting the country in a single shared listening experience and bringing the town’s most famous musical son full circle.</p>
+        </article>
+        <article class="info-card">
+          <h4>A Site of National Memory</h4>
+          <span class="info-card-subtitle">Heritage Potential</span>
+          <p>Successive generations of transmission equipment still stand at Moydrum. Feasibility studies and community campaigns have repeatedly identified the site as ideal for a museum interpreting both music and the technology of radio.</p>
+        </article>
+      </div>
+    </section>
 
     <section id="music-trail" class="content-section music-trail-section">
         <h3>Explore the Athlone Music Trail</h3>
-        <p>Walk through the heart of Athlone's musical history. This self-guided trail highlights key locations that shaped our town's sound. Visit the sites where legends were born and music filled the air. An interactive version with audio guides is a key goal of the Museum project!</p>
+        <p>A self-guided walk through the places where Athlone’s musical history was made. An expanded interactive trail with audio interpretation is a core goal of the museum project.</p>
         <div class="music-trail-grid">
             <div class="trail-stop">
-                <h4>Stop 1: John McCormack's Birthplace</h4>
-                <p><strong>The Bawn, Irishtown.</strong> A plaque marks the spot where the world's greatest tenor was born, starting his journey from Athlone's Marist College choir to global fame.</p>
+                <h4>Stop 1: John McCormack’s Birthplace</h4>
+                <p><strong>The Bawn, Irishtown.</strong> A plaque marks the site where the great tenor was born in 1884. From local choir to the world’s concert stages, his journey began here.</p>
             </div>
             <div class="trail-stop">
                 <h4>Stop 2: Dean Crowe Theatre</h4>
-                <p><strong>Chapel Street.</strong> A hub for the arts for decades and home to the Athlone Musical Society, continuing a tradition co-founded by Henry Foy in 1902.</p>
+                <p><strong>Chapel Street.</strong> Long associated with the Athlone Musical Society (founded 1902) and a continuing home for performance in the town.</p>
             </div>
             <div class="trail-stop">
                 <h4>Stop 3: Site of The Crescent Ballroom</h4>
-                <p><strong>St Mary's Place.</strong> Imagine the legendary dancehall that hosted the showband boom, where bands like The Saints and The Central 7 played to packed crowds.</p>
+                <p><strong>St Mary’s Place.</strong> The legendary dancehall that hosted the showband era and packed houses for local and national acts in the mid-20th century.</p>
+            </div>
+            <div class="trail-stop">
+                <h4>Stop 4: Moydrum Transmitter Site</h4>
+                <p><strong>Moydrum.</strong> The physical heart of Ireland’s high-power radio service from the 1930s. The surviving equipment and landscape form a unique industrial-heritage asset.</p>
             </div>
         </div>
-        <a href="#get-involved" class="call-to-action" style="margin-top: 2rem;">Help Build the Interactive Trail</a>
+        <a href="#get-involved" class="call-to-action" style="margin-top: 2rem;">Help Shape the Interactive Trail</a>
     </section>
     
     <section id="vision" class="content-section vision-section">
-      <h2>Our Vision: The Athlone Music Museum</h2>
-      <p class="page-intro-text">This rich history deserves a permanent home. We believe Athlone needs a dedicated space to celebrate its musical pioneers, inspire future generations, and serve as a cultural landmark for the entire region.</p>
+      <h2>Our Vision: The Athlone Music &amp; Radio Museum</h2>
+      <p class="page-intro-text">This layered history of music and broadcasting deserves a permanent home. We are working toward a dedicated museum that will preserve the stories, instruments, recordings and technology of Athlone’s contribution to Irish culture and to the wider world.</p>
       <div class="vision-points">
-        <div class="vision-point"><h4>Preserve the Legacy</h4><p>Create a permanent archive for the stories, instruments, and artifacts of Athlone's musical giants.</p></div>
-        <div class="vision-point"><h4>Inspire the Future</h4><p>Provide an interactive space for education, workshops, and performances, nurturing the next wave of musicians.</p></div>
-        <div class="vision-point"><h4>Boost Our Town</h4><p>Establish a key tourist destination that enriches Athlone's cultural and economic life.</p></div>
+        <div class="vision-point"><h4>Preserve the Legacy</h4><p>Create a secure archive for documents, photographs, instruments, recordings and oral histories relating to Athlone’s musicians and broadcasters.</p></div>
+        <div class="vision-point"><h4>Interpret Music &amp; Radio</h4><p>Present the twin stories of performance and transmission — from 19th-century bands to the Marconi-era transmitter — in an accessible, scholarly and engaging way.</p></div>
+        <div class="vision-point"><h4>Inspire &amp; Educate</h4><p>Offer learning programmes, research facilities and public events that connect new generations with this heritage.</p></div>
+        <div class="vision-point"><h4>Strengthen the Town</h4><p>Establish a cultural landmark that draws visitors, supports local research, and anchors Athlone’s identity as a place of music and radio history.</p></div>
       </div>
-      <p style="text-align: center; margin-top: 2rem;"><strong>This vision can only become a reality with your support.</strong></p>
+      <p style="text-align: center; margin-top: 2rem;"><strong>This vision can only become reality with community support and partnership.</strong></p>
     </section>
     
     <section id="get-involved" class="content-section">
-      <h2>Get Involved & Share Your Story</h2>
-      <p class="page-intro-text">Your support is crucial to making the Athlone Music Museum a reality. By registering your interest, you help demonstrate the community's passion for this project. Use the form to join our mailing list for updates, share your own stories and memorabilia, or learn about volunteering. Every voice adds to the chorus calling for this vital cultural space.</p>
+      <h2>Get Involved &amp; Share Your Story</h2>
+      <p class="page-intro-text">Your knowledge, photographs, recordings and memories are essential to building a complete picture of Athlone’s musical and radio past. Register your interest, contribute material, or offer support for the museum project using the form below.</p>
       
       <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
@@ -1035,55 +646,50 @@
     </section>
     
     <section id="about" class="content-section policy-section">
-      <h2>About The Project</h2>
-      <p>The Athlone Music Heritage Project is a community-led initiative founded by local historians, musicians, and enthusiasts. Our mission is to research, preserve, and celebrate the incredible musical legacy of our town. This website is the first step towards our ultimate goal: establishing a permanent, interactive Music Museum in the heart of Athlone.</p>
-      <p>We believe that by sharing these stories, we can honor our past and inspire the next generation of artists. The content on this site has been compiled through extensive research in local archives, newspapers, and, most importantly, through the stories and memorabilia shared by the people of Athlone.</p>
-      <h3>Our Team</h3>
-      <p>Our project is driven by a volunteer team of dedicated individuals. (This is a great place to add short bios and photos of the main people involved to build trust and authority).</p>
+      <h2>About the Project</h2>
+      <p>The Athlone Music Heritage Project is a community-led initiative founded by local historians, musicians and enthusiasts. Our mission is to research, preserve and celebrate the musical and broadcasting legacy of Athlone. This website is the first public expression of that work and the digital precursor to a permanent Music &amp; Radio Museum.</p>
+      <p>Content has been compiled from local archives, contemporary newspapers, published scholarship and, above all, the stories and material shared by the people of Athlone and the wider region.</p>
+      <h3>Project Team</h3>
       <ul>
-        <li><strong>Leo Nolan</strong> - Lead Historian & Researcher</li>
-        <li><strong>Seamus McKenna</strong> - Community Outreach</li>
-        <li><strong>Tadhg kelleher</strong> - Web Development & Digital Archiving</li>
+        <li><strong>Leo Nolan</strong> — Lead Historian &amp; Researcher</li>
+        <li><strong>Seamus McKenna</strong> — Community Outreach</li>
+        <li><strong>Tadhg Kelleher</strong> — Web Development &amp; Digital Archiving</li>
       </ul>
     </section>
     
     <section id="contact" class="content-section policy-section">
         <h2>Contact Us</h2>
-        <p>We would love to hear from you. Whether you have a question, a story to share, or want to get involved with the project, please don't hesitate to reach out.</p>
-        <p><strong>Email:</strong> <a href="mailto:info@athlonemusicheritage.ie">tadhgkelleher@gmail.com</a> (example email)</p>
-        <p>You can also follow the project's journey on social media:</p>
+        <p>We welcome enquiries, contributions of material, and expressions of interest in the museum project.</p>
+        <p><strong>Email:</strong> <a href="mailto:tadhgkelleher@gmail.com">tadhgkelleher@gmail.com</a></p>
         <p>
-            <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Follow on Instagram</a>
-            <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 1rem;">Follow on Facebook</a>
+            <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action">Instagram</a>
+            <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="call-to-action" style="margin-left: 0.8rem;">Facebook</a>
         </p>
     </section>
 
     <section id="privacy" class="content-section policy-section">
         <h2>Privacy Policy</h2>
         <p><em>Last Updated: 14 September 2025</em></p>
-        <p>The Athlone Music Heritage Project ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+        <p>The Athlone Music Heritage Project is committed to protecting your privacy. This policy explains how we collect, use and safeguard information when you visit this site.</p>
         
         <h3>Information We Collect</h3>
-        <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
         <ul>
-            <li><strong>Personal Data:</strong> Personally identifiable information, such as your name and email address, which you voluntarily give to us when you submit information through our "Get Involved" form. You are under no obligation to provide us with personal information of any kind.</li>
-            <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+            <li><strong>Personal Data:</strong> Name and email address you voluntarily provide through the “Get Involved” form.</li>
+            <li><strong>Derivative Data:</strong> Standard server logs (IP address, browser type, pages viewed) collected automatically.</li>
         </ul>
 
         <h3>Use of Your Information</h3>
-        <p>Having accurate information permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:</p>
         <ul>
-            <li>Respond to your inquiries and offer support for the project.</li>
-            <li>Send you a newsletter or other updates about the project, should you opt-in.</li>
-            <li>Compile anonymous statistical data and analysis for use internally.</li>
+            <li>To respond to enquiries and support the project.</li>
+            <li>To send project updates if you opt in.</li>
+            <li>To produce anonymous statistical analysis for internal use.</li>
         </ul>
         
         <h3>Third-Party Services</h3>
-        <p><strong>Google Forms:</strong> We use an embedded Google Form to collect submissions. Your data is stored on Google's servers and is subject to Google's Privacy Policy.</p>
-        <p><strong>Google AdSense:</strong> We may use Google AdSense to display ads on this website. Google uses cookies to serve ads based on a user's prior visits to this website or other websites. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>.</p>
+        <p><strong>Google Forms:</strong> Submissions are stored on Google’s servers and subject to Google’s Privacy Policy.</p>
         
-        <h3>Contact Us</h3>
-        <p>If you have questions or comments about this Privacy Policy, please contact us using the information on our <a href="#contact">Contact page</a>.</p>
+        <h3>Contact</h3>
+        <p>Questions about this policy may be directed via the details on our <a href="#contact">Contact page</a>.</p>
     </section>
 
   </main>
@@ -1091,9 +697,9 @@
   <footer class="site-footer">
     <div class="container">
       <p>© <script>document.write(new Date().getFullYear())</script> Athlone Music Heritage Project.</p>
-      <p>Working towards the establishment of the Athlone Music Museum.</p>
+      <p>Working towards the establishment of the Athlone Music &amp; Radio Museum.</p>
       <ul class="footer-nav">
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#privacy">Privacy Policy</a></li>
       </ul>
@@ -1108,24 +714,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const biographyTemplates = {
         'bio-patrick-keating': `
             <section id="bio-patrick-keating" class="content-section biography-section">
-                <h2>Patrick Keating (1796–1875)</h2> <span class="bio-subtitle">The Father of Athlone's Musical Renaissance</span>
+                <h2>Patrick Keating (1796–1875)</h2> <span class="bio-subtitle">The Father of Athlone’s Musical Renaissance</span>
                 <div class="biography-content-wrapper has-image">
                     <div class="bio-image-wrapper"> <img src="keationg4.jpg" alt="Portrait of Patrick Keating"> </div>
                     <div class="bio-text">
-                        <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at Waterloo, he returned to his native Athlone in the 1820s to find a town still reeling from years of conflict and suppression. He saw music not just as entertainment, but as a tool for community revival and national pride.</p>
-                        <p>Drawing on his military experience, he began forming and training local bands with discipline and passion. His efforts sparked a cultural renaissance, earning Athlone renown for its vibrant musical scene and creating a generation of skilled musicians. His influence reached far beyond performance; he instilled a sense of purpose and identity in his students.</p>
-                        <p>His most notable protégé was a young Patrick Gilmore, to whom he passed on his musical and revolutionary ideals. Keating’s work laid the groundwork for a musical movement that inspired unity and resilience, leaving an indelible mark on Athlone and the world.</p>
+                        <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at Waterloo, he returned to his native Athlone in the 1820s to find a town still shaped by conflict and economic hardship. He saw music not merely as entertainment but as a means of community revival and national pride.</p>
+                        <p>Drawing on his military experience, he formed and trained local bands with discipline and ambition. His work helped establish Athlone’s reputation for musical excellence and produced a generation of skilled players. His influence extended beyond performance: he instilled purpose and identity in his pupils.</p>
+                        <p>His most celebrated protégé was the young Patrick Sarsfield Gilmore, to whom he passed both musical technique and political ideals. Keating’s legacy laid foundations that would reach from Athlone to the concert stages and civic rituals of 19th-century America.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Patrick Keating biography">Close Biography</button>
             </section>`,
         'bio-patrick-gilmore': `
             <section id="bio-patrick-gilmore" class="content-section biography-section">
-                <h2>Patrick Gilmore (1829–1892)</h2> <span class="bio-subtitle">Father of the American Band</span>
+                <h2>Patrick Sarsfield Gilmore (1829–1892)</h2> <span class="bio-subtitle">Father of the American Band</span>
                 <div class="biography-content-wrapper has-image">
-                    <div class="bio-image-wrapper"> <img src="Patrick_S._Gilmore (6).jpg" alt="A formal, black and white portrait of Patrick S. Gilmore."> </div>
+                    <div class="bio-image-wrapper"> <img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore"> </div>
                     <div class="bio-text">
-                        <p>Emigrating from the Athlone area in 1849, Patrick Sarsfield Gilmore carried the town's musical spirit to America, where he became a legendary bandmaster and showman. His mentor Patrick Keating’s influence was evident as he founded Gilmore’s Band, which became one of the most acclaimed professional ensembles in the United States.</p>
-                        <p>During the American Civil War, his band served with the Union Army, and it was during this time he penned the iconic anthem “When Johnny Comes Marching Home.” After the war, he organized colossal music festivals, including the National Peace Jubilee of 1869, which featured over 1,000 instrumentalists and a choir of 10,000. His band performed at the dedication of the Statue of Liberty, and he established the venue that would evolve into Madison Square Garden. Gilmore's innovations in instrumentation and grand-scale performance earned him the enduring title, “Father of the American Band.”</p>
+                        <p>Born in Ballygar, Co. Galway, and trained in Athlone under Patrick Keating, Patrick Sarsfield Gilmore carried the town’s musical spirit to America after emigrating in 1849. He became one of the most influential bandmasters and showmen of the 19th century.</p>
+                        <p>During the American Civil War his band served with the Union Army; in 1863, under the pseudonym Louis Lambert, he published the enduring anthem “When Johnny Comes Marching Home.” After the war he organised monumental festivals, including the 1869 National Peace Jubilee in Boston with more than a thousand instrumentalists and a choir of ten thousand. His band performed at the dedication of the Statue of Liberty. Gilmore’s standards of instrumentation, discipline and large-scale presentation earned him the lasting title “Father of the American Band.”</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Patrick Gilmore biography">Close Biography</button>
             </section>`,
@@ -1133,21 +739,21 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-michael-kilkelly" class="content-section biography-section">
                 <h2>Michael Kilkelly</h2> <span class="bio-subtitle">Mentorship and Musical Resistance</span>
                 <div class="biography-content-wrapper has-image">
-                     <div class="bio-image-wrapper"> <img src="michaelkilkelly.jpg" alt="A portrait photograph of Michael Kilkelly."> </div>
+                     <div class="bio-image-wrapper"> <img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly"> </div>
                     <div class="bio-text">
-                        <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political scene. During the Land War of the 1870s, he led the Athlone Brass Band, weaponizing music as a tool of support for beleaguered tenant farmers. The band would perform defiantly at land evictions, their tunes rallying communities and becoming a symbol of resistance against landlords.</p>
-                        <p>His most profound contribution, however, may have been as a mentor. In the early 1890s, as choirmaster at St. Mary's Church, he discovered the extraordinary vocal gift of a young John McCormack. Recognizing the boy's world-class potential, Kilkelly provided crucial early training and encouragement, setting in motion the career of a future global superstar and forever linking his name to one of the greatest voices of all time.</p>
+                        <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political life. During the Land War of the 1870s he led the Athlone Brass Band at land evictions, where music served as a public expression of solidarity with tenant farmers.</p>
+                        <p>His most lasting contribution may have been as a teacher. In the early 1890s, as choirmaster, he recognised the exceptional gift of a young John McCormack and provided crucial early training and encouragement. That act of mentorship helped launch the career of one of the greatest lyrical tenors of the 20th century and permanently linked Kilkelly’s name with Athlone’s most celebrated musical son.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Michael Kilkelly biography">Close Biography</button>
             </section>`,
         'bio-henry-foy': `
             <section id="bio-henry-foy" class="content-section biography-section">
-                <h2>Henry Foy</h2> <span class="bio-subtitle">Ireland's First Jazzman</span>
+                <h2>Henry Foy</h2> <span class="bio-subtitle">Ireland’s First Jazzman</span>
                 <div class="biography-content-wrapper has-image">
                     <div class="bio-image-wrapper"> <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy"> </div>
                     <div class="bio-text">
-                        <p>A true innovator, music professor Henry “Harry” Foy left a lasting mark on Athlone's cultural landscape. In 1902, he co-founded the Athlone Musical Society, which would grow to become Ireland’s oldest continuously active musical society, a testament to his vision and dedication.</p>
-                        <p>But his most groundbreaking act came in 1919. Inspired by the syncopated rhythms arriving from America, he launched Ireland’s first known jazz band, the Harry Foy Jazz Quartette. At a time of intense nationalism, Foy embraced jazz not as a foreign import, but as a modern, energetic medium of expression. His quartet blended these new rhythms with Irish melodies, creating a sound that was both novel and deeply rooted, and positioning Athlone at the unlikely forefront of a global musical revolution.</p>
+                        <p>Music professor Henry “Harry” Foy left a lasting imprint on Athlone’s cultural life. In 1902 he co-founded the Athlone Musical Society, which grew into Ireland’s oldest continuously active musical society.</p>
+                        <p>In 1919, inspired by the new syncopated rhythms arriving from America, he launched the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band. At a time of intense nationalism he treated jazz not as an alien import but as a modern, energetic medium that could sit alongside Irish tradition. His work placed Athlone, unexpectedly, at the forefront of a global musical shift.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Henry Foy biography">Close Biography</button>
             </section>`,
@@ -1155,11 +761,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <section id="bio-count-john-mccormack" class="content-section biography-section">
                 <h2>Count John McCormack (1884–1945)</h2> <span class="bio-subtitle">The World’s Greatest Lyrical Tenor</span>
                 <div class="biography-content-wrapper has-image">
-                    <div class="bio-image-wrapper"> <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Count John McCormack, a famous tenor, in a formal photograph."> </div>
+                    <div class="bio-image-wrapper"> <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Count John McCormack"> </div>
                     <div class="bio-text">
-                        <p>Born and raised in Athlone, John McCormack’s peerless voice, first nurtured in the Marist College choir and recognized by Michael Kilkelly, took him from The Bawn to global adoration. His gold medal win at the 1902 Dublin Feis Ceoil was the springboard to an international career that saw him become one of the most famous and beloved singers of the 20th century.</p>
-                        <p>McCormack was a true superstar of his day. His recordings on the new gramophone technology sold in the millions, making him one of the world's first major recording artists. Though he was celebrated for his mastery of opera, he was equally cherished for his heartfelt renditions of Irish folk songs like "I Hear You Calling Me."</p>
-                        <p>In 1932, his fame came full circle when his performance at the Eucharistic Congress in Dublin was broadcast across the nation from Athlone's powerful new radio transmitter. His voice, born in the heart of Ireland, now united the country, cementing his legacy as Athlone’s most famous son.</p>
+                        <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the Marist College choir and the guidance of Michael Kilkelly to become one of the most celebrated singers of the 20th century. His gold medal at the 1902 Dublin Feis Ceoil opened the path to international study and stardom.</p>
+                        <p>He was equally at home in opera and in the intimate ballad and Irish song repertoire that made him a household name. His recordings sold in the millions. In 1928 he was created a Papal Count. In 1932 his performance at the Eucharistic Congress was broadcast nationwide from Athlone’s new high-power transmitter — the voice of the town’s most famous son carried by the town’s newest technological achievement.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Count John McCormack biography">Close Biography</button>
             </section>`,
@@ -1169,9 +774,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="biography-content-wrapper has-image">
                     <div class="bio-image-wrapper"> <img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly"> </div>
                     <div class="bio-text">
-                        <p>A talented uilleann piper and member of Athlone's famed Clan Uisneach Pipe Band, Eugene Daly secured his place in history through a remarkable tale of survival. In April 1912, he boarded the RMS Titanic as a third-class passenger, hoping to make a new life in America. He famously entertained fellow passengers by playing his pipes, including a rendition of "Erin's Lament" as the ship departed from Queenstown (now Cobh).</p>
-                        <p>When the liner struck an iceberg, Daly's courage and quick thinking came to the fore. He guided fellow Athlone passenger Bertha Mulvihill to the deck and helped her into the safety of a lifeboat. In a miraculous twist of fate, as the ship sank, he jumped into the ocean and was later pulled aboard the overturned Collapsible B lifeboat.</p>
-                        <p>While his precious pipes were lost to the Atlantic, his story of resilience and bravery cemented a poignant Athlone connection into one of the most famous events in world history.</p>
+                        <p>A skilled uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Daly secured a place in both local and world history through survival and courage. In April 1912 he boarded the RMS Titanic as a third-class passenger bound for America. He entertained fellow passengers with his pipes, including a performance of “Erin’s Lament” as the ship left Queenstown (Cobh).</p>
+                        <p>When the ship struck the iceberg he helped fellow Athlone passenger Bertha Mulvihill to safety. He himself jumped into the sea and was later pulled aboard the overturned Collapsible B. His pipes were lost; his story remains one of the most poignant Athlone connections to the Titanic disaster.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close Eugene Daly biography">Close Biography</button>
             </section>`,
@@ -1181,9 +785,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="biography-content-wrapper has-image">
                     <div class="bio-image-wrapper"> <img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band"> </div>
                     <div class="bio-text">
-                        <p>Athlone's proud piping tradition stretches back more than a century, anchored by the renowned <strong>Clan Uisneach Pipe Band</strong>. This band was a cultural beacon, representing the town's spirit in the late 19th and early 20th centuries. Held in high regard, the band was presented with a ceremonial banner by historian Francis Joseph Bigger, a mark of their cultural importance. Its members included Eugene Daly, the famed "Titanic Piper."</p>
-                        <p>The tradition evolved over time, with many members later appearing in the <strong>St. Mary's Pioneer Pipe Band</strong>, ensuring the legacy of the pipes and drums continued through generations of local families, becoming a familiar sound at parades and civic events.</p>
-                        <p>Today, the legacy is proudly carried on by the <strong>Athlone Town Pipe Band</strong>. Formed in 2009 after a resurgence of local interest, this modern revival brings the stirring sound of the pipes to St. Patrick's Day parades, festivals, and competitions, inspiring a new generation and ensuring that Athlone's unique piping heritage not only survives, but thrives.</p>
+                        <p>Athlone’s piping tradition stretches back more than a century, anchored by the renowned Clan Uisneach Pipe Band. The band was a cultural beacon in the late 19th and early 20th centuries; it was presented with a ceremonial banner by the historian Francis Joseph Bigger and counted among its members Eugene Daly, the Titanic piper.</p>
+                        <p>The tradition continued through the St. Mary’s Pioneer Pipe Band and, in the 21st century, the Athlone Town Pipe Band (formed 2009). The sound of the pipes remains a living part of civic and festival life in the town, linking successive generations to a distinctive local heritage.</p>
                     </div>
                 </div> <button class="close-bio-button" aria-label="Close The Athlone Pipers biography">Close Biography</button>
             </section>`
@@ -1191,8 +794,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const biographiesArea = document.getElementById('biographies-area');
     const allBioLinks = document.querySelectorAll('#key-figures .figure-card-link, #societies-groups .info-card a.call-to-action');
-    const azArchiveLinks = document.querySelectorAll('.az-list a');
-    const navLinks = document.querySelectorAll('.main-nav a.nav-link, .az-nav a, .footer-nav a');
+    const navLinks = document.querySelectorAll('.main-nav a.nav-link, .footer-nav a');
     let activeBioSection = null;
     const navHeight = document.querySelector('.main-nav')?.offsetHeight || 70;
 
@@ -1232,42 +834,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    azArchiveLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const name = this.textContent.trim();
-            const stubTemplate = `
-                <section class="content-section biography-section">
-                    <h2>${name}</h2> <span class="bio-subtitle">Community Archive Entry</span>
-                    <div class="biography-content-wrapper">
-                        <div class="bio-text">
-                            <p>This is a placeholder for information about <strong>${name}</strong>. The Athlone Music Heritage Project is actively seeking stories, photographs, recordings, and memories related to this artist/band.</p>
-                            <p>Do you remember seeing them play? Were you a member? Do you have a story to share? Your contribution can help us build a complete picture of Athlone's rich musical history.</p>
-                            <p>Please use the form below to share what you know. Every detail, no matter how small, is valuable.</p>
-                            <a href="#get-involved" class="call-to-action contributor-link">Contribute Information</a>
-                        </div>
-                    </div> <button class="close-bio-button" aria-label="Close ${name} biography">Close Biography</button>
-                </section>`;
-            createAndShowBio(stubTemplate);
-
-            // Add smooth scroll to the contribution button
-            const contributorLink = activeBioSection.querySelector('.contributor-link');
-            if (contributorLink) {
-                contributorLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if (targetElement) {
-                        scrollToElement(targetElement);
-                    }
-                });
-            }
-        });
-    });
-    
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#') && targetId.length > 1) {
+            if (targetId && targetId.startsWith('#') && targetId.length > 1) {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
