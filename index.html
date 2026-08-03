@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Athlone Music & Radio Heritage — the official precursor site for the Athlone Music and Radio Museum. Explore the deep history of music and broadcasting in Athlone, from Patrick Keating and John McCormack to the Moydrum transmitter and Radio Éireann.">
+  <meta name="description" content="Athlone Music & Radio Heritage — the official precursor site for the Athlone Music and Radio Museum. From military bands to recording and radio transmission: how sound itself changed over 150 years in Athlone.">
   <meta name="theme-color" content="#0a1f33" />
   <title>Athlone Music & Radio Heritage | Precursor to the Museum</title>
 
@@ -278,7 +278,7 @@
     }
     .section-header {
       text-align: center;
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto 3.5rem;
     }
     .section-header h2 {
@@ -307,6 +307,112 @@
       margin: 3.5rem 0 2rem;
       color: var(--navy);
     }
+
+    /* ─── The Five / Evolution Spine ─── */
+    .spine-section {
+      background: var(--navy);
+      color: #fff;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .spine-section::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(196,164,106,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .spine-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .spine-header h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-bottom: 0.75rem;
+    }
+    .spine-header h2::after {
+      background: var(--gold);
+    }
+    .spine-header p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-top: 1.25rem;
+    }
+    .spine-chain {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .spine-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,164,106,0.28);
+      border-radius: var(--radius-sm);
+      padding: 1.35rem 1rem;
+      text-align: center;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+      position: relative;
+    }
+    .spine-step:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+    .spine-step-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .spine-step h4 {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+    .spine-step .era {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+    .spine-step .idea {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.45;
+    }
+    .spine-arrow {
+      display: none;
+    }
+    .spine-thesis {
+      max-width: 720px;
+      margin: 3rem auto 0;
+      text-align: center;
+      padding: 1.75rem 2rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      border: 1px solid rgba(196,164,106,0.2);
+    }
+    .spine-thesis p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .spine-thesis p:last-child { margin-bottom: 0; }
+    .spine-thesis strong { color: var(--gold-light); }
 
     /* ─── Figure Cards ─── */
     .figure-grid {
@@ -413,7 +519,69 @@
       align-self: flex-start;
     }
 
-    /* ─── Timeline ─── */
+    /* ─── Comparative Timeline ─── */
+    .comp-timeline-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .comp-timeline {
+      min-width: 900px;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.88rem;
+    }
+    .comp-timeline th,
+    .comp-timeline td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-timeline thead th {
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      position: sticky;
+      top: 0;
+      white-space: nowrap;
+    }
+    .comp-timeline thead th:first-child {
+      background: var(--navy-mid);
+      min-width: 110px;
+    }
+    .comp-timeline tbody tr:nth-child(even) {
+      background: var(--cream);
+    }
+    .comp-timeline tbody tr:hover {
+      background: var(--cream-dark);
+    }
+    .comp-timeline .year-cell {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      font-size: 0.85rem;
+    }
+    .comp-timeline td {
+      color: var(--ink-muted);
+      line-height: 1.45;
+    }
+    .comp-note {
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ─── Classic Timeline ─── */
     .timeline {
       position: relative;
       max-width: 860px;
@@ -617,6 +785,16 @@
       font-weight: 600;
       color: var(--navy);
     }
+    .vision-quote {
+      max-width: 640px;
+      margin: 2.5rem auto 0;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--navy-soft);
+      line-height: 1.5;
+    }
 
     /* ─── Form / Get Involved ─── */
     .form-wrap {
@@ -774,6 +952,11 @@
     .footer-top:hover { color: var(--gold); }
 
     /* ─── Responsive ─── */
+    @media (max-width: 1000px) {
+      .spine-chain {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
     @media (max-width: 900px) {
       .nav-links {
         display: none;
@@ -812,7 +995,11 @@
       }
       .bio-image { max-width: 200px; }
     }
-
+    @media (max-width: 640px) {
+      .spine-chain {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
     @media (max-width: 600px) {
       :root { --nav-h: 64px; }
       .section { padding: 3.5rem 0; }
@@ -823,6 +1010,7 @@
       .biography-section { padding: 1.5rem; }
       .hero-actions { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; }
+      .spine-chain { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -832,7 +1020,7 @@
     "@type": "WebSite",
     "name": "Athlone Music & Radio Heritage",
     "url": "https://athlone-music-heritage.ie/",
-    "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the musical and broadcasting legacy of Athlone from the 19th century to the present.",
+    "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the evolution of sound in Athlone — from military bands to recording and radio transmission.",
     "publisher": {
       "@type": "Organization",
       "name": "Athlone Music Heritage Project"
@@ -868,8 +1056,9 @@
         </svg>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#past" class="nav-link">Our Past</a>
-        <a href="#radio" class="nav-link">Radio Heritage</a>
+        <a href="#spine" class="nav-link">The Story</a>
+        <a href="#past" class="nav-link">The Five</a>
+        <a href="#radio" class="nav-link">Radio</a>
         <a href="#music-trail" class="nav-link">Music Trail</a>
         <a href="#vision" class="nav-link">The Vision</a>
         <a href="#get-involved" class="nav-link">Get Involved</a>
@@ -883,32 +1072,85 @@
       <span class="hero-eyebrow">Precursor to the Museum</span>
       <h1 class="page-hero-title">Athlone — Music &amp; Radio Heritage</h1>
       <p class="hero-lead">
-        From the bands of the early 19th century to the high-power transmitter that carried Ireland’s voice to the world, Athlone holds a unique place in the story of Irish music and broadcasting.
+        From a military bandmaster in the 1820s to a radio signal that crossed Europe: Athlone’s story is not simply a list of famous musicians. It is the story of how sound itself changed.
       </p>
       <div class="hero-actions">
-        <a href="#past" class="btn btn-primary">Explore the Heritage</a>
+        <a href="#spine" class="btn btn-primary">See the Evolution</a>
         <a href="#vision" class="btn btn-outline">The Museum Vision</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Past / Key Figures -->
+    <!-- THE SPINE / EVOLUTION -->
+    <section id="spine" class="spine-section">
+      <div class="container">
+        <div class="spine-header">
+          <h2>Watch What Happens to Sound</h2>
+          <p>Over roughly 150 years, Athlone moves from the physical presence of a military band to a voice that can be recorded, transmitted, and heard across a continent. Five figures mark the turning points.</p>
+        </div>
+
+        <div class="spine-chain" role="list">
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">01</div>
+            <h4>Keating</h4>
+            <div class="era">1790s–1875</div>
+            <p class="idea">The Band<br>Music travels because people travel.</p>
+          </div>
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">02</div>
+            <h4>Gilmore</h4>
+            <div class="era">1829–1892</div>
+            <p class="idea">The Spectacle<br>Music reaches thousands at once.</p>
+          </div>
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">03</div>
+            <h4>Kilkelly</h4>
+            <div class="era">Late 19th–early 20th c.</div>
+            <p class="idea">The Mentor<br>Knowledge passes from one generation to the next.</p>
+          </div>
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">04</div>
+            <h4>Foy</h4>
+            <div class="era">c.1881–20th century</div>
+            <p class="idea">The Modern Sound<br>Jazz challenges the old order.</p>
+          </div>
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">05</div>
+            <h4>McCormack</h4>
+            <div class="era">1884–1945</div>
+            <p class="idea">The Recording<br>The performer no longer needs to be present.</p>
+          </div>
+          <div class="spine-step" role="listitem">
+            <div class="spine-step-num">06</div>
+            <h4>Athlone / Radio</h4>
+            <div class="era">1932–</div>
+            <p class="idea">The Transmission<br>The audience no longer needs to be in the same place.</p>
+          </div>
+        </div>
+
+        <div class="spine-thesis">
+          <p>This is not a conventional local-music museum. It is the story of <strong>how sound moved from the body of a musician to a signal leaving Ireland</strong>.</p>
+          <p>Band → Mass audience → Mentorship → Jazz → Recording → Transmission.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past / The Five -->
     <section id="past" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>A Storied Legacy</h2>
-          <p class="section-lead">Athlone’s musical identity was forged across more than two centuries of bandmasters, tenors, pipers, societies and broadcasters. The figures and institutions below form the core of the heritage the future museum will preserve and interpret.</p>
+          <h2>The Five</h2>
+          <p class="section-lead">Five lives that together form a continuous chain: military band culture, mass spectacle, quiet mentorship, the arrival of modern popular music, and the recorded voice that radio would later carry across Europe.</p>
         </div>
 
         <div id="key-figures">
-          <h3 class="subsection-title">Pioneers &amp; Personalities</h3>
           <div class="figure-grid">
             <a href="#bio-patrick-keating" class="figure-card" data-bio="bio-patrick-keating">
               <div class="figure-card-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating" loading="lazy" /></div>
               <div class="figure-card-body">
                 <h4>Patrick Keating</h4>
-                <p class="figure-card-role">Father of Athlone’s Musical Renaissance</p>
+                <p class="figure-card-role">The Band — Music travels with people</p>
                 <p class="figure-card-caption">Photo courtesy of Athlone Archives</p>
               </div>
             </a>
@@ -916,7 +1158,7 @@
               <div class="figure-card-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" loading="lazy" /></div>
               <div class="figure-card-body">
                 <h4>Patrick S. Gilmore</h4>
-                <p class="figure-card-role">Father of the American Band</p>
+                <p class="figure-card-role">The Spectacle — Music reaches thousands</p>
                 <p class="figure-card-caption">Image: Library of Congress</p>
               </div>
             </a>
@@ -924,7 +1166,7 @@
               <div class="figure-card-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" loading="lazy" /></div>
               <div class="figure-card-body">
                 <h4>Michael Kilkelly</h4>
-                <p class="figure-card-role">Mentorship &amp; Resistance</p>
+                <p class="figure-card-role">The Mentor — Knowledge is passed on</p>
                 <p class="figure-card-caption">Photo courtesy of the Kilkelly family</p>
               </div>
             </a>
@@ -932,7 +1174,7 @@
               <div class="figure-card-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" loading="lazy" /></div>
               <div class="figure-card-body">
                 <h4>Henry Foy</h4>
-                <p class="figure-card-role">Ireland’s First Jazzman</p>
+                <p class="figure-card-role">The Modern Sound — Jazz arrives</p>
                 <p class="figure-card-caption">Photo courtesy of Athlone Archives</p>
               </div>
             </a>
@@ -940,7 +1182,7 @@
               <div class="figure-card-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack" loading="lazy" /></div>
               <div class="figure-card-body">
                 <h4>Count John McCormack</h4>
-                <p class="figure-card-role">Athlone’s Global Voice</p>
+                <p class="figure-card-role">The Recording — The voice can travel alone</p>
                 <p class="figure-card-caption">Image: Wikimedia Commons</p>
               </div>
             </a>
@@ -954,6 +1196,196 @@
             </a>
           </div>
         </div>
+
+        <!-- Side-by-side comparative timeline -->
+        <h3 class="subsection-title">The Five — Side-by-Side</h3>
+        <p class="section-lead" style="text-align:center;margin:0 auto 1.5rem;max-width:620px">A comparative view of the same decades across five lives. Scroll horizontally on smaller screens.</p>
+
+        <div class="comp-timeline-wrap">
+          <table class="comp-timeline">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Patrick Keating</th>
+                <th>Patrick S. Gilmore</th>
+                <th>Michael Kilkelly</th>
+                <th>Henry “Harry” Foy</th>
+                <th>John McCormack</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="year-cell">c.1791/96</td>
+                <td>Born, probably Athlone. Military family.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">c.1815</td>
+                <td>Traditionally associated with the 28th Regiment at Waterloo.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1820s–40s</td>
+                <td>Military musician; later regimental bandmaster and trainer of local bands in Athlone.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1829</td>
+                <td>—</td>
+                <td>Born in Ballygar, Co. Galway.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1840</td>
+                <td>Directs Athlone Amateur Band for Father Mathew banquet.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">Late 1840s</td>
+                <td>Mentors the young Patrick Sarsfield Gilmore in Athlone.</td>
+                <td>Receives formative training in Athlone under Keating.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1848–49</td>
+                <td>Marries Rebecca Ormsby (1848). Continues Athlone musical life.</td>
+                <td>Emigrates to America, aged about 19–20.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1850s–60s</td>
+                <td>Athlone concerts, Mechanics Institute Band, Dublin promenades; international recognition as military musician and composer.</td>
+                <td>Rises as American bandmaster; Civil War service; “When Johnny Comes Marching Home” (1863).</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1869</td>
+                <td>—</td>
+                <td>National Peace Jubilee, Boston — massed bands and choir of thousands.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1870s</td>
+                <td>Receives international testimonials; remains connected with Athlone.</td>
+                <td>One of America’s leading bandmasters; performs for Parnell and at the Statue of Liberty dedication.</td>
+                <td>Active in Athlone musical life; associated with brass-band culture and Land War-era public music.</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1875</td>
+                <td>Dies in Athlone.</td>
+                <td>Still active as internationally famous bandleader.</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1884</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Born in Athlone, 14 June.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1890s</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Choirmaster at St Peter’s; recognises and teaches the young McCormack.</td>
+                <td>—</td>
+                <td>Sings as a boy in St Peter’s choir under Kilkelly.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1902–03</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Continues as mentor and choirmaster.</td>
+                <td>Co-founds Athlone Musical Society (1902).</td>
+                <td>Wins Gold Medal at Feis Ceoil (1903), aged 19.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1904–07</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>First recordings; studies in Milan; Covent Garden debut (1907).</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1910s</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Professor of music in Athlone (Church Street).</td>
+                <td>International opera and concert star; major recording artist.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1919</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Harry Foy Jazz Quartette — an important early Irish jazz ensemble.</td>
+                <td>At the height of his career; becomes U.S. citizen.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1923</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Reunited with McCormack during the tenor’s Athlone visit.</td>
+                <td>—</td>
+                <td>Returns to Athlone; celebrated at Custume Barracks.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1928</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Created Papal Count for charitable work.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1932–33</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Voice carried nationwide via the new Athlone high-power transmitter at the Eucharistic Congress.</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1938–</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Radio Éireann era; Athlone becomes synonymous with Irish radio across Europe. McCormack dies 1945.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comp-note">Dates and attributions follow available local and published sources; some early military details for Keating remain traditional or incompletely documented and are presented as such.</p>
 
         <!-- Societies -->
         <div id="societies-groups">
@@ -983,28 +1415,28 @@
           </div>
         </div>
 
-        <!-- Timeline -->
+        <!-- Classic narrative timeline -->
         <div id="timeline">
-          <h3 class="subsection-title">A Timeline of Music &amp; Broadcasting</h3>
-          <p class="section-lead" style="text-align:center;margin:0 auto 2.5rem;max-width:560px">Key moments that shaped Athlone’s place in Irish and international musical history, from the Napoleonic era to the high-power radio age.</p>
+          <h3 class="subsection-title">A Narrative Timeline</h3>
+          <p class="section-lead" style="text-align:center;margin:0 auto 2.5rem;max-width:560px">Key moments that shaped Athlone’s place in Irish and international musical history.</p>
 
           <div class="timeline">
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1796</div><p>Patrick Keating is born. A future Waterloo veteran, he will become the father of Athlone’s 19th-century musical renaissance.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1820s</div><p>Keating returns to Athlone and begins forming and training local bands, sparking a cultural revival in a post-Napoleonic garrison town.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1843</div><p>Keating’s band performs at Daniel O’Connell’s Monster Meeting at Summerhill, their music a public voice for political change.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1840s</div><p>Amid the Great Famine, Keating mentors a young Patrick Sarsfield Gilmore in Athlone, passing on musical skill and political ideals.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1849</div><p>Gilmore emigrates to America, carrying Athlone’s band tradition to Boston and beyond.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1861–1863</div><p>Gilmore and his band serve with the Union Army. In 1863 he writes “When Johnny Comes Marching Home.”</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1869</div><p>Gilmore organises the National Peace Jubilee in Boston — over 1,000 instrumentalists and a choir of 10,000 — to mark the end of the Civil War.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1870s</div><p>Michael Kilkelly, mentored by Keating, leads the Athlone Brass Band at land evictions during the Land War, using music as public resistance.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1880 &amp; 1886</div><p>Gilmore’s band performs for Charles Stewart Parnell in New York and at the dedication of the Statue of Liberty.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Early 1890s</div><p>As choirmaster, Michael Kilkelly recognises the extraordinary talent of a young John McCormack and gives him early training.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1902</div><p>Henry Foy co-founds the Athlone Musical Society. The same year John McCormack wins gold at the Dublin Feis Ceoil.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">c.1791/96</div><p>Patrick Keating is born into a military family, probably in Athlone. He will become the father of the town’s nineteenth-century musical renaissance.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1820s–40s</div><p>Keating establishes himself as a military musician and band trainer in Athlone, forming and disciplining local bands in a post-Napoleonic garrison town.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1840</div><p>Keating directs the Athlone Amateur Band at a banquet for Father Theobald Mathew.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1840s</div><p>Keating mentors the young Patrick Sarsfield Gilmore in Athlone, passing on technique and ideals that Gilmore will later carry to America.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1849</div><p>Gilmore emigrates to America, taking Athlone’s band tradition with him.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1863</div><p>Gilmore, serving with the Union Army, publishes “When Johnny Comes Marching Home.”</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1869</div><p>Gilmore organises the National Peace Jubilee in Boston — over a thousand instrumentalists and a choir of ten thousand.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1870s</div><p>Michael Kilkelly leads Athlone brass-band musicians in public contexts connected with the Land War; music becomes an expression of local solidarity.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1884</div><p>John McCormack is born in The Bawn, Athlone.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Early 1890s</div><p>As choirmaster at St Peter’s, Kilkelly recognises McCormack’s gift and gives him early training and encouragement.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1902</div><p>Henry Foy co-founds the Athlone Musical Society — still Ireland’s oldest continuously active musical society.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1903</div><p>McCormack wins the Gold Medal at the Dublin Feis Ceoil, aged nineteen.</p></div></div>
             <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1912</div><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill survive the sinking of the Titanic. Daly had played his uilleann pipes for fellow passengers.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1919</div><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band — while McCormack is at the height of international fame.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1922–1923</div><p>The Irish Civil War fractures community life; many local bands fall silent.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1919</div><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as one of the earliest jazz ensembles in Ireland.</p></div></div>
             <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1926</div><p>Ireland’s first national radio service, 2RN, begins broadcasting from Dublin. Athlone will soon become central to its expansion.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1932</div><p>The new high-power Athlone transmitter is used to broadcast the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p></div></div>
+            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1932</div><p>The new high-power Athlone transmitter broadcasts the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p></div></div>
             <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">6 February 1933</div><p>Éamon de Valera officially opens the Athlone transmitting station, calling it “a new bridge of Athlone” linking Ireland with its diaspora.</p></div></div>
             <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1938 onwards</div><p>The service is known as Radio Éireann. Athlone’s transmitter becomes synonymous with Irish radio across Europe.</p></div></div>
             <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1953</div><p>Athlone hosts Fleadh Cheoil na hÉireann, affirming its status as a centre of traditional music.</p></div></div>
@@ -1021,7 +1453,7 @@
       <div class="container">
         <div class="section-header">
           <h2>Radio Heritage</h2>
-          <p class="section-lead">Athlone occupies a singular place in the history of Irish broadcasting. From the first national service to the high-power Moydrum transmitter that carried the nation’s voice across Europe, the town was at the centre of Ireland’s radio age.</p>
+          <p class="section-lead">The final transformation: the audience no longer needs to be in the same place as the performer. Athlone becomes the physical point from which Ireland’s voice leaves the island.</p>
         </div>
 
         <div class="radio-feature">
@@ -1088,8 +1520,9 @@
       <div class="container">
         <div class="section-header">
           <h2>Our Vision: The Athlone Music &amp; Radio Museum</h2>
-          <p class="section-lead">This layered history of music and broadcasting deserves a permanent home. We are working toward a dedicated museum that will preserve the stories, instruments, recordings and technology of Athlone’s contribution to Irish culture and to the wider world.</p>
+          <p class="section-lead">A museum that does not simply collect famous names, but traces a single continuous change: how sound moved from the body of a musician to a signal that could leave Ireland and be heard across Europe.</p>
         </div>
+        <p class="vision-quote">“Watch what happens to sound over 150 years.”</p>
         <div class="vision-grid">
           <div class="vision-card">
             <div class="vision-icon">1</div>
@@ -1098,8 +1531,8 @@
           </div>
           <div class="vision-card">
             <div class="vision-icon">2</div>
-            <h4>Interpret Music &amp; Radio</h4>
-            <p>Present the twin stories of performance and transmission — from 19th-century bands to the Marconi-era transmitter — in an accessible, scholarly and engaging way.</p>
+            <h4>Interpret the Evolution</h4>
+            <p>Present the chain from band to spectacle, mentorship, jazz, recording and transmission in an accessible, scholarly and engaging way.</p>
           </div>
           <div class="vision-card">
             <div class="vision-icon">3</div>
@@ -1109,7 +1542,7 @@
           <div class="vision-card">
             <div class="vision-icon">4</div>
             <h4>Strengthen the Town</h4>
-            <p>Establish a cultural landmark that draws visitors, supports local research, and anchors Athlone’s identity as a place of music and radio history.</p>
+            <p>Establish a cultural landmark that draws visitors, supports local research, and anchors Athlone’s identity as a place where the history of sound can still be read in the landscape.</p>
           </div>
         </div>
         <p class="vision-cta">This vision can only become reality with community support and partnership.</p>
@@ -1154,7 +1587,8 @@
           <p>We welcome enquiries, contributions of material, and expressions of interest in the museum project.</p>
           <p><strong>Email:</strong> <a href="mailto:tadhgkelleher@gmail.com">tadhgkelleher@gmail.com</a></p>
           <p style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.75rem">
-
+            <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram</a>
+            <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Facebook</a>
           </p>
         </div>
       </div>
@@ -1236,14 +1670,14 @@
     const biographyTemplates = {
       'bio-patrick-keating': `
         <section id="bio-patrick-keating" class="biography-section" tabindex="-1">
-          <h2>Patrick Keating (1796–1875)</h2>
-          <span class="bio-subtitle">The Father of Athlone’s Musical Renaissance</span>
+          <h2>Patrick Keating (c.1791/96–1875)</h2>
+          <span class="bio-subtitle">The Band — Music travels because people travel</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating" /></div>
             <div class="bio-text">
-              <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at Waterloo, he returned to his native Athlone in the 1820s to find a town still shaped by conflict and economic hardship. He saw music not merely as entertainment but as a means of community revival and national pride.</p>
-              <p>Drawing on his military experience, he formed and trained local bands with discipline and ambition. His work helped establish Athlone’s reputation for musical excellence and produced a generation of skilled players. His influence extended beyond performance: he instilled purpose and identity in his pupils.</p>
-              <p>His most celebrated protégé was the young Patrick Sarsfield Gilmore, to whom he passed both musical technique and political ideals. Keating’s legacy laid foundations that would reach from Athlone to the concert stages and civic rituals of 19th-century America.</p>
+              <p>Patrick Keating was a transformative force in Athlone’s cultural history. Born into a military family (traditionally dated around 1791–96) and associated in local memory with service in the Peninsular War and at Waterloo with the 28th Regiment, he returned to Athlone in the decades after the Napoleonic Wars. He saw music not merely as entertainment but as a means of community revival and national pride.</p>
+              <p>Drawing on his military experience, he formed and trained local bands with discipline and ambition. By 1840 he was directing the Athlone Amateur Band; later he was closely involved with the Athlone Mechanics Institute Band and major promenade concerts in Dublin. His most celebrated protégé was the young Patrick Sarsfield Gilmore, to whom he passed both musical technique and political ideals in the late 1840s.</p>
+              <p>Keating’s career represents the nineteenth-century network: music moved because musicians physically moved — between army, Italy, European military culture and the streets of Athlone. He died in Athlone in 1875, having laid foundations that would reach from the town to the concert stages and civic rituals of nineteenth-century America.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Patrick Keating biography">Close Biography</button>
@@ -1251,12 +1685,13 @@
       'bio-patrick-gilmore': `
         <section id="bio-patrick-gilmore" class="biography-section" tabindex="-1">
           <h2>Patrick Sarsfield Gilmore (1829–1892)</h2>
-          <span class="bio-subtitle">Father of the American Band</span>
+          <span class="bio-subtitle">The Spectacle — Music reaches thousands at once</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" /></div>
             <div class="bio-text">
-              <p>Born in Ballygar, Co. Galway, and trained in Athlone under Patrick Keating, Patrick Sarsfield Gilmore carried the town’s musical spirit to America after emigrating in 1849. He became one of the most influential bandmasters and showmen of the 19th century.</p>
-              <p>During the American Civil War his band served with the Union Army; in 1863, under the pseudonym Louis Lambert, he published the enduring anthem “When Johnny Comes Marching Home.” After the war he organised monumental festivals, including the 1869 National Peace Jubilee in Boston with more than a thousand instrumentalists and a choir of ten thousand. His band performed at the dedication of the Statue of Liberty. Gilmore’s standards of instrumentation, discipline and large-scale presentation earned him the lasting title “Father of the American Band.”</p>
+              <p>Born in Ballygar, Co. Galway, and trained in Athlone under Patrick Keating in the late 1840s, Patrick Sarsfield Gilmore carried the town’s musical spirit to America after emigrating around 1848–49. He became one of the most influential bandmasters and showmen of the nineteenth century.</p>
+              <p>During the American Civil War his band served with the Union Army; in 1863, under the pseudonym Louis Lambert, he published the enduring anthem “When Johnny Comes Marching Home.” After the war he organised monumental festivals, including the 1869 National Peace Jubilee in Boston with more than a thousand instrumentalists and a choir of ten thousand. His band performed at the dedication of the Statue of Liberty and for Charles Stewart Parnell in New York. Gilmore’s standards of instrumentation, discipline and large-scale presentation earned him the lasting title “Father of the American Band.”</p>
+              <p>He took the Athlone band tradition and scaled it up: hundreds became thousands. The specific mentorship with Keating remains one of the most important (and carefully documentable) links between Athlone and the wider history of mass musical entertainment.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Patrick Gilmore biography">Close Biography</button>
@@ -1264,25 +1699,27 @@
       'bio-michael-kilkelly': `
         <section id="bio-michael-kilkelly" class="biography-section" tabindex="-1">
           <h2>Michael Kilkelly</h2>
-          <span class="bio-subtitle">Mentorship and Musical Resistance</span>
+          <span class="bio-subtitle">The Mentor — Musical knowledge is passed from one generation to the next</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" /></div>
             <div class="bio-text">
-              <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political life. During the Land War of the 1870s he led the Athlone Brass Band at land evictions, where music served as a public expression of solidarity with tenant farmers.</p>
-              <p>His most lasting contribution may have been as a teacher. In the early 1890s, as choirmaster, he recognised the exceptional gift of a young John McCormack and provided crucial early training and encouragement. That act of mentorship helped launch the career of one of the greatest lyrical tenors of the 20th century and permanently linked Kilkelly’s name with Athlone’s most celebrated musical son.</p>
+              <p>A passionate nationalist associated with Athlone’s brass-band culture and the public music of the Land War era, Michael Kilkelly is crucial precisely because he was not the international star. He was the person who recognised the star.</p>
+              <p>As choirmaster at St Peter’s in the 1890s he taught the young John McCormack and encouraged him to pursue singing professionally. Contemporary local historical material identifies him as McCormack’s first choirmaster and an important early influence. In 1923, when McCormack returned to Athlone and was celebrated at Custume Barracks, Kilkelly was reunited with his former pupil.</p>
+              <p>Without that act of recognition and encouragement, the next stage of the story — the recorded voice that radio would later transmit — might never have begun in Athlone. Kilkelly represents the quiet transmission of skill from one generation to the next.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Michael Kilkelly biography">Close Biography</button>
         </section>`,
       'bio-henry-foy': `
         <section id="bio-henry-foy" class="biography-section" tabindex="-1">
-          <h2>Henry Foy</h2>
-          <span class="bio-subtitle">Ireland’s First Jazzman</span>
+          <h2>Henry “Harry” Foy</h2>
+          <span class="bio-subtitle">The Modern Sound — New music arrives; jazz challenges the old order</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" /></div>
             <div class="bio-text">
-              <p>Music professor Henry “Harry” Foy left a lasting imprint on Athlone’s cultural life. In 1902 he co-founded the Athlone Musical Society, which grew into Ireland’s oldest continuously active musical society.</p>
-              <p>In 1919, inspired by the new syncopated rhythms arriving from America, he launched the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band. At a time of intense nationalism he treated jazz not as an alien import but as a modern, energetic medium that could sit alongside Irish tradition. His work placed Athlone, unexpectedly, at the forefront of a global musical shift.</p>
+              <p>Music professor Henry “Harry” Foy, a Westmeath-born figure living in Church Street, Athlone, left a lasting imprint on the town’s cultural life. In 1902 he co-founded the Athlone Musical Society, which grew into Ireland’s oldest continuously active musical society.</p>
+              <p>In 1919, inspired by the new syncopated rhythms arriving from America, he launched the Harry Foy Jazz Quartette — identified in recent scholarly history of jazz in Ireland as an important early Irish jazz ensemble. At a time of intense nationalism he treated jazz not as an alien import but as a modern, energetic medium that could sit alongside Irish tradition.</p>
+              <p>Foy marks the moment when the old military brass-band world begins to give way to dance, jazz, popular music, recording and, eventually, radio. He points Athlone’s musical infrastructure toward the twentieth century.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Henry Foy biography">Close Biography</button>
@@ -1290,12 +1727,13 @@
       'bio-count-john-mccormack': `
         <section id="bio-count-john-mccormack" class="biography-section" tabindex="-1">
           <h2>Count John McCormack (1884–1945)</h2>
-          <span class="bio-subtitle">The World’s Greatest Lyrical Tenor</span>
+          <span class="bio-subtitle">The Recording — The performer no longer needs to be physically present</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Count John McCormack" /></div>
             <div class="bio-text">
-              <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the Marist College choir and the guidance of Michael Kilkelly to become one of the most celebrated singers of the 20th century. His gold medal at the 1902 Dublin Feis Ceoil opened the path to international study and stardom.</p>
-              <p>He was equally at home in opera and in the intimate ballad and Irish song repertoire that made him a household name. His recordings sold in the millions. In 1928 he was created a Papal Count. In 1932 his performance at the Eucharistic Congress was broadcast nationwide from Athlone’s new high-power transmitter — the voice of the town’s most famous son carried by the town’s newest technological achievement.</p>
+              <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the choir of St Peter’s under Michael Kilkelly to become one of the most celebrated singers of the twentieth century. His Gold Medal at the 1903 Dublin Feis Ceoil opened the path to international study and stardom. He made his first recordings in 1904, studied in Milan, debuted at Covent Garden in 1907, and became a global opera and concert star whose records sold in the millions.</p>
+              <p>He was equally at home in opera and in the intimate ballad and Irish song repertoire that made him a household name. In 1928 he was created a Papal Count. In 1932 his performance at the Eucharistic Congress was broadcast nationwide from Athlone’s new high-power transmitter — the voice of the town’s most famous son carried by the town’s newest technological achievement.</p>
+              <p>McCormack’s career is the decisive leap: the physical presence of the singer is no longer necessary. A voice can be put onto a disc, reproduced by a machine, and later transmitted by radio. That is the hinge on which the museum story turns.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Count John McCormack biography">Close Biography</button>
