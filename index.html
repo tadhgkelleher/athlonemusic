@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Athlone Music & Radio Heritage — the official precursor site for the Athlone Music and Radio Museum. Explore the deep history of music and broadcasting in Athlone, from Patrick Keating and John McCormack to the Moydrum transmitter, Radio Éireann, and connections to the Marconi Clara Trail.">
+  <meta name="description" content="Athlone Music & Radio Heritage — official precursor site for the Athlone Music and Radio Museum. Explore the rich legacy of music and broadcasting in Athlone, from Patrick Keating and Count John McCormack to the Moydrum Marconi transmitter, Radio Éireann, and the Marconi Clara Trail.">
   <meta name="theme-color" content="#061522" />
-  <title>Athlone Music & Radio Heritage | Precursor to the Museum</title>
+  <title>Athlone Music &amp; Radio Heritage | Precursor to the Museum</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -50,6 +50,7 @@
       --radius-pill: 999px;
       --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Space Mono', monospace;
       --nav-h: 80px;
       --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -82,7 +83,6 @@
       overflow-x: hidden;
     }
 
-    /* Subtle paper grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -103,7 +103,7 @@
       transition: color 0.3s var(--ease);
     }
     a:hover { color: var(--gold-dark); }
-    a:focus-visible {
+    a:focus-visible, button:focus-visible {
       outline: 2.5px solid var(--gold);
       outline-offset: 3px;
       border-radius: 3px;
@@ -526,6 +526,171 @@
       border-top: 1px solid var(--border-soft);
     }
 
+    /* ─── Interactive Vintage Radio Dial Widget ─── */
+    .radio-tuner-container {
+      background: linear-gradient(145deg, #08192b 0%, #05121e 100%);
+      border: 2px solid var(--gold-dark);
+      border-radius: var(--radius);
+      padding: 2.75rem;
+      color: #fff;
+      box-shadow: var(--shadow-xl), 0 0 45px rgba(196, 164, 106, 0.18);
+      margin: 3.5rem 0 1.5rem;
+      position: relative;
+    }
+    .tuner-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid rgba(196, 164, 106, 0.25);
+      padding-bottom: 1rem;
+    }
+    .tuner-top-row h3 {
+      color: var(--gold-light);
+      font-size: 1.7rem;
+      margin: 0;
+    }
+    .tuner-live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      background: rgba(0,0,0,0.4);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(196,164,106,0.3);
+    }
+    .tuner-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .tuner-dial-glass {
+      background: #02070d;
+      border: 2px solid #1a334d;
+      border-radius: var(--radius-xs);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: inset 0 3px 20px rgba(0,0,0,0.8);
+    }
+    .dial-markings {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #64829f;
+      border-bottom: 1px solid #162a3f;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+    .tuner-channels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+    .tuner-chan-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(196, 164, 106, 0.22);
+      padding: 0.9rem;
+      border-radius: var(--radius-xs);
+      color: #fff;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      font-family: var(--font-body);
+    }
+    .tuner-chan-btn:hover {
+      background: rgba(196, 164, 106, 0.15);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .tuner-chan-btn.active {
+      background: rgba(196, 164, 106, 0.25);
+      border-color: var(--gold);
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+    .tuner-chan-freq {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .tuner-chan-title {
+      font-weight: 700;
+      font-size: 1rem;
+      display: block;
+      color: #fff;
+    }
+    .tuner-chan-meta {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .tuner-transmission-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 4px solid var(--gold);
+      padding: 1.35rem 1.65rem;
+      border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+      margin-top: 1.5rem;
+    }
+    .tuner-trans-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .tuner-trans-content {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* ─── Timeline Filters ─── */
+    .timeline-filter-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .timeline-filter-btn {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      padding: 0.55em 1.25em;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      font-family: var(--font-body);
+    }
+    .timeline-filter-btn:hover {
+      background: var(--cream-dark);
+      color: var(--navy);
+    }
+    .timeline-filter-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
     /* ─── Info Cards ─── */
     .info-grid {
       display: grid;
@@ -613,6 +778,10 @@
       position: relative;
       width: 50%;
       padding: 0 2.75rem 2.6rem;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+    .timeline-item.hidden {
+      display: none;
     }
     .timeline-item:nth-child(odd) {
       left: 0;
@@ -677,6 +846,18 @@
       font-size: 0.94rem;
       color: var(--ink-muted);
       line-height: 1.62;
+    }
+    .timeline-badge {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy-soft);
+      background: var(--cream-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
     }
 
     /* ─── Radio Highlight ─── */
@@ -1139,6 +1320,7 @@
       .page-hero { min-height: 78vh; }
       .hero-content { padding: 5rem 1.15rem 4rem; }
       .radio-feature { padding: 2.1rem; }
+      .radio-tuner-container { padding: 1.75rem 1.25rem; }
       .trail-section { padding: 3rem 1.4rem; }
       .biography-section { padding: 1.8rem; }
       .hero-actions { flex-direction: column; align-items: center; }
@@ -1151,29 +1333,59 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Athlone Music & Radio Heritage",
-    "url": "https://athlone-music-heritage.ie/",
-    "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the musical and broadcasting legacy of Athlone from the 19th century to the present.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Athlone Music Heritage Project"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Count John McCormack",
-    "jobTitle": "Tenor",
-    "birthDate": "1884-06-14",
-    "birthPlace": {
-      "@type": "Place",
-      "address": "The Bawn, Athlone, Co. Westmeath, Ireland"
-    },
-    "description": "Born and raised in Athlone, John McCormack became one of the most celebrated tenors of the 20th century.",
-    "url": "https://athlone-music-heritage.ie/#bio-count-john-mccormack"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://athlone-music-heritage.ie/#website",
+        "url": "https://athlone-music-heritage.ie/",
+        "name": "Athlone Music & Radio Heritage",
+        "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the musical and broadcasting legacy of Athlone from the 19th century to the present.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Athlone Music Heritage Project"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://athlone-music-heritage.ie/#mccormack",
+        "name": "Count John McCormack",
+        "jobTitle": "Tenor",
+        "birthDate": "1884-06-14",
+        "deathDate": "1945-09-16",
+        "birthPlace": {
+          "@type": "Place",
+          "address": "The Bawn, Athlone, Co. Westmeath, Ireland"
+        },
+        "description": "Born and raised in Athlone, John McCormack became one of the most celebrated tenors of the 20th century.",
+        "url": "https://athlone-music-heritage.ie/#bio-count-john-mccormack"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://athlone-music-heritage.ie/#daly",
+        "name": "Eugene Patrick Daly",
+        "jobTitle": "Piper",
+        "birthDate": "1883-01-23",
+        "deathDate": "1965-10-30",
+        "birthPlace": {
+          "@type": "Place",
+          "address": "Athlone, Co. Westmeath, Ireland"
+        },
+        "description": "Athlone Clan Uisneach piper and RMS Titanic survivor.",
+        "url": "https://athlone-music-heritage.ie/#bio-eugene-daly"
+      },
+      {
+        "@type": "Place",
+        "@id": "https://athlone-music-heritage.ie/#moydrum",
+        "name": "Athlone Transmitting Station (Moydrum)",
+        "description": "Ireland's premier high-power medium-wave broadcasting station opened in 1932/1933.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Athlone",
+          "addressRegion": "County Westmeath",
+          "addressCountry": "IE"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -1305,35 +1517,43 @@
           </div>
         </div>
 
-        <!-- Timeline -->
+        <!-- Timeline with Category Filtering -->
         <div id="timeline">
           <h3 class="subsection-title">A Timeline of Music &amp; Broadcasting</h3>
           <p class="section-lead" style="text-align:center;margin:0 auto 2.5rem;max-width:560px">Key moments that shaped Athlone’s place in Irish and international musical history, from the Napoleonic era to the high-power radio age.</p>
 
+          <div class="timeline-filter-nav" aria-label="Filter timeline categories">
+            <button type="button" class="timeline-filter-btn active" data-filter="all">All Events</button>
+            <button type="button" class="timeline-filter-btn" data-filter="bands">Bands &amp; Choirs</button>
+            <button type="button" class="timeline-filter-btn" data-filter="pipes">Pipes &amp; Tradition</button>
+            <button type="button" class="timeline-filter-btn" data-filter="radio">Radio &amp; Marconi</button>
+            <button type="button" class="timeline-filter-btn" data-filter="jazz">Jazz &amp; Society</button>
+          </div>
+
           <div class="timeline">
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1796</div><p>Patrick Keating is born. A future Waterloo veteran, he will become the father of Athlone’s 19th-century musical renaissance.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1820s</div><p>Keating returns to Athlone and begins forming and training local bands, sparking a cultural revival in a post-Napoleonic garrison town.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1843</div><p>Keating’s band performs at Daniel O’Connell’s Monster Meeting at Summerhill, their music a public voice for political change.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1840s</div><p>Amid the Great Famine, Keating mentors a young Patrick Sarsfield Gilmore in Athlone, passing on musical skill and political ideals.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1849</div><p>Gilmore emigrates to America, carrying Athlone’s band tradition to Boston and beyond.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1861–1863</div><p>Gilmore and his band serve with the Union Army. In 1863 he writes “When Johnny Comes Marching Home.”</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1869</div><p>Gilmore organises the National Peace Jubilee in Boston — over 1,000 instrumentalists and a choir of 10,000 — to mark the end of the Civil War.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Late 1870s</div><p>Michael Kilkelly, mentored by Keating, leads the Athlone Brass Band at land evictions during the Land War, using music as public resistance.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1880 &amp; 1886</div><p>Gilmore’s band performs for Charles Stewart Parnell in New York and at the dedication of the Statue of Liberty.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">Early 1890s</div><p>As choirmaster, Michael Kilkelly recognises the extraordinary talent of a young John McCormack and gives him early training.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">May 1898</div><p>In nearby Clara, Co. Offaly, Marconi equipment is installed between the Goodbody flour mill at Charlestown and the jute works at Clashawaun. The first successful message is sent on 11 May — Ireland’s first wireless transmission and the world’s first commercial use of the technology. Local capital from the Goodbody family helps fund Marconi’s company.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1902</div><p>Henry Foy co-founds the Athlone Musical Society. The same year John McCormack wins gold at the Dublin Feis Ceoil.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1907</div><p>Marconi opens the world’s first commercial transatlantic wireless station at Derrigimlagh near Clifden. The Irish midlands’ early support for the technology is part of the same story that will later bring high-power broadcasting to Athlone.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1912</div><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill survive the sinking of the Titanic. Daly had played his uilleann pipes for fellow passengers.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1919</div><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band — while McCormack is at the height of international fame.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1922–1923</div><p>The Irish Civil War fractures community life; many local bands fall silent. Marconi’s Clifden station is damaged and closes.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1926</div><p>Ireland’s first national radio service, 2RN, begins broadcasting from Dublin. Athlone will soon become central to its expansion. Marconi equipment is also supplied for early Irish transmitters.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1932</div><p>The new high-power Athlone (Moydrum) transmitter — a Marconi installation — is used to broadcast the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">6 February 1933</div><p>Éamon de Valera officially opens the Athlone transmitting station (60 kW Marconi transmitter, later upgraded), calling it “a new bridge of Athlone” linking Ireland with its diaspora.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1934</div><p>Fr Peter Conefrey, who had served as curate in Athlone (1907–1914) during Henry Foy’s formative years, leads the Gaelic League anti-jazz campaign. The Mohill march of New Year’s Day frames a clash between clergy defending traditional morality and the new foreign sounds carried by radio.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1935</div><p>The Public Dance Halls Act is passed, requiring licences for public dances — a direct outcome of the anti-jazz agitation that sought to curb unsupervised modern dancing.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1938 onwards</div><p>The service is known as Radio Éireann. Athlone’s transmitter becomes synonymous with Irish radio across Europe.</p></div></div>
-            <div class="timeline-item"><div class="timeline-card"><div class="timeline-year">1953</div><p>Athlone hosts Fleadh Cheoil na hÉireann, affirming its status as a centre of traditional music.</p></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1796</div><p>Patrick Keating is born. A future Waterloo veteran, he will become the father of Athlone’s 19th-century musical renaissance.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1820s</div><p>Keating returns to Athlone and begins forming and training local bands, sparking a cultural revival in a post-Napoleonic garrison town.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1843</div><p>Keating’s band performs at Daniel O’Connell’s Monster Meeting at Summerhill, their music a public voice for political change.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Late 1840s</div><p>Amid the Great Famine, Keating mentors a young Patrick Sarsfield Gilmore in Athlone, passing on musical skill and political ideals.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1849</div><p>Gilmore emigrates to America, carrying Athlone’s band tradition to Boston and beyond.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1861–1863</div><p>Gilmore and his band serve with the Union Army. In 1863 he writes “When Johnny Comes Marching Home.”</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1869</div><p>Gilmore organises the National Peace Jubilee in Boston — over 1,000 instrumentalists and a choir of 10,000 — to mark the end of the Civil War.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Late 1870s</div><p>Michael Kilkelly, mentored by Keating, leads the Athlone Brass Band at land evictions during the Land War, using music as public resistance.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1880 &amp; 1886</div><p>Gilmore’s band performs for Charles Stewart Parnell in New York and at the dedication of the Statue of Liberty.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Early 1890s</div><p>As choirmaster, Michael Kilkelly recognises the extraordinary talent of a young John McCormack and gives him early training.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">May 1898</div><p>In nearby Clara, Co. Offaly, Marconi equipment is installed between the Goodbody flour mill at Charlestown and the jute works at Clashawaun. The first successful message is sent on 11 May — Ireland’s first wireless transmission and the world’s first commercial use of the technology. Local capital from the Goodbody family helps fund Marconi’s company.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1902</div><p>Henry Foy co-founds the Athlone Musical Society. The same year John McCormack wins gold at the Dublin Feis Ceoil.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1907</div><p>Marconi opens the world’s first commercial transatlantic wireless station at Derrigimlagh near Clifden. The Irish midlands’ early support for the technology is part of the same story that will later bring high-power broadcasting to Athlone.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="pipes"><div class="timeline-card"><div class="timeline-year">1912</div><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill survive the sinking of the Titanic. Daly had played his uilleann pipes for fellow passengers.</p><span class="timeline-badge">Pipes &amp; Tradition</span></div></div>
+            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1919</div><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band — while McCormack is at the height of international fame.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
+            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1922–1923</div><p>The Irish Civil War fractures community life; many local bands fall silent. Marconi’s Clifden station is damaged and closes.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1926</div><p>Ireland’s first national radio service, 2RN, begins broadcasting from Dublin. Athlone will soon become central to its expansion. Marconi equipment is also supplied for early Irish transmitters.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1932</div><p>The new high-power Athlone (Moydrum) transmitter — a Marconi installation — is used to broadcast the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">6 February 1933</div><p>Éamon de Valera officially opens the Athlone transmitting station (60 kW Marconi transmitter, later upgraded to 100 kW), calling it “a new bridge of Athlone” linking Ireland with its diaspora.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1934</div><p>Fr Peter Conefrey, who had served as curate in Athlone (1907–1914) during Henry Foy’s formative years, leads the Gaelic League anti-jazz campaign. The Mohill march of New Year’s Day frames a clash between clergy defending traditional morality and the new foreign sounds carried by radio.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
+            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1935</div><p>The Public Dance Halls Act is passed, requiring licences for public dances — a direct outcome of the anti-jazz agitation that sought to curb unsupervised modern dancing.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
+            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1938 onwards</div><p>The service is known as Radio Éireann. Athlone’s transmitter (567 kHz / 531m dial marking) becomes synonymous with Irish radio across Europe.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
+            <div class="timeline-item" data-category="pipes"><div class="timeline-card"><div class="timeline-year">1953</div><p>Athlone hosts Fleadh Cheoil na hÉireann, affirming its status as a centre of traditional music.</p><span class="timeline-badge">Pipes &amp; Tradition</span></div></div>
           </div>
         </div>
       </div>
@@ -1353,7 +1573,54 @@
         <div class="radio-feature">
           <h3>The Athlone Transmitting Station, Moydrum</h3>
           <p>Built to give the young Irish Free State nationwide and international reach, the Athlone transmitter entered temporary service for the 1932 Eucharistic Congress and was officially opened on 6 February 1933 by Taoiseach Éamon de Valera. He described it as “Droichead nua Átha Luain” — a new bridge of Athlone — linking the Irish at home with those abroad.</p>
-          <p>Equipped first with a Marconi transmitter (later upgraded) and a T-aerial suspended between two tall masts, the station operated for decades as the primary medium-wave outlet for Radio Athlone and then Radio Éireann. Its signal was so well known that many European valve radios carried an “Athlone” marking on the dial. The original transmitters remain on site; the location has long been proposed as the natural home for a broadcasting and music heritage museum. The Marconi technology that powered Moydrum has deep roots nearby in Clara, Co. Offaly, where some of the inventor’s earliest Irish experiments and the first commercial wireless use took place in 1898.</p>
+          <p>Equipped first with a 60 kW Marconi transmitter (later upgraded to 100 kW) and a T-aerial suspended between two 100-metre masts, the station operated for decades as the primary medium-wave outlet for Radio Athlone and then Radio Éireann. Its signal was so well known that many European valve radios carried an “Athlone” marking on the dial (567 kHz / 530m). The original transmitters remain on site; the location has long been proposed as the natural home for a broadcasting and music heritage museum. The Marconi technology that powered Moydrum has deep roots nearby in Clara, Co. Offaly, where some of the inventor’s earliest Irish experiments and the first commercial wireless use took place in 1898.</p>
+        </div>
+
+        <!-- Interactive Valve Radio Soundscape Tuner -->
+        <div class="radio-tuner-container">
+          <div class="tuner-top-row">
+            <h3>Interactive Transmitting Dial</h3>
+            <div class="tuner-live-indicator">
+              <span class="tuner-dot"></span>
+              <span id="tuner-indicator-text">TUNED: ATHLONE MOYDRUM (567 kHz)</span>
+            </div>
+          </div>
+
+          <div class="tuner-dial-glass">
+            <div class="dial-markings">
+              <span>530m (567 kHz)</span>
+              <span>MEDIUM WAVE</span>
+              <span>413m (725 kHz)</span>
+              <span>SPARK GAP (1898)</span>
+            </div>
+            <div class="tuner-channels">
+              <button type="button" class="tuner-chan-btn active" data-freq="567 kHz" data-title="Radio Éireann (Athlone Moydrum, 1933)" data-desc="The iconic 60 kW water-cooled Marconi transmitter broadcasting Éamon de Valera’s opening address and national programming across Europe on 530m.">
+                <span class="tuner-chan-freq">567 kHz / 530m</span>
+                <span class="tuner-chan-title">Radio Athlone / Moydrum</span>
+                <span class="tuner-chan-meta">60 kW Marconi Transmitter</span>
+              </button>
+              <button type="button" class="tuner-chan-btn" data-freq="1932 Special" data-title="Eucharistic Congress Broadcast (1932)" data-desc="Count John McCormack’s legendary rendition of Panis Angelicus at Dublin’s Phoenix Park, carried nationwide through the newly constructed Athlone transmitter.">
+                <span class="tuner-chan-freq">725 kHz / 413m</span>
+                <span class="tuner-chan-title">McCormack at Phoenix Park</span>
+                <span class="tuner-chan-meta">Congress Live Relay</span>
+              </button>
+              <button type="button" class="tuner-chan-btn" data-freq="1898 Spark" data-title="Clara Wireless Signal (11 May 1898)" data-desc="Marconi’s historic spark-gap wireless transmission between Goodbody’s Charlestown Flour Mill and Clashawaun Jute Works in Clara — the world’s first commercial wireless message.">
+                <span class="tuner-chan-freq">Spark-Gap Telegraph</span>
+                <span class="tuner-chan-title">Marconi Clara Test</span>
+                <span class="tuner-chan-meta">Goodbody Mills Experiment</span>
+              </button>
+              <button type="button" class="tuner-chan-btn" data-freq="1919 Acoustic" data-title="Harry Foy Jazz Quartette (1919)" data-desc="Syncopated rhythms and modern dance numbers from Athlone’s own pioneer jazz ensemble, sparking the transition from Victorian parlour songs to the Jazz Age.">
+                <span class="tuner-chan-freq">Syncopated Rag &amp; Jazz</span>
+                <span class="tuner-chan-title">Harry Foy Jazz Quartette</span>
+                <span class="tuner-chan-meta">Ireland's First Jazz Ensemble</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="tuner-transmission-card">
+            <div class="tuner-trans-label" id="tuner-card-label">Broadcasting Archival Note</div>
+            <div class="tuner-trans-content" id="tuner-card-desc">The iconic 60 kW water-cooled Marconi transmitter broadcasting Éamon de Valera’s opening address and national programming across Europe on 530m.</div>
+          </div>
         </div>
 
         <div class="info-grid">
@@ -1412,7 +1679,7 @@
             <div class="trail-stop">
               <div class="trail-stop-num">Nearby</div>
               <h4>Marconi Clara Trail / Dickensian Mile</h4>
-              <p><strong>Clara, Co. Offaly</strong> (approx. 20 minutes by train or road). In 1898 the Goodbody family mills hosted some of Marconi’s earliest Irish transmission tests — and the first commercial use of wireless telegraphy anywhere. Clara Heritage Society’s Marconi Dickensian Mile walking tour explores the industrial buildings, Inchmore House links and the town’s role in funding and testing the new technology. A dedicated Marconi Museum is under active development.</p>
+              <p><strong>Clara, Co. Offaly</strong> (approx. 20 minutes by train or road). In 1898 the Goodbody family mills hosted some of Marconi’s earliest Irish transmission tests — and the first commercial use of wireless telegraphy anywhere. Clara Heritage Society’s Marconi Dickensian Mile walking tour explores the industrial buildings, Inchmore House links and the town’s role in funding and testing the new technology.</p>
             </div>
             <div class="trail-stop">
               <div class="trail-stop-num">Link</div>
@@ -1652,13 +1919,13 @@
         </section>`,
       'bio-eugene-daly': `
         <section id="bio-eugene-daly" class="biography-section" tabindex="-1">
-          <h2>Eugene Daly (1883–1949)</h2>
+          <h2>Eugene Daly (1883–1965)</h2>
           <span class="bio-subtitle">The Titanic Piper</span>
           <div class="bio-layout has-image">
             <div class="bio-image"><img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly" /></div>
             <div class="bio-text">
-              <p>A skilled uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Daly secured a place in both local and world history through survival and courage. In April 1912 he boarded the RMS Titanic as a third-class passenger bound for America. He entertained fellow passengers with his pipes, including a performance of “Erin’s Lament” as the ship left Queenstown (Cobh).</p>
-              <p>When the ship struck the iceberg he helped fellow Athlone passenger Bertha Mulvihill to safety. He himself jumped into the sea and was later pulled aboard the overturned Collapsible B. His pipes were lost; his story remains one of the most poignant Athlone connections to the Titanic disaster.</p>
+              <p>A skilled uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Patrick Daly secured a place in both local and world history through survival and courage. In April 1912 he boarded the RMS Titanic as a third-class passenger bound for America. He entertained fellow passengers with his pipes, including a performance of “Erin’s Lament” as the ship left Queenstown (Cobh).</p>
+              <p>When the ship struck the iceberg he helped fellow Athlone passenger Bertha Mulvihill and his cousin Margaret Daly to safety. He himself jumped into the sea and was later pulled aboard the overturned Collapsible B. His pipes were lost; his story remains one of the most poignant Athlone connections to the Titanic disaster. Daly settled in New York and lived to the age of 82, passing away on 30 October 1965.</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary close-bio" aria-label="Close Eugene Daly biography">Close Biography</button>
@@ -1713,6 +1980,46 @@
       el.addEventListener('click', e => {
         e.preventDefault();
         showBio(el.getAttribute('data-bio'));
+      });
+    });
+
+    // Interactive Tuner logic
+    const chanButtons = document.querySelectorAll('.tuner-chan-btn');
+    const tunerText = document.getElementById('tuner-indicator-text');
+    const tunerLabel = document.getElementById('tuner-card-label');
+    const tunerDesc = document.getElementById('tuner-card-desc');
+
+    chanButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        chanButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const freq = btn.getAttribute('data-freq');
+        const title = btn.getAttribute('data-title');
+        const desc = btn.getAttribute('data-desc');
+
+        tunerText.textContent = `TUNED: ${title.toUpperCase()} (${freq})`;
+        tunerLabel.textContent = title;
+        tunerDesc.textContent = desc;
+      });
+    });
+
+    // Interactive Timeline Filter logic
+    const filterButtons = document.querySelectorAll('.timeline-filter-btn');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        timelineItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
       });
     });
 
