@@ -4,55 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Athlone Music & Radio Heritage — official precursor site for the Athlone Music and Radio Museum. Explore the rich legacy of music and broadcasting in Athlone, from Patrick Keating and Count John McCormack to the Moydrum Marconi transmitter, Radio Éireann, and the Marconi Clara Trail.">
-  <meta name="theme-color" content="#061522" />
+  <meta name="theme-color" content="#071726" />
   <title>Athlone Music &amp; Radio Heritage | Precursor to the Museum</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --navy: #0a1f33;
-      --navy-mid: #14324d;
-      --navy-soft: #1e4060;
-      --navy-deep: #061522;
-      --navy-rich: #0d2740;
-      --gold: #c4a46a;
-      --gold-light: #e0c992;
-      --gold-bright: #f0d9a8;
-      --gold-dark: #a8894e;
-      --gold-deep: #8a6f3a;
-      --gold-muted: rgba(196, 164, 106, 0.14);
-      --gold-glow: rgba(196, 164, 106, 0.35);
-      --cream: #faf8f4;
-      --cream-dark: #f0ebe3;
-      --cream-mid: #f5f1ea;
-      --cream-warm: #f8f4ec;
+      --navy-darkest: #040c14;
+      --navy-deep: #071726;
+      --navy: #0c233c;
+      --navy-mid: #15375b;
+      --navy-soft: #204b78;
+      --gold-deep: #7d6029;
+      --gold-dark: #a1813e;
+      --gold: #cca55d;
+      --gold-light: #e8c988;
+      --gold-bright: #fae4b2;
+      --gold-glow: rgba(204, 165, 93, 0.4);
+      --gold-subtle: rgba(204, 165, 93, 0.12);
+      --amber-tube: #ff9d3b;
+      --green-eye: #38ef7d;
+      --cream: #faf6ee;
+      --cream-dark: #f0e7d8;
+      --cream-mid: #f5eedf;
       --paper: #ffffff;
-      --ink: #141414;
-      --ink-muted: #4a4a4a;
-      --ink-faint: #6b6b6b;
-      --ink-soft: #3a3a3a;
-      --border: #e5dfd4;
-      --border-soft: rgba(229, 223, 212, 0.55);
-      --border-gold: rgba(196, 164, 106, 0.28);
-      --shadow-xs: 0 1px 3px rgba(10, 31, 51, 0.04);
-      --shadow: 0 4px 20px rgba(10, 31, 51, 0.06);
-      --shadow-md: 0 10px 36px rgba(10, 31, 51, 0.09);
-      --shadow-lg: 0 18px 50px rgba(10, 31, 51, 0.12);
-      --shadow-xl: 0 28px 64px rgba(10, 31, 51, 0.16);
-      --shadow-gold: 0 8px 32px rgba(196, 164, 106, 0.28);
-      --shadow-gold-lg: 0 14px 40px rgba(196, 164, 106, 0.38);
-      --radius: 16px;
-      --radius-sm: 12px;
-      --radius-xs: 8px;
+      --ink: #16181b;
+      --ink-muted: #4e555f;
+      --ink-faint: #788291;
+      --border: #dfd5c4;
+      --border-gold: rgba(204, 165, 93, 0.35);
+      --shadow-sm: 0 2px 8px rgba(4, 12, 20, 0.06);
+      --shadow: 0 8px 24px rgba(4, 12, 20, 0.08);
+      --shadow-lg: 0 16px 44px rgba(4, 12, 20, 0.14);
+      --shadow-xl: 0 24px 60px rgba(4, 12, 20, 0.22);
+      --shadow-gold: 0 10px 32px rgba(204, 165, 93, 0.3);
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 22px;
       --radius-pill: 999px;
-      --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-      --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-title: 'Cinzel', serif;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
       --font-mono: 'Space Mono', monospace;
       --nav-h: 80px;
-      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
@@ -61,7 +58,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: calc(var(--nav-h) + 24px);
+      scroll-padding-top: calc(var(--nav-h) + 20px);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -78,11 +75,11 @@
       line-height: 1.72;
       color: var(--ink);
       background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* Ambient Film Texture Overlay */
     body::before {
       content: '';
       position: fixed;
@@ -96,29 +93,23 @@
     }
 
     img { max-width: 100%; height: auto; display: block; }
-    a {
-      color: var(--navy-mid);
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s var(--ease);
-    }
+    a { color: var(--navy-mid); font-weight: 600; text-decoration: none; transition: all 0.25s ease; }
     a:hover { color: var(--gold-dark); }
-    a:focus-visible, button:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 2.5px solid var(--gold);
       outline-offset: 3px;
-      border-radius: 3px;
     }
 
     h1, h2, h3, h4, h5 {
       font-family: var(--font-display);
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.18;
       color: var(--navy);
-      letter-spacing: -0.018em;
+      letter-spacing: -0.015em;
     }
 
     .container {
-      width: min(1160px, 100% - 2.75rem);
+      width: min(1180px, 100% - 2.5rem);
       margin-inline: auto;
     }
 
@@ -128,18 +119,18 @@
       top: 0;
       z-index: 1000;
       height: var(--nav-h);
-      background: rgba(250, 248, 244, 0.78);
-      backdrop-filter: blur(20px) saturate(1.6);
-      -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      border-bottom: 1px solid var(--border-soft);
-      transition: box-shadow 0.5s var(--ease), background 0.4s, border-color 0.4s;
+      background: rgba(250, 246, 238, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.35s ease;
     }
     .main-nav.scrolled {
-      box-shadow: 0 6px 32px rgba(10, 31, 51, 0.09);
-      background: rgba(250, 248, 244, 0.94);
-      border-bottom-color: var(--border);
+      background: rgba(250, 246, 238, 0.98);
+      box-shadow: 0 8px 30px rgba(4, 12, 20, 0.08);
+      border-bottom-color: var(--border-gold);
+      height: 72px;
     }
-
     .nav-inner {
       display: flex;
       align-items: center;
@@ -147,53 +138,61 @@
       height: 100%;
       gap: 1rem;
     }
-
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .brand-crest {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-title);
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: 0 2px 10px var(--gold-glow);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
     .site-name {
-      font-family: var(--font-display);
-      font-size: 1.48rem;
+      font-family: var(--font-title);
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--navy);
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-      transition: color 0.3s, transform 0.3s var(--ease-out);
-      position: relative;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
     }
-    .site-name::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
-      transition: width 0.4s var(--ease-out);
+    .site-subtitle {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-dark);
+      font-weight: 700;
     }
-    .site-name:hover {
-      color: var(--navy-mid);
-    }
-    .site-name:hover::after { width: 100%; }
-
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.15rem;
+      gap: 0.35rem;
     }
-
     .nav-link {
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--ink-muted);
-      padding: 0.55em 1.05em;
-      border-radius: 10px;
-      letter-spacing: 0.025em;
-      transition: color 0.3s, background 0.3s, transform 0.25s;
+      padding: 0.55rem 0.95rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.02em;
+      transition: all 0.25s ease;
       position: relative;
     }
-    .nav-link:hover {
-      color: var(--navy);
-      background: var(--cream-dark);
-    }
-    .nav-link.active {
+    .nav-link:hover, .nav-link.active {
       color: var(--navy);
       background: var(--cream-dark);
     }
@@ -201,116 +200,107 @@
       content: '';
       position: absolute;
       bottom: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 18px;
+      left: 20%;
+      right: 20%;
       height: 2.5px;
       background: linear-gradient(90deg, var(--gold-dark), var(--gold));
       border-radius: 2px;
-      box-shadow: 0 0 8px var(--gold-glow);
     }
-
     .nav-toggle {
       display: none;
-      background: none;
-      border: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem;
       cursor: pointer;
-      padding: 0.55rem;
       color: var(--navy);
-      border-radius: 8px;
-      transition: background 0.25s;
     }
-    .nav-toggle:hover { background: var(--cream-dark); }
-    .nav-toggle svg { width: 24px; height: 24px; }
+    .nav-toggle svg { width: 22px; height: 22px; display: block; }
 
-    /* ─── Hero ─── */
+    /* ─── Hero Section ─── */
     .page-hero {
       position: relative;
-      min-height: 88vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #fff;
-      background: var(--navy-deep);
-      background-image: url('79971ff0-0b2c-4c45-8d57-003cc00039df.png');
-      background-size: cover;
-      background-position: center 38%;
+      background: var(--navy-darkest);
+      background-image: radial-gradient(circle at 50% 30%, rgba(32, 75, 120, 0.4) 0%, rgba(4, 12, 20, 0.95) 75%);
       overflow: hidden;
+      padding: 5rem 0;
     }
     .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to top, rgba(6, 21, 34, 0.96) 0%, rgba(10, 31, 51, 0.72) 38%, rgba(10, 31, 51, 0.42) 100%),
-        radial-gradient(ellipse at 50% 80%, rgba(196, 164, 106, 0.12) 0%, transparent 55%);
-      z-index: 1;
-    }
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 140px;
-      background: linear-gradient(to top, var(--cream), transparent);
-      z-index: 2;
+      background: 
+        radial-gradient(ellipse at 50% 90%, rgba(204, 165, 93, 0.18) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.18) 3px, rgba(0,0,0,0.18) 6px);
       pointer-events: none;
     }
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 880px;
-      padding: 7rem 1.5rem 6rem;
+      max-width: 920px;
+      padding: 3rem 1.5rem;
     }
-    .hero-eyebrow {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold-light);
-      margin-bottom: 1.6rem;
-      padding: 0.4em 1.15em;
-      border: 1px solid rgba(196, 164, 106, 0.4);
+      padding: 0.45rem 1.25rem;
+      border: 1px solid rgba(204, 165, 93, 0.45);
       border-radius: var(--radius-pill);
-      background: rgba(196, 164, 106, 0.1);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 24px rgba(196, 164, 106, 0.12);
+      background: rgba(204, 165, 93, 0.08);
+      backdrop-filter: blur(10px);
+      margin-bottom: 2rem;
+      box-shadow: 0 0 30px rgba(204, 165, 93, 0.15);
     }
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px;
-      height: 6px;
+    .hero-beacon {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 10px var(--gold);
+      background: var(--green-eye);
+      box-shadow: 0 0 10px var(--green-eye);
+      animation: pulseBeacon 2.2s infinite;
+    }
+    @keyframes pulseBeacon {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
     }
     .page-hero-title {
-      font-size: clamp(2.9rem, 6.5vw, 4.85rem);
+      font-size: clamp(2.8rem, 6.4vw, 4.9rem);
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 2px 40px rgba(0,0,0,0.45);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
+      letter-spacing: -0.025em;
+      line-height: 1.06;
+      margin-bottom: 1.6rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+    .page-hero-title span {
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .hero-lead {
-      font-size: clamp(1.1rem, 2.15vw, 1.32rem);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.9);
-      max-width: 640px;
-      margin: 0 auto 2.75rem;
-      font-weight: 400;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.25);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      line-height: 1.78;
+      color: rgba(255,255,255,0.88);
+      max-width: 720px;
+      margin: 0 auto 2.8rem;
+      font-weight: 300;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.1rem;
       justify-content: center;
     }
 
@@ -319,71 +309,100 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9em 2em;
+      gap: 0.6rem;
+      padding: 0.95rem 2.2rem;
       border-radius: var(--radius-pill);
       font-family: var(--font-body);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
-      border: 2px solid transparent;
+      letter-spacing: 0.03em;
+      border: 1.5px solid transparent;
       cursor: pointer;
-      transition: transform 0.35s var(--ease-out), box-shadow 0.35s, background 0.3s, color 0.3s, border-color 0.3s;
+      transition: all 0.3s var(--ease-out);
       text-decoration: none !important;
       position: relative;
-      overflow: hidden;
     }
-    .btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
-      transform: translateX(-120%);
-      transition: transform 0.6s var(--ease-out);
-    }
-    .btn:hover::before { transform: translateX(120%); }
-    .btn:hover { transform: translateY(-3px); }
-    .btn:active { transform: translateY(-1px); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: var(--navy-deep) !important;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%, var(--gold-dark) 100%);
+      color: var(--navy-darkest) !important;
       box-shadow: var(--shadow-gold);
     }
     .btn-primary:hover {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-      box-shadow: var(--shadow-gold-lg);
+      box-shadow: 0 12px 35px rgba(204, 165, 93, 0.45);
+      filter: brightness(1.05);
     }
     .btn-outline {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.05);
       color: #fff !important;
-      border-color: rgba(255,255,255,0.38);
-      backdrop-filter: blur(6px);
+      border-color: rgba(204, 165, 93, 0.45);
+      backdrop-filter: blur(8px);
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: var(--gold);
-      color: var(--gold-light) !important;
-      box-shadow: 0 0 28px rgba(196, 164, 106, 0.2);
+      background: rgba(204, 165, 93, 0.18);
+      border-color: var(--gold-light);
+      color: var(--gold-bright) !important;
     }
     .btn-secondary {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: var(--navy);
       color: #fff !important;
-      box-shadow: 0 6px 20px rgba(10, 31, 51, 0.22);
+      border: 1px solid var(--navy-soft);
     }
     .btn-secondary:hover {
-      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-soft) 100%);
-      box-shadow: 0 10px 28px rgba(10, 31, 51, 0.28);
+      background: var(--navy-mid);
+      box-shadow: var(--shadow);
     }
     .btn-ghost {
       background: transparent;
-      color: var(--navy-mid) !important;
-      border-color: var(--border);
+      color: var(--navy) !important;
+      border: 1.5px solid var(--border);
     }
     .btn-ghost:hover {
-      border-color: var(--navy);
+      border-color: var(--gold);
       background: var(--cream-dark);
-      box-shadow: var(--shadow);
+    }
+
+    /* ─── Global Search Toolbar ─── */
+    .search-bar-wrap {
+      margin: -2.2rem auto 3.5rem;
+      max-width: 680px;
+      position: relative;
+      z-index: 10;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--paper);
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-pill);
+      padding: 0.5rem 1.25rem;
+      box-shadow: 0 12px 36px rgba(4, 12, 20, 0.12);
+    }
+    .search-box svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold-dark);
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+    .search-box input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+    }
+    .search-box input::placeholder { color: var(--ink-faint); }
+    .search-counter {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--ink-faint);
+      white-space: nowrap;
+      margin-left: 0.5rem;
     }
 
     /* ─── Sections ─── */
@@ -396,44 +415,51 @@
     }
     .section-header {
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto 4rem;
+      max-width: 760px;
+      margin: 0 auto 3.8rem;
+    }
+    .section-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.8rem;
+      display: block;
+      font-family: var(--font-mono);
     }
     .section-header h2 {
-      font-size: clamp(2.2rem, 4.4vw, 3.1rem);
+      font-size: clamp(2.3rem, 4.2vw, 3.2rem);
       margin-bottom: 0.85rem;
-      letter-spacing: -0.028em;
+      color: var(--navy);
     }
     .section-header h2::after {
       content: '';
       display: block;
-      width: 56px;
-      height: 3.5px;
-      background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
       margin: 1.25rem auto 0;
-      border-radius: 3px;
-      box-shadow: 0 0 12px var(--gold-glow);
+      border-radius: 2px;
     }
     .section-lead {
-      font-size: 1.14rem;
+      font-size: 1.15rem;
       color: var(--ink-muted);
       line-height: 1.8;
-      margin-top: 1.45rem;
-      font-weight: 400;
+      margin-top: 1.25rem;
     }
     .subsection-title {
-      font-size: clamp(1.6rem, 3.3vw, 2.1rem);
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
       text-align: center;
-      margin: 4.25rem 0 2.5rem;
+      margin: 4.5rem 0 2.2rem;
       color: var(--navy);
-      position: relative;
     }
 
-    /* ─── Figure Cards ─── */
+    /* ─── Key Figures Cards ─── */
     .figure-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.85rem;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 2rem;
     }
     .figure-card {
       display: flex;
@@ -443,242 +469,341 @@
       overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.35s;
-      text-decoration: none !important;
-      color: inherit;
+      transition: all 0.4s var(--ease-out);
+      cursor: pointer;
       position: relative;
-    }
-    .figure-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      box-shadow: inset 0 0 0 1px transparent;
-      transition: box-shadow 0.4s;
-      pointer-events: none;
     }
     .figure-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-xl);
-      border-color: var(--border-gold);
+      border-color: var(--gold);
     }
-    .figure-card:hover::after {
-      box-shadow: inset 0 0 0 1px rgba(196, 164, 106, 0.2);
-    }
-    .figure-card-image {
-      aspect-ratio: 4 / 3;
-      background: var(--navy-deep);
+    .figure-card-img-wrap {
+      height: 250px;
+      background: linear-gradient(135deg, var(--navy-darkest), var(--navy));
       overflow: hidden;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .figure-card-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(6,21,34,0.25) 0%, transparent 40%);
-      opacity: 0;
-      transition: opacity 0.4s;
-      pointer-events: none;
-    }
-    .figure-card:hover .figure-card-image::after { opacity: 1; }
-    .figure-card-image img {
+    .figure-card-img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s var(--ease-out);
-    }
-    #key-figures .figure-card-image img {
       object-fit: contain;
-      background: linear-gradient(160deg, #0a1824 0%, #0d2235 100%);
       padding: 0.75rem;
+      transition: transform 0.6s var(--ease-out);
+      filter: grayscale(18%) contrast(105%);
     }
-    .figure-card:hover .figure-card-image img {
-      transform: scale(1.07);
+    .figure-card:hover .figure-card-img-wrap img {
+      transform: scale(1.06);
+      filter: grayscale(0%) contrast(105%);
+    }
+    .figure-pill {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(7, 23, 38, 0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      backdrop-filter: blur(4px);
     }
     .figure-card-body {
-      padding: 1.65rem 1.55rem 1.4rem;
-      text-align: center;
+      padding: 1.7rem;
       flex: 1;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(to bottom, var(--paper) 0%, var(--cream-warm) 100%);
+      background: linear-gradient(to bottom, var(--paper) 0%, var(--cream-mid) 100%);
     }
     .figure-card-body h4 {
-      font-size: 1.45rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.55rem;
+      margin-bottom: 0.35rem;
       color: var(--navy);
-      transition: color 0.3s;
     }
-    .figure-card:hover .figure-card-body h4 { color: var(--navy-mid); }
     .figure-card-role {
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 700;
       color: var(--gold-dark);
-      margin-bottom: 0.7rem;
-      letter-spacing: 0.015em;
+      margin-bottom: 0.9rem;
     }
-    .figure-card-caption {
-      font-size: 0.74rem;
-      font-style: italic;
-      color: var(--ink-faint);
-      margin-top: auto;
-      padding-top: 0.7rem;
-      border-top: 1px solid var(--border-soft);
+    .figure-card-snippet {
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
     }
+    .figure-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+    .figure-card:hover .figure-card-cta { color: var(--gold-dark); }
 
-    /* ─── Interactive Vintage Radio Dial Widget ─── */
-    .radio-tuner-container {
-      background: linear-gradient(145deg, #08192b 0%, #05121e 100%);
-      border: 2px solid var(--gold-dark);
-      border-radius: var(--radius);
-      padding: 2.75rem;
+    /* ─── Interactive Vintage Radio Console ─── */
+    .radio-console {
+      background: radial-gradient(ellipse at 50% 20%, #162f4b 0%, #081624 70%, #030a12 100%);
+      border: 2.5px solid var(--gold-dark);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
       color: #fff;
-      box-shadow: var(--shadow-xl), 0 0 45px rgba(196, 164, 106, 0.18);
-      margin: 3.5rem 0 1.5rem;
+      box-shadow: var(--shadow-xl), 0 0 50px rgba(0,0,0,0.8), inset 0 2px 4px rgba(255,255,255,0.1);
+      margin: 3.5rem 0 2rem;
       position: relative;
     }
-    .tuner-top-row {
+    .console-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      border-bottom: 1px solid rgba(204, 165, 93, 0.25);
+      padding-bottom: 1.25rem;
       margin-bottom: 1.8rem;
-      border-bottom: 1px solid rgba(196, 164, 106, 0.25);
-      padding-bottom: 1rem;
     }
-    .tuner-top-row h3 {
+    .console-title-area h3 {
+      font-family: var(--font-title);
       color: var(--gold-light);
-      font-size: 1.7rem;
-      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
     }
-    .tuner-live-indicator {
+    .console-title-area p {
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: rgba(255,255,255,0.65);
+    }
+    .console-status-cluster {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .magic-eye-tube {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(56, 239, 125, 0.35);
+    }
+    .magic-eye-canvas {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #04140a;
+      box-shadow: 0 0 10px rgba(56, 239, 125, 0.5);
+    }
+    .audio-toggle-btn {
+      background: rgba(204, 165, 93, 0.15);
+      border: 1.5px solid var(--gold);
+      color: var(--gold-light);
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--gold-light);
-      background: rgba(0,0,0,0.4);
-      padding: 0.35rem 0.85rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(196,164,106,0.3);
+      transition: all 0.25s ease;
     }
-    .tuner-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 8px #4ade80;
-      animation: pulse 2s infinite;
+    .audio-toggle-btn:hover {
+      background: var(--gold);
+      color: var(--navy-darkest);
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-    .tuner-dial-glass {
-      background: #02070d;
-      border: 2px solid #1a334d;
-      border-radius: var(--radius-xs);
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
-      box-shadow: inset 0 3px 20px rgba(0,0,0,0.8);
-    }
-    .dial-markings {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: #64829f;
-      border-bottom: 1px solid #162a3f;
-      padding-bottom: 0.4rem;
-      margin-bottom: 0.9rem;
-    }
-    .tuner-channels {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.85rem;
-    }
-    .tuner-chan-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(196, 164, 106, 0.22);
-      padding: 0.9rem;
-      border-radius: var(--radius-xs);
-      color: #fff;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.25s var(--ease);
-      font-family: var(--font-body);
-    }
-    .tuner-chan-btn:hover {
-      background: rgba(196, 164, 106, 0.15);
-      border-color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-    .tuner-chan-btn.active {
-      background: rgba(196, 164, 106, 0.25);
-      border-color: var(--gold);
+    .audio-toggle-btn.active {
+      background: var(--gold);
+      color: var(--navy-darkest);
       box-shadow: 0 0 15px var(--gold-glow);
     }
-    .tuner-chan-freq {
+
+    /* Glass Dial Scale & Frequency Needle */
+    .vintage-dial-glass {
+      background: #02070c;
+      border: 3px solid #14293f;
+      border-radius: var(--radius-sm);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: inset 0 4px 30px rgba(0,0,0,0.9);
+      position: relative;
+      overflow: hidden;
+    }
+    .vintage-dial-glass::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 40%, rgba(204,165,93,0.04) 100%);
+      pointer-events: none;
+    }
+    .dial-scale-stations {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #1a334d;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.2rem;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
     }
-    .tuner-chan-title {
+    .dial-scale-stations span.hilite {
+      color: var(--gold-bright);
+      text-shadow: 0 0 8px var(--gold);
       font-weight: 700;
-      font-size: 1rem;
-      display: block;
-      color: #fff;
-    }
-    .tuner-chan-meta {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.75);
-      display: block;
-      margin-top: 0.2rem;
-    }
-    .tuner-transmission-card {
-      background: rgba(0, 0, 0, 0.4);
-      border-left: 4px solid var(--gold);
-      padding: 1.35rem 1.65rem;
-      border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
-      margin-top: 1.5rem;
-    }
-    .tuner-trans-label {
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-    .tuner-trans-content {
-      font-size: 0.98rem;
-      line-height: 1.65;
-      color: rgba(255, 255, 255, 0.92);
     }
 
-    /* ─── Timeline Filters ─── */
+    /* Tuning Slider & Physical Needle */
+    .dial-slider-container {
+      position: relative;
+      height: 52px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    .dial-track-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #18334e 0%, var(--gold-dark) 50%, #18334e 100%);
+      border-radius: 2px;
+    }
+    .dial-needle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #ff4747;
+      box-shadow: 0 0 12px #ff4747, 0 0 4px #fff;
+      transform: translateX(-50%);
+      pointer-events: none;
+      transition: left 0.35s cubic-bezier(0.2, 0.8, 0.4, 1);
+      z-index: 5;
+    }
+    .dial-needle::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff4747;
+      box-shadow: 0 0 8px #ff4747;
+    }
+    .dial-range-input {
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+      height: 48px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Channel Preset Buttons */
+    .preset-channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .preset-channel-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(204, 165, 93, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.15rem;
+      text-align: left;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .preset-channel-btn:hover {
+      background: rgba(204, 165, 93, 0.14);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .preset-channel-btn.active {
+      background: rgba(204, 165, 93, 0.24);
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+    .preset-freq-tag {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--gold-light);
+      margin-bottom: 0.3rem;
+    }
+    .preset-chan-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .preset-chan-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Transmission Audio / Historical Output */
+    .trans-readout-card {
+      background: rgba(0, 0, 0, 0.55);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.5rem 1.8rem;
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .trans-readout-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .trans-readout-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: #fff;
+    }
+    .trans-readout-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ─── Timeline System ─── */
     .timeline-filter-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
       margin-bottom: 3.5rem;
     }
     .timeline-filter-btn {
       background: var(--paper);
-      border: 1px solid var(--border);
-      padding: 0.55em 1.25em;
+      border: 1.5px solid var(--border);
+      padding: 0.55rem 1.35rem;
       border-radius: var(--radius-pill);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--ink-muted);
       cursor: pointer;
-      transition: all 0.25s var(--ease);
-      font-family: var(--font-body);
+      transition: all 0.25s ease;
     }
     .timeline-filter-btn:hover {
       background: var(--cream-dark);
@@ -691,71 +816,11 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* ─── Info Cards ─── */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.75rem;
-    }
-    .info-card {
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 2.1rem;
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--gold);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.4s var(--ease-out), box-shadow 0.4s, border-color 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .info-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
-      opacity: 0;
-      transition: opacity 0.35s;
-    }
-    .info-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-left-color: var(--gold-light);
-    }
-    .info-card:hover::before { opacity: 1; }
-    .info-card h4 {
-      font-size: 1.35rem;
-      margin-bottom: 0.25rem;
-    }
-    .info-card-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--gold-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      margin-bottom: 0.95rem;
-    }
-    .info-card p {
-      color: var(--ink-muted);
-      font-size: 0.99rem;
-      flex: 1;
-      line-height: 1.68;
-    }
-    .info-card .btn {
-      margin-top: 1.5rem;
-      align-self: flex-start;
-    }
-
-    /* ─── Timeline ─── */
     .timeline {
       position: relative;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 1.5rem 0 2.75rem;
+      padding: 2rem 0;
     }
     .timeline::before {
       content: '';
@@ -763,1253 +828,1310 @@
       top: 0;
       bottom: 0;
       left: 50%;
-      width: 2.5px;
-      background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--gold-dark) 3%,
-        var(--gold) 50%,
-        var(--gold-dark) 97%,
-        transparent 100%);
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 8%, var(--gold) 92%, transparent);
       transform: translateX(-50%);
-      opacity: 0.9;
-      box-shadow: 0 0 12px var(--gold-glow);
     }
     .timeline-item {
       position: relative;
       width: 50%;
-      padding: 0 2.75rem 2.6rem;
-      transition: opacity 0.35s, transform 0.35s;
+      padding: 0 2.8rem 2.8rem;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
-    .timeline-item.hidden {
-      display: none;
-    }
+    .timeline-item.hidden { display: none; }
     .timeline-item:nth-child(odd) {
       left: 0;
       text-align: right;
-      padding-right: 3.1rem;
+      padding-right: 3.2rem;
     }
     .timeline-item:nth-child(even) {
       left: 50%;
       text-align: left;
-      padding-left: 3.1rem;
+      padding-left: 3.2rem;
     }
     .timeline-item::after {
       content: '';
       position: absolute;
-      top: 0.45rem;
-      width: 16px;
-      height: 16px;
+      top: 0.5rem;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: var(--paper);
-      border: 3.5px solid var(--navy);
+      background: var(--cream);
+      border: 4px solid var(--gold-dark);
       z-index: 2;
-      box-shadow: 0 0 0 5px var(--cream), 0 0 0 0 transparent;
-      transition: border-color 0.35s, box-shadow 0.4s, transform 0.35s var(--ease-spring);
+      transition: all 0.3s var(--ease-spring);
     }
+    .timeline-item:nth-child(odd)::after { right: -9px; }
+    .timeline-item:nth-child(even)::after { left: -9px; }
     .timeline-item:hover::after {
-      border-color: var(--gold);
-      transform: scale(1.15);
-      box-shadow: 0 0 0 5px var(--cream), 0 0 0 10px var(--gold-muted), 0 0 16px var(--gold-glow);
+      background: var(--gold);
+      transform: scale(1.3);
+      box-shadow: 0 0 16px var(--gold-glow);
     }
-    .timeline-item:nth-child(odd)::after { right: -8px; }
-    .timeline-item:nth-child(even)::after { left: -8px; }
-
     .timeline-card {
       background: var(--paper);
       border-radius: var(--radius-sm);
-      padding: 1.35rem 1.55rem;
+      padding: 1.5rem 1.65rem;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       display: inline-block;
       text-align: left;
-      max-width: 100%;
-      transition: box-shadow 0.35s, transform 0.35s var(--ease-out), border-color 0.3s;
+      transition: all 0.3s ease;
     }
     .timeline-item:hover .timeline-card {
-      box-shadow: var(--shadow-md);
-      border-color: var(--border-gold);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
     }
     .timeline-year {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-family: var(--font-title);
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--gold-dark);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.4rem;
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      margin-bottom: 0.45rem;
     }
     .timeline-card p {
-      font-size: 0.94rem;
+      font-size: 0.96rem;
       color: var(--ink-muted);
-      line-height: 1.62;
+      line-height: 1.65;
     }
     .timeline-badge {
       display: inline-block;
-      margin-top: 0.6rem;
-      font-size: 0.72rem;
+      margin-top: 0.75rem;
+      font-size: 0.73rem;
+      font-family: var(--font-mono);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--navy-soft);
+      color: var(--navy);
       background: var(--cream-dark);
-      padding: 0.15rem 0.55rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 4px;
     }
 
-    /* ─── Radio Highlight ─── */
-    .radio-feature {
-      background: linear-gradient(145deg, var(--navy-deep) 0%, var(--navy-rich) 45%, var(--navy-mid) 100%);
-      color: #fff;
-      border-radius: var(--radius);
-      padding: 3.15rem 3.25rem;
-      margin-bottom: 2.85rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid rgba(196, 164, 106, 0.15);
-    }
-    .radio-feature::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, rgba(196,164,106,0.2) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    .radio-feature::after {
-      content: '';
-      position: absolute;
-      bottom: -25%;
-      left: -6%;
-      width: 240px;
-      height: 240px;
-      background: radial-gradient(circle, rgba(196,164,106,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .radio-feature h3 {
-      color: var(--gold-light);
-      font-size: 1.8rem;
-      margin-bottom: 1.25rem;
-      position: relative;
-      text-shadow: 0 0 30px rgba(196, 164, 106, 0.25);
-    }
-    .radio-feature p {
-      color: rgba(255,255,255,0.9);
-      max-width: 74ch;
-      margin-bottom: 1.1rem;
-      position: relative;
-      line-height: 1.75;
-      font-size: 1.02rem;
-    }
-    .radio-feature p:last-child { margin-bottom: 0; }
-
-    /* ─── Music Trail ─── */
-    .trail-section {
-      background: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 48%, var(--navy-mid) 100%);
-      color: #fff;
-      border-radius: var(--radius);
+    /* ─── Interactive Heritage Trail & Vector Map ─── */
+    .trail-container {
+      background: radial-gradient(circle at 70% 30%, #163353 0%, #091a2c 60%, #05101c 100%);
+      border-radius: var(--radius-lg);
       padding: 4rem 3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid rgba(196, 164, 106, 0.12);
-    }
-    .trail-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 72% 18%, rgba(196,164,106,0.14) 0%, transparent 50%),
-        radial-gradient(ellipse at 15% 85%, rgba(196,164,106,0.06) 0%, transparent 45%);
-      pointer-events: none;
-    }
-    .trail-section h2 {
       color: #fff;
-      font-size: clamp(2rem, 3.8vw, 2.7rem);
-      margin-bottom: 0.75rem;
-      position: relative;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(204, 165, 93, 0.25);
     }
-    .trail-section h2::after {
+    .trail-container h2 {
+      color: #fff;
+      text-align: center;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+    }
+    .trail-container h2::after {
       background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
-      box-shadow: 0 0 14px var(--gold-glow);
     }
-    .trail-section > p {
-      color: rgba(255,255,255,0.86);
-      max-width: 600px;
-      margin: 1.4rem auto 3rem;
+    .trail-intro {
+      text-align: center;
+      max-width: 680px;
+      margin: 1.25rem auto 3.5rem;
+      color: rgba(255,255,255,0.85);
       font-size: 1.1rem;
-      position: relative;
-      line-height: 1.75;
     }
-    .trail-grid {
+
+    .trail-map-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.45rem;
-      text-align: left;
-      margin-bottom: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+    .trail-svg-box {
+      background: #061524;
+      border: 2px solid rgba(204, 165, 93, 0.3);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: inset 0 2px 20px rgba(0,0,0,0.8);
       position: relative;
     }
-    .trail-stop {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(196,164,106,0.2);
-      border-radius: var(--radius-sm);
-      padding: 1.65rem;
-      transition: background 0.35s, border-color 0.35s, transform 0.35s var(--ease-out), box-shadow 0.35s;
-      backdrop-filter: blur(4px);
+    .trail-svg-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    .trail-stop:hover {
-      background: rgba(255,255,255,0.09);
+    .map-hotspot {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .map-hotspot:hover circle {
+      fill: #fff;
+      stroke: var(--gold-bright);
+      stroke-width: 4px;
+    }
+    .map-hotspot.active circle {
+      fill: var(--gold-bright);
+      stroke: #fff;
+      stroke-width: 5px;
+      filter: drop-shadow(0 0 10px var(--gold));
+    }
+
+    .trail-stops-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .trail-stop-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(204, 165, 93, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 1.35rem 1.6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .trail-stop-card:hover {
+      background: rgba(255, 255, 255, 0.09);
       border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.25), 0 0 24px rgba(196,164,106,0.1);
+    }
+    .trail-stop-card.active {
+      background: rgba(204, 165, 93, 0.15);
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
     .trail-stop-num {
+      font-family: var(--font-mono);
       font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-    .trail-stop h4 {
-      color: #fff;
-      font-family: var(--font-body);
-      font-size: 1.14rem;
       font-weight: 700;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.35rem;
     }
-    .trail-stop p {
+    .trail-stop-card h4 {
+      color: #fff;
+      font-size: 1.22rem;
+      margin-bottom: 0.4rem;
+    }
+    .trail-stop-card p {
       font-size: 0.94rem;
       color: rgba(255,255,255,0.8);
-      line-height: 1.62;
+      line-height: 1.6;
     }
 
-    /* ─── Vision ─── */
+    /* ─── Vision Section ─── */
     .vision-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.6rem;
-      margin-top: 2.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem;
     }
     .vision-card {
       text-align: center;
-      padding: 2.25rem 1.4rem 2rem;
+      padding: 2.5rem 1.8rem 2.2rem;
       background: var(--paper);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      transition: transform 0.4s var(--ease-out), box-shadow 0.4s, border-color 0.3s;
+      transition: all 0.35s ease;
       position: relative;
-      overflow: hidden;
-    }
-    .vision-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
-      opacity: 0;
-      transition: opacity 0.35s;
     }
     .vision-card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
-      border-color: var(--border-gold);
+      border-color: var(--gold);
     }
-    .vision-card:hover::before { opacity: 1; }
-    .vision-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1.25rem;
+    .vision-num {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.4rem;
       border-radius: 50%;
-      background: linear-gradient(145deg, var(--gold-light), var(--gold-dark));
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--navy-deep);
-      font-size: 1.4rem;
+      color: var(--navy-darkest);
+      font-size: 1.5rem;
+      font-family: var(--font-title);
       font-weight: 700;
-      font-family: var(--font-display);
-      box-shadow: 0 6px 18px rgba(196, 164, 106, 0.35), inset 0 1px 0 rgba(255,255,255,0.35);
-      transition: transform 0.4s var(--ease-spring), box-shadow 0.35s;
-    }
-    .vision-card:hover .vision-icon {
-      transform: scale(1.08);
-      box-shadow: 0 8px 24px rgba(196, 164, 106, 0.45), inset 0 1px 0 rgba(255,255,255,0.4);
+      box-shadow: var(--shadow-gold);
     }
     .vision-card h4 {
-      font-size: 1.28rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
     }
     .vision-card p {
       font-size: 0.96rem;
       color: var(--ink-muted);
-      line-height: 1.62;
-    }
-    .vision-cta {
-      text-align: center;
-      margin-top: 3rem;
-      font-weight: 600;
-      color: var(--navy);
-      font-size: 1.08rem;
-      letter-spacing: 0.01em;
+      line-height: 1.65;
     }
 
-    /* ─── Form / Get Involved ─── */
+    /* ─── Slide-In Biography Modal / Drawer ─── */
+    .bio-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 12, 20, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .bio-modal-backdrop.open {
+      display: flex;
+      opacity: 1;
+    }
+    .bio-modal-content {
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      width: min(840px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 2px solid var(--gold);
+      box-shadow: var(--shadow-xl);
+      padding: 3rem 2.8rem;
+      position: relative;
+      transform: scale(0.94);
+      transition: transform 0.35s var(--ease-spring);
+    }
+    .bio-modal-backdrop.open .bio-modal-content {
+      transform: scale(1);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      transition: all 0.25s ease;
+    }
+    .modal-close-btn:hover {
+      background: var(--gold);
+      color: var(--navy-darkest);
+      transform: rotate(90deg);
+    }
+    .bio-modal-header h2 {
+      font-size: 2.3rem;
+      margin-bottom: 0.2rem;
+    }
+    .bio-modal-sub {
+      font-family: var(--font-title);
+      color: var(--gold-dark);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .bio-modal-body {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.2rem;
+    }
+    .bio-modal-img {
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--navy);
+      max-height: 320px;
+    }
+    .bio-modal-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .bio-modal-text p {
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .bio-quote {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.4rem;
+      margin: 1.2rem 0;
+      font-style: italic;
+      color: var(--navy);
+      font-size: 1.02rem;
+    }
+
+    /* ─── Form Wrap ─── */
     .form-wrap {
-      max-width: 760px;
+      max-width: 800px;
       margin: 0 auto;
       background: var(--paper);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-xl);
       overflow: hidden;
-      position: relative;
-    }
-    .form-wrap::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
-      z-index: 1;
+      border-top: 4px solid var(--gold);
     }
     .form-wrap iframe {
       width: 100%;
-      min-height: 700px;
+      min-height: 720px;
       border: none;
       display: block;
     }
 
-    /* ─── Biographies ─── */
-    #biographies-area:empty { display: none; }
-    .biography-section {
-      background: var(--paper);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      border-left: 6px solid var(--gold);
-      box-shadow: var(--shadow-xl);
-      padding: 3rem;
-      margin: 2.5rem 0 3.5rem;
-      animation: bioIn 0.5s var(--ease-out);
-      position: relative;
-      overflow: hidden;
-    }
-    .biography-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
-    }
-    @keyframes bioIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .biography-section h2 {
-      font-size: clamp(1.95rem, 3.8vw, 2.65rem);
-      margin-bottom: 0.25rem;
-      text-align: left;
-    }
-    .biography-section h2::after { display: none; }
-    .bio-subtitle {
-      display: block;
-      font-family: var(--font-body);
-      font-size: 1.14rem;
-      font-style: italic;
-      color: var(--navy-soft);
-      margin-bottom: 2rem;
-      font-weight: 500;
-    }
-    .bio-layout {
-      display: grid;
-      gap: 2.4rem;
-    }
-    .bio-layout.has-image {
-      grid-template-columns: 240px 1fr;
-      align-items: start;
-    }
-    .bio-image img {
-      width: 100%;
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .bio-text p {
-      font-size: 1.08rem;
-      max-width: 70ch;
-      margin-bottom: 1.15rem;
-      color: var(--ink);
-      line-height: 1.76;
-    }
-    .bio-text p:last-child { margin-bottom: 0; }
-    .close-bio {
-      margin-top: 2.1rem;
-    }
-
-    /* ─── Policy / About ─── */
+    /* ─── Policy Blocks ─── */
     .policy-block {
       background: var(--paper);
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      border-top: 4px solid transparent;
-      border-image: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light)) 1;
       padding: 3rem;
-      box-shadow: var(--shadow-md);
-      max-width: 820px;
+      box-shadow: var(--shadow);
+      max-width: 840px;
       margin: 0 auto;
     }
     .policy-block h2 {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       margin-bottom: 1.2rem;
-      text-align: left;
     }
-    .policy-block h2::after { display: none; }
     .policy-block h3 {
-      font-size: 1.32rem;
-      margin: 2rem 0 0.75rem;
-      text-align: left;
+      font-size: 1.35rem;
+      margin: 2.2rem 0 0.8rem;
     }
-    .policy-block p,
-    .policy-block ul {
+    .policy-block p, .policy-block ul {
       color: var(--ink-muted);
-      max-width: 70ch;
-      line-height: 1.72;
+      line-height: 1.75;
     }
     .policy-block ul {
-      padding-left: 1.35rem;
-      margin: 0.6rem 0 1.15rem;
+      padding-left: 1.4rem;
+      margin: 0.8rem 0;
     }
     .policy-block li { margin-bottom: 0.45rem; }
-    .policy-block a {
-      border-bottom: 1px dotted currentColor;
-      transition: border-color 0.25s, color 0.25s;
-    }
-    .policy-block a:hover { border-bottom-style: solid; }
 
     /* ─── Footer ─── */
     .site-footer {
-      background: linear-gradient(180deg, var(--navy-deep) 0%, #040e18 100%);
+      background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-darkest) 100%);
       color: rgba(255,255,255,0.8);
-      padding: 4.5rem 0 2.5rem;
-      margin-top: 2.75rem;
-      border-top: 4px solid transparent;
-      border-image: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light), var(--gold)) 1;
-      position: relative;
+      padding: 5rem 0 2.5rem;
+      border-top: 3px solid var(--gold);
+      text-align: center;
     }
-    .site-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(196,164,106,0.5), transparent);
-    }
-    .footer-inner { text-align: center; }
-    .footer-brand {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
+    .footer-brand-title {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
       color: #fff;
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
     }
     .footer-tagline {
-      font-size: 0.98rem;
-      margin-bottom: 2rem;
-      opacity: 0.82;
+      font-size: 0.96rem;
+      color: var(--gold-light);
+      margin-bottom: 2.2rem;
     }
     .footer-nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem 2rem;
+      gap: 2rem;
       list-style: none;
       margin-bottom: 2.4rem;
+      flex-wrap: wrap;
     }
     .footer-nav a {
-      color: var(--gold-light);
-      font-weight: 500;
-      font-size: 0.96rem;
-      transition: color 0.3s, text-shadow 0.3s;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
     }
-    .footer-nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 16px rgba(196, 164, 106, 0.4);
-    }
+    .footer-nav a:hover { color: var(--gold-bright); }
     .footer-credits {
-      font-size: 0.86rem;
-      opacity: 0.55;
-      margin-bottom: 1.45rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
       max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 1.5rem;
       line-height: 1.6;
     }
-    .footer-top {
-      display: inline-block;
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 0.7rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .footer-top:hover {
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
 
-    /* ─── Responsive ─── */
-    @media (max-width: 900px) {
+    /* ─── Responsive Media Queries ─── */
+    @media (max-width: 960px) {
       .nav-links {
         display: none;
         position: absolute;
         top: var(--nav-h);
         left: 0;
         right: 0;
-        background: rgba(250, 248, 244, 0.97);
-        backdrop-filter: blur(16px);
+        background: var(--cream);
         flex-direction: column;
-        padding: 1.15rem;
+        padding: 1.5rem;
         border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-md);
-        gap: 0.25rem;
+        box-shadow: var(--shadow-lg);
+        gap: 0.5rem;
       }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
-      .nav-link { width: 100%; text-align: center; padding: 0.85em; }
-
-      .timeline::before { left: 18px; }
-      .timeline-item,
-      .timeline-item:nth-child(odd),
-      .timeline-item:nth-child(even) {
+      .trail-map-layout { grid-template-columns: 1fr; }
+      .timeline::before { left: 24px; }
+      .timeline-item, .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
         width: 100%;
         left: 0;
         text-align: left;
-        padding: 0 0 2rem 3.2rem;
+        padding: 0 0 2.5rem 4rem;
       }
-      .timeline-item::after,
-      .timeline-item:nth-child(odd)::after,
-      .timeline-item:nth-child(even)::after {
-        left: 11px;
+      .timeline-item::after, .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after {
+        left: 15px;
         right: auto;
       }
-      .bio-layout.has-image {
-        grid-template-columns: 1fr;
-      }
-      .bio-image { max-width: 220px; }
+      .bio-modal-body { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 600px) {
-      :root { --nav-h: 68px; }
-      .section { padding: 4rem 0; }
-      .page-hero { min-height: 78vh; }
-      .hero-content { padding: 5rem 1.15rem 4rem; }
-      .radio-feature { padding: 2.1rem; }
-      .radio-tuner-container { padding: 1.75rem 1.25rem; }
-      .trail-section { padding: 3rem 1.4rem; }
-      .biography-section { padding: 1.8rem; }
-      .hero-actions { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 300px; }
-      .policy-block { padding: 2.1rem; }
-      .figure-grid { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .section { padding: 4.5rem 0; }
+      .radio-console { padding: 1.5rem 1.2rem; }
+      .trail-container { padding: 2.5rem 1.4rem; }
+      .policy-block { padding: 2rem 1.5rem; }
+      .bio-modal-content { padding: 2rem 1.5rem; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .btn { width: 100%; }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://athlone-music-heritage.ie/#website",
-        "url": "https://athlone-music-heritage.ie/",
-        "name": "Athlone Music & Radio Heritage",
-        "description": "Historic archive and precursor site for the Athlone Music and Radio Museum. Documenting the musical and broadcasting legacy of Athlone from the 19th century to the present.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Athlone Music Heritage Project"
-        }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://athlone-music-heritage.ie/#mccormack",
-        "name": "Count John McCormack",
-        "jobTitle": "Tenor",
-        "birthDate": "1884-06-14",
-        "deathDate": "1945-09-16",
-        "birthPlace": {
-          "@type": "Place",
-          "address": "The Bawn, Athlone, Co. Westmeath, Ireland"
-        },
-        "description": "Born and raised in Athlone, John McCormack became one of the most celebrated tenors of the 20th century.",
-        "url": "https://athlone-music-heritage.ie/#bio-count-john-mccormack"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://athlone-music-heritage.ie/#daly",
-        "name": "Eugene Patrick Daly",
-        "jobTitle": "Piper",
-        "birthDate": "1883-01-23",
-        "deathDate": "1965-10-30",
-        "birthPlace": {
-          "@type": "Place",
-          "address": "Athlone, Co. Westmeath, Ireland"
-        },
-        "description": "Athlone Clan Uisneach piper and RMS Titanic survivor.",
-        "url": "https://athlone-music-heritage.ie/#bio-eugene-daly"
-      },
-      {
-        "@type": "Place",
-        "@id": "https://athlone-music-heritage.ie/#moydrum",
-        "name": "Athlone Transmitting Station (Moydrum)",
-        "description": "Ireland's premier high-power medium-wave broadcasting station opened in 1932/1933.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Athlone",
-          "addressRegion": "County Westmeath",
-          "addressCountry": "IE"
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
   <a id="top"></a>
 
-  <!-- Navigation -->
-  <nav class="main-nav" id="main-nav" aria-label="Primary">
+  <!-- Primary Navigation -->
+  <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
     <div class="container nav-inner">
-      <a href="#top" class="site-name">Athlone Music &amp; Radio</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <a href="#top" class="site-brand">
+        <div class="brand-crest">A</div>
+        <div class="brand-text">
+          <span class="site-name">Athlone Heritage</span>
+          <span class="site-subtitle">Music &amp; Radio Museum Project</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#past" class="nav-link">Our Past</a>
-        <a href="#radio" class="nav-link">Radio Heritage</a>
-        <a href="#music-trail" class="nav-link">Music &amp; Radio Trail</a>
+        <a href="#radio" class="nav-link">Radio Console</a>
+        <a href="#music-trail" class="nav-link">Interactive Trail</a>
         <a href="#vision" class="nav-link">The Vision</a>
         <a href="#get-involved" class="nav-link">Get Involved</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Banner -->
   <header class="page-hero">
     <div class="hero-content">
-      <span class="hero-eyebrow">Precursor to the Museum</span>
-      <h1 class="page-hero-title">Athlone — Music &amp; Radio Heritage</h1>
+      <div class="hero-badge">
+        <span class="hero-beacon"></span>
+        Digital Precursor &amp; Archival Project
+      </div>
+      <h1 class="page-hero-title">
+        The Sound of Ireland — <span>Athlone Music &amp; Radio</span>
+      </h1>
       <p class="hero-lead">
-        From the bands of the early 19th century to the high-power transmitter that carried Ireland’s voice to the world, Athlone holds a unique place in the story of Irish music and broadcasting.
+        From 19th-century bandmasters and Titanic pipers to the high-power Moydrum transmitter that broadcast Ireland's voice across Europe: explore the living soundscape of the Irish Midlands.
       </p>
       <div class="hero-actions">
-        <a href="#past" class="btn btn-primary">Explore the Heritage</a>
-        <a href="#vision" class="btn btn-outline">The Museum Vision</a>
+        <a href="#radio" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Tune Vintage Radio
+        </a>
+        <a href="#music-trail" class="btn btn-outline">Explore Heritage Trail</a>
       </div>
     </div>
   </header>
 
+  <!-- Live Quick Search -->
+  <div class="container">
+    <div class="search-bar-wrap">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="global-search" placeholder="Search figures, Marconi broadcasts, bands, timeline dates..." aria-label="Search Heritage Archive" />
+        <span class="search-counter" id="search-counter">Archive Ready</span>
+      </div>
+    </div>
+  </div>
+
   <main>
-    <!-- Past / Key Figures -->
+    <!-- Key Figures & Heritage Section -->
     <section id="past" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>A Storied Legacy</h2>
-          <p class="section-lead">Athlone’s musical identity was forged across more than two centuries of bandmasters, tenors, pipers, societies and broadcasters. The figures and institutions below form the core of the heritage the future museum will preserve and interpret.</p>
+          <span class="section-tag">Historical Legacy</span>
+          <h2>Pioneers, Virtuosos &amp; Rebel Bands</h2>
+          <p class="section-lead">Athlone's soundscape was forged across two centuries of resistance, global tours, and technological leaps. Click any personality to examine full archival biographies.</p>
         </div>
 
-        <div id="key-figures">
-          <h3 class="subsection-title">Pioneers &amp; Personalities</h3>
-          <div class="figure-grid">
-            <a href="#bio-patrick-keating" class="figure-card" data-bio="bio-patrick-keating">
-              <div class="figure-card-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Patrick Keating</h4>
-                <p class="figure-card-role">Father of Athlone’s Musical Renaissance</p>
-                <p class="figure-card-caption">Photo courtesy of Athlone Archives</p>
-              </div>
-            </a>
-            <a href="#bio-patrick-gilmore" class="figure-card" data-bio="bio-patrick-gilmore">
-              <div class="figure-card-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Patrick S. Gilmore</h4>
-                <p class="figure-card-role">Father of the American Band</p>
-                <p class="figure-card-caption">Image: Library of Congress</p>
-              </div>
-            </a>
-            <a href="#bio-michael-kilkelly" class="figure-card" data-bio="bio-michael-kilkelly">
-              <div class="figure-card-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Michael Kilkelly</h4>
-                <p class="figure-card-role">Mentorship &amp; Resistance</p>
-                <p class="figure-card-caption">Photo courtesy of the Kilkelly family</p>
-              </div>
-            </a>
-            <a href="#bio-henry-foy" class="figure-card" data-bio="bio-henry-foy">
-              <div class="figure-card-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Henry Foy</h4>
-                <p class="figure-card-role">Ireland’s First Jazzman</p>
-                <p class="figure-card-caption">Photo courtesy of Athlone Archives</p>
-              </div>
-            </a>
-            <a href="#bio-count-john-mccormack" class="figure-card" data-bio="bio-count-john-mccormack">
-              <div class="figure-card-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Count John McCormack</h4>
-                <p class="figure-card-role">Athlone’s Global Voice</p>
-                <p class="figure-card-caption">Image: Wikimedia Commons</p>
-              </div>
-            </a>
-            <a href="#bio-eugene-daly" class="figure-card" data-bio="bio-eugene-daly">
-              <div class="figure-card-image"><img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly, the Titanic Piper" loading="lazy" /></div>
-              <div class="figure-card-body">
-                <h4>Eugene Daly</h4>
-                <p class="figure-card-role">The Titanic Piper</p>
-                <p class="figure-card-caption">Photo courtesy of Encyclopedia Titanica</p>
-              </div>
-            </a>
-          </div>
+        <div class="figure-grid" id="figure-grid">
+          <!-- Patrick Keating -->
+          <article class="figure-card" data-bio="bio-patrick-keating" tabindex="0" role="button" aria-label="View biography of Patrick Keating">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">1796–1875</span>
+              <img src="keationg4.jpg" alt="Portrait of Patrick Keating" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Patrick Keating</h4>
+              <p class="figure-card-role">Father of Athlone’s Musical Renaissance</p>
+              <p class="figure-card-snippet">Waterloo veteran who returned to Athlone in the 1820s to establish military band discipline and inspire a generation of revolutionary musicians.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Patrick Sarsfield Gilmore -->
+          <article class="figure-card" data-bio="bio-patrick-gilmore" tabindex="0" role="button" aria-label="View biography of Patrick Sarsfield Gilmore">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">1829–1892</span>
+              <img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Patrick S. Gilmore</h4>
+              <p class="figure-card-role">Father of the American Band</p>
+              <p class="figure-card-snippet">Keating's protégé who composed "When Johnny Comes Marching Home", led Union Army bands, and organised the 10,000-voice Peace Jubilee in Boston.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Michael Kilkelly -->
+          <article class="figure-card" data-bio="bio-michael-kilkelly" tabindex="0" role="button" aria-label="View biography of Michael Kilkelly">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">Land War Era</span>
+              <img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Michael Kilkelly</h4>
+              <p class="figure-card-role">Mentorship &amp; Musical Resistance</p>
+              <p class="figure-card-snippet">Land League activist who led brass bands in defiance of evictions, and later discovered and trained a young John McCormack.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Henry Foy -->
+          <article class="figure-card" data-bio="bio-henry-foy" tabindex="0" role="button" aria-label="View biography of Henry Foy">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">1919 Pioneer</span>
+              <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Henry Foy</h4>
+              <p class="figure-card-role">Ireland’s First Jazzman</p>
+              <p class="figure-card-snippet">Founder of Athlone Musical Society and leader of the Harry Foy Jazz Quartette (1919), sparking the clash between Jazz modernism and the 1934 Anti-Jazz campaign.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Count John McCormack -->
+          <article class="figure-card" data-bio="bio-count-john-mccormack" tabindex="0" role="button" aria-label="View biography of Count John McCormack">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">1884–1945</span>
+              <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Count John McCormack</h4>
+              <p class="figure-card-role">The Global Voice of Athlone</p>
+              <p class="figure-card-snippet">From The Bawn to the world's greatest opera houses, his legendary 1932 Phoenix Park broadcast of Panis Angelicus resonated globally through Moydrum.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Eugene Daly -->
+          <article class="figure-card" data-bio="bio-eugene-daly" tabindex="0" role="button" aria-label="View biography of Eugene Daly">
+            <div class="figure-card-img-wrap">
+              <span class="figure-pill">1883–1965</span>
+              <img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly" loading="lazy" />
+            </div>
+            <div class="figure-card-body">
+              <h4>Eugene Daly</h4>
+              <p class="figure-card-role">The Titanic Piper</p>
+              <p class="figure-card-snippet">Clan Uisneach piper who played "Erin's Lament" on the deck of RMS Titanic, surviving the disaster after assisting fellow Athlone passengers.</p>
+              <span class="figure-card-cta">Read Archival Biography &rarr;</span>
+            </div>
+          </article>
         </div>
 
-        <!-- Societies -->
-        <div id="societies-groups">
-          <h3 class="subsection-title">Societies &amp; Groups</h3>
-          <div class="info-grid">
-            <article class="info-card">
-              <h4>The Athlone Pipers</h4>
-              <span class="info-card-label">A Century of Tradition</span>
-              <p>From the Clan Uisneach Pipe Band of the late 19th and early 20th centuries to the modern Athlone Town Pipe Band, the pipes have been a continuous thread in the town’s cultural life. Members included Eugene Daly, the Titanic piper.</p>
-              <a href="#bio-athlone-pipers" class="btn btn-ghost" data-bio="bio-athlone-pipers">Learn More</a>
-            </article>
-            <article class="info-card">
-              <h4>Athlone Musical Society</h4>
-              <span class="info-card-label">Ireland’s Oldest Musical Society</span>
-              <p>Co-founded by Henry Foy in 1902, the society is the longest continuously active musical society in Ireland. It has staged productions for well over a century and remains a cornerstone of the town’s performing-arts tradition.</p>
-            </article>
-            <article class="info-card">
-              <h4>Athlone Choral Society</h4>
-              <span class="info-card-label">A Community in Harmony</span>
-              <p>For decades the Athlone Choral Society has brought together voices from across the community, performing classical and contemporary repertoire and enriching the town’s cultural calendar.</p>
-            </article>
-            <article class="info-card">
-              <h4>Comhaltas Ceoltóirí Éireann</h4>
-              <span class="info-card-label">Guardians of Tradition</span>
-              <p>The local branch of Comhaltas has long been central to the transmission of traditional Irish music, song and dance in Athlone, supporting sessions, classes and major festivals including the 1953 Fleadh Cheoil na hÉireann hosted in the town.</p>
-            </article>
-          </div>
+        <!-- Chronological Timeline -->
+        <h3 class="subsection-title">Two Centuries of Sound &amp; Wireless Telegraphy</h3>
+        
+        <div class="timeline-filter-nav" aria-label="Timeline Filters">
+          <button type="button" class="timeline-filter-btn active" data-filter="all">All Chronicles</button>
+          <button type="button" class="timeline-filter-btn" data-filter="bands">Bands &amp; Revival</button>
+          <button type="button" class="timeline-filter-btn" data-filter="radio">Marconi &amp; Transmitters</button>
+          <button type="button" class="timeline-filter-btn" data-filter="jazz">Jazz &amp; Resistance</button>
+          <button type="button" class="timeline-filter-btn" data-filter="pipes">Pipes &amp; Maritime</button>
         </div>
 
-        <!-- Timeline with Category Filtering -->
-        <div id="timeline">
-          <h3 class="subsection-title">A Timeline of Music &amp; Broadcasting</h3>
-          <p class="section-lead" style="text-align:center;margin:0 auto 2.5rem;max-width:560px">Key moments that shaped Athlone’s place in Irish and international musical history, from the Napoleonic era to the high-power radio age.</p>
-
-          <div class="timeline-filter-nav" aria-label="Filter timeline categories">
-            <button type="button" class="timeline-filter-btn active" data-filter="all">All Events</button>
-            <button type="button" class="timeline-filter-btn" data-filter="bands">Bands &amp; Choirs</button>
-            <button type="button" class="timeline-filter-btn" data-filter="pipes">Pipes &amp; Tradition</button>
-            <button type="button" class="timeline-filter-btn" data-filter="radio">Radio &amp; Marconi</button>
-            <button type="button" class="timeline-filter-btn" data-filter="jazz">Jazz &amp; Society</button>
+        <div class="timeline" id="chronicle-timeline">
+          <div class="timeline-item" data-category="bands">
+            <div class="timeline-card">
+              <div class="timeline-year">1796 &amp; 1820s</div>
+              <p>Patrick Keating is born. Following service at Waterloo, he returns to Athlone to institute military band training, igniting an 80-year midlands band revival.</p>
+              <span class="timeline-badge">Bands &amp; Revival</span>
+            </div>
           </div>
-
-          <div class="timeline">
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1796</div><p>Patrick Keating is born. A future Waterloo veteran, he will become the father of Athlone’s 19th-century musical renaissance.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1820s</div><p>Keating returns to Athlone and begins forming and training local bands, sparking a cultural revival in a post-Napoleonic garrison town.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1843</div><p>Keating’s band performs at Daniel O’Connell’s Monster Meeting at Summerhill, their music a public voice for political change.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Late 1840s</div><p>Amid the Great Famine, Keating mentors a young Patrick Sarsfield Gilmore in Athlone, passing on musical skill and political ideals.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1849</div><p>Gilmore emigrates to America, carrying Athlone’s band tradition to Boston and beyond.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1861–1863</div><p>Gilmore and his band serve with the Union Army. In 1863 he writes “When Johnny Comes Marching Home.”</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1869</div><p>Gilmore organises the National Peace Jubilee in Boston — over 1,000 instrumentalists and a choir of 10,000 — to mark the end of the Civil War.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Late 1870s</div><p>Michael Kilkelly, mentored by Keating, leads the Athlone Brass Band at land evictions during the Land War, using music as public resistance.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1880 &amp; 1886</div><p>Gilmore’s band performs for Charles Stewart Parnell in New York and at the dedication of the Statue of Liberty.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">Early 1890s</div><p>As choirmaster, Michael Kilkelly recognises the extraordinary talent of a young John McCormack and gives him early training.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">May 1898</div><p>In nearby Clara, Co. Offaly, Marconi equipment is installed between the Goodbody flour mill at Charlestown and the jute works at Clashawaun. The first successful message is sent on 11 May — Ireland’s first wireless transmission and the world’s first commercial use of the technology. Local capital from the Goodbody family helps fund Marconi’s company.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1902</div><p>Henry Foy co-founds the Athlone Musical Society. The same year John McCormack wins gold at the Dublin Feis Ceoil.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1907</div><p>Marconi opens the world’s first commercial transatlantic wireless station at Derrigimlagh near Clifden. The Irish midlands’ early support for the technology is part of the same story that will later bring high-power broadcasting to Athlone.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="pipes"><div class="timeline-card"><div class="timeline-year">1912</div><p>Athlone piper Eugene Daly and local resident Bertha Mulvihill survive the sinking of the Titanic. Daly had played his uilleann pipes for fellow passengers.</p><span class="timeline-badge">Pipes &amp; Tradition</span></div></div>
-            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1919</div><p>Henry Foy forms the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band — while McCormack is at the height of international fame.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
-            <div class="timeline-item" data-category="bands"><div class="timeline-card"><div class="timeline-year">1922–1923</div><p>The Irish Civil War fractures community life; many local bands fall silent. Marconi’s Clifden station is damaged and closes.</p><span class="timeline-badge">Bands &amp; Classical</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1926</div><p>Ireland’s first national radio service, 2RN, begins broadcasting from Dublin. Athlone will soon become central to its expansion. Marconi equipment is also supplied for early Irish transmitters.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1932</div><p>The new high-power Athlone (Moydrum) transmitter — a Marconi installation — is used to broadcast the Eucharistic Congress. McCormack’s performance of “Panis Angelicus” is heard nationwide.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">6 February 1933</div><p>Éamon de Valera officially opens the Athlone transmitting station (60 kW Marconi transmitter, later upgraded to 100 kW), calling it “a new bridge of Athlone” linking Ireland with its diaspora.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1934</div><p>Fr Peter Conefrey, who had served as curate in Athlone (1907–1914) during Henry Foy’s formative years, leads the Gaelic League anti-jazz campaign. The Mohill march of New Year’s Day frames a clash between clergy defending traditional morality and the new foreign sounds carried by radio.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
-            <div class="timeline-item" data-category="jazz"><div class="timeline-card"><div class="timeline-year">1935</div><p>The Public Dance Halls Act is passed, requiring licences for public dances — a direct outcome of the anti-jazz agitation that sought to curb unsupervised modern dancing.</p><span class="timeline-badge">Jazz &amp; Society</span></div></div>
-            <div class="timeline-item" data-category="radio"><div class="timeline-card"><div class="timeline-year">1938 onwards</div><p>The service is known as Radio Éireann. Athlone’s transmitter (567 kHz / 531m dial marking) becomes synonymous with Irish radio across Europe.</p><span class="timeline-badge">Radio &amp; Marconi</span></div></div>
-            <div class="timeline-item" data-category="pipes"><div class="timeline-card"><div class="timeline-year">1953</div><p>Athlone hosts Fleadh Cheoil na hÉireann, affirming its status as a centre of traditional music.</p><span class="timeline-badge">Pipes &amp; Tradition</span></div></div>
+          <div class="timeline-item" data-category="bands">
+            <div class="timeline-card">
+              <div class="timeline-year">1843 – 1849</div>
+              <p>Keating's Athlone band headlines Daniel O’Connell’s Monster Meeting at Summerhill. Keating trains young Patrick Gilmore before Gilmore departs for Boston in 1849.</p>
+              <span class="timeline-badge">Bands &amp; Revival</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="bands">
+            <div class="timeline-card">
+              <div class="timeline-year">1863 – 1869</div>
+              <p>Gilmore publishes “When Johnny Comes Marching Home” during the US Civil War and establishes the monumental Boston Peace Jubilee with 1,000 players and 10,000 choristers.</p>
+              <span class="timeline-badge">Bands &amp; Revival</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="bands">
+            <div class="timeline-card">
+              <div class="timeline-year">Late 1870s</div>
+              <p>Michael Kilkelly leads the Athlone Brass Band at Land War evictions, transforming municipal brass music into a weapon of agrarian civil resistance.</p>
+              <span class="timeline-badge">Bands &amp; Revival</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="radio">
+            <div class="timeline-card">
+              <div class="timeline-year">11 May 1898</div>
+              <p>In nearby Clara, Co. Offaly, Guglielmo Marconi establishes a link between Goodbody’s Charlestown Mill and Clashawaun Jute Works: Ireland's first wireless test and the world's first commercial wireless message.</p>
+              <span class="timeline-badge">Marconi &amp; Transmitters</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="jazz">
+            <div class="timeline-card">
+              <div class="timeline-year">1902 &amp; 1919</div>
+              <p>Henry Foy co-founds Athlone Musical Society. In 1919, he forms the Harry Foy Jazz Quartette — widely acknowledged as Ireland's first jazz ensemble.</p>
+              <span class="timeline-badge">Jazz &amp; Resistance</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="pipes">
+            <div class="timeline-card">
+              <div class="timeline-year">15 April 1912</div>
+              <p>Athlone uilleann piper Eugene Daly survives the RMS Titanic sinking after piping on deck and rescuing fellow Athlone passenger Bertha Mulvihill.</p>
+              <span class="timeline-badge">Pipes &amp; Maritime</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="radio">
+            <div class="timeline-card">
+              <div class="timeline-year">June 1932</div>
+              <p>The newly constructed Athlone (Moydrum) Marconi transmitter is powered up to relay Count John McCormack singing Panis Angelicus at the 31st International Eucharistic Congress.</p>
+              <span class="timeline-badge">Marconi &amp; Transmitters</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="radio">
+            <div class="timeline-card">
+              <div class="timeline-year">6 February 1933</div>
+              <p>Éamon de Valera officially inaugurates the Athlone Transmitting Station (567 kHz / 530m) as "Droichead nua Átha Luain" — a bridge connecting Ireland with its diaspora.</p>
+              <span class="timeline-badge">Marconi &amp; Transmitters</span>
+            </div>
+          </div>
+          <div class="timeline-item" data-category="jazz">
+            <div class="timeline-card">
+              <div class="timeline-year">1934 – 1935</div>
+              <p>Former Athlone curate Fr Peter Conefrey leads the Gaelic League Anti-Jazz march in Mohill; radio and gramophone jazz imports result in the 1935 Public Dance Halls Act.</p>
+              <span class="timeline-badge">Jazz &amp; Resistance</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Biographies injected here -->
-    <div class="container" id="biographies-area"></div>
-
-    <!-- Radio Heritage -->
+    <!-- Interactive Vintage Radio Console -->
     <section id="radio" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <h2>Radio Heritage</h2>
-          <p class="section-lead">Athlone occupies a singular place in the history of Irish broadcasting. From the first national service to the high-power Moydrum transmitter that carried the nation’s voice across Europe, the town was at the centre of Ireland’s radio age.</p>
+          <span class="section-tag">Interactive Broadcasting Soundscape</span>
+          <h2>The Athlone High-Power Station (Moydrum)</h2>
+          <p class="section-lead">
+            Operated by Radio Éireann on 567 kHz (530m dial marking), Athlone's Marconi transmitter carried Ireland across Europe. Use the dial slider or presets below to tune the airwaves.
+          </p>
         </div>
 
-        <div class="radio-feature">
-          <h3>The Athlone Transmitting Station, Moydrum</h3>
-          <p>Built to give the young Irish Free State nationwide and international reach, the Athlone transmitter entered temporary service for the 1932 Eucharistic Congress and was officially opened on 6 February 1933 by Taoiseach Éamon de Valera. He described it as “Droichead nua Átha Luain” — a new bridge of Athlone — linking the Irish at home with those abroad.</p>
-          <p>Equipped first with a 60 kW Marconi transmitter (later upgraded to 100 kW) and a T-aerial suspended between two 100-metre masts, the station operated for decades as the primary medium-wave outlet for Radio Athlone and then Radio Éireann. Its signal was so well known that many European valve radios carried an “Athlone” marking on the dial (567 kHz / 530m). The original transmitters remain on site; the location has long been proposed as the natural home for a broadcasting and music heritage museum. The Marconi technology that powered Moydrum has deep roots nearby in Clara, Co. Offaly, where some of the inventor’s earliest Irish experiments and the first commercial wireless use took place in 1898.</p>
-        </div>
-
-        <!-- Interactive Valve Radio Soundscape Tuner -->
-        <div class="radio-tuner-container">
-          <div class="tuner-top-row">
-            <h3>Interactive Transmitting Dial</h3>
-            <div class="tuner-live-indicator">
-              <span class="tuner-dot"></span>
-              <span id="tuner-indicator-text">TUNED: ATHLONE MOYDRUM (567 kHz)</span>
+        <!-- Valve Radio Interactive Box -->
+        <div class="radio-console">
+          <div class="console-header">
+            <div class="console-title-area">
+              <h3>Marconi 60kW / 100kW Transmitter Console</h3>
+              <p>BROADCASTING STATION MOYDRUM • ATHLONE MIDLANDS 567 kHz</p>
             </div>
-          </div>
-
-          <div class="tuner-dial-glass">
-            <div class="dial-markings">
-              <span>530m (567 kHz)</span>
-              <span>MEDIUM WAVE</span>
-              <span>413m (725 kHz)</span>
-              <span>SPARK GAP (1898)</span>
-            </div>
-            <div class="tuner-channels">
-              <button type="button" class="tuner-chan-btn active" data-freq="567 kHz" data-title="Radio Éireann (Athlone Moydrum, 1933)" data-desc="The iconic 60 kW water-cooled Marconi transmitter broadcasting Éamon de Valera’s opening address and national programming across Europe on 530m.">
-                <span class="tuner-chan-freq">567 kHz / 530m</span>
-                <span class="tuner-chan-title">Radio Athlone / Moydrum</span>
-                <span class="tuner-chan-meta">60 kW Marconi Transmitter</span>
-              </button>
-              <button type="button" class="tuner-chan-btn" data-freq="1932 Special" data-title="Eucharistic Congress Broadcast (1932)" data-desc="Count John McCormack’s legendary rendition of Panis Angelicus at Dublin’s Phoenix Park, carried nationwide through the newly constructed Athlone transmitter.">
-                <span class="tuner-chan-freq">725 kHz / 413m</span>
-                <span class="tuner-chan-title">McCormack at Phoenix Park</span>
-                <span class="tuner-chan-meta">Congress Live Relay</span>
-              </button>
-              <button type="button" class="tuner-chan-btn" data-freq="1898 Spark" data-title="Clara Wireless Signal (11 May 1898)" data-desc="Marconi’s historic spark-gap wireless transmission between Goodbody’s Charlestown Flour Mill and Clashawaun Jute Works in Clara — the world’s first commercial wireless message.">
-                <span class="tuner-chan-freq">Spark-Gap Telegraph</span>
-                <span class="tuner-chan-title">Marconi Clara Test</span>
-                <span class="tuner-chan-meta">Goodbody Mills Experiment</span>
-              </button>
-              <button type="button" class="tuner-chan-btn" data-freq="1919 Acoustic" data-title="Harry Foy Jazz Quartette (1919)" data-desc="Syncopated rhythms and modern dance numbers from Athlone’s own pioneer jazz ensemble, sparking the transition from Victorian parlour songs to the Jazz Age.">
-                <span class="tuner-chan-freq">Syncopated Rag &amp; Jazz</span>
-                <span class="tuner-chan-title">Harry Foy Jazz Quartette</span>
-                <span class="tuner-chan-meta">Ireland's First Jazz Ensemble</span>
+            <div class="console-status-cluster">
+              <div class="magic-eye-tube" title="Cathode Ray Tuning Indicator">
+                <canvas id="magic-eye-canvas" class="magic-eye-canvas" width="32" height="32"></canvas>
+                <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--green-eye)">VALVE TUNED</span>
+              </div>
+              <button type="button" class="audio-toggle-btn" id="audio-synth-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08"/></svg>
+                <span id="audio-btn-label">ENABLE SOUND</span>
               </button>
             </div>
           </div>
 
-          <div class="tuner-transmission-card">
-            <div class="tuner-trans-label" id="tuner-card-label">Broadcasting Archival Note</div>
-            <div class="tuner-trans-content" id="tuner-card-desc">The iconic 60 kW water-cooled Marconi transmitter broadcasting Éamon de Valera’s opening address and national programming across Europe on 530m.</div>
-          </div>
-        </div>
+          <!-- Dial Scale -->
+          <div class="vintage-dial-glass">
+            <div class="dial-scale-stations">
+              <span>CLARA (1898 SPARK)</span>
+              <span class="hilite">ATHLONE (567 kHz / 530m)</span>
+              <span>DUBLIN (2RN 1926)</span>
+              <span>PARIS / LUXEMBOURG</span>
+            </div>
 
-        <div class="info-grid">
-          <article class="info-card">
-            <h4>2RN to Radio Éireann</h4>
-            <span class="info-card-label">1926 – 1930s</span>
-            <p>2RN, Ireland’s first national radio station, began in Dublin in 1926. The Athlone high-power site transformed coverage, making the service truly national and audible far beyond Ireland’s shores.</p>
-          </article>
-          <article class="info-card">
-            <h4>McCormack &amp; the Congress</h4>
-            <span class="info-card-label">1932</span>
-            <p>John McCormack’s performance at the Eucharistic Congress in Dublin was broadcast via the new Athlone transmitter, uniting the country in a single shared listening experience and bringing the town’s most famous musical son full circle.</p>
-          </article>
-          <article class="info-card">
-            <h4>A Site of National Memory</h4>
-            <span class="info-card-label">Heritage Potential</span>
-            <p>Successive generations of transmission equipment still stand at Moydrum. Feasibility studies and community campaigns have repeatedly identified the site as ideal for a museum interpreting both music and the technology of radio.</p>
-          </article>
+            <div class="dial-slider-container">
+              <div class="dial-track-line"></div>
+              <div class="dial-needle" id="dial-needle" style="left: 45%;"></div>
+              <input type="range" id="radio-frequency-slider" class="dial-range-input" min="0" max="100" value="45" aria-label="Vintage Radio Frequency Tuner" />
+            </div>
+          </div>
+
+          <!-- Channel Preset Selectors -->
+          <div class="preset-channels-grid">
+            <button type="button" class="preset-channel-btn active" data-index="0" data-pos="45" data-freq="567 kHz" data-title="Radio Athlone / Moydrum (1933)" data-desc="The 60 kW Marconi water-cooled valve transmitter carrying Éamon de Valera's official dedication address of 'Droichead nua Átha Luain' on 6 February 1933.">
+              <span class="preset-freq-tag">567 kHz (530m)</span>
+              <span class="preset-chan-title">Radio Éireann Moydrum</span>
+              <span class="preset-chan-sub">De Valera Inauguration Relay</span>
+            </button>
+
+            <button type="button" class="preset-channel-btn" data-index="1" data-pos="68" data-freq="725 kHz" data-title="Count John McCormack at Phoenix Park (1932)" data-desc="Live relay of the 31st Eucharistic Congress in Dublin: McCormack sings 'Panis Angelicus' to over 500,000 worshippers, broadcast live via the temporary Athlone transmitter.">
+              <span class="preset-freq-tag">725 kHz (413m)</span>
+              <span class="preset-chan-title">McCormack Phoenix Park</span>
+              <span class="preset-chan-sub">Eucharistic Congress 1932</span>
+            </button>
+
+            <button type="button" class="preset-channel-btn" data-index="2" data-pos="12" data-freq="Spark Gap" data-title="Marconi Clara Spark Transmission (May 1898)" data-desc="Goodbody Charlestown Flour Mill to Clashawaun Jute Works in Clara: Guglielmo Marconi conducts Ireland's first wireless test and the world's first commercial wireless message.">
+              <span class="preset-freq-tag">Spark-Gap Morse</span>
+              <span class="preset-chan-title">Marconi Clara Test 1898</span>
+              <span class="preset-chan-sub">World Commercial First</span>
+            </button>
+
+            <button type="button" class="preset-channel-btn" data-index="3" data-pos="88" data-freq="1919 Syncopation" data-title="Harry Foy Jazz Quartette (1919)" data-desc="Athlone's pioneer jazz ensemble introduces syncopated American rhythm, leading directly to the national cultural clash and the Public Dance Halls Act of 1935.">
+              <span class="preset-freq-tag">Ragtime &amp; Foxtrot</span>
+              <span class="preset-chan-title">Harry Foy Jazz Quartette</span>
+              <span class="preset-chan-sub">Ireland's 1st Jazz Band</span>
+            </button>
+          </div>
+
+          <!-- Transmission Display Output -->
+          <div class="trans-readout-card">
+            <span class="trans-readout-badge" id="trans-card-freq">TUNED: 567 kHz (530 METRES)</span>
+            <div class="trans-readout-title" id="trans-card-title">Radio Athlone / Moydrum (1933)</div>
+            <div class="trans-readout-text" id="trans-card-desc">The 60 kW Marconi water-cooled valve transmitter carrying Éamon de Valera's official dedication address of 'Droichead nua Átha Luain' on 6 February 1933.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Music Trail -->
+    <!-- Interactive Midlands Music & Radio Trail -->
     <section id="music-trail" class="section">
       <div class="container">
-        <div class="trail-section">
-          <h2>Explore the Athlone Music &amp; Radio Trail</h2>
-          <p>A self-guided walk through the places where Athlone’s musical and broadcasting history was made. An expanded interactive trail with audio interpretation is a core goal of the museum project — and a natural link in a wider network of Midlands and Irish radio-heritage routes.</p>
-          <div class="trail-grid">
-            <div class="trail-stop">
-              <div class="trail-stop-num">Stop 01</div>
-              <h4>John McCormack’s Birthplace</h4>
-              <p><strong>The Bawn, Irishtown.</strong> A plaque marks the site where the great tenor was born in 1884. From local choir to the world’s concert stages, his journey began here.</p>
+        <div class="trail-container">
+          <span class="section-tag" style="color:var(--gold-light);text-align:center;display:block">Midlands Heritage Route</span>
+          <h2>Explore the Athlone &amp; Marconi Clara Trail</h2>
+          <p class="trail-intro">
+            A self-guided historic pilgrimage connecting Athlone's urban musical landmarks with the Marconi industrial innovation sites across the Offaly border. Click stops or map nodes below.
+          </p>
+
+          <div class="trail-map-layout">
+            <!-- Interactive SVG Vector Map -->
+            <div class="trail-svg-box">
+              <svg viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Athlone and Clara Heritage Trail Map">
+                <!-- Shannon River / Waterway Curve -->
+                <path d="M70 20 C100 120, 60 220, 110 340" stroke="#1c4873" stroke-width="24" stroke-linecap="round" />
+                <path d="M70 20 C100 120, 60 220, 110 340" stroke="#25629d" stroke-width="12" stroke-linecap="round" />
+
+                <!-- Old Rail Trail / Greenway Route -->
+                <path d="M120 160 C220 140, 320 180, 420 220" stroke="#cca55d" stroke-width="4" stroke-dasharray="8 6" />
+                
+                <!-- Map Labels -->
+                <text x="30" y="325" fill="#587e9e" font-family="Space Mono" font-size="12" font-weight="700">RIVER SHANNON</text>
+                <text x="210" y="145" fill="#cca55d" font-family="Space Mono" font-size="11" letter-spacing="1">OLD RAIL TRAIL</text>
+
+                <!-- Hotspot 1: McCormack Birthplace (Bawn) -->
+                <g class="map-hotspot active" id="map-stop-1" data-target="0">
+                  <circle cx="110" cy="140" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
+                  <text x="110" y="145" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">1</text>
+                  <text x="132" y="135" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">The Bawn (McCormack)</text>
+                </g>
+
+                <!-- Hotspot 2: Dean Crowe Theatre -->
+                <g class="map-hotspot" id="map-stop-2" data-target="1">
+                  <circle cx="95" cy="180" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
+                  <text x="95" y="185" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">2</text>
+                  <text x="118" y="185" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">Dean Crowe Theatre</text>
+                </g>
+
+                <!-- Hotspot 3: Crescent Ballroom -->
+                <g class="map-hotspot" id="map-stop-3" data-target="2">
+                  <circle cx="125" cy="205" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
+                  <text x="125" y="210" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">3</text>
+                  <text x="148" y="210" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">Crescent Ballroom Site</text>
+                </g>
+
+                <!-- Hotspot 4: Moydrum Transmitter Station -->
+                <g class="map-hotspot" id="map-stop-4" data-target="3">
+                  <circle cx="210" cy="100" r="15" fill="#a1813e" stroke="#fff" stroke-width="3"/>
+                  <text x="210" y="105" fill="#0c233c" font-family="Space Mono" font-size="12" font-weight="700" text-anchor="middle">4</text>
+                  <text x="232" y="98" fill="#e8c988" font-family="Source Sans 3" font-size="13" font-weight="700">Moydrum Transmitter</text>
+                </g>
+
+                <!-- Hotspot 5: Clara Marconi Trail -->
+                <g class="map-hotspot" id="map-stop-5" data-target="4">
+                  <circle cx="420" cy="220" r="16" fill="#a1813e" stroke="#ff9d3b" stroke-width="3"/>
+                  <text x="420" y="225" fill="#040c14" font-family="Space Mono" font-size="12" font-weight="700" text-anchor="middle">5</text>
+                  <text x="350" y="255" fill="#e8c988" font-family="Source Sans 3" font-size="13" font-weight="700">Clara Marconi 1898 Trail</text>
+                </g>
+              </svg>
             </div>
-            <div class="trail-stop">
-              <div class="trail-stop-num">Stop 02</div>
-              <h4>Dean Crowe Theatre</h4>
-              <p><strong>Chapel Street.</strong> Long associated with the Athlone Musical Society (founded 1902) and a continuing home for performance in the town.</p>
-            </div>
-            <div class="trail-stop">
-              <div class="trail-stop-num">Stop 03</div>
-              <h4>Site of The Crescent Ballroom</h4>
-              <p><strong>St Mary’s Place.</strong> The legendary dancehall that hosted the showband era and packed houses for local and national acts in the mid-20th century.</p>
-            </div>
-            <div class="trail-stop">
-              <div class="trail-stop-num">Stop 04</div>
-              <h4>Moydrum Transmitter Site</h4>
-              <p><strong>Moydrum.</strong> The physical heart of Ireland’s high-power radio service from the 1930s. Equipped with Marconi technology, the surviving equipment and landscape form a unique industrial-heritage asset.</p>
+
+            <!-- Stop Details Accordion -->
+            <div class="trail-stops-accordion" id="trail-stops-accordion">
+              <div class="trail-stop-card active" data-stop="0">
+                <div class="trail-stop-num">Stop 01 • The Bawn, Irishtown</div>
+                <h4>John McCormack's Birthplace</h4>
+                <p>A commemorative bronze plaque marks where the legendary tenor was born on 14 June 1884. Kilkelly discovered McCormack singing in the Marist College choir just streets away.</p>
+              </div>
+
+              <div class="trail-stop-card" data-stop="1">
+                <div class="trail-stop-num">Stop 02 • Chapel Street</div>
+                <h4>Dean Crowe Theatre &amp; Arts Centre</h4>
+                <p>Historic rehearsal hall and home of the Athlone Musical Society (founded 1902 by Henry Foy), continuously staging operatic and choral productions for over 120 years.</p>
+              </div>
+
+              <div class="trail-stop-card" data-stop="2">
+                <div class="trail-stop-num">Stop 03 • St. Mary's Place</div>
+                <h4>Site of The Crescent Ballroom</h4>
+                <p>The epicenter of the Irish Showband boom of the 1950s and 60s, hosting legendary national showbands and drawing crowds across the Midlands.</p>
+              </div>
+
+              <div class="trail-stop-card" data-stop="3">
+                <div class="trail-stop-num">Stop 04 • Moydrum (567 kHz)</div>
+                <h4>Moydrum Transmitting Station</h4>
+                <p>Ireland’s historic high-power broadcasting station. The surviving Marconi transmitter halls and two 100m mast footings represent one of Europe's foremost early broadcasting monuments.</p>
+              </div>
+
+              <div class="trail-stop-card" data-stop="4">
+                <div class="trail-stop-num">Stop 05 • Clara, Co. Offaly (20 Mins East)</div>
+                <h4>Marconi Dickensian Mile &amp; Goodbody Mills</h4>
+                <p>The historic 1898 spark-gap transmission path between the Charlestown Flour Mill and Clashawaun Jute Works, funded by the Quaker Goodbody family.</p>
+              </div>
             </div>
           </div>
 
-          <h3 style="color:#fff;font-size:1.45rem;margin:2.75rem 0 1rem;position:relative;">Connecting Trails — The Marconi Story Continues</h3>
-          <p style="color:rgba(255,255,255,0.86);max-width:680px;margin:0 auto 2rem;font-size:1.05rem;line-height:1.75;position:relative;">Athlone’s radio heritage does not stand alone. Just a short journey away, Clara in County Offaly holds a pivotal place in the birth of wireless communication. Together the two towns form a natural corridor of music, industry and radio history that can link into wider Irish and international Marconi routes.</p>
-
-          <div class="trail-grid">
-            <div class="trail-stop">
-              <div class="trail-stop-num">Nearby</div>
-              <h4>Marconi Clara Trail / Dickensian Mile</h4>
-              <p><strong>Clara, Co. Offaly</strong> (approx. 20 minutes by train or road). In 1898 the Goodbody family mills hosted some of Marconi’s earliest Irish transmission tests — and the first commercial use of wireless telegraphy anywhere. Clara Heritage Society’s Marconi Dickensian Mile walking tour explores the industrial buildings, Inchmore House links and the town’s role in funding and testing the new technology.</p>
-            </div>
-            <div class="trail-stop">
-              <div class="trail-stop-num">Link</div>
-              <h4>Why Athlone ↔ Clara Matters</h4>
-              <p>The Moydrum transmitter that carried Radio Éireann across Europe used Marconi equipment. Clara’s early experiments and investment helped make that technology possible. Visitors can easily combine the Athlone Music &amp; Radio Trail with Clara’s industrial and Marconi heritage — creating a richer Midlands story of performance, invention and broadcasting.</p>
-            </div>
-            <div class="trail-stop">
-              <div class="trail-stop-num">Further</div>
-              <h4>Wider Heritage Connections</h4>
-              <p>From Clara the narrative reaches outward to the great Marconi stations at Clifden (Derrigimlagh) and beyond, and locally to the Old Rail Trail / Dublin–Galway Greenway that already links Athlone with the surrounding countryside. Future interpretation can weave these routes into a coherent music-and-radio heritage network.</p>
-            </div>
+          <div style="text-align:center;">
+            <a href="#get-involved" class="btn btn-primary">Help Build the Complete Digital Audio Guide</a>
           </div>
-
-          <a href="#get-involved" class="btn btn-primary">Help Shape the Interactive Trail</a>
         </div>
       </div>
     </section>
 
-    <!-- Vision -->
+    <!-- Museum Vision Section -->
     <section id="vision" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <h2>Our Vision: The Athlone Music &amp; Radio Museum</h2>
-          <p class="section-lead">This layered history of music and broadcasting deserves a permanent home. We are working toward a dedicated museum that will preserve the stories, instruments, recordings and technology of Athlone’s contribution to Irish culture and to the wider world.</p>
+          <span class="section-tag">Strategic Plan</span>
+          <h2>The Permanent Museum Vision</h2>
+          <p class="section-lead">
+            Preserving Athlone's dual legacy of performance and wireless technology in a world-class cultural institution and archive for the Irish Midlands.
+          </p>
         </div>
+
         <div class="vision-grid">
           <div class="vision-card">
-            <div class="vision-icon">1</div>
-            <h4>Preserve the Legacy</h4>
-            <p>Create a secure archive for documents, photographs, instruments, recordings and oral histories relating to Athlone’s musicians and broadcasters.</p>
+            <div class="vision-num">I</div>
+            <h4>Secure &amp; Archive</h4>
+            <p>Gathering 19th-century band instruments, uilleann pipes, shellac discs, rare recordings, and surviving Moydrum valve transmitters into a protected civic repository.</p>
           </div>
           <div class="vision-card">
-            <div class="vision-icon">2</div>
-            <h4>Interpret Music &amp; Radio</h4>
-            <p>Present the twin stories of performance and transmission — from 19th-century bands to the Marconi-era transmitter — in an accessible, scholarly and engaging way.</p>
+            <div class="vision-num">II</div>
+            <h4>Immersive Interpretation</h4>
+            <p>Creating interactive vintage valve studios, dynamic sound stages, and acoustic listening chambers illustrating Athlone's role as Ireland’s voice to the diaspora.</p>
           </div>
           <div class="vision-card">
-            <div class="vision-icon">3</div>
-            <h4>Inspire &amp; Educate</h4>
-            <p>Offer learning programmes, research facilities and public events that connect new generations with this heritage.</p>
+            <div class="vision-num">III</div>
+            <h4>Education &amp; Residency</h4>
+            <p>Supporting contemporary radio documentaries, audio restoration workshops, and youth traditional and jazz academies in collaboration with local schools and universities.</p>
           </div>
           <div class="vision-card">
-            <div class="vision-icon">4</div>
-            <h4>Strengthen the Town</h4>
-            <p>Establish a cultural landmark that draws visitors, supports local research, and anchors Athlone’s identity as a place of music and radio history.</p>
+            <div class="vision-num">IV</div>
+            <h4>Midlands Heritage Tourism</h4>
+            <p>Linking Athlone Castle, the Old Rail Trail Greenway, and Clara's Marconi heritage into a unified cultural corridor drawing international visitors.</p>
           </div>
         </div>
-        <p class="vision-cta">This vision can only become reality with community support and partnership.</p>
       </div>
     </section>
 
-    <!-- Get Involved -->
+    <!-- Get Involved / Google Form -->
     <section id="get-involved" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Get Involved &amp; Share Your Story</h2>
-          <p class="section-lead">Your knowledge, photographs, recordings and memories are essential to building a complete picture of Athlone’s musical and radio past. Register your interest, contribute material, or offer support for the museum project using the form below.</p>
+          <span class="section-tag">Community Archive</span>
+          <h2>Submit Material &amp; Support the Project</h2>
+          <p class="section-lead">
+            Do you possess photographs, vintage radio receivers, band instruments, recordings, or family recollections of Athlone's musical past? Share them with our research team below.
+          </p>
         </div>
         <div class="form-wrap">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" title="Get Involved form" loading="lazy">Loading…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" title="Get Involved Form" loading="lazy">Loading Google Form...</iframe>
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- About the Project Team -->
     <section id="about" class="section section-alt">
       <div class="container">
         <div class="policy-block">
-          <h2>About the Project</h2>
-          <p>The Athlone Music Heritage Project is a community-led initiative founded by local historians, musicians and enthusiasts. Our mission is to research, preserve and celebrate the musical and broadcasting legacy of Athlone. This website is the first public expression of that work and the digital precursor to a permanent Music &amp; Radio Museum.</p>
-          <p>Content has been compiled from local archives, contemporary newspapers, published scholarship and, above all, the stories and material shared by the people of Athlone and the wider region.</p>
-          <h3>Project Team</h3>
+          <h2>About the Athlone Music Heritage Project</h2>
+          <p>Founded by local historians, radio enthusiasts, and musicians, our initiative seeks to preserve the rich acoustic and technological heritage of Athlone, Co. Westmeath and its surrounding regions.</p>
+          
+          <h3>Project Working Group</h3>
           <ul>
-            <li><strong>Leo Nolan</strong> — Lead Historian &amp; Researcher</li>
-            <li><strong>Seamus McKenna</strong> — Community Outreach</li>
-            <li><strong>Tadhg Kelleher</strong> — Web Development &amp; Digital Archiving</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="policy-block">
-          <h2>Contact Us</h2>
-          <p>We welcome enquiries, contributions of material, and expressions of interest in the museum project.</p>
-          <p><strong>Email:</strong> <a href="mailto:tadhgkelleher@gmail.com">tadhgkelleher@gmail.com</a></p>
-          <p style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.75rem">
-            <a href="https://instagram.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram</a>
-            <a href="https://facebook.com/AthloneMusicHeritage" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Facebook</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Privacy -->
-    <section id="privacy" class="section section-alt">
-      <div class="container">
-        <div class="policy-block">
-          <h2>Privacy Policy</h2>
-          <p><em>Last Updated: 14 September 2025</em></p>
-          <p>The Athlone Music Heritage Project is committed to protecting your privacy. This policy explains how we collect, use and safeguard information when you visit this site.</p>
-
-          <h3>Information We Collect</h3>
-          <ul>
-            <li><strong>Personal Data:</strong> Name and email address you voluntarily provide through the “Get Involved” form.</li>
-            <li><strong>Derivative Data:</strong> Standard server logs (IP address, browser type, pages viewed) collected automatically.</li>
+            <li><strong>Leo Nolan</strong> — Lead Historian &amp; Archival Researcher</li>
+            <li><strong>Seamus McKenna</strong> — Community Outreach &amp; Oral History</li>
+            <li><strong>Tadhg Kelleher</strong> — Digital Preservation &amp; Web Systems</li>
           </ul>
 
-          <h3>Use of Your Information</h3>
-          <ul>
-            <li>To respond to enquiries and support the project.</li>
-            <li>To send project updates if you opt in.</li>
-            <li>To produce anonymous statistical analysis for internal use.</li>
-          </ul>
-
-          <h3>Third-Party Services</h3>
-          <p><strong>Google Forms:</strong> Submissions are stored on Google’s servers and subject to Google’s Privacy Policy.</p>
-
-          <h3>Contact</h3>
-          <p>Questions about this policy may be directed via the details on our <a href="#contact">Contact page</a>.</p>
+          <h3>Institutional Partnerships &amp; Sources</h3>
+          <p>Historical research drawn from the National Archives of Ireland, Westmeath County Library Archives, Clara Heritage Society, Library of Congress, and the RTÉ Archives.</p>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Biography Slide-In Modal -->
+  <div class="bio-modal-backdrop" id="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bio-modal-title">
+    <div class="bio-modal-content">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close Biography Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="bio-modal-header">
+        <h2 id="bio-modal-title">Biography Title</h2>
+        <span class="bio-modal-sub" id="bio-modal-subtitle">Subtitle</span>
+      </div>
+      <div class="bio-modal-body">
+        <div class="bio-modal-img">
+          <img id="bio-modal-image" src="" alt="Historical Portrait" />
+        </div>
+        <div class="bio-modal-text" id="bio-modal-text">
+          <!-- Dynamic biographical paragraphs -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">Athlone Music Heritage Project</div>
-      <p class="footer-tagline">Working towards the establishment of the Athlone Music &amp; Radio Museum.</p>
+    <div class="container">
+      <div class="footer-brand-title">Athlone Music &amp; Radio Museum Project</div>
+      <p class="footer-tagline">Preserving Ireland's voice, heritage, and acoustics in the heart of the Midlands.</p>
       <ul class="footer-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#past">Our Past</a></li>
+        <li><a href="#radio">Vintage Radio</a></li>
+        <li><a href="#music-trail">Heritage Trail</a></li>
+        <li><a href="#vision">The Vision</a></li>
+        <li><a href="#get-involved">Contribute</a></li>
+        <li><a href="#about">Project Team</a></li>
       </ul>
-      <p class="footer-credits">Historical research and content compiled by the Athlone Music Heritage Project team. With thanks to local archives and community contributors.</p>
-      <p>© <span id="year"></span> Athlone Music Heritage Project.</p>
-      <a href="#top" class="footer-top">↑ Back to Top</a>
+      <p class="footer-credits">
+        Historical curation &copy; <span id="footer-year"></span> Athlone Music Heritage Project.
+      </p>
+      <a href="#top" style="color:var(--gold-light);font-size:0.9rem;">&uarr; Return to Top</a>
     </div>
   </footer>
 
+  <!-- Script Architecture -->
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Dynamic Footer Year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    // Sticky nav shadow
+    // 2. Navigation Scroll Effect & Mobile Toggle
     const nav = document.getElementById('main-nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-    // Mobile menu
-    const toggle = document.getElementById('nav-toggle');
-    const links = document.getElementById('nav-links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 25);
+    }, { passive: true });
+
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
     });
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Biography system
-    const biographyTemplates = {
-      'bio-patrick-keating': `
-        <section id="bio-patrick-keating" class="biography-section" tabindex="-1">
-          <h2>Patrick Keating (1796–1875)</h2>
-          <span class="bio-subtitle">The Father of Athlone’s Musical Renaissance</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="keationg4.jpg" alt="Portrait of Patrick Keating" /></div>
-            <div class="bio-text">
-              <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at Waterloo, he returned to his native Athlone in the 1820s to find a town still shaped by conflict and economic hardship. He saw music not merely as entertainment but as a means of community revival and national pride.</p>
-              <p>Drawing on his military experience, he formed and trained local bands with discipline and ambition. His work helped establish Athlone’s reputation for musical excellence and produced a generation of skilled players. His influence extended beyond performance: he instilled purpose and identity in his pupils.</p>
-              <p>His most celebrated protégé was the young Patrick Sarsfield Gilmore, to whom he passed both musical technique and political ideals. Keating’s legacy laid foundations that would reach from Athlone to the concert stages and civic rituals of 19th-century America.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Patrick Keating biography">Close Biography</button>
-        </section>`,
-      'bio-patrick-gilmore': `
-        <section id="bio-patrick-gilmore" class="biography-section" tabindex="-1">
-          <h2>Patrick Sarsfield Gilmore (1829–1892)</h2>
-          <span class="bio-subtitle">Father of the American Band</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" /></div>
-            <div class="bio-text">
-              <p>Born in Ballygar, Co. Galway, and trained in Athlone under Patrick Keating, Patrick Sarsfield Gilmore carried the town’s musical spirit to America after emigrating in 1849. He became one of the most influential bandmasters and showmen of the 19th century.</p>
-              <p>During the American Civil War his band served with the Union Army; in 1863, under the pseudonym Louis Lambert, he published the enduring anthem “When Johnny Comes Marching Home.” After the war he organised monumental festivals, including the 1869 National Peace Jubilee in Boston with more than a thousand instrumentalists and a choir of ten thousand. His band performed at the dedication of the Statue of Liberty. Gilmore’s standards of instrumentation, discipline and large-scale presentation earned him the lasting title “Father of the American Band.”</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Patrick Gilmore biography">Close Biography</button>
-        </section>`,
-      'bio-michael-kilkelly': `
-        <section id="bio-michael-kilkelly" class="biography-section" tabindex="-1">
-          <h2>Michael Kilkelly</h2>
-          <span class="bio-subtitle">Mentorship and Musical Resistance</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" /></div>
-            <div class="bio-text">
-              <p>A passionate nationalist mentored by Patrick Keating, Michael Kilkelly became a pivotal figure in Athlone’s musical and political life. During the Land War of the 1870s he led the Athlone Brass Band at land evictions, where music served as a public expression of solidarity with tenant farmers.</p>
-              <p>His most lasting contribution may have been as a teacher. In the early 1890s, as choirmaster, he recognised the exceptional gift of a young John McCormack and provided crucial early training and encouragement. That act of mentorship helped launch the career of one of the greatest lyrical tenors of the 20th century and permanently linked Kilkelly’s name with Athlone’s most celebrated musical son.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Michael Kilkelly biography">Close Biography</button>
-        </section>`,
-      'bio-henry-foy': `
-        <section id="bio-henry-foy" class="biography-section" tabindex="-1">
-          <h2>Henry Foy</h2>
-          <span class="bio-subtitle">Ireland’s First Jazzman</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" /></div>
-            <div class="bio-text">
-              <p>Music professor Henry “Harry” Foy left a lasting imprint on Athlone’s cultural life. In 1902 he co-founded the Athlone Musical Society, which grew into Ireland’s oldest continuously active musical society.</p>
-              <p>In 1919, inspired by the new syncopated rhythms arriving from America, he launched the Harry Foy Jazz Quartette — widely regarded as Ireland’s first jazz band. At a time of intense nationalism he treated jazz not as an alien import but as a modern, energetic medium that could sit alongside Irish tradition. His work placed Athlone, unexpectedly, at the forefront of a global musical shift.</p>
-              <p>Foy’s early years in Athlone coincided with the ministry of Fr Peter Conefrey (sometimes rendered Coneferty), who served as curate at St Mary’s from around 1907 to 1914. Conefrey, already active in the Gaelic League and traditional culture, later became the driving clerical voice of the national anti-jazz campaign. When the campaign peaked with the Mohill demonstration of New Year’s Day 1934, the tension was framed on two clear sides. On one side stood the clergy and cultural nationalists who condemned jazz as music “borrowed from the savages of Africa by the anti-God society,” a threat to virtue, Irish music and morality greater even than drink or landlordism. On the other stood the new technology of radio (2RN / Radio Éireann) and gramophones, which flooded Irish homes with precisely those foreign, syncopated sounds. The same airwaves that carried Athlone’s high-power transmitter also carried the rhythms Foy had pioneered, setting tradition and modernity in open conflict and helping to produce the Public Dance Halls Act of 1935.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Henry Foy biography">Close Biography</button>
-        </section>`,
-      'bio-count-john-mccormack': `
-        <section id="bio-count-john-mccormack" class="biography-section" tabindex="-1">
-          <h2>Count John McCormack (1884–1945)</h2>
-          <span class="bio-subtitle">The World’s Greatest Lyrical Tenor</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Count John McCormack" /></div>
-            <div class="bio-text">
-              <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the Marist College choir and the guidance of Michael Kilkelly to become one of the most celebrated singers of the 20th century. His gold medal at the 1902 Dublin Feis Ceoil opened the path to international study and stardom.</p>
-              <p>He was equally at home in opera and in the intimate ballad and Irish song repertoire that made him a household name. His recordings sold in the millions. In 1928 he was created a Papal Count. In 1932 his performance at the Eucharistic Congress was broadcast nationwide from Athlone’s new high-power transmitter — the voice of the town’s most famous son carried by the town’s newest technological achievement.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Count John McCormack biography">Close Biography</button>
-        </section>`,
-      'bio-eugene-daly': `
-        <section id="bio-eugene-daly" class="biography-section" tabindex="-1">
-          <h2>Eugene Daly (1883–1965)</h2>
-          <span class="bio-subtitle">The Titanic Piper</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly" /></div>
-            <div class="bio-text">
-              <p>A skilled uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Patrick Daly secured a place in both local and world history through survival and courage. In April 1912 he boarded the RMS Titanic as a third-class passenger bound for America. He entertained fellow passengers with his pipes, including a performance of “Erin’s Lament” as the ship left Queenstown (Cobh).</p>
-              <p>When the ship struck the iceberg he helped fellow Athlone passenger Bertha Mulvihill and his cousin Margaret Daly to safety. He himself jumped into the sea and was later pulled aboard the overturned Collapsible B. His pipes were lost; his story remains one of the most poignant Athlone connections to the Titanic disaster. Daly settled in New York and lived to the age of 82, passing away on 30 October 1965.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close Eugene Daly biography">Close Biography</button>
-        </section>`,
-      'bio-athlone-pipers': `
-        <section id="bio-athlone-pipers" class="biography-section" tabindex="-1">
-          <h2>The Athlone Pipers</h2>
-          <span class="bio-subtitle">An Enduring Tradition of the Pipes</span>
-          <div class="bio-layout has-image">
-            <div class="bio-image"><img src="IMG_2170_480x480.webp" alt="Historic photo of the Clan Uisneach Pipe Band" /></div>
-            <div class="bio-text">
-              <p>Athlone’s piping tradition stretches back more than a century, anchored by the renowned Clan Uisneach Pipe Band. The band was a cultural beacon in the late 19th and early 20th centuries; it was presented with a ceremonial banner by the historian Francis Joseph Bigger and counted among its members Eugene Daly, the Titanic piper.</p>
-              <p>The tradition continued through the St. Mary’s Pioneer Pipe Band and, in the 21st century, the Athlone Town Pipe Band (formed 2009). The sound of the pipes remains a living part of civic and festival life in the town, linking successive generations to a distinctive local heritage.</p>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary close-bio" aria-label="Close The Athlone Pipers biography">Close Biography</button>
-        </section>`
+    // 3. Complete Biography Archive Registry
+    const bios = {
+      'bio-patrick-keating': {
+        title: 'Patrick Keating (1796–1875)',
+        sub: 'Father of Athlone’s Musical Renaissance',
+        image: 'keationg4.jpg',
+        text: `
+          <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at the Battle of Waterloo (1815), he returned to his native Athlone in the 1820s to find a garrison town burdened by economic hardship. He championed municipal wind music as a vehicle for civic discipline, pride, and national regeneration.</p>
+          <div class="bio-quote">"Keating transformed military brass precision into a vibrant expression of local civic identity and Irish self-determination."</div>
+          <p>Keating trained multiple local town bands and famously led his ensemble at Daniel O’Connell’s 1843 Monster Meeting at Summerhill. His greatest protégé was a young Patrick Sarsfield Gilmore, to whom he imparted the advanced brass fingering, instrumentation, and showmanship that Gilmore subsequently exported to America.</p>
+        `
+      },
+      'bio-patrick-gilmore': {
+        title: 'Patrick Sarsfield Gilmore (1829–1892)',
+        sub: 'Father of the American Band',
+        image: 'Patrick_S._Gilmore (6).jpg',
+        text: `
+          <p>Born in Ballygar, Co. Galway, and trained as a cornetist in Athlone under Patrick Keating, Patrick Sarsfield Gilmore emigrated to Boston in 1849. He quickly became the preeminent bandmaster in North America.</p>
+          <div class="bio-quote">"In 1863, under the nom de plume Louis Lambert, Gilmore penned the immortal Civil War anthem 'When Johnny Comes Marching Home'."</div>
+          <p>During the American Civil War, Gilmore enlisted his entire band into the 24th Massachusetts Volunteer Regiment. Following the conflict, he produced the monumental 1869 National Peace Jubilee in Boston (1,000 musicians, 10,000 choristers) and later performed for Charles Stewart Parnell and at the 1886 dedication of the Statue of Liberty in New York Harbour.</p>
+        `
+      },
+      'bio-michael-kilkelly': {
+        title: 'Michael Kilkelly',
+        sub: 'Mentorship & Musical Resistance',
+        image: 'michaelkilkelly.jpg',
+        text: `
+          <p>Mentored directly by Patrick Keating, Michael Kilkelly was a staunch nationalist and versatile multi-instrumentalist who positioned music on the frontline of the Irish Land War during the late 1870s and 1880s.</p>
+          <div class="bio-quote">"Kilkelly deployed the Athlone Brass Band at eviction sites across Westmeath and Roscommon, using triumphant airs to sustain tenant resistance."</div>
+          <p>As choirmaster at St. Mary’s and Marist College in the early 1890s, Kilkelly discovered the raw vocal brilliance of a schoolboy named John McCormack, providing him with his foundational vocal coaching and setting him upon his path to international renown.</p>
+        `
+      },
+      'bio-henry-foy': {
+        title: 'Henry Foy',
+        sub: 'Ireland’s First Jazzman',
+        image: 'cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png',
+        text: `
+          <p>Professor Henry "Harry" Foy stands as one of the most innovative figures in 20th-century Irish music. In 1902, he co-founded the Athlone Musical Society, which today is the oldest continuously operating musical society in Ireland.</p>
+          <div class="bio-quote">"In 1919, Foy formed the Harry Foy Jazz Quartette — widely acknowledged as the first authentic jazz band formed in Ireland."</div>
+          <p>Foy’s pioneering jazz performances in the midlands coincided with the ministry of curate Fr. Peter Conefrey at St. Mary's Athlone. Conefrey later became the national leader of the 1934 Anti-Jazz campaign. Foy embraced jazz as a modern, vibrant medium, defying the moral panic that culminated in the 1935 Public Dance Halls Act.</p>
+        `
+      },
+      'bio-count-john-mccormack': {
+        title: 'Count John McCormack (1884–1945)',
+        sub: 'The World’s Greatest Lyrical Tenor',
+        image: 'cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg',
+        text: `
+          <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the local church choir to become the most commercially successful concert tenor of the early 20th century. After winning gold at the 1902 Dublin Feis Ceoil, he studied in Milan under Vincenzo Sabatini.</p>
+          <div class="bio-quote">"McCormack sold millions of Victor gramophone records and was created a Papal Count in 1928 by Pope Pius XI."</div>
+          <p>At the 1932 Eucharistic Congress in Dublin, McCormack’s rendition of César Franck’s <em>Panis Angelicus</em> was broadcast across the world via Athlone's newly completed Moydrum transmitter, uniting global Irish audiences through radio.</p>
+        `
+      },
+      'bio-eugene-daly': {
+        title: 'Eugene Daly (1883–1965)',
+        sub: 'The Titanic Piper',
+        image: 'EugeneDaly-1 (1).webp',
+        text: `
+          <p>An accomplished uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Patrick Daly boarded RMS Titanic at Queenstown (Cobh) in April 1912 as a third-class passenger.</p>
+          <div class="bio-quote">"As Titanic pulled away from Ireland, Daly stood on the steerage deck playing 'Erin’s Lament' on his uilleann pipes."</div>
+          <p>During the sinking on 15 April 1912, Daly guided fellow Athlone passenger Bertha Mulvihill to Lifeboat 15. He survived by jumping into the freezing ocean and scrambling onto the overturned Collapsible B. He settled in New York and lived to the age of 82.</p>
+        `
+      }
     };
 
-    const area = document.getElementById('biographies-area');
-    let activeBio = null;
-    const navH = () => document.getElementById('main-nav')?.offsetHeight || 72;
+    // 4. Modal Engine
+    const modalBackdrop = document.getElementById('bio-modal');
+    const modalTitle = document.getElementById('bio-modal-title');
+    const modalSubtitle = document.getElementById('bio-modal-subtitle');
+    const modalImage = document.getElementById('bio-modal-image');
+    const modalText = document.getElementById('bio-modal-text');
+    const modalClose = document.getElementById('modal-close-btn');
 
-    function hideBio() {
-      if (activeBio) {
-        activeBio.remove();
-        activeBio = null;
+    function openBio(key) {
+      const data = bios[key];
+      if (!data) return;
+      modalTitle.textContent = data.title;
+      modalSubtitle.textContent = data.sub;
+      modalImage.src = data.image;
+      modalImage.alt = data.title;
+      modalText.innerHTML = data.text;
+      modalBackdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      history.pushState(null, '', `#${key}`);
+    }
+
+    function closeBio() {
+      modalBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      if (location.hash.startsWith('#bio-')) {
+        history.pushState(null, '', window.location.pathname);
       }
     }
 
-    function scrollTo(el) {
-      if (!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - navH() - 24;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-
-    function showBio(id) {
-      const html = biographyTemplates[id];
-      if (!html) return;
-      hideBio();
-      area.innerHTML = html;
-      activeBio = area.querySelector('.biography-section');
-      scrollTo(activeBio);
-      activeBio.focus({ preventScroll: true });
-      activeBio.querySelector('.close-bio').addEventListener('click', () => {
-        hideBio();
-        scrollTo(document.getElementById('past'));
-      });
-    }
-
     document.querySelectorAll('[data-bio]').forEach(el => {
-      el.addEventListener('click', e => {
-        e.preventDefault();
-        showBio(el.getAttribute('data-bio'));
+      el.addEventListener('click', () => openBio(el.getAttribute('data-bio')));
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBio(el.getAttribute('data-bio'));
+        }
       });
     });
 
-    // Interactive Tuner logic
-    const chanButtons = document.querySelectorAll('.tuner-chan-btn');
-    const tunerText = document.getElementById('tuner-indicator-text');
-    const tunerLabel = document.getElementById('tuner-card-label');
-    const tunerDesc = document.getElementById('tuner-card-desc');
-
-    chanButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        chanButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const freq = btn.getAttribute('data-freq');
-        const title = btn.getAttribute('data-title');
-        const desc = btn.getAttribute('data-desc');
-
-        tunerText.textContent = `TUNED: ${title.toUpperCase()} (${freq})`;
-        tunerLabel.textContent = title;
-        tunerDesc.textContent = desc;
-      });
+    modalClose.addEventListener('click', closeBio);
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) closeBio();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) closeBio();
     });
 
-    // Interactive Timeline Filter logic
-    const filterButtons = document.querySelectorAll('.timeline-filter-btn');
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    if (location.hash && bios[location.hash.replace('#', '')]) {
+      openBio(location.hash.replace('#', ''));
+    }
 
-    filterButtons.forEach(btn => {
+    // 5. Interactive Web Audio API Valve Radio Synthesizer
+    let audioCtx = null;
+    let noiseNode = null;
+    let humOsc = null;
+    let audioGain = null;
+    let isSoundOn = false;
+
+    const soundBtn = document.getElementById('audio-synth-btn');
+    const soundLabel = document.getElementById('audio-btn-label');
+
+    function initWebAudio() {
+      if (audioCtx) return;
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContext();
+
+      // Master Gain
+      audioGain = audioCtx.createGain();
+      audioGain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+      audioGain.connect(audioCtx.destination);
+
+      // 50Hz Mains Transformer Valve Hum
+      humOsc = audioCtx.createOscillator();
+      humOsc.type = 'sawtooth';
+      humOsc.frequency.setValueAtTime(50, audioCtx.currentTime);
+      const humFilter = audioCtx.createBiquadFilter();
+      humFilter.type = 'lowpass';
+      humFilter.frequency.setValueAtTime(120, audioCtx.currentTime);
+      humOsc.connect(humFilter);
+      humFilter.connect(audioGain);
+      humOsc.start();
+
+      // Atmospheric White Noise / Radio Static
+      const bufferSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+      noiseNode = audioCtx.createBufferSource();
+      noiseNode.buffer = noiseBuffer;
+      noiseNode.loop = true;
+
+      const noiseFilter = audioCtx.createBiquadFilter();
+      noiseFilter.type = 'bandpass';
+      noiseFilter.frequency.setValueAtTime(1000, audioCtx.currentTime);
+      noiseFilter.Q.setValueAtTime(1.5, audioCtx.currentTime);
+
+      noiseNode.connect(noiseFilter);
+      noiseFilter.connect(audioGain);
+      noiseNode.start();
+    }
+
+    soundBtn.addEventListener('click', () => {
+      if (!audioCtx) initWebAudio();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      isSoundOn = !isSoundOn;
+      if (isSoundOn) {
+        soundBtn.classList.add('active');
+        soundLabel.textContent = 'MUTE VALVE SOUND';
+        audioGain.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.1);
+      } else {
+        soundBtn.classList.remove('active');
+        soundLabel.textContent = 'ENABLE SOUND';
+        audioGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+      }
+    });
+
+    // 6. Magic Eye Cathode Ray Canvas Indicator
+    const eyeCanvas = document.getElementById('magic-eye-canvas');
+    const eyeCtx = eyeCanvas.getContext('2d');
+    function drawMagicEye(angleOpening) {
+      eyeCtx.clearRect(0, 0, 32, 32);
+      eyeCtx.fillStyle = '#05180c';
+      eyeCtx.fillRect(0, 0, 32, 32);
+
+      // Glowing Green Fan
+      eyeCtx.save();
+      eyeCtx.translate(16, 16);
+      eyeCtx.beginPath();
+      eyeCtx.arc(0, 0, 13, 0, Math.PI * 2);
+      eyeCtx.fillStyle = '#1c7430';
+      eyeCtx.fill();
+
+      // Eye shadow wedge (indicates tuning quality)
+      eyeCtx.beginPath();
+      eyeCtx.moveTo(0, 0);
+      eyeCtx.arc(0, 0, 14, -angleOpening, angleOpening);
+      eyeCtx.fillStyle = '#031006';
+      eyeCtx.fill();
+
+      // Center Cathode Cap
+      eyeCtx.beginPath();
+      eyeCtx.arc(0, 0, 4.5, 0, Math.PI * 2);
+      eyeCtx.fillStyle = '#0f3818';
+      eyeCtx.fill();
+      eyeCtx.restore();
+    }
+    drawMagicEye(0.85);
+
+    // 7. Radio Tuning & Preset Logic
+    const dialNeedle = document.getElementById('dial-needle');
+    const freqSlider = document.getElementById('radio-frequency-slider');
+    const presetBtns = document.querySelectorAll('.preset-channel-btn');
+    const cardFreq = document.getElementById('trans-card-freq');
+    const cardTitle = document.getElementById('trans-card-title');
+    const cardDesc = document.getElementById('trans-card-desc');
+
+    function applyRadioChannel(btn) {
+      presetBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const pos = btn.getAttribute('data-pos');
+      const freq = btn.getAttribute('data-freq');
+      const title = btn.getAttribute('data-title');
+      const desc = btn.getAttribute('data-desc');
+
+      dialNeedle.style.left = `${pos}%`;
+      freqSlider.value = pos;
+      cardFreq.textContent = `TUNED: ${freq.toUpperCase()}`;
+      cardTitle.textContent = title;
+      cardDesc.textContent = desc;
+
+      drawMagicEye(0.2); // Sharp tuning focus
+
+      if (audioCtx && isSoundOn) {
+        // Heterodyne whistle burst when changing stations
+        const beep = audioCtx.createOscillator();
+        const beepGain = audioCtx.createGain();
+        beep.frequency.setValueAtTime(1400, audioCtx.currentTime);
+        beep.frequency.exponentialRampToValueAtTime(450, audioCtx.currentTime + 0.25);
+        beepGain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        beepGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.25);
+        beep.connect(beepGain);
+        beepGain.connect(audioCtx.destination);
+        beep.start();
+        beep.stop(audioCtx.currentTime + 0.25);
+      }
+    }
+
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyRadioChannel(btn));
+    });
+
+    freqSlider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      dialNeedle.style.left = `${val}%`;
+      drawMagicEye(0.9); // De-tuned wider eye shadow
+    });
+
+    // 8. Timeline Category Filter
+    const timelineFilterBtns = document.querySelectorAll('.timeline-filter-btn');
+    const timelineItems = document.querySelectorAll('#chronicle-timeline .timeline-item');
+
+    timelineFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
+        timelineFilterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.getAttribute('data-filter');
 
@@ -2023,34 +2145,62 @@
       });
     });
 
-    // Smooth nav links + close bio
-    document.querySelectorAll('.main-nav a.nav-link, .footer-nav a, .footer-top').forEach(link => {
-      link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#') && href.length > 1) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            hideBio();
-            scrollTo(target);
-          }
-        }
+    // 9. Interactive Trail Map & Accordion Sync
+    const mapHotspots = document.querySelectorAll('.map-hotspot');
+    const trailCards = document.querySelectorAll('.trail-stop-card');
+
+    function highlightTrailStop(index) {
+      mapHotspots.forEach(h => h.classList.toggle('active', h.getAttribute('data-target') === String(index)));
+      trailCards.forEach(c => c.classList.toggle('active', c.getAttribute('data-stop') === String(index)));
+    }
+
+    mapHotspots.forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        const idx = hotspot.getAttribute('data-target');
+        highlightTrailStop(idx);
       });
     });
 
-    // Active section highlighting
-    const sections = document.querySelectorAll('main > section[id]');
-    const observer = new IntersectionObserver(entries => {
-      document.querySelectorAll('.nav-link.active').forEach(a => a.classList.remove('active'));
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-          if (link) link.classList.add('active');
-          return;
-        }
+    trailCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = card.getAttribute('data-stop');
+        highlightTrailStop(idx);
+      });
+    });
+
+    // 10. Live Archive Quick Search
+    const searchInput = document.getElementById('global-search');
+    const searchCounter = document.getElementById('search-counter');
+    const figureCards = document.querySelectorAll('.figure-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      let matchCount = 0;
+
+      // Filter Figures
+      figureCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matches = text.includes(term);
+        card.style.display = matches ? 'flex' : 'none';
+        if (matches) matchCount++;
+      });
+
+      // Filter Timeline
+      timelineItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const matches = text.includes(term);
+        item.style.display = matches ? 'block' : 'none';
+        if (matches) matchCount++;
+      });
+
+      if (term === '') {
+        searchCounter.textContent = 'Archive Ready';
+        timelineItems.forEach(item => item.style.display = '');
+        figureCards.forEach(card => card.style.display = '');
+      } else {
+        searchCounter.textContent = `${matchCount} Matches`;
       }
-    }, { rootMargin: `-${navH()}px 0px -55% 0px` });
-    sections.forEach(s => observer.observe(s));
+    });
   });
   </script>
 </body>
