@@ -24,7 +24,6 @@
       --gold-light: #e8c988;
       --gold-bright: #fae4b2;
       --gold-glow: rgba(204, 165, 93, 0.4);
-      --gold-subtle: rgba(204, 165, 93, 0.12);
       --amber-tube: #ff9d3b;
       --green-eye: #38ef7d;
       --cream: #faf6ee;
@@ -61,14 +60,6 @@
       scroll-padding-top: calc(var(--nav-h) + 20px);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
     body {
       font-family: var(--font-body);
       font-size: 17.5px;
@@ -79,7 +70,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Ambient Film Texture Overlay */
     body::before {
       content: '';
       position: fixed;
@@ -121,7 +111,6 @@
       height: var(--nav-h);
       background: rgba(250, 246, 238, 0.88);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
       transition: all 0.35s ease;
     }
@@ -142,7 +131,6 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      text-decoration: none;
     }
     .brand-crest {
       width: 38px;
@@ -158,10 +146,7 @@
       font-weight: 700;
       box-shadow: 0 2px 10px var(--gold-glow);
     }
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
+    .brand-text { display: flex; flex-direction: column; }
     .site-name {
       font-family: var(--font-title);
       font-size: 1.1rem;
@@ -177,11 +162,7 @@
       color: var(--gold-dark);
       font-weight: 700;
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
+    .nav-links { display: flex; align-items: center; gap: 0.35rem; }
     .nav-link {
       font-size: 0.88rem;
       font-weight: 600;
@@ -220,7 +201,7 @@
     /* ─── Hero Section ─── */
     .page-hero {
       position: relative;
-      min-height: 90vh;
+      min-height: 86vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -320,7 +301,6 @@
       cursor: pointer;
       transition: all 0.3s var(--ease-out);
       text-decoration: none !important;
-      position: relative;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn:active { transform: translateY(0); }
@@ -345,26 +325,8 @@
       border-color: var(--gold-light);
       color: var(--gold-bright) !important;
     }
-    .btn-secondary {
-      background: var(--navy);
-      color: #fff !important;
-      border: 1px solid var(--navy-soft);
-    }
-    .btn-secondary:hover {
-      background: var(--navy-mid);
-      box-shadow: var(--shadow);
-    }
-    .btn-ghost {
-      background: transparent;
-      color: var(--navy) !important;
-      border: 1.5px solid var(--border);
-    }
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      background: var(--cream-dark);
-    }
 
-    /* ─── Global Search Toolbar ─── */
+    /* ─── Search Toolbar ─── */
     .search-bar-wrap {
       margin: -2.2rem auto 3.5rem;
       max-width: 680px;
@@ -396,7 +358,6 @@
       color: var(--ink);
       outline: none;
     }
-    .search-box input::placeholder { color: var(--ink-faint); }
     .search-counter {
       font-size: 0.75rem;
       font-family: var(--font-mono);
@@ -406,18 +367,9 @@
     }
 
     /* ─── Sections ─── */
-    .section {
-      padding: 6.5rem 0;
-      position: relative;
-    }
-    .section-alt {
-      background: var(--paper);
-    }
-    .section-header {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 3.8rem;
-    }
+    .section { padding: 6.5rem 0; position: relative; }
+    .section-alt { background: var(--paper); }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 3.8rem; }
     .section-tag {
       font-size: 0.78rem;
       font-weight: 700;
@@ -455,7 +407,7 @@
       color: var(--navy);
     }
 
-    /* ─── Key Figures Cards ─── */
+    /* ─── Figures ─── */
     .figure-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -471,7 +423,6 @@
       box-shadow: var(--shadow);
       transition: all 0.4s var(--ease-out);
       cursor: pointer;
-      position: relative;
     }
     .figure-card:hover {
       transform: translateY(-8px);
@@ -493,12 +444,8 @@
       object-fit: contain;
       padding: 0.75rem;
       transition: transform 0.6s var(--ease-out);
-      filter: grayscale(18%) contrast(105%);
     }
-    .figure-card:hover .figure-card-img-wrap img {
-      transform: scale(1.06);
-      filter: grayscale(0%) contrast(105%);
-    }
+    .figure-card:hover .figure-card-img-wrap img { transform: scale(1.06); }
     .figure-pill {
       position: absolute;
       top: 12px;
@@ -510,7 +457,6 @@
       font-family: var(--font-mono);
       padding: 0.25rem 0.65rem;
       border-radius: var(--radius-pill);
-      backdrop-filter: blur(4px);
     }
     .figure-card-body {
       padding: 1.7rem;
@@ -519,24 +465,9 @@
       flex-direction: column;
       background: linear-gradient(to bottom, var(--paper) 0%, var(--cream-mid) 100%);
     }
-    .figure-card-body h4 {
-      font-size: 1.55rem;
-      margin-bottom: 0.35rem;
-      color: var(--navy);
-    }
-    .figure-card-role {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--gold-dark);
-      margin-bottom: 0.9rem;
-    }
-    .figure-card-snippet {
-      font-size: 0.94rem;
-      color: var(--ink-muted);
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-      flex: 1;
-    }
+    .figure-card-body h4 { font-size: 1.55rem; margin-bottom: 0.35rem; color: var(--navy); }
+    .figure-card-role { font-size: 0.92rem; font-weight: 700; color: var(--gold-dark); margin-bottom: 0.9rem; }
+    .figure-card-snippet { font-size: 0.94rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 1.25rem; flex: 1; }
     .figure-card-cta {
       display: inline-flex;
       align-items: center;
@@ -549,7 +480,9 @@
     }
     .figure-card:hover .figure-card-cta { color: var(--gold-dark); }
 
-    /* ─── Interactive Vintage Radio Console ─── */
+    /* ═══════════════════════════════════════════════════════════════
+       AUTHENTIC INTERACTIVE TUBE RADIO CONSOLE
+    ═══════════════════════════════════════════════════════════════ */
     .radio-console {
       background: radial-gradient(ellipse at 50% 20%, #162f4b 0%, #081624 70%, #030a12 100%);
       border: 2.5px solid var(--gold-dark);
@@ -565,9 +498,9 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
       border-bottom: 1px solid rgba(204, 165, 93, 0.25);
-      padding-bottom: 1.25rem;
+      padding-bottom: 1.4rem;
       margin-bottom: 1.8rem;
     }
     .console-title-area h3 {
@@ -582,60 +515,79 @@
       font-family: var(--font-mono);
       color: rgba(255,255,255,0.65);
     }
-    .console-status-cluster {
+    .console-controls-cluster {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .magic-eye-tube {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(0,0,0,0.5);
-      padding: 0.4rem 0.85rem;
+    .master-power-btn {
+      background: linear-gradient(135deg, #102a45, #081624);
+      border: 2px solid var(--gold);
+      color: #fff;
+      padding: 0.65rem 1.4rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(56, 239, 125, 0.35);
-    }
-    .magic-eye-canvas {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #04140a;
-      box-shadow: 0 0 10px rgba(56, 239, 125, 0.5);
-    }
-    .audio-toggle-btn {
-      background: rgba(204, 165, 93, 0.15);
-      border: 1.5px solid var(--gold);
-      color: var(--gold-light);
-      padding: 0.45rem 1rem;
-      border-radius: var(--radius-pill);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-family: var(--font-title);
+      font-size: 0.85rem;
       font-weight: 700;
+      letter-spacing: 0.08em;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      transition: all 0.25s ease;
+      gap: 0.65rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
-    .audio-toggle-btn:hover {
+    .master-power-btn:hover {
       background: var(--gold);
       color: var(--navy-darkest);
+      box-shadow: 0 0 20px var(--gold-glow);
     }
-    .audio-toggle-btn.active {
-      background: var(--gold);
+    .master-power-btn.active {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
       color: var(--navy-darkest);
-      box-shadow: 0 0 15px var(--gold-glow);
+      border-color: #fff;
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+    .power-lamp {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #441010;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
+      transition: all 0.3s ease;
+    }
+    .master-power-btn.active .power-lamp {
+      background: #38ef7d;
+      box-shadow: 0 0 12px #38ef7d, 0 0 4px #fff;
     }
 
-    /* Glass Dial Scale & Frequency Needle */
+    /* Oscilloscope Visualizer Box */
+    .magic-eye-cluster {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0,0,0,0.6);
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(56, 239, 125, 0.4);
+    }
+    .oscilloscope-canvas {
+      width: 80px;
+      height: 26px;
+      background: #020b05;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 239, 125, 0.3);
+    }
+
+    /* Vintage Illuminated Dial Glass */
     .vintage-dial-glass {
       background: #02070c;
       border: 3px solid #14293f;
       border-radius: var(--radius-sm);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.75rem;
-      box-shadow: inset 0 4px 30px rgba(0,0,0,0.9);
+      padding: 1.6rem 2rem 1.2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: inset 0 4px 30px rgba(0,0,0,0.95);
       position: relative;
       overflow: hidden;
     }
@@ -643,7 +595,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 40%, rgba(204,165,93,0.04) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 45%, rgba(204,165,93,0.05) 100%);
       pointer-events: none;
     }
     .dial-scale-stations {
@@ -651,23 +603,28 @@
       justify-content: space-between;
       border-bottom: 1px solid #1a334d;
       padding-bottom: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.35rem;
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: var(--gold-light);
       letter-spacing: 0.05em;
     }
-    .dial-scale-stations span.hilite {
+    .dial-station-marker {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .dial-station-marker:hover { color: #fff; text-shadow: 0 0 8px var(--gold); }
+    .dial-station-marker.tuned {
       color: var(--gold-bright);
-      text-shadow: 0 0 8px var(--gold);
       font-weight: 700;
+      text-shadow: 0 0 10px var(--gold);
     }
 
-    /* Tuning Slider & Physical Needle */
+    /* Dial Tracking Needle & Track */
     .dial-slider-container {
       position: relative;
-      height: 52px;
-      margin-bottom: 1rem;
+      height: 56px;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
     }
@@ -684,39 +641,46 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: #ff4747;
-      box-shadow: 0 0 12px #ff4747, 0 0 4px #fff;
+      background: #ff3838;
+      box-shadow: 0 0 14px #ff3838, 0 0 4px #fff;
       transform: translateX(-50%);
       pointer-events: none;
-      transition: left 0.35s cubic-bezier(0.2, 0.8, 0.4, 1);
+      transition: left 0.15s linear;
       z-index: 5;
     }
     .dial-needle::after {
       content: '';
       position: absolute;
-      top: -4px;
+      top: -5px;
       left: 50%;
       transform: translateX(-50%);
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: #ff4747;
-      box-shadow: 0 0 8px #ff4747;
+      background: #ff3838;
+      box-shadow: 0 0 10px #ff3838;
     }
     .dial-range-input {
       width: 100%;
       opacity: 0;
-      cursor: pointer;
-      height: 48px;
+      cursor: ew-resize;
+      height: 54px;
       position: relative;
       z-index: 10;
     }
+    .tuning-instruction-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: rgba(255,255,255,0.5);
+    }
 
-    /* Channel Preset Buttons */
+    /* Presets Grid */
     .preset-channels-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 1rem;
+      margin-bottom: 1.5rem;
     }
     .preset-channel-btn {
       background: rgba(255, 255, 255, 0.04);
@@ -746,26 +710,23 @@
       color: var(--gold-light);
       margin-bottom: 0.3rem;
     }
-    .preset-chan-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-    .preset-chan-sub {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.7);
-    }
+    .preset-chan-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .preset-chan-sub { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
 
-    /* Transmission Audio / Historical Output */
+    /* Readout Card */
     .trans-readout-card {
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.6);
       border-left: 4px solid var(--gold);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 1.5rem 1.8rem;
-      margin-top: 1.6rem;
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
+    }
+    .trans-status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .trans-readout-badge {
       font-family: var(--font-mono);
@@ -775,18 +736,15 @@
       color: var(--gold);
       font-weight: 700;
     }
-    .trans-readout-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: #fff;
+    .reception-quality-bar {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--green-eye);
     }
-    .trans-readout-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
-    }
+    .trans-readout-title { font-family: var(--font-display); font-size: 1.45rem; color: #fff; }
+    .trans-readout-text { font-size: 0.98rem; line-height: 1.7; color: rgba(255, 255, 255, 0.9); }
 
-    /* ─── Timeline System ─── */
+    /* ─── Timeline ─── */
     .timeline-filter-nav {
       display: flex;
       justify-content: center;
@@ -805,10 +763,7 @@
       cursor: pointer;
       transition: all 0.25s ease;
     }
-    .timeline-filter-btn:hover {
-      background: var(--cream-dark);
-      color: var(--navy);
-    }
+    .timeline-filter-btn:hover { background: var(--cream-dark); color: var(--navy); }
     .timeline-filter-btn.active {
       background: var(--navy);
       color: #fff;
@@ -839,16 +794,8 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
     .timeline-item.hidden { display: none; }
-    .timeline-item:nth-child(odd) {
-      left: 0;
-      text-align: right;
-      padding-right: 3.2rem;
-    }
-    .timeline-item:nth-child(even) {
-      left: 50%;
-      text-align: left;
-      padding-left: 3.2rem;
-    }
+    .timeline-item:nth-child(odd) { left: 0; text-align: right; padding-right: 3.2rem; }
+    .timeline-item:nth-child(even) { left: 50%; text-align: left; padding-left: 3.2rem; }
     .timeline-item::after {
       content: '';
       position: absolute;
@@ -890,11 +837,7 @@
       color: var(--gold-dark);
       margin-bottom: 0.45rem;
     }
-    .timeline-card p {
-      font-size: 0.96rem;
-      color: var(--ink-muted);
-      line-height: 1.65;
-    }
+    .timeline-card p { font-size: 0.96rem; color: var(--ink-muted); line-height: 1.65; }
     .timeline-badge {
       display: inline-block;
       margin-top: 0.75rem;
@@ -909,7 +852,7 @@
       border-radius: 4px;
     }
 
-    /* ─── Interactive Heritage Trail & Vector Map ─── */
+    /* ─── Trail & Map ─── */
     .trail-container {
       background: radial-gradient(circle at 70% 30%, #163353 0%, #091a2c 60%, #05101c 100%);
       border-radius: var(--radius-lg);
@@ -918,14 +861,8 @@
       box-shadow: var(--shadow-xl);
       border: 1px solid rgba(204, 165, 93, 0.25);
     }
-    .trail-container h2 {
-      color: #fff;
-      text-align: center;
-      font-size: clamp(2.2rem, 4vw, 3rem);
-    }
-    .trail-container h2::after {
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
-    }
+    .trail-container h2 { color: #fff; text-align: center; font-size: clamp(2.2rem, 4vw, 3rem); }
+    .trail-container h2::after { background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light)); }
     .trail-intro {
       text-align: center;
       max-width: 680px;
@@ -933,7 +870,6 @@
       color: rgba(255,255,255,0.85);
       font-size: 1.1rem;
     }
-
     .trail-map-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -947,34 +883,17 @@
       border-radius: var(--radius);
       padding: 1.5rem;
       box-shadow: inset 0 2px 20px rgba(0,0,0,0.8);
-      position: relative;
     }
-    .trail-svg-box svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .map-hotspot {
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .map-hotspot:hover circle {
-      fill: #fff;
-      stroke: var(--gold-bright);
-      stroke-width: 4px;
-    }
+    .trail-svg-box svg { width: 100%; height: auto; display: block; }
+    .map-hotspot { cursor: pointer; transition: all 0.3s ease; }
+    .map-hotspot:hover circle { fill: #fff; stroke: var(--gold-bright); stroke-width: 4px; }
     .map-hotspot.active circle {
       fill: var(--gold-bright);
       stroke: #fff;
       stroke-width: 5px;
       filter: drop-shadow(0 0 10px var(--gold));
     }
-
-    .trail-stops-accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .trail-stops-accordion { display: flex; flex-direction: column; gap: 1rem; }
     .trail-stop-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(204, 165, 93, 0.2);
@@ -983,10 +902,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    .trail-stop-card:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: var(--gold);
-    }
+    .trail-stop-card:hover { background: rgba(255, 255, 255, 0.09); border-color: var(--gold); }
     .trail-stop-card.active {
       background: rgba(204, 165, 93, 0.15);
       border-color: var(--gold);
@@ -1001,18 +917,10 @@
       font-weight: 700;
       margin-bottom: 0.35rem;
     }
-    .trail-stop-card h4 {
-      color: #fff;
-      font-size: 1.22rem;
-      margin-bottom: 0.4rem;
-    }
-    .trail-stop-card p {
-      font-size: 0.94rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.6;
-    }
+    .trail-stop-card h4 { color: #fff; font-size: 1.22rem; margin-bottom: 0.4rem; }
+    .trail-stop-card p { font-size: 0.94rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
 
-    /* ─── Vision Section ─── */
+    /* ─── Vision & Form ─── */
     .vision-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1027,13 +935,8 @@
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       transition: all 0.35s ease;
-      position: relative;
     }
-    .vision-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--gold);
-    }
+    .vision-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
     .vision-num {
       width: 60px;
       height: 60px;
@@ -1049,17 +952,22 @@
       font-weight: 700;
       box-shadow: var(--shadow-gold);
     }
-    .vision-card h4 {
-      font-size: 1.35rem;
-      margin-bottom: 0.75rem;
-    }
-    .vision-card p {
-      font-size: 0.96rem;
-      color: var(--ink-muted);
-      line-height: 1.65;
-    }
+    .vision-card h4 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .vision-card p { font-size: 0.96rem; color: var(--ink-muted); line-height: 1.65; }
 
-    /* ─── Slide-In Biography Modal / Drawer ─── */
+    .form-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      border-top: 4px solid var(--gold);
+    }
+    .form-wrap iframe { width: 100%; min-height: 720px; border: none; display: block; }
+
+    /* ─── Modal ─── */
     .bio-modal-backdrop {
       position: fixed;
       inset: 0;
@@ -1070,13 +978,8 @@
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
-    .bio-modal-backdrop.open {
-      display: flex;
-      opacity: 1;
-    }
+    .bio-modal-backdrop.open { display: flex; }
     .bio-modal-content {
       background: var(--paper);
       border-radius: var(--radius-lg);
@@ -1087,11 +990,6 @@
       box-shadow: var(--shadow-xl);
       padding: 3rem 2.8rem;
       position: relative;
-      transform: scale(0.94);
-      transition: transform 0.35s var(--ease-spring);
-    }
-    .bio-modal-backdrop.open .bio-modal-content {
-      transform: scale(1);
     }
     .modal-close-btn {
       position: absolute;
@@ -1107,17 +1005,9 @@
       align-items: center;
       justify-content: center;
       color: var(--navy);
-      transition: all 0.25s ease;
     }
-    .modal-close-btn:hover {
-      background: var(--gold);
-      color: var(--navy-darkest);
-      transform: rotate(90deg);
-    }
-    .bio-modal-header h2 {
-      font-size: 2.3rem;
-      margin-bottom: 0.2rem;
-    }
+    .modal-close-btn:hover { background: var(--gold); color: var(--navy-darkest); }
+    .bio-modal-header h2 { font-size: 2.3rem; margin-bottom: 0.2rem; }
     .bio-modal-sub {
       font-family: var(--font-title);
       color: var(--gold-dark);
@@ -1125,11 +1015,7 @@
       margin-bottom: 2rem;
       display: block;
     }
-    .bio-modal-body {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 2.2rem;
-    }
+    .bio-modal-body { display: grid; grid-template-columns: 240px 1fr; gap: 2.2rem; }
     .bio-modal-img {
       border-radius: var(--radius-sm);
       box-shadow: var(--shadow-md);
@@ -1138,17 +1024,8 @@
       background: var(--navy);
       max-height: 320px;
     }
-    .bio-modal-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .bio-modal-text p {
-      font-size: 1.05rem;
-      line-height: 1.78;
-      color: var(--ink);
-      margin-bottom: 1.25rem;
-    }
+    .bio-modal-img img { width: 100%; height: 100%; object-fit: contain; }
+    .bio-modal-text p { font-size: 1.05rem; line-height: 1.78; color: var(--ink); margin-bottom: 1.25rem; }
     .bio-quote {
       background: var(--cream);
       border-left: 4px solid var(--gold);
@@ -1156,54 +1033,7 @@
       margin: 1.2rem 0;
       font-style: italic;
       color: var(--navy);
-      font-size: 1.02rem;
     }
-
-    /* ─── Form Wrap ─── */
-    .form-wrap {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--paper);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-xl);
-      overflow: hidden;
-      border-top: 4px solid var(--gold);
-    }
-    .form-wrap iframe {
-      width: 100%;
-      min-height: 720px;
-      border: none;
-      display: block;
-    }
-
-    /* ─── Policy Blocks ─── */
-    .policy-block {
-      background: var(--paper);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 3rem;
-      box-shadow: var(--shadow);
-      max-width: 840px;
-      margin: 0 auto;
-    }
-    .policy-block h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .policy-block h3 {
-      font-size: 1.35rem;
-      margin: 2.2rem 0 0.8rem;
-    }
-    .policy-block p, .policy-block ul {
-      color: var(--ink-muted);
-      line-height: 1.75;
-    }
-    .policy-block ul {
-      padding-left: 1.4rem;
-      margin: 0.8rem 0;
-    }
-    .policy-block li { margin-bottom: 0.45rem; }
 
     /* ─── Footer ─── */
     .site-footer {
@@ -1220,33 +1050,12 @@
       letter-spacing: 0.08em;
       margin-bottom: 0.5rem;
     }
-    .footer-tagline {
-      font-size: 0.96rem;
-      color: var(--gold-light);
-      margin-bottom: 2.2rem;
-    }
-    .footer-nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      margin-bottom: 2.4rem;
-      flex-wrap: wrap;
-    }
-    .footer-nav a {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.95rem;
-    }
+    .footer-tagline { font-size: 0.96rem; color: var(--gold-light); margin-bottom: 2.2rem; }
+    .footer-nav { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 2.4rem; flex-wrap: wrap; }
+    .footer-nav a { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
     .footer-nav a:hover { color: var(--gold-bright); }
-    .footer-credits {
-      font-size: 0.85rem;
-      opacity: 0.6;
-      max-width: 540px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.6;
-    }
 
-    /* ─── Responsive Media Queries ─── */
+    /* ─── Media Queries ─── */
     @media (max-width: 960px) {
       .nav-links {
         display: none;
@@ -1282,8 +1091,6 @@
       .section { padding: 4.5rem 0; }
       .radio-console { padding: 1.5rem 1.2rem; }
       .trail-container { padding: 2.5rem 1.4rem; }
-      .policy-block { padding: 2rem 1.5rem; }
-      .bio-modal-content { padding: 2rem 1.5rem; }
       .hero-actions { flex-direction: column; width: 100%; }
       .btn { width: 100%; }
     }
@@ -1292,32 +1099,30 @@
 <body>
   <a id="top"></a>
 
-  <!-- Primary Navigation -->
+  <!-- Navigation -->
   <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
     <div class="container nav-inner">
       <a href="#top" class="site-brand">
         <div class="brand-crest">A</div>
         <div class="brand-text">
           <span class="site-name">Athlone Heritage</span>
-          <span class="site-subtitle">Music &amp; Radio Museum Project</span>
+          <span class="site-subtitle">Music &amp; Radio Museum</span>
         </div>
       </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#past" class="nav-link">Our Past</a>
         <a href="#radio" class="nav-link">Radio Console</a>
-        <a href="#music-trail" class="nav-link">Interactive Trail</a>
+        <a href="#music-trail" class="nav-link">Heritage Trail</a>
         <a href="#vision" class="nav-link">The Vision</a>
         <a href="#get-involved" class="nav-link">Get Involved</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Banner -->
+  <!-- Hero Header -->
   <header class="page-hero">
     <div class="hero-content">
       <div class="hero-badge">
@@ -1340,7 +1145,7 @@
     </div>
   </header>
 
-  <!-- Live Quick Search -->
+  <!-- Live Archive Search -->
   <div class="container">
     <div class="search-bar-wrap">
       <div class="search-box">
@@ -1352,18 +1157,18 @@
   </div>
 
   <main>
-    <!-- Key Figures & Heritage Section -->
+    <!-- Key Figures -->
     <section id="past" class="section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Historical Legacy</span>
           <h2>Pioneers, Virtuosos &amp; Rebel Bands</h2>
-          <p class="section-lead">Athlone's soundscape was forged across two centuries of resistance, global tours, and technological leaps. Click any personality to examine full archival biographies.</p>
+          <p class="section-lead">Athlone's soundscape was forged across two centuries of resistance, global tours, and technological leaps. Click any card to inspect the archival biography.</p>
         </div>
 
         <div class="figure-grid" id="figure-grid">
           <!-- Patrick Keating -->
-          <article class="figure-card" data-bio="bio-patrick-keating" tabindex="0" role="button" aria-label="View biography of Patrick Keating">
+          <article class="figure-card" data-bio="bio-patrick-keating" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">1796–1875</span>
               <img src="keationg4.jpg" alt="Portrait of Patrick Keating" loading="lazy" />
@@ -1377,7 +1182,7 @@
           </article>
 
           <!-- Patrick Sarsfield Gilmore -->
-          <article class="figure-card" data-bio="bio-patrick-gilmore" tabindex="0" role="button" aria-label="View biography of Patrick Sarsfield Gilmore">
+          <article class="figure-card" data-bio="bio-patrick-gilmore" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">1829–1892</span>
               <img src="Patrick_S._Gilmore (6).jpg" alt="Portrait of Patrick S. Gilmore" loading="lazy" />
@@ -1391,7 +1196,7 @@
           </article>
 
           <!-- Michael Kilkelly -->
-          <article class="figure-card" data-bio="bio-michael-kilkelly" tabindex="0" role="button" aria-label="View biography of Michael Kilkelly">
+          <article class="figure-card" data-bio="bio-michael-kilkelly" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">Land War Era</span>
               <img src="michaelkilkelly.jpg" alt="Portrait of Michael Kilkelly" loading="lazy" />
@@ -1405,7 +1210,7 @@
           </article>
 
           <!-- Henry Foy -->
-          <article class="figure-card" data-bio="bio-henry-foy" tabindex="0" role="button" aria-label="View biography of Henry Foy">
+          <article class="figure-card" data-bio="bio-henry-foy" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">1919 Pioneer</span>
               <img src="cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png" alt="Portrait of Henry Foy" loading="lazy" />
@@ -1419,7 +1224,7 @@
           </article>
 
           <!-- Count John McCormack -->
-          <article class="figure-card" data-bio="bio-count-john-mccormack" tabindex="0" role="button" aria-label="View biography of Count John McCormack">
+          <article class="figure-card" data-bio="bio-count-john-mccormack" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">1884–1945</span>
               <img src="cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg" alt="Portrait of Count John McCormack" loading="lazy" />
@@ -1433,7 +1238,7 @@
           </article>
 
           <!-- Eugene Daly -->
-          <article class="figure-card" data-bio="bio-eugene-daly" tabindex="0" role="button" aria-label="View biography of Eugene Daly">
+          <article class="figure-card" data-bio="bio-eugene-daly" tabindex="0" role="button">
             <div class="figure-card-img-wrap">
               <span class="figure-pill">1883–1965</span>
               <img src="EugeneDaly-1 (1).webp" alt="Portrait of Eugene Daly" loading="lazy" />
@@ -1447,10 +1252,9 @@
           </article>
         </div>
 
-        <!-- Chronological Timeline -->
+        <!-- Timeline -->
         <h3 class="subsection-title">Two Centuries of Sound &amp; Wireless Telegraphy</h3>
-        
-        <div class="timeline-filter-nav" aria-label="Timeline Filters">
+        <div class="timeline-filter-nav">
           <button type="button" class="timeline-filter-btn active" data-filter="all">All Chronicles</button>
           <button type="button" class="timeline-filter-btn" data-filter="bands">Bands &amp; Revival</button>
           <button type="button" class="timeline-filter-btn" data-filter="radio">Marconi &amp; Transmitters</button>
@@ -1533,143 +1337,145 @@
       </div>
     </section>
 
-    <!-- Interactive Vintage Radio Console -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE RADIO CONSOLE WITH LIVE AUDIO ENGINE
+    ═══════════════════════════════════════════════════════════════ -->
     <section id="radio" class="section section-alt">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Interactive Broadcasting Soundscape</span>
           <h2>The Athlone High-Power Station (Moydrum)</h2>
           <p class="section-lead">
-            Operated by Radio Éireann on 567 kHz (530m dial marking), Athlone's Marconi transmitter carried Ireland across Europe. Use the dial slider or presets below to tune the airwaves.
+            Turn on the master radio switch below, then drag the needle or choose a station preset to listen to reconstructed historical broadcasts across the airwaves.
           </p>
         </div>
 
-        <!-- Valve Radio Interactive Box -->
         <div class="radio-console">
           <div class="console-header">
             <div class="console-title-area">
-              <h3>Marconi 60kW / 100kW Transmitter Console</h3>
+              <h3>Marconi 60kW / 100kW Receiver Console</h3>
               <p>BROADCASTING STATION MOYDRUM • ATHLONE MIDLANDS 567 kHz</p>
             </div>
-            <div class="console-status-cluster">
-              <div class="magic-eye-tube" title="Cathode Ray Tuning Indicator">
-                <canvas id="magic-eye-canvas" class="magic-eye-canvas" width="32" height="32"></canvas>
-                <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--green-eye)">VALVE TUNED</span>
+            
+            <div class="console-controls-cluster">
+              <div class="magic-eye-cluster" title="Live Tuning Oscilloscope">
+                <canvas id="scope-canvas" class="oscilloscope-canvas" width="80" height="26"></canvas>
+                <span id="scope-status" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--green-eye)">STANDBY</span>
               </div>
-              <button type="button" class="audio-toggle-btn" id="audio-synth-btn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08"/></svg>
-                <span id="audio-btn-label">ENABLE SOUND</span>
+
+              <!-- Master Power / Audio Enable -->
+              <button type="button" class="master-power-btn" id="radio-power-btn">
+                <span class="power-lamp"></span>
+                <span id="power-btn-text">POWER ON / TUNE AUDIO</span>
               </button>
             </div>
           </div>
 
-          <!-- Dial Scale -->
+          <!-- Illuminated Dial Glass -->
           <div class="vintage-dial-glass">
             <div class="dial-scale-stations">
-              <span>CLARA (1898 SPARK)</span>
-              <span class="hilite">ATHLONE (567 kHz / 530m)</span>
-              <span>DUBLIN (2RN 1926)</span>
-              <span>PARIS / LUXEMBOURG</span>
+              <span class="dial-station-marker" data-target-pos="12">12% • CLARA SPARK (1898)</span>
+              <span class="dial-station-marker tuned" data-target-pos="45">45% • ATHLONE MOYDRUM (567 kHz)</span>
+              <span class="dial-station-marker" data-target-pos="68">68% • McCORMACK (1932 CONGRESS)</span>
+              <span class="dial-station-marker" data-target-pos="88">88% • HARRY FOY JAZZ (1919)</span>
             </div>
 
             <div class="dial-slider-container">
               <div class="dial-track-line"></div>
               <div class="dial-needle" id="dial-needle" style="left: 45%;"></div>
-              <input type="range" id="radio-frequency-slider" class="dial-range-input" min="0" max="100" value="45" aria-label="Vintage Radio Frequency Tuner" />
+              <input type="range" id="radio-freq-slider" class="dial-range-input" min="0" max="100" value="45" aria-label="Frequency Tuner Needle" />
+            </div>
+
+            <div class="tuning-instruction-hint">
+              &larr; Drag the red needle across the spectrum to tune through atmospheric static into live broadcasts &rarr;
             </div>
           </div>
 
           <!-- Channel Preset Selectors -->
           <div class="preset-channels-grid">
-            <button type="button" class="preset-channel-btn active" data-index="0" data-pos="45" data-freq="567 kHz" data-title="Radio Athlone / Moydrum (1933)" data-desc="The 60 kW Marconi water-cooled valve transmitter carrying Éamon de Valera's official dedication address of 'Droichead nua Átha Luain' on 6 February 1933.">
+            <button type="button" class="preset-channel-btn active" data-pos="45" data-freq="567 kHz (530m)" data-title="Radio Éireann Moydrum (Athlone 1933)" data-desc="Broadcasting the famous Radio Éireann 'O'Donnell Abú' interval chime signal followed by the opening broadcast dedication of the 60 kW Moydrum transmitter.">
               <span class="preset-freq-tag">567 kHz (530m)</span>
               <span class="preset-chan-title">Radio Éireann Moydrum</span>
-              <span class="preset-chan-sub">De Valera Inauguration Relay</span>
+              <span class="preset-chan-sub">Interval Chimes &amp; Address</span>
             </button>
 
-            <button type="button" class="preset-channel-btn" data-index="1" data-pos="68" data-freq="725 kHz" data-title="Count John McCormack at Phoenix Park (1932)" data-desc="Live relay of the 31st Eucharistic Congress in Dublin: McCormack sings 'Panis Angelicus' to over 500,000 worshippers, broadcast live via the temporary Athlone transmitter.">
+            <button type="button" class="preset-channel-btn" data-pos="68" data-freq="725 kHz (413m)" data-title="Count John McCormack — Panis Angelicus (1932)" data-desc="Count John McCormack’s legendary performance at the Eucharistic Congress in Phoenix Park, relayed live across Europe via the new Athlone transmitter.">
               <span class="preset-freq-tag">725 kHz (413m)</span>
-              <span class="preset-chan-title">McCormack Phoenix Park</span>
+              <span class="preset-chan-title">McCormack at Phoenix Park</span>
               <span class="preset-chan-sub">Eucharistic Congress 1932</span>
             </button>
 
-            <button type="button" class="preset-channel-btn" data-index="2" data-pos="12" data-freq="Spark Gap" data-title="Marconi Clara Spark Transmission (May 1898)" data-desc="Goodbody Charlestown Flour Mill to Clashawaun Jute Works in Clara: Guglielmo Marconi conducts Ireland's first wireless test and the world's first commercial wireless message.">
-              <span class="preset-freq-tag">Spark-Gap Morse</span>
+            <button type="button" class="preset-channel-btn" data-pos="12" data-freq="Spark Telegraph" data-title="Marconi Clara Spark-Gap Signal (1898)" data-desc="Marconi’s spark-gap transmitter sending rhythmic Morse telegraphy between Goodbody’s Charlestown Flour Mill and Clashawaun Jute Works in Clara.">
+              <span class="preset-freq-tag">Spark Gap (Clara)</span>
               <span class="preset-chan-title">Marconi Clara Test 1898</span>
               <span class="preset-chan-sub">World Commercial First</span>
             </button>
 
-            <button type="button" class="preset-channel-btn" data-index="3" data-pos="88" data-freq="1919 Syncopation" data-title="Harry Foy Jazz Quartette (1919)" data-desc="Athlone's pioneer jazz ensemble introduces syncopated American rhythm, leading directly to the national cultural clash and the Public Dance Halls Act of 1935.">
-              <span class="preset-freq-tag">Ragtime &amp; Foxtrot</span>
+            <button type="button" class="preset-channel-btn" data-pos="88" data-freq="Syncopated Ragtime" data-title="Harry Foy Jazz Quartette (Athlone 1919)" data-desc="Athlone's pioneer jazz ensemble playing syncopated ragtime and foxtrot, prompting the national cultural clash and the Public Dance Halls Act of 1935.">
+              <span class="preset-freq-tag">Jazz Age Ragtime</span>
               <span class="preset-chan-title">Harry Foy Jazz Quartette</span>
               <span class="preset-chan-sub">Ireland's 1st Jazz Band</span>
             </button>
           </div>
 
-          <!-- Transmission Display Output -->
+          <!-- Transmission Readout Card -->
           <div class="trans-readout-card">
-            <span class="trans-readout-badge" id="trans-card-freq">TUNED: 567 kHz (530 METRES)</span>
-            <div class="trans-readout-title" id="trans-card-title">Radio Athlone / Moydrum (1933)</div>
-            <div class="trans-readout-text" id="trans-card-desc">The 60 kW Marconi water-cooled valve transmitter carrying Éamon de Valera's official dedication address of 'Droichead nua Átha Luain' on 6 February 1933.</div>
+            <div class="trans-status-row">
+              <span class="trans-readout-badge" id="trans-card-freq">TUNED: 567 kHz (530 METRES)</span>
+              <span class="reception-quality-bar" id="reception-meter">&#9679; SIGNAL LOCKED (100%)</span>
+            </div>
+            <div class="trans-readout-title" id="trans-card-title">Radio Éireann Moydrum (Athlone 1933)</div>
+            <div class="trans-readout-text" id="trans-card-desc">Broadcasting the famous Radio Éireann 'O'Donnell Abú' interval chime signal followed by the opening broadcast dedication of the 60 kW Moydrum transmitter.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Midlands Music & Radio Trail -->
+    <!-- Trail Section -->
     <section id="music-trail" class="section">
       <div class="container">
         <div class="trail-container">
           <span class="section-tag" style="color:var(--gold-light);text-align:center;display:block">Midlands Heritage Route</span>
           <h2>Explore the Athlone &amp; Marconi Clara Trail</h2>
           <p class="trail-intro">
-            A self-guided historic pilgrimage connecting Athlone's urban musical landmarks with the Marconi industrial innovation sites across the Offaly border. Click stops or map nodes below.
+            A self-guided historic pilgrimage connecting Athlone's urban musical landmarks with the Marconi industrial innovation sites across the Offaly border.
           </p>
 
           <div class="trail-map-layout">
-            <!-- Interactive SVG Vector Map -->
+            <!-- Interactive Map -->
             <div class="trail-svg-box">
               <svg viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Athlone and Clara Heritage Trail Map">
-                <!-- Shannon River / Waterway Curve -->
                 <path d="M70 20 C100 120, 60 220, 110 340" stroke="#1c4873" stroke-width="24" stroke-linecap="round" />
                 <path d="M70 20 C100 120, 60 220, 110 340" stroke="#25629d" stroke-width="12" stroke-linecap="round" />
-
-                <!-- Old Rail Trail / Greenway Route -->
                 <path d="M120 160 C220 140, 320 180, 420 220" stroke="#cca55d" stroke-width="4" stroke-dasharray="8 6" />
                 
-                <!-- Map Labels -->
                 <text x="30" y="325" fill="#587e9e" font-family="Space Mono" font-size="12" font-weight="700">RIVER SHANNON</text>
                 <text x="210" y="145" fill="#cca55d" font-family="Space Mono" font-size="11" letter-spacing="1">OLD RAIL TRAIL</text>
 
-                <!-- Hotspot 1: McCormack Birthplace (Bawn) -->
                 <g class="map-hotspot active" id="map-stop-1" data-target="0">
                   <circle cx="110" cy="140" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
                   <text x="110" y="145" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">1</text>
                   <text x="132" y="135" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">The Bawn (McCormack)</text>
                 </g>
 
-                <!-- Hotspot 2: Dean Crowe Theatre -->
                 <g class="map-hotspot" id="map-stop-2" data-target="1">
                   <circle cx="95" cy="180" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
                   <text x="95" y="185" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">2</text>
                   <text x="118" y="185" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">Dean Crowe Theatre</text>
                 </g>
 
-                <!-- Hotspot 3: Crescent Ballroom -->
                 <g class="map-hotspot" id="map-stop-3" data-target="2">
                   <circle cx="125" cy="205" r="14" fill="#0c233c" stroke="#cca55d" stroke-width="3"/>
                   <text x="125" y="210" fill="#fff" font-family="Space Mono" font-size="11" font-weight="700" text-anchor="middle">3</text>
                   <text x="148" y="210" fill="#fff" font-family="Source Sans 3" font-size="13" font-weight="700">Crescent Ballroom Site</text>
                 </g>
 
-                <!-- Hotspot 4: Moydrum Transmitter Station -->
                 <g class="map-hotspot" id="map-stop-4" data-target="3">
                   <circle cx="210" cy="100" r="15" fill="#a1813e" stroke="#fff" stroke-width="3"/>
                   <text x="210" y="105" fill="#0c233c" font-family="Space Mono" font-size="12" font-weight="700" text-anchor="middle">4</text>
                   <text x="232" y="98" fill="#e8c988" font-family="Source Sans 3" font-size="13" font-weight="700">Moydrum Transmitter</text>
                 </g>
 
-                <!-- Hotspot 5: Clara Marconi Trail -->
                 <g class="map-hotspot" id="map-stop-5" data-target="4">
                   <circle cx="420" cy="220" r="16" fill="#a1813e" stroke="#ff9d3b" stroke-width="3"/>
                   <text x="420" y="225" fill="#040c14" font-family="Space Mono" font-size="12" font-weight="700" text-anchor="middle">5</text>
@@ -1678,7 +1484,7 @@
               </svg>
             </div>
 
-            <!-- Stop Details Accordion -->
+            <!-- Accordion -->
             <div class="trail-stops-accordion" id="trail-stops-accordion">
               <div class="trail-stop-card active" data-stop="0">
                 <div class="trail-stop-num">Stop 01 • The Bawn, Irishtown</div>
@@ -1711,91 +1517,63 @@
               </div>
             </div>
           </div>
-
-          <div style="text-align:center;">
-            <a href="#get-involved" class="btn btn-primary">Help Build the Complete Digital Audio Guide</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Museum Vision Section -->
+    <!-- Museum Vision -->
     <section id="vision" class="section section-alt">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Strategic Plan</span>
           <h2>The Permanent Museum Vision</h2>
-          <p class="section-lead">
-            Preserving Athlone's dual legacy of performance and wireless technology in a world-class cultural institution and archive for the Irish Midlands.
-          </p>
+          <p class="section-lead">Preserving Athlone's dual legacy of performance and wireless technology in a world-class cultural institution.</p>
         </div>
 
         <div class="vision-grid">
           <div class="vision-card">
             <div class="vision-num">I</div>
             <h4>Secure &amp; Archive</h4>
-            <p>Gathering 19th-century band instruments, uilleann pipes, shellac discs, rare recordings, and surviving Moydrum valve transmitters into a protected civic repository.</p>
+            <p>Gathering 19th-century band instruments, rare recordings, and surviving Moydrum valve transmitters into a protected civic repository.</p>
           </div>
           <div class="vision-card">
             <div class="vision-num">II</div>
-            <h4>Immersive Interpretation</h4>
-            <p>Creating interactive vintage valve studios, dynamic sound stages, and acoustic listening chambers illustrating Athlone's role as Ireland’s voice to the diaspora.</p>
+            <h4>Immersive Sound</h4>
+            <p>Creating interactive vintage valve studios and acoustic listening chambers illustrating Athlone's role as Ireland’s voice to the diaspora.</p>
           </div>
           <div class="vision-card">
             <div class="vision-num">III</div>
-            <h4>Education &amp; Residency</h4>
-            <p>Supporting contemporary radio documentaries, audio restoration workshops, and youth traditional and jazz academies in collaboration with local schools and universities.</p>
+            <h4>Education</h4>
+            <p>Supporting radio documentaries, sound workshops, and youth traditional and jazz academies in collaboration with regional schools.</p>
           </div>
           <div class="vision-card">
             <div class="vision-num">IV</div>
-            <h4>Midlands Heritage Tourism</h4>
-            <p>Linking Athlone Castle, the Old Rail Trail Greenway, and Clara's Marconi heritage into a unified cultural corridor drawing international visitors.</p>
+            <h4>Heritage Tourism</h4>
+            <p>Linking Athlone Castle, the Old Rail Trail Greenway, and Clara's Marconi heritage into a unified cultural corridor.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Get Involved / Google Form -->
+    <!-- Form Section -->
     <section id="get-involved" class="section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Community Archive</span>
           <h2>Submit Material &amp; Support the Project</h2>
-          <p class="section-lead">
-            Do you possess photographs, vintage radio receivers, band instruments, recordings, or family recollections of Athlone's musical past? Share them with our research team below.
-          </p>
+          <p class="section-lead">Share your photographs, stories, recordings, or vintage radio items with our research team.</p>
         </div>
         <div class="form-wrap">
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYpdbAijWEIxKOa--uqsHR738jA8VTzjUDpbjMdpgFAtyIjg/viewform?embedded=true" title="Get Involved Form" loading="lazy">Loading Google Form...</iframe>
         </div>
       </div>
     </section>
-
-    <!-- About the Project Team -->
-    <section id="about" class="section section-alt">
-      <div class="container">
-        <div class="policy-block">
-          <h2>About the Athlone Music Heritage Project</h2>
-          <p>Founded by local historians, radio enthusiasts, and musicians, our initiative seeks to preserve the rich acoustic and technological heritage of Athlone, Co. Westmeath and its surrounding regions.</p>
-          
-          <h3>Project Working Group</h3>
-          <ul>
-            <li><strong>Leo Nolan</strong> — Lead Historian &amp; Archival Researcher</li>
-            <li><strong>Seamus McKenna</strong> — Community Outreach &amp; Oral History</li>
-            <li><strong>Tadhg Kelleher</strong> — Digital Preservation &amp; Web Systems</li>
-          </ul>
-
-          <h3>Institutional Partnerships &amp; Sources</h3>
-          <p>Historical research drawn from the National Archives of Ireland, Westmeath County Library Archives, Clara Heritage Society, Library of Congress, and the RTÉ Archives.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- Biography Slide-In Modal -->
+  <!-- Biography Modal -->
   <div class="bio-modal-backdrop" id="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bio-modal-title">
     <div class="bio-modal-content">
-      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close Biography Modal">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <div class="bio-modal-header">
@@ -1806,9 +1584,7 @@
         <div class="bio-modal-img">
           <img id="bio-modal-image" src="" alt="Historical Portrait" />
         </div>
-        <div class="bio-modal-text" id="bio-modal-text">
-          <!-- Dynamic biographical paragraphs -->
-        </div>
+        <div class="bio-modal-text" id="bio-modal-text"></div>
       </div>
     </div>
   </div>
@@ -1824,22 +1600,22 @@
         <li><a href="#music-trail">Heritage Trail</a></li>
         <li><a href="#vision">The Vision</a></li>
         <li><a href="#get-involved">Contribute</a></li>
-        <li><a href="#about">Project Team</a></li>
       </ul>
-      <p class="footer-credits">
+      <p style="font-size:0.85rem;opacity:0.6;margin-bottom:1.5rem">
         Historical curation &copy; <span id="footer-year"></span> Athlone Music Heritage Project.
       </p>
       <a href="#top" style="color:var(--gold-light);font-size:0.9rem;">&uarr; Return to Top</a>
     </div>
   </footer>
 
-  <!-- Script Architecture -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       JAVASCRIPT ARCHITECTURE & WEB AUDIO TUNING SYNTHESIZER
+  ═══════════════════════════════════════════════════════════════ -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Dynamic Footer Year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    // 2. Navigation Scroll Effect & Mobile Toggle
+    // 1. Navigation & Scroll
     const nav = document.getElementById('main-nav');
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -1849,82 +1625,49 @@
     }, { passive: true });
 
     navToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open);
+      navLinks.classList.toggle('open');
     });
 
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // 3. Complete Biography Archive Registry
+    // 2. Archival Biographies
     const bios = {
       'bio-patrick-keating': {
         title: 'Patrick Keating (1796–1875)',
         sub: 'Father of Athlone’s Musical Renaissance',
         image: 'keationg4.jpg',
-        text: `
-          <p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at the Battle of Waterloo (1815), he returned to his native Athlone in the 1820s to find a garrison town burdened by economic hardship. He championed municipal wind music as a vehicle for civic discipline, pride, and national regeneration.</p>
-          <div class="bio-quote">"Keating transformed military brass precision into a vibrant expression of local civic identity and Irish self-determination."</div>
-          <p>Keating trained multiple local town bands and famously led his ensemble at Daniel O’Connell’s 1843 Monster Meeting at Summerhill. His greatest protégé was a young Patrick Sarsfield Gilmore, to whom he imparted the advanced brass fingering, instrumentation, and showmanship that Gilmore subsequently exported to America.</p>
-        `
+        text: `<p>Patrick Keating was a transformative force in Athlone’s cultural history. A veteran of the Napoleonic Wars who fought at the Battle of Waterloo (1815), he returned to his native Athlone in the 1820s to champion municipal wind music as a vehicle for civic discipline, pride, and national regeneration.</p><div class="bio-quote">"Keating transformed military brass precision into a vibrant expression of local civic identity."</div><p>Keating trained local town bands and led his ensemble at Daniel O’Connell’s 1843 Monster Meeting at Summerhill. His greatest protégé was a young Patrick Sarsfield Gilmore, to whom he imparted the advanced brass fingering and showmanship Gilmore took to America.</p>`
       },
       'bio-patrick-gilmore': {
         title: 'Patrick Sarsfield Gilmore (1829–1892)',
         sub: 'Father of the American Band',
         image: 'Patrick_S._Gilmore (6).jpg',
-        text: `
-          <p>Born in Ballygar, Co. Galway, and trained as a cornetist in Athlone under Patrick Keating, Patrick Sarsfield Gilmore emigrated to Boston in 1849. He quickly became the preeminent bandmaster in North America.</p>
-          <div class="bio-quote">"In 1863, under the nom de plume Louis Lambert, Gilmore penned the immortal Civil War anthem 'When Johnny Comes Marching Home'."</div>
-          <p>During the American Civil War, Gilmore enlisted his entire band into the 24th Massachusetts Volunteer Regiment. Following the conflict, he produced the monumental 1869 National Peace Jubilee in Boston (1,000 musicians, 10,000 choristers) and later performed for Charles Stewart Parnell and at the 1886 dedication of the Statue of Liberty in New York Harbour.</p>
-        `
+        text: `<p>Born in Ballygar, Co. Galway, and trained as a cornetist in Athlone under Patrick Keating, Patrick Sarsfield Gilmore emigrated to Boston in 1849 and became the preeminent bandmaster in America.</p><div class="bio-quote">"In 1863, under the pseudonym Louis Lambert, Gilmore penned 'When Johnny Comes Marching Home'."</div><p>During the Civil War, Gilmore enlisted his band into the Union Army. He later directed the 1869 Boston Peace Jubilee with 1,000 instrumentalists and a choir of 10,000, and performed at the 1886 dedication of the Statue of Liberty.</p>`
       },
       'bio-michael-kilkelly': {
         title: 'Michael Kilkelly',
         sub: 'Mentorship & Musical Resistance',
         image: 'michaelkilkelly.jpg',
-        text: `
-          <p>Mentored directly by Patrick Keating, Michael Kilkelly was a staunch nationalist and versatile multi-instrumentalist who positioned music on the frontline of the Irish Land War during the late 1870s and 1880s.</p>
-          <div class="bio-quote">"Kilkelly deployed the Athlone Brass Band at eviction sites across Westmeath and Roscommon, using triumphant airs to sustain tenant resistance."</div>
-          <p>As choirmaster at St. Mary’s and Marist College in the early 1890s, Kilkelly discovered the raw vocal brilliance of a schoolboy named John McCormack, providing him with his foundational vocal coaching and setting him upon his path to international renown.</p>
-        `
+        text: `<p>Mentored directly by Patrick Keating, Michael Kilkelly was a versatile instrumentalist who positioned music on the frontline of the Irish Land War during the late 1870s and 1880s.</p><div class="bio-quote">"Kilkelly deployed the Athlone Brass Band at eviction sites across Westmeath, using martial airs to sustain tenant resistance."</div><p>As choirmaster at St. Mary’s in the early 1890s, Kilkelly discovered the vocal gift of schoolboy John McCormack, providing foundational coaching that launched his global career.</p>`
       },
       'bio-henry-foy': {
         title: 'Henry Foy',
         sub: 'Ireland’s First Jazzman',
         image: 'cd54ad2e-f706-4961-9eb8-fea6d48b2bdf.png',
-        text: `
-          <p>Professor Henry "Harry" Foy stands as one of the most innovative figures in 20th-century Irish music. In 1902, he co-founded the Athlone Musical Society, which today is the oldest continuously operating musical society in Ireland.</p>
-          <div class="bio-quote">"In 1919, Foy formed the Harry Foy Jazz Quartette — widely acknowledged as the first authentic jazz band formed in Ireland."</div>
-          <p>Foy’s pioneering jazz performances in the midlands coincided with the ministry of curate Fr. Peter Conefrey at St. Mary's Athlone. Conefrey later became the national leader of the 1934 Anti-Jazz campaign. Foy embraced jazz as a modern, vibrant medium, defying the moral panic that culminated in the 1935 Public Dance Halls Act.</p>
-        `
+        text: `<p>Professor Henry "Harry" Foy stands as one of the most innovative figures in 20th-century Irish music. In 1902, he co-founded the Athlone Musical Society, Ireland’s oldest continuously operating musical society.</p><div class="bio-quote">"In 1919, Foy formed the Harry Foy Jazz Quartette — widely acknowledged as the first jazz band formed in Ireland."</div><p>Foy’s jazz performances in the Midlands coincided with curate Fr. Peter Conefrey’s tenure in Athlone. Conefrey later led the 1934 Anti-Jazz campaign that resulted in the 1935 Public Dance Halls Act.</p>`
       },
       'bio-count-john-mccormack': {
         title: 'Count John McCormack (1884–1945)',
         sub: 'The World’s Greatest Lyrical Tenor',
         image: 'cropped_MI+John+McCormack+tenor+Wikimedia+Commons.jpg',
-        text: `
-          <p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the local church choir to become the most commercially successful concert tenor of the early 20th century. After winning gold at the 1902 Dublin Feis Ceoil, he studied in Milan under Vincenzo Sabatini.</p>
-          <div class="bio-quote">"McCormack sold millions of Victor gramophone records and was created a Papal Count in 1928 by Pope Pius XI."</div>
-          <p>At the 1932 Eucharistic Congress in Dublin, McCormack’s rendition of César Franck’s <em>Panis Angelicus</em> was broadcast across the world via Athlone's newly completed Moydrum transmitter, uniting global Irish audiences through radio.</p>
-        `
+        text: `<p>Born in The Bawn, Athlone, on 14 June 1884, John McCormack rose from the local choir to become the most celebrated concert tenor of the early 20th century. In 1928 he was created a Papal Count.</p><div class="bio-quote">"At the 1932 Eucharistic Congress in Dublin, McCormack’s rendition of César Franck’s Panis Angelicus was broadcast globally via Athlone's Moydrum transmitter."</div>`
       },
       'bio-eugene-daly': {
         title: 'Eugene Daly (1883–1965)',
         sub: 'The Titanic Piper',
         image: 'EugeneDaly-1 (1).webp',
-        text: `
-          <p>An accomplished uilleann piper and member of Athlone’s Clan Uisneach Pipe Band, Eugene Patrick Daly boarded RMS Titanic at Queenstown (Cobh) in April 1912 as a third-class passenger.</p>
-          <div class="bio-quote">"As Titanic pulled away from Ireland, Daly stood on the steerage deck playing 'Erin’s Lament' on his uilleann pipes."</div>
-          <p>During the sinking on 15 April 1912, Daly guided fellow Athlone passenger Bertha Mulvihill to Lifeboat 15. He survived by jumping into the freezing ocean and scrambling onto the overturned Collapsible B. He settled in New York and lived to the age of 82.</p>
-        `
+        text: `<p>A piper in Athlone’s Clan Uisneach Pipe Band, Eugene Patrick Daly boarded RMS Titanic at Queenstown (Cobh) in April 1912. He famously played 'Erin’s Lament' on the deck.</p><div class="bio-quote">"Daly helped fellow Athlone passenger Bertha Mulvihill into Lifeboat 15, survived the freezing Atlantic on Collapsible B, and lived to the age of 82."</div>`
       }
     };
 
-    // 4. Modal Engine
     const modalBackdrop = document.getElementById('bio-modal');
     const modalTitle = document.getElementById('bio-modal-title');
     const modalSubtitle = document.getElementById('bio-modal-subtitle');
@@ -1938,194 +1681,356 @@
       modalTitle.textContent = data.title;
       modalSubtitle.textContent = data.sub;
       modalImage.src = data.image;
-      modalImage.alt = data.title;
       modalText.innerHTML = data.text;
       modalBackdrop.classList.add('open');
       document.body.style.overflow = 'hidden';
-      history.pushState(null, '', `#${key}`);
     }
 
     function closeBio() {
       modalBackdrop.classList.remove('open');
       document.body.style.overflow = '';
-      if (location.hash.startsWith('#bio-')) {
-        history.pushState(null, '', window.location.pathname);
-      }
     }
 
     document.querySelectorAll('[data-bio]').forEach(el => {
       el.addEventListener('click', () => openBio(el.getAttribute('data-bio')));
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openBio(el.getAttribute('data-bio'));
-        }
-      });
     });
-
     modalClose.addEventListener('click', closeBio);
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) closeBio();
-    });
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) closeBio();
-    });
+    modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeBio(); });
 
-    if (location.hash && bios[location.hash.replace('#', '')]) {
-      openBio(location.hash.replace('#', ''));
-    }
-
-    // 5. Interactive Web Audio API Valve Radio Synthesizer
+    // ══════════════════════════════════════════════════════════════════
+    // 3. COMPLETE WEB AUDIO ACOUSTIC RADIO BROADCAST SYNTHESIZER
+    // ══════════════════════════════════════════════════════════════════
     let audioCtx = null;
-    let noiseNode = null;
-    let humOsc = null;
-    let audioGain = null;
-    let isSoundOn = false;
+    let masterGain = null;
+    let staticGain = null;
+    let whistleGain = null;
+    let whistleOsc = null;
+    let isRadioPowered = false;
+    let currentNoteIndex = 0;
+    let broadcastInterval = null;
+    let currentStationIndex = -1;
 
-    const soundBtn = document.getElementById('audio-synth-btn');
-    const soundLabel = document.getElementById('audio-btn-label');
+    const stations = [
+      {
+        pos: 12,
+        name: "Marconi Clara Spark (1898)",
+        freq: "Spark Gap Telegraph",
+        desc: "Rhythmic spark-gap discharges transmitting Morse code between Goodbody’s Charlestown Flour Mill and Clashawaun Jute Works in Clara — the world’s first commercial wireless message.",
+        type: "spark"
+      },
+      {
+        pos: 45,
+        name: "Radio Éireann Moydrum (Athlone 1933)",
+        freq: "567 kHz (530m)",
+        desc: "The famous Radio Éireann 'O'Donnell Abú' interval chime melody followed by period broadcasting music on the 60 kW Moydrum Marconi transmitter.",
+        type: "eireann"
+      },
+      {
+        pos: 68,
+        name: "McCormack — Panis Angelicus (1932)",
+        freq: "725 kHz (413m)",
+        desc: "Count John McCormack’s tenor melody of César Franck's Panis Angelicus accompanied by church organ acoustics, broadcast live across Europe from Phoenix Park.",
+        type: "mccormack"
+      },
+      {
+        pos: 88,
+        name: "Harry Foy Jazz Quartette (1919)",
+        freq: "Syncopated Ragtime",
+        desc: "Athlone’s pioneer jazz ensemble playing syncopated ragtime foxtrot, prompting the national cultural clash and the Public Dance Halls Act of 1935.",
+        type: "jazz"
+      }
+    ];
 
-    function initWebAudio() {
+    function initRadioAudio() {
       if (audioCtx) return;
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtx = new AudioContext();
 
-      // Master Gain
-      audioGain = audioCtx.createGain();
-      audioGain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-      audioGain.connect(audioCtx.destination);
+      // Master output
+      masterGain = audioCtx.createGain();
+      masterGain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+      masterGain.connect(audioCtx.destination);
 
-      // 50Hz Mains Transformer Valve Hum
-      humOsc = audioCtx.createOscillator();
+      // 1. Atmospheric Radio Static Generator
+      const bufSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufSize; i++) {
+        output[i] = (Math.random() * 2 - 1) * 0.5;
+      }
+      const staticSrc = audioCtx.createBufferSource();
+      staticSrc.buffer = noiseBuffer;
+      staticSrc.loop = true;
+
+      const staticFilter = audioCtx.createBiquadFilter();
+      staticFilter.type = 'bandpass';
+      staticFilter.frequency.setValueAtTime(1200, audioCtx.currentTime);
+      staticFilter.Q.setValueAtTime(1.2, audioCtx.currentTime);
+
+      staticGain = audioCtx.createGain();
+      staticGain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+
+      staticSrc.connect(staticFilter);
+      staticFilter.connect(staticGain);
+      staticGain.connect(masterGain);
+      staticSrc.start();
+
+      // 2. Heterodyne Whistle Generator (Valve dial sweep effect)
+      whistleOsc = audioCtx.createOscillator();
+      whistleOsc.type = 'sine';
+      whistleOsc.frequency.setValueAtTime(800, audioCtx.currentTime);
+
+      whistleGain = audioCtx.createGain();
+      whistleGain.gain.setValueAtTime(0, audioCtx.currentTime);
+
+      whistleOsc.connect(whistleGain);
+      whistleGain.connect(masterGain);
+      whistleOsc.start();
+
+      // 3. 50Hz Transformer Valve Hum
+      const humOsc = audioCtx.createOscillator();
       humOsc.type = 'sawtooth';
       humOsc.frequency.setValueAtTime(50, audioCtx.currentTime);
-      const humFilter = audioCtx.createBiquadFilter();
-      humFilter.type = 'lowpass';
-      humFilter.frequency.setValueAtTime(120, audioCtx.currentTime);
-      humOsc.connect(humFilter);
-      humFilter.connect(audioGain);
+      const humGain = audioCtx.createGain();
+      humGain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+      humOsc.connect(humGain);
+      humGain.connect(masterGain);
       humOsc.start();
 
-      // Atmospheric White Noise / Radio Static
-      const bufferSize = audioCtx.sampleRate * 2;
-      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      const output = noiseBuffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        output[i] = Math.random() * 2 - 1;
-      }
-      noiseNode = audioCtx.createBufferSource();
-      noiseNode.buffer = noiseBuffer;
-      noiseNode.loop = true;
-
-      const noiseFilter = audioCtx.createBiquadFilter();
-      noiseFilter.type = 'bandpass';
-      noiseFilter.frequency.setValueAtTime(1000, audioCtx.currentTime);
-      noiseFilter.Q.setValueAtTime(1.5, audioCtx.currentTime);
-
-      noiseNode.connect(noiseFilter);
-      noiseFilter.connect(audioGain);
-      noiseNode.start();
+      startOscilloscope();
     }
 
-    soundBtn.addEventListener('click', () => {
-      if (!audioCtx) initWebAudio();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
+    // Melodies for different stations
+    const oDonnellAbuNotes = [
+      { f: 523.25, d: 0.28 }, { f: 587.33, d: 0.28 }, { f: 659.25, d: 0.5 },
+      { f: 523.25, d: 0.28 }, { f: 659.25, d: 0.28 }, { f: 783.99, d: 0.6 },
+      { f: 880.00, d: 0.35 }, { f: 783.99, d: 0.35 }, { f: 659.25, d: 0.4 },
+      { f: 587.33, d: 0.35 }, { f: 523.25, d: 0.7 }
+    ];
 
-      isSoundOn = !isSoundOn;
-      if (isSoundOn) {
-        soundBtn.classList.add('active');
-        soundLabel.textContent = 'MUTE VALVE SOUND';
-        audioGain.gain.setTargetAtTime(0.08, audioCtx.currentTime, 0.1);
-      } else {
-        soundBtn.classList.remove('active');
-        soundLabel.textContent = 'ENABLE SOUND';
-        audioGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
-      }
-    });
+    const panisNotes = [
+      { f: 349.23, d: 0.6 }, { f: 392.00, d: 0.6 }, { f: 440.00, d: 0.8 },
+      { f: 392.00, d: 0.5 }, { f: 349.23, d: 0.5 }, { f: 329.63, d: 0.9 },
+      { f: 293.66, d: 0.6 }, { f: 329.63, d: 0.6 }, { f: 349.23, d: 1.1 }
+    ];
 
-    // 6. Magic Eye Cathode Ray Canvas Indicator
-    const eyeCanvas = document.getElementById('magic-eye-canvas');
-    const eyeCtx = eyeCanvas.getContext('2d');
-    function drawMagicEye(angleOpening) {
-      eyeCtx.clearRect(0, 0, 32, 32);
-      eyeCtx.fillStyle = '#05180c';
-      eyeCtx.fillRect(0, 0, 32, 32);
+    const ragtimeNotes = [
+      { f: 523.25, d: 0.18 }, { f: 554.37, d: 0.18 }, { f: 587.33, d: 0.18 }, { f: 659.25, d: 0.3 },
+      { f: 523.25, d: 0.22 }, { f: 440.00, d: 0.22 }, { f: 392.00, d: 0.35 },
+      { f: 659.25, d: 0.2 }, { f: 783.99, d: 0.2 }, { f: 880.00, d: 0.35 }
+    ];
 
-      // Glowing Green Fan
-      eyeCtx.save();
-      eyeCtx.translate(16, 16);
-      eyeCtx.beginPath();
-      eyeCtx.arc(0, 0, 13, 0, Math.PI * 2);
-      eyeCtx.fillStyle = '#1c7430';
-      eyeCtx.fill();
+    function playTone(freq, dur, type = 'sine', decay = 0.8) {
+      if (!audioCtx || !isRadioPowered) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
 
-      // Eye shadow wedge (indicates tuning quality)
-      eyeCtx.beginPath();
-      eyeCtx.moveTo(0, 0);
-      eyeCtx.arc(0, 0, 14, -angleOpening, angleOpening);
-      eyeCtx.fillStyle = '#031006';
-      eyeCtx.fill();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
-      // Center Cathode Cap
-      eyeCtx.beginPath();
-      eyeCtx.arc(0, 0, 4.5, 0, Math.PI * 2);
-      eyeCtx.fillStyle = '#0f3818';
-      eyeCtx.fill();
-      eyeCtx.restore();
+      gain.gain.setValueAtTime(0.09, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur * decay);
+
+      osc.connect(gain);
+      gain.connect(masterGain);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + dur);
     }
-    drawMagicEye(0.85);
 
-    // 7. Radio Tuning & Preset Logic
-    const dialNeedle = document.getElementById('dial-needle');
-    const freqSlider = document.getElementById('radio-frequency-slider');
-    const presetBtns = document.querySelectorAll('.preset-channel-btn');
+    function runBroadcastLoop(stationType) {
+      if (broadcastInterval) clearInterval(broadcastInterval);
+      currentNoteIndex = 0;
+
+      broadcastInterval = setInterval(() => {
+        if (!isRadioPowered || !audioCtx) return;
+
+        if (stationType === 'eireann') {
+          const note = oDonnellAbuNotes[currentNoteIndex % oDonnellAbuNotes.length];
+          playTone(note.f, note.d, 'triangle', 0.9);
+          currentNoteIndex++;
+        } else if (stationType === 'mccormack') {
+          const note = panisNotes[currentNoteIndex % panisNotes.length];
+          playTone(note.f, note.d, 'sine', 1.2);
+          // Pipe organ harmony
+          playTone(note.f / 2, note.d * 1.2, 'sawtooth', 0.4);
+          currentNoteIndex++;
+        } else if (stationType === 'jazz') {
+          const note = ragtimeNotes[currentNoteIndex % ragtimeNotes.length];
+          playTone(note.f, note.d, 'square', 0.6);
+          // Stride bass
+          if (currentNoteIndex % 2 === 0) playTone(note.f / 2, 0.15, 'triangle', 0.8);
+          currentNoteIndex++;
+        } else if (stationType === 'spark') {
+          // Morse rhythm
+          const isDash = Math.random() > 0.4;
+          playTone(900, isDash ? 0.22 : 0.08, 'sawtooth', 0.95);
+        }
+      }, 360);
+    }
+
+    // Dial Needle Tuning Math & Signal Lock
+    const slider = document.getElementById('radio-freq-slider');
+    const needle = document.getElementById('dial-needle');
     const cardFreq = document.getElementById('trans-card-freq');
     const cardTitle = document.getElementById('trans-card-title');
     const cardDesc = document.getElementById('trans-card-desc');
+    const receptionMeter = document.getElementById('reception-meter');
+    const presetButtons = document.querySelectorAll('.preset-channel-btn');
 
-    function applyRadioChannel(btn) {
-      presetBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    function applyTuningPosition(pos) {
+      needle.style.left = `${pos}%`;
+      slider.value = pos;
 
-      const pos = btn.getAttribute('data-pos');
-      const freq = btn.getAttribute('data-freq');
-      const title = btn.getAttribute('data-title');
-      const desc = btn.getAttribute('data-desc');
+      // Find closest station
+      let closest = null;
+      let minDistance = 999;
 
-      dialNeedle.style.left = `${pos}%`;
-      freqSlider.value = pos;
-      cardFreq.textContent = `TUNED: ${freq.toUpperCase()}`;
-      cardTitle.textContent = title;
-      cardDesc.textContent = desc;
+      stations.forEach((st, idx) => {
+        const dist = Math.abs(pos - st.pos);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closest = { ...st, index: idx };
+        }
+      });
 
-      drawMagicEye(0.2); // Sharp tuning focus
+      // Check tuning lock tolerance (within 4% of preset frequency)
+      const lockThreshold = 4.5;
+      const isLocked = minDistance <= lockThreshold;
 
-      if (audioCtx && isSoundOn) {
-        // Heterodyne whistle burst when changing stations
-        const beep = audioCtx.createOscillator();
-        const beepGain = audioCtx.createGain();
-        beep.frequency.setValueAtTime(1400, audioCtx.currentTime);
-        beep.frequency.exponentialRampToValueAtTime(450, audioCtx.currentTime + 0.25);
-        beepGain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-        beepGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.25);
-        beep.connect(beepGain);
-        beepGain.connect(audioCtx.destination);
-        beep.start();
-        beep.stop(audioCtx.currentTime + 0.25);
+      // Highlight active preset
+      presetButtons.forEach(btn => {
+        const btnPos = parseFloat(btn.getAttribute('data-pos'));
+        btn.classList.toggle('active', isLocked && Math.abs(btnPos - closest.pos) < 1);
+      });
+
+      // Update Dial scale text
+      document.querySelectorAll('.dial-station-marker').forEach(m => {
+        const targetPos = parseFloat(m.getAttribute('data-target-pos'));
+        m.classList.toggle('tuned', isLocked && Math.abs(targetPos - closest.pos) < 1);
+      });
+
+      if (isLocked) {
+        cardFreq.textContent = `TUNED: ${closest.freq.toUpperCase()}`;
+        cardTitle.textContent = closest.name;
+        cardDesc.textContent = closest.desc;
+        
+        const signalPct = Math.round((1 - (minDistance / lockThreshold)) * 100);
+        receptionMeter.textContent = `● SIGNAL LOCKED (${signalPct}%)`;
+        receptionMeter.style.color = 'var(--green-eye)';
+
+        if (audioCtx && isRadioPowered) {
+          // Fade down static & whistling when signal locked
+          staticGain.gain.setTargetAtTime(0.015, audioCtx.currentTime, 0.1);
+          whistleGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+
+          if (currentStationIndex !== closest.index) {
+            currentStationIndex = closest.index;
+            runBroadcastLoop(closest.type);
+          }
+        }
+      } else {
+        cardFreq.textContent = `FREQUENCY: ${Math.round(400 + pos * 6)} kHz (STATIC)`;
+        cardTitle.textContent = "Atmospheric Static / Hunting Carrier Wave...";
+        cardDesc.textContent = "The dial is untuned between broadcast stations. Sweep the red needle toward marked presets to lock onto historical radio signals.";
+        receptionMeter.textContent = "○ NO CARRIER SIGNAL";
+        receptionMeter.style.color = "#ff4444";
+
+        currentStationIndex = -1;
+        if (broadcastInterval) clearInterval(broadcastInterval);
+
+        if (audioCtx && isRadioPowered) {
+          // Static & Heterodyne Whistle between channels
+          staticGain.gain.setTargetAtTime(0.09, audioCtx.currentTime, 0.1);
+          whistleGain.gain.setTargetAtTime(0.04, audioCtx.currentTime, 0.1);
+          whistleOsc.frequency.setValueAtTime(300 + pos * 18, audioCtx.currentTime);
+        }
       }
     }
 
-    presetBtns.forEach(btn => {
-      btn.addEventListener('click', () => applyRadioChannel(btn));
+    slider.addEventListener('input', (e) => applyTuningPosition(parseFloat(e.target.value)));
+
+    presetButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pos = parseFloat(btn.getAttribute('data-pos'));
+        applyTuningPosition(pos);
+        if (!isRadioPowered) powerOnRadio();
+      });
     });
 
-    freqSlider.addEventListener('input', (e) => {
-      const val = e.target.value;
-      dialNeedle.style.left = `${val}%`;
-      drawMagicEye(0.9); // De-tuned wider eye shadow
+    document.querySelectorAll('.dial-station-marker').forEach(m => {
+      m.addEventListener('click', () => {
+        const pos = parseFloat(m.getAttribute('data-target-pos'));
+        applyTuningPosition(pos);
+        if (!isRadioPowered) powerOnRadio();
+      });
     });
 
-    // 8. Timeline Category Filter
+    // Master Power Switch
+    const powerBtn = document.getElementById('radio-power-btn');
+    const powerBtnText = document.getElementById('power-btn-text');
+    const scopeStatus = document.getElementById('scope-status');
+
+    function powerOnRadio() {
+      initRadioAudio();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      isRadioPowered = true;
+      powerBtn.classList.add('active');
+      powerBtnText.textContent = "RADIO ON • SOUND ACTIVE";
+      scopeStatus.textContent = "LIVE VALVE";
+      applyTuningPosition(parseFloat(slider.value));
+    }
+
+    function powerOffRadio() {
+      isRadioPowered = false;
+      powerBtn.classList.remove('active');
+      powerBtnText.textContent = "POWER ON / TUNE AUDIO";
+      scopeStatus.textContent = "STANDBY";
+      if (broadcastInterval) clearInterval(broadcastInterval);
+      if (staticGain) staticGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+      if (whistleGain) whistleGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.1);
+    }
+
+    powerBtn.addEventListener('click', () => {
+      if (!isRadioPowered) {
+        powerOnRadio();
+      } else {
+        powerOffRadio();
+      }
+    });
+
+    // Oscilloscope Canvas Visualizer
+    const canvas = document.getElementById('scope-canvas');
+    const ctx = canvas.getContext('2d');
+    let scopePhase = 0;
+
+    function startOscilloscope() {
+      function draw() {
+        requestAnimationFrame(draw);
+        ctx.fillStyle = '#020b05';
+        ctx.fillRect(0, 0, 80, 26);
+
+        ctx.strokeStyle = isRadioPowered ? '#38ef7d' : '#144020';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+
+        const amp = isRadioPowered ? (currentStationIndex >= 0 ? 8 : 3) : 0.5;
+        const freq = isRadioPowered ? (currentStationIndex >= 0 ? 0.3 : 0.8) : 0.1;
+
+        for (let x = 0; x < 80; x++) {
+          const y = 13 + Math.sin(x * freq + scopePhase) * amp * (isRadioPowered && currentStationIndex < 0 ? (Math.random() * 1.5 - 0.75) : 1);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        scopePhase += 0.2;
+      }
+      draw();
+    }
+    startOscilloscope();
+
+    // 4. Timeline Category Filter
     const timelineFilterBtns = document.querySelectorAll('.timeline-filter-btn');
     const timelineItems = document.querySelectorAll('#chronicle-timeline .timeline-item');
 
@@ -2145,7 +2050,7 @@
       });
     });
 
-    // 9. Interactive Trail Map & Accordion Sync
+    // 5. Interactive Trail Map & Accordion
     const mapHotspots = document.querySelectorAll('.map-hotspot');
     const trailCards = document.querySelectorAll('.trail-stop-card');
 
@@ -2154,21 +2059,10 @@
       trailCards.forEach(c => c.classList.toggle('active', c.getAttribute('data-stop') === String(index)));
     }
 
-    mapHotspots.forEach(hotspot => {
-      hotspot.addEventListener('click', () => {
-        const idx = hotspot.getAttribute('data-target');
-        highlightTrailStop(idx);
-      });
-    });
+    mapHotspots.forEach(h => h.addEventListener('click', () => highlightTrailStop(h.getAttribute('data-target'))));
+    trailCards.forEach(c => c.addEventListener('click', () => highlightTrailStop(c.getAttribute('data-stop'))));
 
-    trailCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const idx = card.getAttribute('data-stop');
-        highlightTrailStop(idx);
-      });
-    });
-
-    // 10. Live Archive Quick Search
+    // 6. Global Search Filter
     const searchInput = document.getElementById('global-search');
     const searchCounter = document.getElementById('search-counter');
     const figureCards = document.querySelectorAll('.figure-card');
@@ -2177,26 +2071,22 @@
       const term = e.target.value.toLowerCase().trim();
       let matchCount = 0;
 
-      // Filter Figures
       figureCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        const matches = text.includes(term);
-        card.style.display = matches ? 'flex' : 'none';
-        if (matches) matchCount++;
+        const match = card.textContent.toLowerCase().includes(term);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) matchCount++;
       });
 
-      // Filter Timeline
       timelineItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const matches = text.includes(term);
-        item.style.display = matches ? 'block' : 'none';
-        if (matches) matchCount++;
+        const match = item.textContent.toLowerCase().includes(term);
+        item.style.display = match ? 'block' : 'none';
+        if (match) matchCount++;
       });
 
       if (term === '') {
         searchCounter.textContent = 'Archive Ready';
-        timelineItems.forEach(item => item.style.display = '');
-        figureCards.forEach(card => card.style.display = '');
+        figureCards.forEach(c => c.style.display = '');
+        timelineItems.forEach(i => i.style.display = '');
       } else {
         searchCounter.textContent = `${matchCount} Matches`;
       }
