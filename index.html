@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Westmeath Heritage — Official digital precursor to the Westmeath Music & Radio Museum. Explore Ireland's soundscape, from Count John McCormack to the 1933 Moydrum Marconi transmitter.">
+  <meta name="description" content="Athlone's music heritage, from Count John McCormack to the 1933 Moydrum transmitter, and the booklet Athlone: The Birthplace of Modern Music.">
+  <link rel="canonical" href="https://athlonemusic.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Athlone Music &amp; Radio Heritage" />
+  <meta property="og:url" content="https://athlonemusic.com/" />
+  <meta property="og:title" content="Athlone Music &amp; Radio Heritage | Sound of the Irish Midlands" />
+  <meta property="og:description" content="Athlone's music heritage, from Count John McCormack to the 1933 Moydrum transmitter, and the booklet Athlone: The Birthplace of Modern Music." />
+  <meta property="og:image" content="https://athlonemusic.com/booklet-cover.jpg" />
+  <meta property="og:image:alt" content="Cover of Athlone: The Birthplace of Modern Music, a 40-page illustrated A5 booklet" />
+  <meta property="og:image:width" content="848" />
+  <meta property="og:image:height" content="1216" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Athlone Music &amp; Radio Heritage | Sound of the Irish Midlands" />
+  <meta name="twitter:description" content="Athlone's music heritage, from Count John McCormack to the 1933 Moydrum transmitter, and the booklet Athlone: The Birthplace of Modern Music." />
+  <meta name="twitter:image" content="https://athlonemusic.com/booklet-cover.jpg" />
+  <meta name="twitter:image:alt" content="Cover of Athlone: The Birthplace of Modern Music, a 40-page illustrated A5 booklet" />
   <meta name="theme-color" content="#040c14" />
-  <title>Westmeath Heritage | Sound of the Irish Midlands</title>
+  <title>Athlone Music &amp; Radio Heritage | Sound of the Irish Midlands</title>
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -305,6 +320,75 @@
       flex-wrap: wrap;
       gap: 1.15rem;
       justify-content: center;
+    }
+
+    /* ??? Booklet Order Section ??? */
+    .booklet-section {
+      padding: 5.5rem 0 4rem;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    }
+    .booklet-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .booklet-image-wrap {
+      position: relative;
+    }
+    .booklet-cover {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-xl), 0 0 0 1px var(--border-gold);
+      transform: rotate(-1.5deg);
+      transition: transform 0.4s var(--ease-out);
+    }
+    .booklet-image-wrap:hover .booklet-cover {
+      transform: rotate(0deg) scale(1.02);
+    }
+    .booklet-content h2 {
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
+      margin: 0.4rem 0 1.2rem;
+    }
+    .booklet-lead {
+      font-size: 1.18rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+    .booklet-details {
+      color: var(--ink-muted);
+      margin-bottom: 1.25rem;
+    }
+    .booklet-price {
+      font-size: 1.15rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .booklet-stockist {
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+    }
+    .booklet-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--navy) !important;
+      border-color: var(--gold-dark);
+    }
+    .btn-outline-dark:hover {
+      background: var(--cream-dark);
+      border-color: var(--gold);
+    }
+    .booklet-note {
+      font-size: 0.9rem;
+      color: var(--ink-faint);
+      font-style: italic;
     }
 
     /* ??? Buttons ??? */
@@ -1219,6 +1303,8 @@
         right: auto;
       }
       .bio-modal-body { grid-template-columns: 1fr; }
+      .booklet-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .booklet-image-wrap { max-width: 380px; margin: 0 auto; }
     }
 
     @media (max-width: 640px) {
@@ -1238,9 +1324,9 @@
   <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
     <div class="container nav-inner">
       <a href="#top" class="site-brand">
-        <div class="brand-crest">W</div>
+        <div class="brand-crest">A</div>
         <div class="brand-text">
-          <span class="site-name">Westmeath Heritage</span>
+          <span class="site-name">Athlone Heritage</span>
           <span class="site-subtitle">Music &amp; Radio Museum</span>
         </div>
       </a>
@@ -1252,6 +1338,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <div class="nav-links" id="nav-links">
+        <a href="#booklet" class="nav-link">The Booklet</a>
         <a href="#past" class="nav-link">Our Past</a>
         <a href="#radio" class="nav-link">Vintage Radio</a>
         <a href="#music-trail" class="nav-link">Heritage Trail</a>
@@ -1269,13 +1356,41 @@
         Digital Precursor &amp; Archival Soundscape
       </div>
       <h1 class="page-hero-title">
-        The Sound of Ireland — <span>Westmeath Heritage</span>
+        The Sound of Ireland — <span>Athlone Music &amp; Radio</span>
       </h1>
       <p class="hero-lead">
         From 19th-century bandmasters and Titanic pipers to the high-power Moydrum transmitter that broadcast Ireland's voice across Europe: explore the living soundscape of the Irish Midlands.
       </p>
     </div>
   </header>
+
+  <!-- Booklet Order Section -->
+  <section id="booklet" class="section booklet-section">
+    <div class="container">
+      <div class="booklet-layout">
+        <div class="booklet-image-wrap">
+          <img src="booklet-cover.jpg" width="848" height="1216" alt="Cover of Athlone: The Birthplace of Modern Music, a 40-page illustrated A5 booklet" class="booklet-cover" />
+        </div>
+        <div class="booklet-content">
+          <span class="section-tag">New Publication</span>
+          <h2>Athlone: The Birthplace of Modern Music</h2>
+          <p class="booklet-lead">
+            A 40-page illustrated A5 booklet in full colour, tracing Athlone’s musical story from Patrick Keating and Patrick S. Gilmore to John McCormack, Michael Kilkelly, the Athlone Musical Society, the Moydrum transmitter, and the 1953 Fleadh Cheoil.
+          </p>
+          <p class="booklet-details">
+            A companion to this site — for readers in Ireland and abroad, collectors, and anyone following the sound of the Irish Midlands.
+          </p>
+          <p class="booklet-price">€10 a copy, plus €3.50 postage.</p>
+          <p class="booklet-stockist">Also on sale at The Bastion Gallery, Athlone.</p>
+          <div class="booklet-actions">
+            <a href="mailto:tadhgkelleher@gmail.com?subject=Order%3A%20Athlone%3A%20The%20Birthplace%20of%20Modern%20Music" class="btn btn-primary">Order by email — €10 + €3.50 postage</a>
+            <a href="https://www.westmeathindependent.ie/2026/11/06/new-booklet-charts-athlones-rich-musical-history/" class="btn btn-outline-dark" target="_blank" rel="noopener">Read the Westmeath Independent feature</a>
+          </div>
+          <p class="booklet-note">To order a posted copy, email tadhgkelleher@gmail.com with your name, address, and how many copies you would like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Live Archive Instant Search -->
   <div class="container">
@@ -1295,7 +1410,7 @@
         <div class="section-header">
           <span class="section-tag">Historical Legacy</span>
           <h2>Pioneers, Virtuosos &amp; Rebel Bands</h2>
-          <p class="section-lead">Westmeath's soundscape was forged across two centuries of resistance, global tours, and technological leaps. Click any card to inspect the archival biography.</p>
+          <p class="section-lead">Athlone's soundscape was forged across two centuries of resistance, global tours, and technological leaps. Click any card to inspect the archival biography.</p>
         </div>
 
         <div class="figure-grid" id="figure-grid">
@@ -1772,16 +1887,17 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-brand-title">Westmeath Heritage Project</div>
+      <div class="footer-brand-title">Athlone Music &amp; Radio Museum Project</div>
       <p class="footer-tagline">Preserving Ireland's voice, heritage, and acoustics in the heart of the Midlands.</p>
       <ul class="footer-nav">
+        <li><a href="#booklet">The Booklet</a></li>
         <li><a href="#past">Our Past</a></li>
         <li><a href="#radio">Vintage Radio</a></li>
         <li><a href="#music-trail">Heritage Trail</a></li>
         <li><a href="#vision">The Vision</a></li>
       </ul>
       <p style="font-size:0.85rem;opacity:0.6;margin-bottom:1.5rem">
-        Historical curation &copy; <span id="footer-year"></span> Westmeath Heritage Project.
+        Historical curation &copy; <span id="footer-year"></span> Athlone Music Heritage Project.
       </p>
       <a href="#top" style="color:var(--gold-light);font-size:0.9rem;">&uarr; Return to Top of Page</a>
     </div>
