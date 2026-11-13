@@ -364,17 +364,28 @@
       font-size: 1.15rem;
       color: var(--navy);
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin: 0 0 0.4rem;
     }
     .booklet-stockist {
       color: var(--ink-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.15rem;
     }
     .booklet-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+      width: min(100%, 26rem);
+      margin: 0.15rem 0 1.25rem;
+    }
+    .booklet-actions .btn {
+      width: 100%;
+      min-height: 3.4rem;
+      padding: 1.05rem 1.5rem;
+      font-size: 1.08rem;
+    }
+    .booklet-feature {
+      margin: 0 0 1.15rem;
     }
     .btn-outline-dark {
       background: transparent;
@@ -1380,13 +1391,17 @@
           <p class="booklet-details">
             A companion to this site — for readers in Ireland and abroad, collectors, and anyone following the sound of the Irish Midlands.
           </p>
-          <p class="booklet-price">€10 a copy, plus €3.50 postage.</p>
-          <p class="booklet-stockist">Also on sale at The Bastion Gallery, Athlone.</p>
           <div class="booklet-actions">
-            <a href="mailto:tadhgkelleher@gmail.com?subject=Order%3A%20Athlone%3A%20The%20Birthplace%20of%20Modern%20Music" class="btn btn-primary">Order by email — €10 + €3.50 postage</a>
-            <a href="https://www.westmeathindependent.ie/2026/11/06/new-booklet-charts-athlones-rich-musical-history/" class="btn btn-outline-dark" target="_blank" rel="noopener">Read the Westmeath Independent feature</a>
+            <a href="https://buy.stripe.com/7sY4gzfu71QE2lK6Jg9EI09" class="btn btn-primary" target="_blank" rel="noopener">Buy now — Ireland</a>
+            <a href="https://buy.stripe.com/cNidR9a9Ndzme4s4B89EI0a" class="btn btn-primary" target="_blank" rel="noopener">Buy now — UK</a>
+            <a href="https://buy.stripe.com/5kQaEXeq39j60dC8Ro9EI0b" class="btn btn-primary" target="_blank" rel="noopener">Buy now — USA</a>
           </div>
-          <p class="booklet-note">To order a posted copy, email tadhgkelleher@gmail.com with your name, address, and how many copies you would like.</p>
+          <p class="booklet-price">€10 a copy. Postage: Ireland €4 (up to 3 copies), UK €8, USA €11.</p>
+          <p class="booklet-stockist">Also on sale at The Bastion Gallery, Athlone.</p>
+          <p class="booklet-feature">
+            <a href="https://www.westmeathindependent.ie/2026/11/06/new-booklet-charts-athlones-rich-musical-history/" class="btn btn-outline-dark" target="_blank" rel="noopener">Read the Westmeath Independent feature</a>
+          </p>
+          <p class="booklet-note">Northern Ireland, other countries, or more than one copy to the UK/USA? <a href="mailto:tadhgkelleher@gmail.com?subject=Order%3A%20Athlone%3A%20The%20Birthplace%20of%20Modern%20Music">Email me to order.</a></p>
         </div>
       </div>
     </div>
